@@ -2,7 +2,7 @@ template<typename Cost>
 struct Edge{
     int src,to;
     Cost cost;
-    Edge(int s, int t, Cost c=1) : src(s), to(t), cost(c){}
+    Edge(int s, int t, Cost c=1) : src(s), to(t), cost(c) {}
     // デフォルトでは行き先を返す
     operator int() const {return to;}
 };
