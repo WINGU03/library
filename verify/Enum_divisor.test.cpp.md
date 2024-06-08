@@ -1,33 +1,30 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: math/Extgcd.cpp
-    title: math/Extgcd.cpp
+  - icon: ':x:'
+    path: math/Enum_divisor.cpp
+    title: math/Enum_divisor.cpp
   - icon: ':question:'
     path: other/Macro.cpp
     title: other/Macro.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_E
+    PROBLEM: https://atcoder.jp/contests/abc180/tasks/abc180_c
     links:
-    - https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_E
-  bundledCode: "#line 1 \"verify/Extgcd.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_E\"\
-    \n\n#include <bits/stdc++.h>\nusing namespace std;\n#line 1 \"math/Extgcd.cpp\"\
-    \nlong long extgcd(long long a, long long b, long long &x, long long &y) {\n \
-    \   if (b == 0) {\n        x = 1;\n        y = 0;\n        return a;\n    }\n\
-    \    long long d = extgcd(b, a % b, y, x);\n    y -= a / b * x;\n    return d;\n\
-    }\n#line 2 \"other/Macro.cpp\"\nusing namespace std;\n\n#ifdef DEFINED_ONLY_IN_LOCAL\n\
-    #include <dump.hpp>\n#define dump(...) cpp_dump(__VA_ARGS__)\n#else\n#undef dump\n\
-    #define dump(...)\n#endif\n#define rep1(i, a) for (int i = 0; i < (int)(a); i++)\n\
-    #define rep2(i, a, b) for (int i = (int)(a); i < (int)(b); i++)\n#define rep3(i,\
-    \ a, b, c) for (int i = (int)(a); i < (int)(b); i += (int)(c))\n#define overloadRep(a,\
-    \ b, c, d, e, ...) e\n#define rep(...) overloadRep(__VA_ARGS__, rep3, rep2, rep1)(__VA_ARGS__)\n\
+    - https://atcoder.jp/contests/abc180/tasks/abc180_c
+  bundledCode: "#line 1 \"verify/Enum_divisor.test.cpp\"\n#define PROBLEM \"https://atcoder.jp/contests/abc180/tasks/abc180_c\"\
+    \n\n#include<bits/stdc++.h>\nusing namespace std;\n#line 2 \"other/Macro.cpp\"\
+    \nusing namespace std;\n\n#ifdef DEFINED_ONLY_IN_LOCAL\n#include <dump.hpp>\n\
+    #define dump(...) cpp_dump(__VA_ARGS__)\n#else\n#undef dump\n#define dump(...)\n\
+    #endif\n#define rep1(i, a) for (int i = 0; i < (int)(a); i++)\n#define rep2(i,\
+    \ a, b) for (int i = (int)(a); i < (int)(b); i++)\n#define rep3(i, a, b, c) for\
+    \ (int i = (int)(a); i < (int)(b); i += (int)(c))\n#define overloadRep(a, b, c,\
+    \ d, e, ...) e\n#define rep(...) overloadRep(__VA_ARGS__, rep3, rep2, rep1)(__VA_ARGS__)\n\
     #define rrep(i, a, b) for (int i = (int)(a); i <= (int)(b); i++)\n#define drep(i,\
     \ a, b) for (int i = (int)(a); i >= (int)(b); i--)\n#define all(a) a.begin(),\
     \ a.end()\n#define rall(a) a.rbegin(), a.rend()\nusing ll = long long;\nusing\
@@ -53,27 +50,32 @@ data:
     n';\n    return os;\n}\n\nbool bit(ll x, int p) {\n    return (x >> p) & 1;\n\
     }\n\nbool out(int ni, int nj, int h, int w) {\n    return (ni < 0 or ni >= h or\
     \ nj < 0 or nj >= w);\n}\n\nint pc(ll x) {\n    return __builtin_popcountll(x);\n\
-    }\n#line 7 \"verify/Extgcd.test.cpp\"\n\nint main() {\n    int a, b;\n    cin\
-    \ >> a >> b;\n    ll x, y;\n    extgcd(a, b, x, y);\n    cout << x << \" \" <<\
-    \ y << endl;\n    return 0;\n}\n"
-  code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_E\"\
-    \n\n#include <bits/stdc++.h>\nusing namespace std;\n#include \"math/Extgcd\"\n\
-    #include \"other/Macro\"\n\nint main() {\n    int a, b;\n    cin >> a >> b;\n\
-    \    ll x, y;\n    extgcd(a, b, x, y);\n    cout << x << \" \" << y << endl;\n\
-    \    return 0;\n}"
+    }\n#line 4 \"math/Enum_divisor.cpp\"\n\nstd::vector<long long> enum_divisor(long\
+    \ long n) {\n    std::vector<long long> res;\n    for (long long i = 1LL; i *\
+    \ i <= n; ++i) {\n        if (n % i == 0) {\n            res.push_back(i);\n \
+    \           long long j = n / i;\n            if (j != i) res.push_back(j);\n\
+    \        }\n    }\n    std::sort(res.begin(), res.end());\n    return res;\n}\n\
+    #line 7 \"verify/Enum_divisor.test.cpp\"\n\nint main(){\n    int n;\n    cin >>\
+    \ n;\n    auto ans = enum_divisor(n);\n    for(auto x : ans){\n        cout <<\
+    \ x << endl;\n    }\n    return 0;\n}\n"
+  code: "#define PROBLEM \"https://atcoder.jp/contests/abc180/tasks/abc180_c\"\n\n\
+    #include<bits/stdc++.h>\nusing namespace std;\n#include \"other/Macro\"\n#include\
+    \ \"math/Enum_divisor\"\n\nint main(){\n    int n;\n    cin >> n;\n    auto ans\
+    \ = enum_divisor(n);\n    for(auto x : ans){\n        cout << x << endl;\n   \
+    \ }\n    return 0;\n}"
   dependsOn:
-  - math/Extgcd.cpp
   - other/Macro.cpp
+  - math/Enum_divisor.cpp
   isVerificationFile: true
-  path: verify/Extgcd.test.cpp
+  path: verify/Enum_divisor.test.cpp
   requiredBy: []
   timestamp: '2024-06-08 12:15:43+09:00'
-  verificationStatus: TEST_ACCEPTED
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
-documentation_of: verify/Extgcd.test.cpp
+documentation_of: verify/Enum_divisor.test.cpp
 layout: document
 redirect_from:
-- /verify/verify/Extgcd.test.cpp
-- /verify/verify/Extgcd.test.cpp.html
-title: verify/Extgcd.test.cpp
+- /verify/verify/Enum_divisor.test.cpp
+- /verify/verify/Enum_divisor.test.cpp.html
+title: verify/Enum_divisor.test.cpp
 ---

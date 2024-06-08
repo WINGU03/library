@@ -17,6 +17,9 @@ data:
       title: Rerooting.cpp
   - name: math
     pages:
+    - icon: ':x:'
+      path: math/Enum_divisor.cpp
+      title: math/Enum_divisor.cpp
     - icon: ':heavy_check_mark:'
       path: math/Extgcd.cpp
       title: math/Extgcd.cpp
@@ -28,7 +31,7 @@ data:
     - icon: ':warning:'
       path: other/CC.cpp
       title: other/CC.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: other/Macro.cpp
       title: other/Macro.cpp
   - name: string
@@ -39,6 +42,9 @@ data:
   verificationCategories:
   - name: verify
     pages:
+    - icon: ':x:'
+      path: verify/Enum_divisor.test.cpp
+      title: verify/Enum_divisor.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/Extgcd.test.cpp
       title: verify/Extgcd.test.cpp
