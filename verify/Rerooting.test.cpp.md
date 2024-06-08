@@ -51,11 +51,11 @@ data:
     \u3044\u3066\u306E\u7D2F\u7A4D\n        dp[c]=head[n];\n\n        for (Edge<Cost>\
     \ &d : (*this)[c])if(d!=p){\n            Data sub=merge(head[idx], tail[idx+1]);\n\
     \            dfs2(d, c, apply(sub, c, d, d.cost));\n            idx++;\n     \
-    \   }\n  }\n};\n#line 2 \"other/Macro.cpp\"\nusing namespace std;\n\n#ifdef DEFINED_ONLY_IN_LOCAL\n\
-    #include <dump.hpp>\n#define dump(...) cpp_dump(__VA_ARGS__)\n#else\n#undef dump\n\
-    #define dump(...)\n#endif\n#define rep1(i, a) for (int i = 0; i < (int)(a); i++)\n\
-    #define rep2(i, a, b) for (int i = (int)(a); i < (int)(b); i++)\n#define rep3(i,\
-    \ a, b, c) for (int i = (int)(a); i < (int)(b); i += (int)(c))\n#define overloadRep(a,\
+    \   }\n  }\n};\n#line 1 \"other/Macro.cpp\"\n#ifdef DEFINED_ONLY_IN_LOCAL\n#include\
+    \ <dump.hpp>\n#define dump(...) cpp_dump(__VA_ARGS__)\n#else\n#undef dump\n#define\
+    \ dump(...)\n#endif\n#define rep1(i, a) for (int i = 0; i < (int)(a); i++)\n#define\
+    \ rep2(i, a, b) for (int i = (int)(a); i < (int)(b); i++)\n#define rep3(i, a,\
+    \ b, c) for (int i = (int)(a); i < (int)(b); i += (int)(c))\n#define overloadRep(a,\
     \ b, c, d, e, ...) e\n#define rep(...) overloadRep(__VA_ARGS__, rep3, rep2, rep1)(__VA_ARGS__)\n\
     #define rrep(i, a, b) for (int i = (int)(a); i <= (int)(b); i++)\n#define drep(i,\
     \ a, b) for (int i = (int)(a); i >= (int)(b); i--)\n#define all(a) a.begin(),\
@@ -105,7 +105,7 @@ data:
   isVerificationFile: true
   path: verify/Rerooting.test.cpp
   requiredBy: []
-  timestamp: '2024-06-08 12:42:28+09:00'
+  timestamp: '2024-06-08 15:04:32+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/Rerooting.test.cpp
