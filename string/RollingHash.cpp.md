@@ -71,7 +71,7 @@ data:
   isVerificationFile: false
   path: string/RollingHash.cpp
   requiredBy: []
-  timestamp: '2024-06-08 10:03:27+09:00'
+  timestamp: '2024-06-07 20:43:46+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/RollingHash.test.cpp

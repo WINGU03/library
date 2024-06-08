@@ -33,7 +33,7 @@ data:
   isVerificationFile: false
   path: other/CC.cpp
   requiredBy: []
-  timestamp: '2024-06-08 10:03:27+09:00'
+  timestamp: '2024-06-08 09:28:23+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: other/CC.cpp
