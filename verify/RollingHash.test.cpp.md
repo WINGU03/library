@@ -2,8 +2,8 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: Macro.cpp
-    title: Macro.cpp
+    path: other/Macro.cpp
+    title: other/Macro.cpp
   - icon: ':heavy_check_mark:'
     path: string/RollingHash.cpp
     title: string/RollingHash.cpp
@@ -17,13 +17,14 @@ data:
     PROBLEM: https://judge.yosupo.jp/problem/zalgorithm
     links:
     - https://judge.yosupo.jp/problem/zalgorithm
-  bundledCode: "#line 1 \"verify/RollingHash.test.cpp\"\n#include<bits/stdc++.h>\n\
-    using namespace std;\n#line 1 \"Macro.cpp\"\n#ifdef DEFINED_ONLY_IN_LOCAL\n#include\
-    \ <dump.hpp>\n#define dump(...) cpp_dump(__VA_ARGS__)\n#else\n#undef dump\n#define\
-    \ dump(...)\n#endif\n#define rep1(i, a) for (int i = 0; i < (int)(a); i++)\n#define\
-    \ rep2(i, a, b) for (int i = (int)(a); i < (int)(b); i++)\n#define rep3(i, a,\
-    \ b, c) for (int i = (int)(a); i < (int)(b); i += (int)(c))\n#define overloadRep(a,\
-    \ b, c, d, e, ...) e\n#define rep(...) overloadRep(__VA_ARGS__, rep3, rep2, rep1)(__VA_ARGS__)\n\
+  bundledCode: "#line 1 \"verify/RollingHash.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/zalgorithm\"\
+    \n\n#include <bits/stdc++.h>\nusing namespace std;\n#line 2 \"other/Macro.cpp\"\
+    \nusing namespace std;\n\n#ifdef DEFINED_ONLY_IN_LOCAL\n#include <dump.hpp>\n\
+    #define dump(...) cpp_dump(__VA_ARGS__)\n#else\n#undef dump\n#define dump(...)\n\
+    #endif\n#define rep1(i, a) for (int i = 0; i < (int)(a); i++)\n#define rep2(i,\
+    \ a, b) for (int i = (int)(a); i < (int)(b); i++)\n#define rep3(i, a, b, c) for\
+    \ (int i = (int)(a); i < (int)(b); i += (int)(c))\n#define overloadRep(a, b, c,\
+    \ d, e, ...) e\n#define rep(...) overloadRep(__VA_ARGS__, rep3, rep2, rep1)(__VA_ARGS__)\n\
     #define rrep(i, a, b) for (int i = (int)(a); i <= (int)(b); i++)\n#define drep(i,\
     \ a, b) for (int i = (int)(a); i >= (int)(b); i--)\n#define all(a) a.begin(),\
     \ a.end()\n#define rall(a) a.rbegin(), a.rend()\nusing ll = long long;\nusing\
@@ -49,8 +50,7 @@ data:
     n';\n    return os;\n}\n\nbool bit(ll x, int p) {\n    return (x >> p) & 1;\n\
     }\n\nbool out(int ni, int nj, int h, int w) {\n    return (ni < 0 or ni >= h or\
     \ nj < 0 or nj >= w);\n}\n\nint pc(ll x) {\n    return __builtin_popcountll(x);\n\
-    }\n#line 4 \"verify/RollingHash.test.cpp\"\n\n#define PROBLEM \"https://judge.yosupo.jp/problem/zalgorithm\"\
-    \n\n#line 4 \"string/RollingHash.cpp\"\n\nstruct RollingHash {\n    static const\
+    }\n#line 4 \"string/RollingHash.cpp\"\n\nstruct RollingHash {\n    static const\
     \ int base1 = 1007, base2 = 2009;\n    static const int mod1 = 1000000007, mod2\
     \ = 1000000009;\n    std::vector<long long> hash1, hash2, power1, power2;\n\n\
     \    // construct\n    RollingHash(const std::string &S) {\n        int n = (int)S.size();\n\
@@ -76,22 +76,22 @@ data:
     \        int low = 0, high = len;\n        while (high - low > 1) {\n        \
     \    int mid = (low + high) >> 1;\n            if (get(a, a + mid) != T.get(b,\
     \ b + mid))\n                high = mid;\n            else\n                low\
-    \ = mid;\n        }\n        return low;\n    }\n};\n#line 8 \"verify/RollingHash.test.cpp\"\
-    \n\nint main(){\n    string s;\n    cin >> s;\n    RollingHash rol(s);\n    vector<int>\
-    \ ans;\n    rep(i,(int)s.size()){\n        ans.push_back(rol.getLCP(0, i));\n\
-    \    }\n    cout<<ans;\n    return 0;\n}\n"
-  code: "#include<bits/stdc++.h>\nusing namespace std;\n#include \"Macro.cpp\"\n\n\
-    #define PROBLEM \"https://judge.yosupo.jp/problem/zalgorithm\"\n\n#include \"\
-    string/RollingHash.cpp\"\n\nint main(){\n    string s;\n    cin >> s;\n    RollingHash\
-    \ rol(s);\n    vector<int> ans;\n    rep(i,(int)s.size()){\n        ans.push_back(rol.getLCP(0,\
-    \ i));\n    }\n    cout<<ans;\n    return 0;\n}"
+    \ = mid;\n        }\n        return low;\n    }\n};\n#line 7 \"verify/RollingHash.test.cpp\"\
+    \n\nint main() {\n    string s;\n    cin >> s;\n    RollingHash rol(s);\n    vector<int>\
+    \ ans;\n    rep(i, (int)s.size()) {\n        ans.push_back(rol.getLCP(0, i));\n\
+    \    }\n    cout << ans;\n    return 0;\n}\n"
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/zalgorithm\"\n\n#include\
+    \ <bits/stdc++.h>\nusing namespace std;\n#include \"other/Macro\"\n#include \"\
+    string/RollingHash.cpp\"\n\nint main() {\n    string s;\n    cin >> s;\n    RollingHash\
+    \ rol(s);\n    vector<int> ans;\n    rep(i, (int)s.size()) {\n        ans.push_back(rol.getLCP(0,\
+    \ i));\n    }\n    cout << ans;\n    return 0;\n}"
   dependsOn:
-  - Macro.cpp
+  - other/Macro.cpp
   - string/RollingHash.cpp
   isVerificationFile: true
   path: verify/RollingHash.test.cpp
   requiredBy: []
-  timestamp: '2024-06-07 23:14:28+09:00'
+  timestamp: '2024-06-08 11:51:22+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/RollingHash.test.cpp
