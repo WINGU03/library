@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/CC.test.cpp
+    title: verify/CC.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"other/CC.cpp\"\ntemplate<typename T=int>\nstruct CC {\n\
@@ -34,8 +37,9 @@ data:
   path: other/CC.cpp
   requiredBy: []
   timestamp: '2024-06-08 09:28:23+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/CC.test.cpp
 documentation_of: other/CC.cpp
 layout: document
 redirect_from:

@@ -4,6 +4,9 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: verify/CC.test.cpp
+    title: verify/CC.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/Extgcd.test.cpp
     title: verify/Extgcd.test.cpp
   - icon: ':heavy_check_mark:'
@@ -90,6 +93,7 @@ data:
   timestamp: '2024-06-08 15:04:32+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - verify/CC.test.cpp
   - verify/Prime_factorize.test.cpp
   - verify/RollingHash.test.cpp
   - verify/Rerooting.test.cpp

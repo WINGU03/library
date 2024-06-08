@@ -19,7 +19,7 @@ data:
       title: math/Prime_factorize.cpp
   - name: other
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: other/CC.cpp
       title: other/CC.cpp
     - icon: ':warning:'
@@ -39,6 +39,9 @@ data:
   verificationCategories:
   - name: verify
     pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/CC.test.cpp
+      title: verify/CC.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/Extgcd.test.cpp
       title: verify/Extgcd.test.cpp
