@@ -16,10 +16,11 @@ int main() {
     rep(i, n) c.add(a[i]);
     int m = c.size();
     fenwick_tree<int> f(m);
+    rep(i, n) a[i] = c(a[i]);
     ll ans = 0;
     rep(i, n) {
-        ans += f.sum(c(a[i]), m);
-        f.add(c(a[i]), 1);
+        ans += f.sum(a[i], m);
+        f.add(a[i], 1);
     }
     cout << ans << endl;
     return 0;
