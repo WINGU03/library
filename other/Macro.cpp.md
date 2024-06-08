@@ -3,9 +3,6 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
-    path: verify/Enum_divisor.test.cpp
-    title: verify/Enum_divisor.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/Extgcd.test.cpp
     title: verify/Extgcd.test.cpp
@@ -15,9 +12,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/RollingHash.test.cpp
     title: verify/RollingHash.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"other/Macro.cpp\"\n#include <bits/stdc++.h>\nusing namespace\
@@ -89,11 +86,10 @@ data:
   path: other/Macro.cpp
   requiredBy: []
   timestamp: '2024-06-08 11:51:22+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/Prime_factorize.test.cpp
   - verify/RollingHash.test.cpp
-  - verify/Enum_divisor.test.cpp
   - verify/Extgcd.test.cpp
 documentation_of: other/Macro.cpp
 layout: document

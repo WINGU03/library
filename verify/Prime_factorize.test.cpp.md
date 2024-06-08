@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/Prime_factorize.cpp
     title: math/Prime_factorize.cpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: other/Macro.cpp
     title: other/Macro.cpp
   _extendedRequiredBy: []

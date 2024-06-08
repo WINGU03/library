@@ -2,13 +2,10 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':x:'
-    path: verify/Enum_divisor.test.cpp
-    title: verify/Enum_divisor.test.cpp
-  _isVerificationFailed: true
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
   bundledCode: "#line 1 \"math/Enum_divisor.cpp\"\n#include <algorithm>\n#include\
@@ -28,9 +25,8 @@ data:
   path: math/Enum_divisor.cpp
   requiredBy: []
   timestamp: '2024-06-08 12:15:43+09:00'
-  verificationStatus: LIBRARY_ALL_WA
-  verifiedWith:
-  - verify/Enum_divisor.test.cpp
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: math/Enum_divisor.cpp
 layout: document
 redirect_from:
