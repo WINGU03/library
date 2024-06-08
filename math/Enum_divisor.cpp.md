@@ -8,23 +8,20 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"math/Enum_divisor.cpp\"\n#include <algorithm>\n#include\
-    \ <iostream>\n#include <vector>\n\nstd::vector<long long> enum_divisor(long long\
-    \ n) {\n    std::vector<long long> res;\n    for (long long i = 1LL; i * i <=\
-    \ n; ++i) {\n        if (n % i == 0) {\n            res.push_back(i);\n      \
-    \      long long j = n / i;\n            if (j != i) res.push_back(j);\n     \
-    \   }\n    }\n    std::sort(res.begin(), res.end());\n    return res;\n}\n"
-  code: "#include <algorithm>\n#include <iostream>\n#include <vector>\n\nstd::vector<long\
-    \ long> enum_divisor(long long n) {\n    std::vector<long long> res;\n    for\
-    \ (long long i = 1LL; i * i <= n; ++i) {\n        if (n % i == 0) {\n        \
-    \    res.push_back(i);\n            long long j = n / i;\n            if (j !=\
-    \ i) res.push_back(j);\n        }\n    }\n    std::sort(res.begin(), res.end());\n\
-    \    return res;\n}"
+  bundledCode: "#line 1 \"math/Enum_divisor.cpp\"\nvector<ll> enum_divisor(ll n) {\n\
+    \    vector<ll> res;\n    for (ll i = 1; i * i <= n; ++i) {\n        if (n % i\
+    \ == 0) {\n            res.push_back(i);\n            ll j = n / i;\n        \
+    \    if (j != i) res.push_back(j);\n        }\n    }\n    sort(res.begin(), res.end());\n\
+    \    return res;\n}\n"
+  code: "vector<ll> enum_divisor(ll n) {\n    vector<ll> res;\n    for (ll i = 1;\
+    \ i * i <= n; ++i) {\n        if (n % i == 0) {\n            res.push_back(i);\n\
+    \            ll j = n / i;\n            if (j != i) res.push_back(j);\n      \
+    \  }\n    }\n    sort(res.begin(), res.end());\n    return res;\n}"
   dependsOn: []
   isVerificationFile: false
   path: math/Enum_divisor.cpp
   requiredBy: []
-  timestamp: '2024-06-08 12:15:43+09:00'
+  timestamp: '2024-06-08 20:27:55+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: math/Enum_divisor.cpp
