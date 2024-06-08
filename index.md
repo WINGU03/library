@@ -1,14 +1,6 @@
 ---
 data:
   libraryCategories:
-  - name: .
-    pages:
-    - icon: ':warning:'
-      path: CompileOption.cpp
-      title: CompileOption.cpp
-    - icon: ':warning:'
-      path: Heuristic_Macro.cpp
-      title: Heuristic_Macro.cpp
   - name: graph
     pages:
     - icon: ':heavy_check_mark:'
