@@ -2,15 +2,18 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/Rerooting.test.cpp
+    title: verify/Rerooting.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"Rerooting.cpp\"\ntemplate<typename Cost>\nstruct Edge{\n\
+  bundledCode: "#line 1 \"graph/Rerooting.cpp\"\ntemplate<typename Cost>\nstruct Edge{\n\
     \    int src,to;\n    Cost cost;\n    Edge(int s, int t, Cost c=1) : src(s), to(t),\
-    \ cost(c){}\n    // \u30C7\u30D5\u30A9\u30EB\u30C8\u3067\u306F\u884C\u304D\u5148\
+    \ cost(c) {}\n    // \u30C7\u30D5\u30A9\u30EB\u30C8\u3067\u306F\u884C\u304D\u5148\
     \u3092\u8FD4\u3059\n    operator int() const {return to;}\n};\n\ntemplate<typename\
     \ Cost>\nstruct Graph : vector<vector<Edge<Cost>>>{\n    Graph(int n) : vector<vector<Edge<Cost>>>(n){}\n\
     \    void add_edge(int s, int t, Cost c=1){(*this)[s].emplace_back(s, t, c);}\n\
@@ -42,7 +45,7 @@ data:
     \            dfs2(d, c, apply(sub, c, d, d.cost));\n            idx++;\n     \
     \   }\n  }\n};\n"
   code: "template<typename Cost>\nstruct Edge{\n    int src,to;\n    Cost cost;\n\
-    \    Edge(int s, int t, Cost c=1) : src(s), to(t), cost(c){}\n    // \u30C7\u30D5\
+    \    Edge(int s, int t, Cost c=1) : src(s), to(t), cost(c) {}\n    // \u30C7\u30D5\
     \u30A9\u30EB\u30C8\u3067\u306F\u884C\u304D\u5148\u3092\u8FD4\u3059\n    operator\
     \ int() const {return to;}\n};\n\ntemplate<typename Cost>\nstruct Graph : vector<vector<Edge<Cost>>>{\n\
     \    Graph(int n) : vector<vector<Edge<Cost>>>(n){}\n    void add_edge(int s,\
@@ -76,15 +79,16 @@ data:
     \   }\n  }\n};"
   dependsOn: []
   isVerificationFile: false
-  path: Rerooting.cpp
+  path: graph/Rerooting.cpp
   requiredBy: []
   timestamp: '2024-06-08 12:42:28+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
-documentation_of: Rerooting.cpp
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/Rerooting.test.cpp
+documentation_of: graph/Rerooting.cpp
 layout: document
 redirect_from:
-- /library/Rerooting.cpp
-- /library/Rerooting.cpp.html
-title: Rerooting.cpp
+- /library/graph/Rerooting.cpp
+- /library/graph/Rerooting.cpp.html
+title: graph/Rerooting.cpp
 ---

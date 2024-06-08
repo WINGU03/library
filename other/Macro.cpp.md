@@ -10,6 +10,9 @@ data:
     path: verify/Prime_factorize.test.cpp
     title: verify/Prime_factorize.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/Rerooting.test.cpp
+    title: verify/Rerooting.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/RollingHash.test.cpp
     title: verify/RollingHash.test.cpp
   _isVerificationFailed: false
@@ -90,6 +93,7 @@ data:
   verifiedWith:
   - verify/Prime_factorize.test.cpp
   - verify/RollingHash.test.cpp
+  - verify/Rerooting.test.cpp
   - verify/Extgcd.test.cpp
 documentation_of: other/Macro.cpp
 layout: document
