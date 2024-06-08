@@ -12,14 +12,15 @@ int main() {
     cin >> n;
     vector<int> a(n);
     cin >> a;
-    CC c;
-    rep(i, n) c.add(a[i]);
-    int m = c.size();
-    fenwick_tree<int> f(m);
-    rep(i, n) a[i] = c(a[i]);
+    unordered_map<int, int> mp;
+    auto sa = a;
+    sort(all(sa));
+    rep(i, n) mp[sa[i]] = i;
+    rep(i, n) a[i] = mp[a[i]];
+    fenwick_tree<int> f(n);
     ll ans = 0;
     rep(i, n) {
-        ans += f.sum(a[i], m);
+        ans += f.sum(a[i], n);
         f.add(a[i], 1);
     }
     cout << ans << endl;
