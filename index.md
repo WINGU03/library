@@ -9,9 +9,6 @@ data:
     - icon: ':warning:'
       path: Heuristic_Macro.cpp
       title: Heuristic_Macro.cpp
-    - icon: ':warning:'
-      path: Rerooting.cpp
-      title: Rerooting.cpp
   - name: graph
     pages:
     - icon: ':heavy_check_mark:'
@@ -33,6 +30,12 @@ data:
     - icon: ':warning:'
       path: other/CC.cpp
       title: other/CC.cpp
+    - icon: ':warning:'
+      path: other/CompileOption.cpp
+      title: other/CompileOption.cpp
+    - icon: ':warning:'
+      path: other/Heuristic_Macro.cpp
+      title: other/Heuristic_Macro.cpp
     - icon: ':heavy_check_mark:'
       path: other/Macro.cpp
       title: other/Macro.cpp
