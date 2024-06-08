@@ -20,20 +20,21 @@ data:
   bundledCode: "#line 1 \"verify/CC.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/5/ALDS1_5_D\"\
     \n\n#include <bits/stdc++.h>\nusing namespace std;\n#include <atcoder/fenwicktree>\n\
     using namespace atcoder;\n#line 1 \"other/CC.cpp\"\ntemplate<typename T=int>\n\
-    struct CC {\n  bool initialized;\n  vector<T> xs;\n  CC(): initialized(false)\
-    \ {}\n  void add(T x) { xs.push_back(x);}\n  void init() {\n    sort(xs.begin(),\
-    \ xs.end());\n    xs.erase(unique(xs.begin(),xs.end()),xs.end());\n    initialized\
-    \ = true;\n  }\n\t// x\u304C\u5EA7\u5727\u5F8C\u4F55\u756A\u76EE\u304B\u3092\u8FD4\
-    \u3059\n  int operator()(T x) {\n    if (!initialized) init();\n    return upper_bound(xs.begin(),\
-    \ xs.end(), x) - xs.begin() - 1;\n  }\n    // \u5EA7\u5727\u5F8C\u306Ei\u756A\u76EE\
-    \u306E\u5024\u3092\u8FD4\u3059\n  T operator[](int i) {\n    if (!initialized)\
-    \ init();\n    return xs[i];\n  }\n    // \u5EA7\u5727\u5F8C\u306E\u30B5\u30A4\
-    \u30BA\u3092\u8FD4\u3059\n  int size() {\n    if (!initialized) init();\n    return\
-    \ xs.size();\n  }\n};\n#line 1 \"other/Macro.cpp\"\n#ifdef DEFINED_ONLY_IN_LOCAL\n\
-    #include <dump.hpp>\n#define dump(...) cpp_dump(__VA_ARGS__)\n#else\n#undef dump\n\
-    #define dump(...)\n#endif\n#define rep1(i, a) for (int i = 0; i < (int)(a); i++)\n\
-    #define rep2(i, a, b) for (int i = (int)(a); i < (int)(b); i++)\n#define rep3(i,\
-    \ a, b, c) for (int i = (int)(a); i < (int)(b); i += (int)(c))\n#define overloadRep(a,\
+    struct CC {\n  bool initialized;\n  vector<T> xs;\n  unordered_map<T, int> mp;\n\
+    \  CC(): initialized(false) {}\n  void add(T x) { xs.push_back(x);}\n  void init()\
+    \ {\n    sort(xs.begin(), xs.end());\n    xs.erase(unique(xs.begin(),xs.end()),xs.end());\n\
+    \    for(int i = 0; i < (int)xs.size(); i++){\n      mp[xs[i]] = i;\n    }\n \
+    \   initialized = true;\n  }\n\t// x\u304C\u5EA7\u5727\u5F8C\u4F55\u756A\u76EE\
+    \u304B\u3092\u8FD4\u3059\n  int operator()(T x) {\n    if (!initialized) init();\n\
+    \    return mp[x];\n  }\n    // \u5EA7\u5727\u5F8C\u306Ei\u756A\u76EE\u306E\u5024\
+    \u3092\u8FD4\u3059\n  T operator[](int i) {\n    if (!initialized) init();\n \
+    \   return xs[i];\n  }\n    // \u5EA7\u5727\u5F8C\u306E\u30B5\u30A4\u30BA\u3092\
+    \u8FD4\u3059\n  int size() {\n    if (!initialized) init();\n    return xs.size();\n\
+    \  }\n};\n#line 1 \"other/Macro.cpp\"\n#ifdef DEFINED_ONLY_IN_LOCAL\n#include\
+    \ <dump.hpp>\n#define dump(...) cpp_dump(__VA_ARGS__)\n#else\n#undef dump\n#define\
+    \ dump(...)\n#endif\n#define rep1(i, a) for (int i = 0; i < (int)(a); i++)\n#define\
+    \ rep2(i, a, b) for (int i = (int)(a); i < (int)(b); i++)\n#define rep3(i, a,\
+    \ b, c) for (int i = (int)(a); i < (int)(b); i += (int)(c))\n#define overloadRep(a,\
     \ b, c, d, e, ...) e\n#define rep(...) overloadRep(__VA_ARGS__, rep3, rep2, rep1)(__VA_ARGS__)\n\
     #define rrep(i, a, b) for (int i = (int)(a); i <= (int)(b); i++)\n#define drep(i,\
     \ a, b) for (int i = (int)(a); i >= (int)(b); i--)\n#define all(a) a.begin(),\
@@ -61,26 +62,25 @@ data:
     }\n\nbool out(int ni, int nj, int h, int w) {\n    return (ni < 0 or ni >= h or\
     \ nj < 0 or nj >= w);\n}\n\nint pc(ll x) {\n    return __builtin_popcountll(x);\n\
     }\n#line 9 \"verify/CC.test.cpp\"\n\nint main() {\n    int n;\n    cin >> n;\n\
-    \    vector<int> a(n);\n    cin >> a;\n    unordered_map<int, int> mp;\n    auto\
-    \ sa = a;\n    sort(all(sa));\n    rep(i, n) mp[sa[i]] = i;\n    rep(i, n) a[i]\
-    \ = mp[a[i]];\n    fenwick_tree<int> f(n);\n    ll ans = 0;\n    rep(i, n) {\n\
-    \        ans += f.sum(a[i], n);\n        f.add(a[i], 1);\n    }\n    cout << ans\
-    \ << endl;\n    return 0;\n}\n"
+    \    vector<int> a(n);\n    cin >> a;\n    CC c;\n    rep(i, n) c.add(a[i]);\n\
+    \    int m = c.size();\n    rep(i, n) a[i] = c(a[i]);\n    fenwick_tree<int> f(m);\n\
+    \    ll ans = 0;\n    rep(i, n) {\n        ans += f.sum(a[i], m);\n        f.add(a[i],\
+    \ 1);\n    }\n    cout << ans << endl;\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/5/ALDS1_5_D\"\
     \n\n#include <bits/stdc++.h>\nusing namespace std;\n#include <atcoder/fenwicktree>\n\
     using namespace atcoder;\n#include \"other/CC\"\n#include \"other/Macro\"\n\n\
     int main() {\n    int n;\n    cin >> n;\n    vector<int> a(n);\n    cin >> a;\n\
-    \    unordered_map<int, int> mp;\n    auto sa = a;\n    sort(all(sa));\n    rep(i,\
-    \ n) mp[sa[i]] = i;\n    rep(i, n) a[i] = mp[a[i]];\n    fenwick_tree<int> f(n);\n\
-    \    ll ans = 0;\n    rep(i, n) {\n        ans += f.sum(a[i], n);\n        f.add(a[i],\
-    \ 1);\n    }\n    cout << ans << endl;\n    return 0;\n}"
+    \    CC c;\n    rep(i, n) c.add(a[i]);\n    int m = c.size();\n    rep(i, n) a[i]\
+    \ = c(a[i]);\n    fenwick_tree<int> f(m);\n    ll ans = 0;\n    rep(i, n) {\n\
+    \        ans += f.sum(a[i], m);\n        f.add(a[i], 1);\n    }\n    cout << ans\
+    \ << endl;\n    return 0;\n}"
   dependsOn:
   - other/CC.cpp
   - other/Macro.cpp
   isVerificationFile: true
   path: verify/CC.test.cpp
   requiredBy: []
-  timestamp: '2024-06-08 15:39:40+09:00'
+  timestamp: '2024-06-08 15:50:53+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/CC.test.cpp
