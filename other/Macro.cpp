@@ -1,3 +1,6 @@
+#include <bits/stdc++.h>
+using namespace std;
+
 #ifdef DEFINED_ONLY_IN_LOCAL
 #include <dump.hpp>
 #define dump(...) cpp_dump(__VA_ARGS__)

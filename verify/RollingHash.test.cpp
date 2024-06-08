@@ -1,7 +1,6 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/zalgorithm"
 
 #include <bits/stdc++.h>
-using namespace std;
 #include "other/Macro"
 #include "string/RollingHash.cpp"
 

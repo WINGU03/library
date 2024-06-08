@@ -1,9 +1,8 @@
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/5/GRL_5_B"
 
 #include <bits/stdc++.h>
-using namespace std;
-#include "graph/Rerooting"
 #include "other/Macro"
+#include "graph/Rerooting"
 
 int merge(int a, int b) {
     return max(a, b);
