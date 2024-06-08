@@ -1,6 +1,6 @@
+#include <algorithm>
 #include <iostream>
 #include <vector>
-#include <algorithm>
 
 std::vector<long long> enum_divisor(long long n) {
     std::vector<long long> res;
