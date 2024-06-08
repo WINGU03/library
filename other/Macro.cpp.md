@@ -4,6 +4,9 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: verify/Extgcd.test.cpp
+    title: verify/Extgcd.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/Prime_factorize.test.cpp
     title: verify/Prime_factorize.test.cpp
   - icon: ':heavy_check_mark:'
@@ -87,6 +90,7 @@ data:
   verifiedWith:
   - verify/Prime_factorize.test.cpp
   - verify/RollingHash.test.cpp
+  - verify/Extgcd.test.cpp
 documentation_of: other/Macro.cpp
 layout: document
 redirect_from:

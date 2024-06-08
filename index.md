@@ -10,9 +10,6 @@ data:
       path: Enum_divisor.cpp
       title: Enum_divisor.cpp
     - icon: ':warning:'
-      path: Extgcd.cpp
-      title: Extgcd.cpp
-    - icon: ':warning:'
       path: Heuristic_Macro.cpp
       title: Heuristic_Macro.cpp
     - icon: ':warning:'
@@ -20,6 +17,9 @@ data:
       title: Rerooting.cpp
   - name: math
     pages:
+    - icon: ':heavy_check_mark:'
+      path: math/Extgcd.cpp
+      title: math/Extgcd.cpp
     - icon: ':heavy_check_mark:'
       path: math/Prime_factorize.cpp
       title: math/Prime_factorize.cpp
@@ -39,6 +39,9 @@ data:
   verificationCategories:
   - name: verify
     pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/Extgcd.test.cpp
+      title: verify/Extgcd.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/Prime_factorize.test.cpp
       title: verify/Prime_factorize.test.cpp
