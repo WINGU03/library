@@ -18,13 +18,7 @@ data:
     links:
     - https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_A
   bundledCode: "#line 1 \"verify/Prime_factorize.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_A\"\
-    \n\n#include <bits/stdc++.h>\nusing namespace std;\n#line 3 \"math/Prime_factorize.cpp\"\
-    \n\nstd::vector<std::pair<long long, long long> > prime_factorize(long long n)\
-    \ {\n    std::vector<std::pair<long long, long long> > res;\n    for (long long\
-    \ p = 2; p * p <= n; ++p) {\n        if (n % p != 0) continue;\n        int num\
-    \ = 0;\n        while (n % p == 0) {\n            ++num;\n            n /= p;\n\
-    \        }\n        res.push_back(std::make_pair(p, num));\n    }\n    if (n !=\
-    \ 1) res.push_back(std::make_pair(n, 1));\n    return res;\n}\n#line 1 \"other/Macro.cpp\"\
+    \n\n#include <bits/stdc++.h>\n#line 2 \"other/Macro.cpp\"\nusing namespace std;\n\
     \n#ifdef DEFINED_ONLY_IN_LOCAL\n#include <dump.hpp>\n#define dump(...) cpp_dump(__VA_ARGS__)\n\
     #else\n#undef dump\n#define dump(...)\n#endif\n#define rep1(i, a) for (int i =\
     \ 0; i < (int)(a); i++)\n#define rep2(i, a, b) for (int i = (int)(a); i < (int)(b);\
@@ -55,23 +49,28 @@ data:
     \ T2> &p) {\n    os << p.first << \" \" << p.second << '\\n';\n    return os;\n\
     }\n\nbool bit(ll x, int p) {\n    return (x >> p) & 1;\n}\n\nbool out(int ni,\
     \ int nj, int h, int w) {\n    return (ni < 0 or ni >= h or nj < 0 or nj >= w);\n\
-    }\n\nint pc(ll x) {\n    return __builtin_popcountll(x);\n}\n#line 7 \"verify/Prime_factorize.test.cpp\"\
+    }\n\nint pc(ll x) {\n    return __builtin_popcountll(x);\n}\n#line 3 \"math/Prime_factorize.cpp\"\
+    \n\nstd::vector<std::pair<long long, long long> > prime_factorize(long long n)\
+    \ {\n    std::vector<std::pair<long long, long long> > res;\n    for (long long\
+    \ p = 2; p * p <= n; ++p) {\n        if (n % p != 0) continue;\n        int num\
+    \ = 0;\n        while (n % p == 0) {\n            ++num;\n            n /= p;\n\
+    \        }\n        res.push_back(std::make_pair(p, num));\n    }\n    if (n !=\
+    \ 1) res.push_back(std::make_pair(n, 1));\n    return res;\n}\n#line 6 \"verify/Prime_factorize.test.cpp\"\
     \n\nint main() {\n    int n;\n    cin >> n;\n    auto p = prime_factorize(n);\n\
     \    cout << n << ':';\n    for (auto [number, val] : p) {\n        rep(i, val)\
     \ cout << \" \" << number;\n    }\n    cout << endl;\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_A\"\
-    \n\n#include <bits/stdc++.h>\nusing namespace std;\n#include \"math/Prime_factorize\"\
-    \n#include \"other/Macro\"\n\nint main() {\n    int n;\n    cin >> n;\n    auto\
-    \ p = prime_factorize(n);\n    cout << n << ':';\n    for (auto [number, val]\
-    \ : p) {\n        rep(i, val) cout << \" \" << number;\n    }\n    cout << endl;\n\
-    \    return 0;\n}"
+    \n\n#include <bits/stdc++.h>\n#include \"other/Macro\"\n#include \"math/Prime_factorize\"\
+    \n\nint main() {\n    int n;\n    cin >> n;\n    auto p = prime_factorize(n);\n\
+    \    cout << n << ':';\n    for (auto [number, val] : p) {\n        rep(i, val)\
+    \ cout << \" \" << number;\n    }\n    cout << endl;\n    return 0;\n}"
   dependsOn:
-  - math/Prime_factorize.cpp
   - other/Macro.cpp
+  - math/Prime_factorize.cpp
   isVerificationFile: true
   path: verify/Prime_factorize.test.cpp
   requiredBy: []
-  timestamp: '2024-06-08 15:04:32+09:00'
+  timestamp: '2024-06-08 20:18:32+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/Prime_factorize.test.cpp
