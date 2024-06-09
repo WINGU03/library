@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/RollingHash.test.cpp
     title: verify/RollingHash.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"string/RollingHash.cpp\"\nstruct RollingHash {\n    static\
@@ -30,14 +30,15 @@ data:
     \ b) const {\n        int len = min((int)hash1.size() - a, (int)hash1.size() -\
     \ b);\n        int low = 0, high = len;\n        while (high - low > 1) {\n  \
     \          int mid = (low + high) >> 1;\n            if (get(a, a + mid) != get(b,\
-    \ b + mid))\n                high = mid;\n            else\n                low\
-    \ = mid;\n        }\n        return low;\n    }\n\n    // get lcp of S[a:] and\
-    \ T[b:]\n    inline int getLCP(const RollingHash &T, int a, int b) const {\n \
-    \       int len = min((int)hash1.size() - a, (int)hash1.size() - b);\n       \
-    \ int low = 0, high = len;\n        while (high - low > 1) {\n            int\
-    \ mid = (low + high) >> 1;\n            if (get(a, a + mid) != T.get(b, b + mid))\n\
-    \                high = mid;\n            else\n                low = mid;\n \
-    \       }\n        return low;\n    }\n};\n"
+    \ b + mid)){\n                high = mid;\n            }else{\n              \
+    \  low = mid;\n            }\n        }\n        return low;\n    }\n\n    //\
+    \ get lcp of S[a:] and T[b:]\n    inline int getLCP(const RollingHash &T, int\
+    \ a, int b) const {\n        int len = min((int)hash1.size() - a, (int)hash1.size()\
+    \ - b);\n        int low = 0, high = len;\n        while (high - low > 1) {\n\
+    \            int mid = (low + high) >> 1;\n            if (get(a, a + mid) !=\
+    \ T.get(b, b + mid)){\n                high = mid;\n            }else{\n     \
+    \           low = mid;\n            }\n        }\n        return low;\n    }\n\
+    };\n"
   code: "struct RollingHash {\n    static const int base1 = 1007, base2 = 2009;\n\
     \    static const int mod1 = 1000000007, mod2 = 1000000009;\n    vector<long long>\
     \ hash1, hash2, power1, power2;\n\n    // construct\n    RollingHash(const string\
@@ -56,21 +57,21 @@ data:
     \ of S[a:] and S[b:]\n    inline int getLCP(int a, int b) const {\n        int\
     \ len = min((int)hash1.size() - a, (int)hash1.size() - b);\n        int low =\
     \ 0, high = len;\n        while (high - low > 1) {\n            int mid = (low\
-    \ + high) >> 1;\n            if (get(a, a + mid) != get(b, b + mid))\n       \
-    \         high = mid;\n            else\n                low = mid;\n        }\n\
-    \        return low;\n    }\n\n    // get lcp of S[a:] and T[b:]\n    inline int\
-    \ getLCP(const RollingHash &T, int a, int b) const {\n        int len = min((int)hash1.size()\
-    \ - a, (int)hash1.size() - b);\n        int low = 0, high = len;\n        while\
-    \ (high - low > 1) {\n            int mid = (low + high) >> 1;\n            if\
-    \ (get(a, a + mid) != T.get(b, b + mid))\n                high = mid;\n      \
-    \      else\n                low = mid;\n        }\n        return low;\n    }\n\
-    };"
+    \ + high) >> 1;\n            if (get(a, a + mid) != get(b, b + mid)){\n      \
+    \          high = mid;\n            }else{\n                low = mid;\n     \
+    \       }\n        }\n        return low;\n    }\n\n    // get lcp of S[a:] and\
+    \ T[b:]\n    inline int getLCP(const RollingHash &T, int a, int b) const {\n \
+    \       int len = min((int)hash1.size() - a, (int)hash1.size() - b);\n       \
+    \ int low = 0, high = len;\n        while (high - low > 1) {\n            int\
+    \ mid = (low + high) >> 1;\n            if (get(a, a + mid) != T.get(b, b + mid)){\n\
+    \                high = mid;\n            }else{\n                low = mid;\n\
+    \            }\n        }\n        return low;\n    }\n};"
   dependsOn: []
   isVerificationFile: false
   path: string/RollingHash.cpp
   requiredBy: []
-  timestamp: '2024-06-08 20:18:32+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2024-06-09 15:16:49+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/RollingHash.test.cpp
 documentation_of: string/RollingHash.cpp

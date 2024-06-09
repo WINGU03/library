@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: other/Macro.cpp
     title: other/Macro.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: string/RollingHash.cpp
     title: string/RollingHash.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/14/ALDS1_14_A
@@ -68,20 +68,21 @@ data:
     \ of S[a:] and S[b:]\n    inline int getLCP(int a, int b) const {\n        int\
     \ len = min((int)hash1.size() - a, (int)hash1.size() - b);\n        int low =\
     \ 0, high = len;\n        while (high - low > 1) {\n            int mid = (low\
-    \ + high) >> 1;\n            if (get(a, a + mid) != get(b, b + mid))\n       \
-    \         high = mid;\n            else\n                low = mid;\n        }\n\
-    \        return low;\n    }\n\n    // get lcp of S[a:] and T[b:]\n    inline int\
-    \ getLCP(const RollingHash &T, int a, int b) const {\n        int len = min((int)hash1.size()\
-    \ - a, (int)hash1.size() - b);\n        int low = 0, high = len;\n        while\
-    \ (high - low > 1) {\n            int mid = (low + high) >> 1;\n            if\
-    \ (get(a, a + mid) != T.get(b, b + mid))\n                high = mid;\n      \
-    \      else\n                low = mid;\n        }\n        return low;\n    }\n\
-    };\n#line 6 \"verify/RollingHash.test.cpp\"\n\nint main() {\n    string T, P;\n\
-    \    cin >> T >> P;\n    int N = T.size(), M = P.size();\n    RollingHash RT(T),\
-    \ RP(P);\n    rep(i, N) {\n        int cur = RT.getLCP(RP, i, 0);\n        if\
-    \ (cur == M) cout << i << endl;\n    }\n    return 0;\n}\n"
+    \ + high) >> 1;\n            if (get(a, a + mid) != get(b, b + mid)){\n      \
+    \          high = mid;\n            }else{\n                low = mid;\n     \
+    \       }\n        }\n        return low;\n    }\n\n    // get lcp of S[a:] and\
+    \ T[b:]\n    inline int getLCP(const RollingHash &T, int a, int b) const {\n \
+    \       int len = min((int)hash1.size() - a, (int)hash1.size() - b);\n       \
+    \ int low = 0, high = len;\n        while (high - low > 1) {\n            int\
+    \ mid = (low + high) >> 1;\n            if (get(a, a + mid) != T.get(b, b + mid)){\n\
+    \                high = mid;\n            }else{\n                low = mid;\n\
+    \            }\n        }\n        return low;\n    }\n};\n#line 6 \"verify/RollingHash.test.cpp\"\
+    \n\nint main() {\n    string T, P;\n    cin >> T >> P;\n    int N = T.size(),\
+    \ M = P.size();\n    RollingHash RT(T), RP(P);\n    rep(i, N) {\n        int cur\
+    \ = RT.getLCP(RP, i, 0);\n        if (cur == M) cout << i << endl;\n    }\n  \
+    \  return 0;\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/14/ALDS1_14_A\"\
-    \n\n#include <bits/stdc++.h>\n#include \"other/Macro\"\n#include \"string/RollingHash.cpp\"\
+    \n\n#include <bits/stdc++.h>\n#include \"other/Macro\"\n#include \"string/RollingHash\"\
     \n\nint main() {\n    string T, P;\n    cin >> T >> P;\n    int N = T.size(),\
     \ M = P.size();\n    RollingHash RT(T), RP(P);\n    rep(i, N) {\n        int cur\
     \ = RT.getLCP(RP, i, 0);\n        if (cur == M) cout << i << endl;\n    }\n  \
@@ -92,8 +93,8 @@ data:
   isVerificationFile: true
   path: verify/RollingHash.test.cpp
   requiredBy: []
-  timestamp: '2024-06-09 15:06:49+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-06-09 15:16:49+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/RollingHash.test.cpp
 layout: document

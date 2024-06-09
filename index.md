@@ -28,12 +28,12 @@ data:
     - icon: ':warning:'
       path: other/Heuristic_Macro.cpp
       title: other/Heuristic_Macro.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: other/Macro.cpp
       title: other/Macro.cpp
   - name: string
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: string/RollingHash.cpp
       title: string/RollingHash.cpp
   verificationCategories:
@@ -51,7 +51,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/Rerooting.test.cpp
       title: verify/Rerooting.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/RollingHash.test.cpp
       title: verify/RollingHash.test.cpp
 layout: toppage
