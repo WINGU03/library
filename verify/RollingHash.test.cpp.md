@@ -1,23 +1,23 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: other/Macro.cpp
     title: other/Macro.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: string/RollingHash.cpp
     title: string/RollingHash.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.yosupo.jp/problem/zalgorithm
+    PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/14/ALDS1_14_A
     links:
-    - https://judge.yosupo.jp/problem/zalgorithm
-  bundledCode: "#line 1 \"verify/RollingHash.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/zalgorithm\"\
+    - https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/14/ALDS1_14_A
+  bundledCode: "#line 1 \"verify/RollingHash.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/14/ALDS1_14_A\"\
     \n\n#include <bits/stdc++.h>\n#line 2 \"other/Macro.cpp\"\nusing namespace std;\n\
     \n#ifdef DEFINED_ONLY_IN_LOCAL\n#include <dump.hpp>\n#define dump(...) cpp_dump(__VA_ARGS__)\n\
     #else\n#undef dump\n#define dump(...)\n#endif\n#define rep1(i, a) for (int i =\
@@ -76,23 +76,24 @@ data:
     \ (high - low > 1) {\n            int mid = (low + high) >> 1;\n            if\
     \ (get(a, a + mid) != T.get(b, b + mid))\n                high = mid;\n      \
     \      else\n                low = mid;\n        }\n        return low;\n    }\n\
-    };\n#line 6 \"verify/RollingHash.test.cpp\"\n\nint main() {\n    string s;\n \
-    \   cin >> s;\n    RollingHash rol(s);\n    vector<int> ans;\n    rep(i, (int)s.size())\
-    \ {\n        ans.push_back(rol.getLCP(0, i));\n    }\n    cout << ans;\n    return\
-    \ 0;\n}\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/zalgorithm\"\n\n#include\
-    \ <bits/stdc++.h>\n#include \"other/Macro\"\n#include \"string/RollingHash.cpp\"\
-    \n\nint main() {\n    string s;\n    cin >> s;\n    RollingHash rol(s);\n    vector<int>\
-    \ ans;\n    rep(i, (int)s.size()) {\n        ans.push_back(rol.getLCP(0, i));\n\
-    \    }\n    cout << ans;\n    return 0;\n}"
+    };\n#line 6 \"verify/RollingHash.test.cpp\"\n\nint main() {\n    string T, P;\n\
+    \    cin >> T >> P;\n    int N = T.size(), M = P.size();\n    RollingHash RT(T),\
+    \ RP(P);\n    rep(i, N) {\n        int cur = RT.getLCP(RP, i, 0);\n        if\
+    \ (cur == M) cout << i << endl;\n    }\n    return 0;\n}\n"
+  code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/14/ALDS1_14_A\"\
+    \n\n#include <bits/stdc++.h>\n#include \"other/Macro\"\n#include \"string/RollingHash.cpp\"\
+    \n\nint main() {\n    string T, P;\n    cin >> T >> P;\n    int N = T.size(),\
+    \ M = P.size();\n    RollingHash RT(T), RP(P);\n    rep(i, N) {\n        int cur\
+    \ = RT.getLCP(RP, i, 0);\n        if (cur == M) cout << i << endl;\n    }\n  \
+    \  return 0;\n}"
   dependsOn:
   - other/Macro.cpp
   - string/RollingHash.cpp
   isVerificationFile: true
   path: verify/RollingHash.test.cpp
   requiredBy: []
-  timestamp: '2024-06-08 20:18:32+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2024-06-09 15:06:49+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/RollingHash.test.cpp
 layout: document

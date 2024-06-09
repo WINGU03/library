@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/Rerooting.cpp
     title: graph/Rerooting.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: other/Macro.cpp
     title: other/Macro.cpp
   _extendedRequiredBy: []
