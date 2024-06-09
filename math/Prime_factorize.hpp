@@ -1,6 +1,6 @@
 vector<P> prime_factorize(ll n) {
     vector<P> res;
-    for (int p = 2; ll(p * p) <= n; p++) {
+    for (int p = 2; ll(p) * p <= n; p++) {
         if (n % p != 0) continue;
         int num = 0;
         while (n % p == 0) {
