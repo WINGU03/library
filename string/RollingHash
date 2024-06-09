@@ -1,1 +1,1 @@
-#include "RollingHash.cpp"
+#include "RollingHash.hpp"

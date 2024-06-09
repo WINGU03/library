@@ -1,6 +1,6 @@
 ---
 title: RollingHash
-documentation_of: //string/RollingHash.cpp
+documentation_of: //string/RollingHash.hpp
 ---
 
 ## コンストラクタ
