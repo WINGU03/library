@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: math/Enum_divisor.hpp
     title: math/Enum_divisor.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: other/Macro.cpp
     title: other/Macro.cpp
   _extendedRequiredBy: []
@@ -50,8 +50,8 @@ data:
     }\n\nbool bit(ll x, int p) {\n    return (x >> p) & 1;\n}\n\nbool out(int ni,\
     \ int nj, int h, int w) {\n    return (ni < 0 or ni >= h or nj < 0 or nj >= w);\n\
     }\n\nint pc(ll x) {\n    return __builtin_popcountll(x);\n}\n#line 1 \"math/Enum_divisor.hpp\"\
-    \nvector<ll> enum_divisor(ll n) {\n    vector<ll> res;\n    for (int i = 1; ll(i\
-    \ * i) <= n; i++) {\n        if (n % i == 0) {\n            res.push_back(i);\n\
+    \nvector<ll> enum_divisor(ll n) {\n    vector<ll> res;\n    for (int i = 1; ll(i)\
+    \ * i <= n; i++) {\n        if (n % i == 0) {\n            res.push_back(i);\n\
     \            ll j = n / i;\n            if (j != i) res.push_back(j);\n      \
     \  }\n    }\n    sort(res.begin(), res.end());\n    return res;\n}\n#line 6 \"\
     verify/Enum_divisor.test.cpp\"\n\nint main() {\n    int a, b, c;\n    cin >> a\
@@ -72,7 +72,7 @@ data:
   isVerificationFile: true
   path: verify/Enum_divisor.test.cpp
   requiredBy: []
-  timestamp: '2024-06-09 23:38:52+09:00'
+  timestamp: '2024-06-10 00:51:07+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/Enum_divisor.test.cpp

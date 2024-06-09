@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/Prime_factorize.hpp
     title: math/Prime_factorize.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: other/Macro.cpp
     title: other/Macro.cpp
   _extendedRequiredBy: []
@@ -50,8 +50,8 @@ data:
     }\n\nbool bit(ll x, int p) {\n    return (x >> p) & 1;\n}\n\nbool out(int ni,\
     \ int nj, int h, int w) {\n    return (ni < 0 or ni >= h or nj < 0 or nj >= w);\n\
     }\n\nint pc(ll x) {\n    return __builtin_popcountll(x);\n}\n#line 1 \"math/Prime_factorize.hpp\"\
-    \nvector<P> prime_factorize(ll n) {\n    vector<P> res;\n    for (int p = 2; ll(p\
-    \ * p) <= n; p++) {\n        if (n % p != 0) continue;\n        int num = 0;\n\
+    \nvector<P> prime_factorize(ll n) {\n    vector<P> res;\n    for (int p = 2; ll(p)\
+    \ * p <= n; p++) {\n        if (n % p != 0) continue;\n        int num = 0;\n\
     \        while (n % p == 0) {\n            num++;\n            n /= p;\n     \
     \   }\n        res.push_back(make_pair(p, num));\n    }\n    if (n != 1) res.push_back(make_pair(n,\
     \ 1));\n    return res;\n}\n#line 6 \"verify/Prime_factorize.test.cpp\"\n\nint\
@@ -69,7 +69,7 @@ data:
   isVerificationFile: true
   path: verify/Prime_factorize.test.cpp
   requiredBy: []
-  timestamp: '2024-06-09 23:38:52+09:00'
+  timestamp: '2024-06-10 00:51:07+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/Prime_factorize.test.cpp

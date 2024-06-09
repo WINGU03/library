@@ -1,23 +1,23 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: math/Extgcd.hpp
-    title: math/Extgcd.hpp
+  - icon: ':question:'
+    path: math/Enum_divisor.hpp
+    title: math/Enum_divisor.hpp
   - icon: ':question:'
     path: other/Macro.cpp
     title: other/Macro.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_E
+    PROBLEM: https://yukicoder.me/problems/no/888
     links:
-    - https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_E
-  bundledCode: "#line 1 \"verify/Extgcd.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_E\"\
+    - https://yukicoder.me/problems/no/888
+  bundledCode: "#line 1 \"verify/Enum_divisor2.test.cpp\"\n#define PROBLEM \"https://yukicoder.me/problems/no/888\"\
     \n\n#include <bits/stdc++.h>\n#line 2 \"other/Macro.cpp\"\nusing namespace std;\n\
     \n#ifdef DEFINED_ONLY_IN_LOCAL\n#include <dump.hpp>\n#define dump(...) cpp_dump(__VA_ARGS__)\n\
     #else\n#undef dump\n#define dump(...)\n#endif\n#define rep1(i, a) for (int i =\
@@ -49,29 +49,34 @@ data:
     \ T2> &p) {\n    os << p.first << \" \" << p.second << '\\n';\n    return os;\n\
     }\n\nbool bit(ll x, int p) {\n    return (x >> p) & 1;\n}\n\nbool out(int ni,\
     \ int nj, int h, int w) {\n    return (ni < 0 or ni >= h or nj < 0 or nj >= w);\n\
-    }\n\nint pc(ll x) {\n    return __builtin_popcountll(x);\n}\n#line 1 \"math/Extgcd.hpp\"\
-    \nll extgcd(ll a, ll b, ll &x, ll &y) {\n    if (b == 0) {\n        x = 1;\n \
-    \       y = 0;\n        return a;\n    }\n    ll d = extgcd(b, a % b, y, x);\n\
-    \    y -= a / b * x;\n    return d;\n}\n#line 6 \"verify/Extgcd.test.cpp\"\n\n\
-    int main() {\n    int a, b;\n    cin >> a >> b;\n    ll x, y;\n    extgcd(a, b,\
-    \ x, y);\n    cout << x << \" \" << y << endl;\n    return 0;\n}\n"
-  code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_E\"\
-    \n\n#include <bits/stdc++.h>\n#include \"other/Macro\"\n#include \"math/Extgcd\"\
-    \n\nint main() {\n    int a, b;\n    cin >> a >> b;\n    ll x, y;\n    extgcd(a,\
-    \ b, x, y);\n    cout << x << \" \" << y << endl;\n    return 0;\n}"
+    }\n\nint pc(ll x) {\n    return __builtin_popcountll(x);\n}\n#line 1 \"math/Enum_divisor.hpp\"\
+    \nvector<ll> enum_divisor(ll n) {\n    vector<ll> res;\n    for (int i = 1; ll(i)\
+    \ * i <= n; i++) {\n        if (n % i == 0) {\n            res.push_back(i);\n\
+    \            ll j = n / i;\n            if (j != i) res.push_back(j);\n      \
+    \  }\n    }\n    sort(res.begin(), res.end());\n    return res;\n}\n#line 6 \"\
+    verify/Enum_divisor2.test.cpp\"\n\nint main(){\n    ll n;\n    cin >> n;\n   \
+    \ auto divisors = enum_divisor(n);\n    ll ans = 0;\n    for (auto divisor : divisors)\
+    \ {\n        if (divisor * divisor > n) break;\n        ans += divisor;\n    \
+    \    ans += n / divisor;\n    }\n    cout << ans << endl;\n    return 0;\n}\n"
+  code: "#define PROBLEM \"https://yukicoder.me/problems/no/888\"\n\n#include <bits/stdc++.h>\n\
+    #include \"other/Macro\"\n#include \"math/Enum_divisor\"\n\nint main(){\n    ll\
+    \ n;\n    cin >> n;\n    auto divisors = enum_divisor(n);\n    ll ans = 0;\n \
+    \   for (auto divisor : divisors) {\n        if (divisor * divisor > n) break;\n\
+    \        ans += divisor;\n        ans += n / divisor;\n    }\n    cout << ans\
+    \ << endl;\n    return 0;\n}"
   dependsOn:
   - other/Macro.cpp
-  - math/Extgcd.hpp
+  - math/Enum_divisor.hpp
   isVerificationFile: true
-  path: verify/Extgcd.test.cpp
+  path: verify/Enum_divisor2.test.cpp
   requiredBy: []
-  timestamp: '2024-06-09 23:38:52+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2024-06-10 00:51:07+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
-documentation_of: verify/Extgcd.test.cpp
+documentation_of: verify/Enum_divisor2.test.cpp
 layout: document
 redirect_from:
-- /verify/verify/Extgcd.test.cpp
-- /verify/verify/Extgcd.test.cpp.html
-title: verify/Extgcd.test.cpp
+- /verify/verify/Enum_divisor2.test.cpp
+- /verify/verify/Enum_divisor2.test.cpp.html
+title: verify/Enum_divisor2.test.cpp
 ---
