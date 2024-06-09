@@ -2,7 +2,7 @@
 
 #include <bits/stdc++.h>
 #include "other/Macro"
-#include "string/RollingHash.cpp"
+#include "string/RollingHash"
 
 int main() {
     string T, P;

@@ -36,10 +36,11 @@ struct RollingHash {
         int low = 0, high = len;
         while (high - low > 1) {
             int mid = (low + high) >> 1;
-            if (get(a, a + mid) != get(b, b + mid))
+            if (get(a, a + mid) != get(b, b + mid)){
                 high = mid;
-            else
+            }else{
                 low = mid;
+            }
         }
         return low;
     }
@@ -50,10 +51,11 @@ struct RollingHash {
         int low = 0, high = len;
         while (high - low > 1) {
             int mid = (low + high) >> 1;
-            if (get(a, a + mid) != T.get(b, b + mid))
+            if (get(a, a + mid) != T.get(b, b + mid)){
                 high = mid;
-            else
+            }else{
                 low = mid;
+            }
         }
         return low;
     }
