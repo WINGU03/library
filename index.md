@@ -19,9 +19,12 @@ data:
       title: math/Prime_factorize.cpp
   - name: other
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
       path: other/CC.cpp
       title: other/CC.cpp
+    - icon: ':heavy_check_mark:'
+      path: other/CC.hpp
+      title: other/CC.hpp
     - icon: ':heavy_check_mark:'
       path: other/CompileOption.cpp
       title: other/CompileOption.cpp

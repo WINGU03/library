@@ -2,13 +2,16 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/CC.test.cpp
+    title: verify/CC.test.cpp
   _isVerificationFailed: false
-  _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _pathExtension: hpp
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"other/CC.cpp\"\ntemplate<typename T=int>\nstruct CC {\n\
+  bundledCode: "#line 1 \"other/CC.hpp\"\ntemplate<typename T=int>\nstruct CC {\n\
     \  bool initialized;\n  vector<T> xs;\n  unordered_map<T, int> mp;\n  CC(): initialized(false)\
     \ {}\n  void add(T x) { xs.push_back(x);}\n  void init() {\n    sort(xs.begin(),\
     \ xs.end());\n    xs.erase(unique(xs.begin(),xs.end()),xs.end());\n    for(int\
@@ -32,15 +35,16 @@ data:
     \  }\n};"
   dependsOn: []
   isVerificationFile: false
-  path: other/CC.cpp
+  path: other/CC.hpp
   requiredBy: []
-  timestamp: '2024-06-08 15:50:53+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
-documentation_of: other/CC.cpp
+  timestamp: '2024-06-09 17:51:02+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/CC.test.cpp
+documentation_of: other/CC.hpp
 layout: document
 redirect_from:
-- /library/other/CC.cpp
-- /library/other/CC.cpp.html
-title: other/CC.cpp
+- /library/other/CC.hpp
+- /library/other/CC.hpp.html
+title: other/CC.hpp
 ---

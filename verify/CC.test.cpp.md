@@ -2,8 +2,8 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: other/CC.cpp
-    title: other/CC.cpp
+    path: other/CC.hpp
+    title: other/CC.hpp
   - icon: ':heavy_check_mark:'
     path: other/Macro.cpp
     title: other/Macro.cpp
@@ -49,7 +49,7 @@ data:
     \ T2> &p) {\n    os << p.first << \" \" << p.second << '\\n';\n    return os;\n\
     }\n\nbool bit(ll x, int p) {\n    return (x >> p) & 1;\n}\n\nbool out(int ni,\
     \ int nj, int h, int w) {\n    return (ni < 0 or ni >= h or nj < 0 or nj >= w);\n\
-    }\n\nint pc(ll x) {\n    return __builtin_popcountll(x);\n}\n#line 1 \"other/CC.cpp\"\
+    }\n\nint pc(ll x) {\n    return __builtin_popcountll(x);\n}\n#line 1 \"other/CC.hpp\"\
     \ntemplate<typename T=int>\nstruct CC {\n  bool initialized;\n  vector<T> xs;\n\
     \  unordered_map<T, int> mp;\n  CC(): initialized(false) {}\n  void add(T x) {\
     \ xs.push_back(x);}\n  void init() {\n    sort(xs.begin(), xs.end());\n    xs.erase(unique(xs.begin(),xs.end()),xs.end());\n\
@@ -76,11 +76,11 @@ data:
     \    return 0;\n}"
   dependsOn:
   - other/Macro.cpp
-  - other/CC.cpp
+  - other/CC.hpp
   isVerificationFile: true
   path: verify/CC.test.cpp
   requiredBy: []
-  timestamp: '2024-06-08 20:18:32+09:00'
+  timestamp: '2024-06-09 17:51:02+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/CC.test.cpp
