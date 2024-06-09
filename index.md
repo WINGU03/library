@@ -22,7 +22,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: other/CC.cpp
       title: other/CC.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: other/CompileOption.cpp
       title: other/CompileOption.cpp
     - icon: ':warning:'
@@ -42,6 +42,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/CC.test.cpp
       title: verify/CC.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/CompileOption.test.cpp
+      title: verify/CompileOption.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/Extgcd.test.cpp
       title: verify/Extgcd.test.cpp

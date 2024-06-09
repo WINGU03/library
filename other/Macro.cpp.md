@@ -7,6 +7,9 @@ data:
     path: verify/CC.test.cpp
     title: verify/CC.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/CompileOption.test.cpp
+    title: verify/CompileOption.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/Extgcd.test.cpp
     title: verify/Extgcd.test.cpp
   - icon: ':heavy_check_mark:'
@@ -100,6 +103,7 @@ data:
   - verify/CC.test.cpp
   - verify/Prime_factorize.test.cpp
   - verify/RollingHash2.test.cpp
+  - verify/CompileOption.test.cpp
   - verify/RollingHash.test.cpp
   - verify/Rerooting.test.cpp
   - verify/Extgcd.test.cpp
