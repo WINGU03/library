@@ -10,7 +10,9 @@ int main(){
     auto divisors = enum_divisor(n);
     ll ans = 0;
     for (auto divisor : divisors) {
+        if (divisor * divisor > n) break;
         ans += divisor;
+        ans += n / divisor;
     }
     cout << ans << endl;
     return 0;
