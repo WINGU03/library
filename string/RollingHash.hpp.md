@@ -10,11 +10,11 @@ data:
     path: verify/RollingHash2.test.cpp
     title: verify/RollingHash2.test.cpp
   _isVerificationFailed: false
-  _pathExtension: cpp
+  _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"string/RollingHash.cpp\"\nstruct RollingHash {\n    static\
+  bundledCode: "#line 1 \"string/RollingHash.hpp\"\nstruct RollingHash {\n    static\
     \ const int base1 = 1007, base2 = 2009;\n    static const int mod1 = 1000000007,\
     \ mod2 = 1000000009;\n    vector<long long> hash1, hash2, power1, power2;\n\n\
     \    // construct\n    RollingHash(const string &S) {\n        int n = (int)S.size();\n\
@@ -71,14 +71,14 @@ data:
     \            }\n        }\n        return low;\n    }\n};"
   dependsOn: []
   isVerificationFile: false
-  path: string/RollingHash.cpp
+  path: string/RollingHash.hpp
   requiredBy: []
-  timestamp: '2024-06-09 15:16:49+09:00'
+  timestamp: '2024-06-09 17:55:45+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/RollingHash2.test.cpp
   - verify/RollingHash.test.cpp
-documentation_of: string/RollingHash.cpp
+documentation_of: string/RollingHash.hpp
 layout: document
 title: RollingHash
 ---

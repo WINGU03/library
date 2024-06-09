@@ -19,9 +19,6 @@ data:
       title: math/Prime_factorize.cpp
   - name: other
     pages:
-    - icon: ':warning:'
-      path: other/CC.cpp
-      title: other/CC.cpp
     - icon: ':heavy_check_mark:'
       path: other/CC.hpp
       title: other/CC.hpp
@@ -37,7 +34,7 @@ data:
   - name: string
     pages:
     - icon: ':heavy_check_mark:'
-      path: string/RollingHash.cpp
+      path: string/RollingHash.hpp
       title: RollingHash
   verificationCategories:
   - name: verify

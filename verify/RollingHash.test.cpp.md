@@ -5,7 +5,7 @@ data:
     path: other/Macro.cpp
     title: other/Macro.cpp
   - icon: ':heavy_check_mark:'
-    path: string/RollingHash.cpp
+    path: string/RollingHash.hpp
     title: RollingHash
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
@@ -49,7 +49,7 @@ data:
     \ T2> &p) {\n    os << p.first << \" \" << p.second << '\\n';\n    return os;\n\
     }\n\nbool bit(ll x, int p) {\n    return (x >> p) & 1;\n}\n\nbool out(int ni,\
     \ int nj, int h, int w) {\n    return (ni < 0 or ni >= h or nj < 0 or nj >= w);\n\
-    }\n\nint pc(ll x) {\n    return __builtin_popcountll(x);\n}\n#line 1 \"string/RollingHash.cpp\"\
+    }\n\nint pc(ll x) {\n    return __builtin_popcountll(x);\n}\n#line 1 \"string/RollingHash.hpp\"\
     \nstruct RollingHash {\n    static const int base1 = 1007, base2 = 2009;\n   \
     \ static const int mod1 = 1000000007, mod2 = 1000000009;\n    vector<long long>\
     \ hash1, hash2, power1, power2;\n\n    // construct\n    RollingHash(const string\
@@ -89,11 +89,11 @@ data:
     \  return 0;\n}"
   dependsOn:
   - other/Macro.cpp
-  - string/RollingHash.cpp
+  - string/RollingHash.hpp
   isVerificationFile: true
   path: verify/RollingHash.test.cpp
   requiredBy: []
-  timestamp: '2024-06-09 15:16:49+09:00'
+  timestamp: '2024-06-09 17:55:45+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/RollingHash.test.cpp
