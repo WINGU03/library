@@ -8,15 +8,15 @@ data:
       title: graph/Rerooting.cpp
   - name: math
     pages:
-    - icon: ':warning:'
-      path: math/Enum_divisor.cpp
-      title: math/Enum_divisor.cpp
     - icon: ':heavy_check_mark:'
-      path: math/Extgcd.cpp
-      title: math/Extgcd.cpp
+      path: math/Enum_divisor.hpp
+      title: math/Enum_divisor.hpp
     - icon: ':heavy_check_mark:'
-      path: math/Prime_factorize.cpp
-      title: math/Prime_factorize.cpp
+      path: math/Extgcd.hpp
+      title: math/Extgcd.hpp
+    - icon: ':heavy_check_mark:'
+      path: math/Prime_factorize.hpp
+      title: math/Prime_factorize.hpp
   - name: other
     pages:
     - icon: ':heavy_check_mark:'
@@ -45,6 +45,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/CompileOption.test.cpp
       title: verify/CompileOption.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/Enum_divisor.test.cpp
+      title: verify/Enum_divisor.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/Extgcd.test.cpp
       title: verify/Extgcd.test.cpp

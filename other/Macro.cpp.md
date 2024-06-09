@@ -10,6 +10,9 @@ data:
     path: verify/CompileOption.test.cpp
     title: verify/CompileOption.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/Enum_divisor.test.cpp
+    title: verify/Enum_divisor.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/Extgcd.test.cpp
     title: verify/Extgcd.test.cpp
   - icon: ':heavy_check_mark:'
@@ -105,6 +108,7 @@ data:
   - verify/RollingHash2.test.cpp
   - verify/CompileOption.test.cpp
   - verify/RollingHash.test.cpp
+  - verify/Enum_divisor.test.cpp
   - verify/Rerooting.test.cpp
   - verify/Extgcd.test.cpp
 documentation_of: other/Macro.cpp
