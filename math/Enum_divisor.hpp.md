@@ -6,12 +6,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/Enum_divisor.test.cpp
     title: verify/Enum_divisor.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/Enum_divisor2.test.cpp
     title: verify/Enum_divisor2.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"math/Enum_divisor.hpp\"\nvector<ll> enum_divisor(ll n) {\n\
@@ -28,7 +28,7 @@ data:
   path: math/Enum_divisor.hpp
   requiredBy: []
   timestamp: '2024-06-10 00:51:07+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/Enum_divisor2.test.cpp
   - verify/Enum_divisor.test.cpp

@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: math/Enum_divisor.hpp
     title: math/Enum_divisor.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: other/Macro.cpp
     title: other/Macro.cpp
   _extendedRequiredBy: []

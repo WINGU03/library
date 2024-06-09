@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: math/Enum_divisor.hpp
     title: math/Enum_divisor.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: other/Macro.cpp
     title: other/Macro.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://yukicoder.me/problems/no/888
@@ -56,22 +56,21 @@ data:
     \  }\n    }\n    sort(res.begin(), res.end());\n    return res;\n}\n#line 6 \"\
     verify/Enum_divisor2.test.cpp\"\n\nint main(){\n    ll n;\n    cin >> n;\n   \
     \ auto divisors = enum_divisor(n);\n    ll ans = 0;\n    for (auto divisor : divisors)\
-    \ {\n        if (divisor * divisor > n) break;\n        ans += divisor;\n    \
-    \    ans += n / divisor;\n    }\n    cout << ans << endl;\n    return 0;\n}\n"
+    \ {\n        ans += divisor;\n    }\n    cout << ans << endl;\n    return 0;\n\
+    }\n"
   code: "#define PROBLEM \"https://yukicoder.me/problems/no/888\"\n\n#include <bits/stdc++.h>\n\
     #include \"other/Macro\"\n#include \"math/Enum_divisor\"\n\nint main(){\n    ll\
     \ n;\n    cin >> n;\n    auto divisors = enum_divisor(n);\n    ll ans = 0;\n \
-    \   for (auto divisor : divisors) {\n        if (divisor * divisor > n) break;\n\
-    \        ans += divisor;\n        ans += n / divisor;\n    }\n    cout << ans\
-    \ << endl;\n    return 0;\n}"
+    \   for (auto divisor : divisors) {\n        ans += divisor;\n    }\n    cout\
+    \ << ans << endl;\n    return 0;\n}"
   dependsOn:
   - other/Macro.cpp
   - math/Enum_divisor.hpp
   isVerificationFile: true
   path: verify/Enum_divisor2.test.cpp
   requiredBy: []
-  timestamp: '2024-06-10 00:51:07+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-06-10 00:53:37+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/Enum_divisor2.test.cpp
 layout: document

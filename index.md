@@ -8,7 +8,7 @@ data:
       title: graph/Rerooting.cpp
   - name: math
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: math/Enum_divisor.hpp
       title: math/Enum_divisor.hpp
     - icon: ':heavy_check_mark:'
@@ -28,7 +28,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: other/Heuristic_Macro.cpp
       title: other/Heuristic_Macro.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: other/Macro.cpp
       title: other/Macro.cpp
   - name: string
@@ -48,7 +48,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/Enum_divisor.test.cpp
       title: verify/Enum_divisor.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/Enum_divisor2.test.cpp
       title: verify/Enum_divisor2.test.cpp
     - icon: ':heavy_check_mark:'

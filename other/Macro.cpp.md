@@ -12,7 +12,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/Enum_divisor.test.cpp
     title: verify/Enum_divisor.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/Enum_divisor2.test.cpp
     title: verify/Enum_divisor2.test.cpp
   - icon: ':heavy_check_mark:'
@@ -30,9 +30,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/RollingHash2.test.cpp
     title: verify/RollingHash2.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"other/Macro.cpp\"\n#include <bits/stdc++.h>\nusing namespace\
@@ -104,7 +104,7 @@ data:
   path: other/Macro.cpp
   requiredBy: []
   timestamp: '2024-06-08 20:18:32+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/CC.test.cpp
   - verify/Enum_divisor2.test.cpp

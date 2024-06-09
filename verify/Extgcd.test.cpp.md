@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/Extgcd.hpp
     title: math/Extgcd.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: other/Macro.cpp
     title: other/Macro.cpp
   _extendedRequiredBy: []
