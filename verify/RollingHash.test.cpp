@@ -1,17 +1,17 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/zalgorithm"
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/14/ALDS1_14_A"
 
 #include <bits/stdc++.h>
 #include "other/Macro"
 #include "string/RollingHash.cpp"
 
 int main() {
-    string s;
-    cin >> s;
-    RollingHash rol(s);
-    vector<int> ans;
-    rep(i, (int)s.size()) {
-        ans.push_back(rol.getLCP(0, i));
+    string T, P;
+    cin >> T >> P;
+    int N = T.size(), M = P.size();
+    RollingHash RT(T), RP(P);
+    rep(i, N) {
+        int cur = RT.getLCP(RP, i, 0);
+        if (cur == M) cout << i << endl;
     }
-    cout << ans;
     return 0;
 }
