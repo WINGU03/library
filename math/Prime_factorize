@@ -1,1 +1,1 @@
-#include "Prime_factorize.cpp"
+#include "Prime_factorize.hpp"

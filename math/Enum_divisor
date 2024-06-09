@@ -1,1 +1,1 @@
-#include "Enum_divisor.cpp"
+#include "Enum_divisor.hpp"
