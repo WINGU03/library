@@ -35,7 +35,7 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: string/RollingHash.cpp
-      title: string/RollingHash.cpp
+      title: RollingHash
   verificationCategories:
   - name: verify
     pages:

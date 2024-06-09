@@ -6,7 +6,7 @@ data:
     title: other/Macro.cpp
   - icon: ':heavy_check_mark:'
     path: string/RollingHash.cpp
-    title: string/RollingHash.cpp
+    title: RollingHash
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
