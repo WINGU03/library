@@ -6,6 +6,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/RollingHash.test.cpp
     title: verify/RollingHash.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/RollingHash2.test.cpp
+    title: verify/RollingHash2.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -73,6 +76,7 @@ data:
   timestamp: '2024-06-09 15:16:49+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - verify/RollingHash2.test.cpp
   - verify/RollingHash.test.cpp
 documentation_of: string/RollingHash.cpp
 layout: document

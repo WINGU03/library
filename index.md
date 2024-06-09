@@ -54,5 +54,8 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/RollingHash.test.cpp
       title: verify/RollingHash.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/RollingHash2.test.cpp
+      title: verify/RollingHash2.test.cpp
 layout: toppage
 ---

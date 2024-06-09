@@ -18,6 +18,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/RollingHash.test.cpp
     title: verify/RollingHash.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/RollingHash2.test.cpp
+    title: verify/RollingHash2.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -96,6 +99,7 @@ data:
   verifiedWith:
   - verify/CC.test.cpp
   - verify/Prime_factorize.test.cpp
+  - verify/RollingHash2.test.cpp
   - verify/RollingHash.test.cpp
   - verify/Rerooting.test.cpp
   - verify/Extgcd.test.cpp
