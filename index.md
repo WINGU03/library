@@ -25,7 +25,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: other/CompileOption.cpp
       title: other/CompileOption.cpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: other/Heuristic_Macro.cpp
       title: other/Heuristic_Macro.cpp
     - icon: ':heavy_check_mark:'
@@ -51,6 +51,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/Extgcd.test.cpp
       title: verify/Extgcd.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/Heuristic_Macro.test.cpp
+      title: verify/Heuristic_Macro.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/Prime_factorize.test.cpp
       title: verify/Prime_factorize.test.cpp

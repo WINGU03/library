@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/Heuristic_Macro.test.cpp
+    title: verify/Heuristic_Macro.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"other/Heuristic_Macro.cpp\"\n#include <bits/stdc++.h>\n\
@@ -67,8 +70,9 @@ data:
   path: other/Heuristic_Macro.cpp
   requiredBy: []
   timestamp: '2024-06-08 14:46:40+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/Heuristic_Macro.test.cpp
 documentation_of: other/Heuristic_Macro.cpp
 layout: document
 redirect_from:
