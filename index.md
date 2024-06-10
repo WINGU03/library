@@ -4,70 +4,66 @@ data:
   - name: graph
     pages:
     - icon: ':heavy_check_mark:'
-      path: graph/Rerooting.cpp
-      title: graph/Rerooting.cpp
+      path: graph/rerooting.hpp
+      title: graph/rerooting.hpp
   - name: math
     pages:
     - icon: ':heavy_check_mark:'
-      path: math/Enum_divisor.hpp
-      title: math/Enum_divisor.hpp
+      path: math/enum-divisor.hpp
+      title: math/enum-divisor.hpp
     - icon: ':heavy_check_mark:'
-      path: math/Extgcd.hpp
-      title: math/Extgcd.hpp
+      path: math/extgcd.hpp
+      title: math/extgcd.hpp
     - icon: ':heavy_check_mark:'
-      path: math/Prime_factorize.hpp
-      title: math/Prime_factorize.hpp
+      path: math/prime-factorize.hpp
+      title: math/prime-factorize.hpp
   - name: other
     pages:
     - icon: ':heavy_check_mark:'
-      path: other/CC.hpp
-      title: other/CC.hpp
+      path: other/cc.hpp
+      title: other/cc.hpp
     - icon: ':heavy_check_mark:'
-      path: other/CompileOption.cpp
-      title: other/CompileOption.cpp
+      path: other/compile-option.hpp
+      title: other/compile-option.hpp
     - icon: ':heavy_check_mark:'
-      path: other/Heuristic_Macro.cpp
-      title: other/Heuristic_Macro.cpp
-    - icon: ':heavy_check_mark:'
-      path: other/Macro.cpp
-      title: other/Macro.cpp
+      path: other/heuristic-template.hpp
+      title: other/heuristic-template.hpp
   - name: string
     pages:
     - icon: ':heavy_check_mark:'
-      path: string/RollingHash.hpp
+      path: string/rolling-hash.hpp
       title: RollingHash
+  - name: .
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: template.hpp
+      title: template.hpp
   verificationCategories:
   - name: verify
     pages:
     - icon: ':heavy_check_mark:'
-      path: verify/CC.test.cpp
-      title: verify/CC.test.cpp
+      path: verify/cc.test.cpp
+      title: verify/cc.test.cpp
     - icon: ':heavy_check_mark:'
-      path: verify/CompileOption.test.cpp
-      title: verify/CompileOption.test.cpp
+      path: verify/compile-option.test.cpp
+      title: verify/compile-option.test.cpp
     - icon: ':heavy_check_mark:'
-      path: verify/Enum_divisor.test.cpp
-      title: verify/Enum_divisor.test.cpp
+      path: verify/enum-divisor.test.cpp
+      title: verify/enum-divisor.test.cpp
     - icon: ':heavy_check_mark:'
-      path: verify/Enum_divisor2.test.cpp
-      title: verify/Enum_divisor2.test.cpp
+      path: verify/extgcd.test.cpp
+      title: verify/extgcd.test.cpp
     - icon: ':heavy_check_mark:'
-      path: verify/Extgcd.test.cpp
-      title: verify/Extgcd.test.cpp
+      path: verify/heuristic-template.test.cpp
+      title: verify/heuristic-template.test.cpp
     - icon: ':heavy_check_mark:'
-      path: verify/Heuristic_Macro.test.cpp
-      title: verify/Heuristic_Macro.test.cpp
+      path: verify/prime-factorize.test.cpp
+      title: verify/prime-factorize.test.cpp
     - icon: ':heavy_check_mark:'
-      path: verify/Prime_factorize.test.cpp
-      title: verify/Prime_factorize.test.cpp
+      path: verify/rerooting.test.cpp
+      title: verify/rerooting.test.cpp
     - icon: ':heavy_check_mark:'
-      path: verify/Rerooting.test.cpp
-      title: verify/Rerooting.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: verify/RollingHash.test.cpp
-      title: verify/RollingHash.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: verify/RollingHash2.test.cpp
-      title: verify/RollingHash2.test.cpp
+      path: verify/rolling-hash.test.cpp
+      title: verify/rolling-hash.test.cpp
 layout: toppage
 ---

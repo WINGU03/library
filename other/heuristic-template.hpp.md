@@ -4,14 +4,14 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: verify/Heuristic_Macro.test.cpp
-    title: verify/Heuristic_Macro.test.cpp
+    path: verify/heuristic-template.test.cpp
+    title: verify/heuristic-template.test.cpp
   _isVerificationFailed: false
-  _pathExtension: cpp
+  _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"other/Heuristic_Macro.cpp\"\n#include <bits/stdc++.h>\n\
+  bundledCode: "#line 1 \"other/heuristic-template.hpp\"\n#include <bits/stdc++.h>\n\
     using namespace std;\nusing namespace chrono;\n#ifdef DEFINED_ONLY_IN_LOCAL\n\
     #include <dump.hpp>\n#define dump(...) cpp_dump(__VA_ARGS__)\n#else\n#undef dump\n\
     #define dump(...)\n#endif\ntemplate<class T>inline bool chmax(T &a,T b){if(a<b){a=b;return\
@@ -67,16 +67,16 @@ data:
     \ isTimeOver() const {return now_time_ >= time_threshold_;}\n};"
   dependsOn: []
   isVerificationFile: false
-  path: other/Heuristic_Macro.cpp
+  path: other/heuristic-template.hpp
   requiredBy: []
-  timestamp: '2024-06-08 14:46:40+09:00'
+  timestamp: '2024-06-10 17:44:10+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/Heuristic_Macro.test.cpp
-documentation_of: other/Heuristic_Macro.cpp
+  - verify/heuristic-template.test.cpp
+documentation_of: other/heuristic-template.hpp
 layout: document
 redirect_from:
-- /library/other/Heuristic_Macro.cpp
-- /library/other/Heuristic_Macro.cpp.html
-title: other/Heuristic_Macro.cpp
+- /library/other/heuristic-template.hpp
+- /library/other/heuristic-template.hpp.html
+title: other/heuristic-template.hpp
 ---

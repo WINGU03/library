@@ -2,11 +2,11 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: other/Macro.cpp
-    title: other/Macro.cpp
-  - icon: ':heavy_check_mark:'
-    path: string/RollingHash.hpp
+    path: string/rolling-hash.hpp
     title: RollingHash
+  - icon: ':heavy_check_mark:'
+    path: template.hpp
+    title: template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -14,12 +14,12 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/14/ALDS1_14_A
+    PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/14/ALDS1_14_B
     links:
-    - https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/14/ALDS1_14_A
-  bundledCode: "#line 1 \"verify/RollingHash.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/14/ALDS1_14_A\"\
-    \n\n#include <bits/stdc++.h>\n#line 2 \"other/Macro.cpp\"\nusing namespace std;\n\
-    \n#ifdef DEFINED_ONLY_IN_LOCAL\n#include <dump.hpp>\n#define dump(...) cpp_dump(__VA_ARGS__)\n\
+    - https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/14/ALDS1_14_B
+  bundledCode: "#line 1 \"verify/rolling-hash.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/14/ALDS1_14_B\"\
+    \n\n#include<bits/stdc++.h>\n#line 2 \"template.hpp\"\nusing namespace std;\n\n\
+    #ifdef DEFINED_ONLY_IN_LOCAL\n#include <dump.hpp>\n#define dump(...) cpp_dump(__VA_ARGS__)\n\
     #else\n#undef dump\n#define dump(...)\n#endif\n#define rep1(i, a) for (int i =\
     \ 0; i < (int)(a); i++)\n#define rep2(i, a, b) for (int i = (int)(a); i < (int)(b);\
     \ i++)\n#define rep3(i, a, b, c) for (int i = (int)(a); i < (int)(b); i += (int)(c))\n\
@@ -49,7 +49,7 @@ data:
     \ T2> &p) {\n    os << p.first << \" \" << p.second << '\\n';\n    return os;\n\
     }\n\nbool bit(ll x, int p) {\n    return (x >> p) & 1;\n}\n\nbool out(int ni,\
     \ int nj, int h, int w) {\n    return (ni < 0 or ni >= h or nj < 0 or nj >= w);\n\
-    }\n\nint pc(ll x) {\n    return __builtin_popcountll(x);\n}\n#line 1 \"string/RollingHash.hpp\"\
+    }\n\nint pc(ll x) {\n    return __builtin_popcountll(x);\n}\n#line 1 \"string/rolling-hash.hpp\"\
     \nstruct RollingHash {\n    static const int base1 = 1007, base2 = 2009;\n   \
     \ static const int mod1 = 1000000007, mod2 = 1000000009;\n    vector<long long>\
     \ hash1, hash2, power1, power2;\n\n    // construct\n    RollingHash(const string\
@@ -76,30 +76,30 @@ data:
     \ int low = 0, high = len;\n        while (high - low > 1) {\n            int\
     \ mid = (low + high) >> 1;\n            if (get(a, a + mid) != T.get(b, b + mid)){\n\
     \                high = mid;\n            }else{\n                low = mid;\n\
-    \            }\n        }\n        return low;\n    }\n};\n#line 6 \"verify/RollingHash.test.cpp\"\
+    \            }\n        }\n        return low;\n    }\n};\n#line 6 \"verify/rolling-hash.test.cpp\"\
     \n\nint main() {\n    string T, P;\n    cin >> T >> P;\n    int N = T.size(),\
-    \ M = P.size();\n    RollingHash RT(T), RP(P);\n    rep(i, N) {\n        int cur\
-    \ = RT.getLCP(RP, i, 0);\n        if (cur == M) cout << i << endl;\n    }\n  \
-    \  return 0;\n}\n"
-  code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/14/ALDS1_14_A\"\
-    \n\n#include <bits/stdc++.h>\n#include \"other/Macro\"\n#include \"string/RollingHash\"\
+    \ M = P.size();\n    RollingHash RT(T), RP(P);\n    rep(i, N - M + 1) {\n    \
+    \    if(RT.get(i, i + M) == RP.get(0, M)){\n            cout << i << endl;\n \
+    \       }\n    }\n    return 0;\n}\n"
+  code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/14/ALDS1_14_B\"\
+    \n\n#include<bits/stdc++.h>\n#include \"template\"\n#include \"string/rolling-hash\"\
     \n\nint main() {\n    string T, P;\n    cin >> T >> P;\n    int N = T.size(),\
-    \ M = P.size();\n    RollingHash RT(T), RP(P);\n    rep(i, N) {\n        int cur\
-    \ = RT.getLCP(RP, i, 0);\n        if (cur == M) cout << i << endl;\n    }\n  \
-    \  return 0;\n}"
+    \ M = P.size();\n    RollingHash RT(T), RP(P);\n    rep(i, N - M + 1) {\n    \
+    \    if(RT.get(i, i + M) == RP.get(0, M)){\n            cout << i << endl;\n \
+    \       }\n    }\n    return 0;\n}"
   dependsOn:
-  - other/Macro.cpp
-  - string/RollingHash.hpp
+  - template.hpp
+  - string/rolling-hash.hpp
   isVerificationFile: true
-  path: verify/RollingHash.test.cpp
+  path: verify/rolling-hash.test.cpp
   requiredBy: []
-  timestamp: '2024-06-09 17:55:45+09:00'
+  timestamp: '2024-06-10 17:44:10+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: verify/RollingHash.test.cpp
+documentation_of: verify/rolling-hash.test.cpp
 layout: document
 redirect_from:
-- /verify/verify/RollingHash.test.cpp
-- /verify/verify/RollingHash.test.cpp.html
-title: verify/RollingHash.test.cpp
+- /verify/verify/rolling-hash.test.cpp
+- /verify/verify/rolling-hash.test.cpp.html
+title: verify/rolling-hash.test.cpp
 ---

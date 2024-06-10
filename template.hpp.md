@@ -4,38 +4,32 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: verify/CC.test.cpp
-    title: verify/CC.test.cpp
+    path: verify/cc.test.cpp
+    title: verify/cc.test.cpp
   - icon: ':heavy_check_mark:'
-    path: verify/CompileOption.test.cpp
-    title: verify/CompileOption.test.cpp
+    path: verify/compile-option.test.cpp
+    title: verify/compile-option.test.cpp
   - icon: ':heavy_check_mark:'
-    path: verify/Enum_divisor.test.cpp
-    title: verify/Enum_divisor.test.cpp
+    path: verify/enum-divisor.test.cpp
+    title: verify/enum-divisor.test.cpp
   - icon: ':heavy_check_mark:'
-    path: verify/Enum_divisor2.test.cpp
-    title: verify/Enum_divisor2.test.cpp
+    path: verify/extgcd.test.cpp
+    title: verify/extgcd.test.cpp
   - icon: ':heavy_check_mark:'
-    path: verify/Extgcd.test.cpp
-    title: verify/Extgcd.test.cpp
+    path: verify/prime-factorize.test.cpp
+    title: verify/prime-factorize.test.cpp
   - icon: ':heavy_check_mark:'
-    path: verify/Prime_factorize.test.cpp
-    title: verify/Prime_factorize.test.cpp
+    path: verify/rerooting.test.cpp
+    title: verify/rerooting.test.cpp
   - icon: ':heavy_check_mark:'
-    path: verify/Rerooting.test.cpp
-    title: verify/Rerooting.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/RollingHash.test.cpp
-    title: verify/RollingHash.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/RollingHash2.test.cpp
-    title: verify/RollingHash2.test.cpp
+    path: verify/rolling-hash.test.cpp
+    title: verify/rolling-hash.test.cpp
   _isVerificationFailed: false
-  _pathExtension: cpp
+  _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"other/Macro.cpp\"\n#include <bits/stdc++.h>\nusing namespace\
+  bundledCode: "#line 1 \"template.hpp\"\n#include <bits/stdc++.h>\nusing namespace\
     \ std;\n\n#ifdef DEFINED_ONLY_IN_LOCAL\n#include <dump.hpp>\n#define dump(...)\
     \ cpp_dump(__VA_ARGS__)\n#else\n#undef dump\n#define dump(...)\n#endif\n#define\
     \ rep1(i, a) for (int i = 0; i < (int)(a); i++)\n#define rep2(i, a, b) for (int\
@@ -101,24 +95,22 @@ data:
     }"
   dependsOn: []
   isVerificationFile: false
-  path: other/Macro.cpp
+  path: template.hpp
   requiredBy: []
-  timestamp: '2024-06-08 20:18:32+09:00'
+  timestamp: '2024-06-10 17:44:10+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/CC.test.cpp
-  - verify/Enum_divisor2.test.cpp
-  - verify/Prime_factorize.test.cpp
-  - verify/RollingHash2.test.cpp
-  - verify/CompileOption.test.cpp
-  - verify/RollingHash.test.cpp
-  - verify/Enum_divisor.test.cpp
-  - verify/Rerooting.test.cpp
-  - verify/Extgcd.test.cpp
-documentation_of: other/Macro.cpp
+  - verify/compile-option.test.cpp
+  - verify/rolling-hash.test.cpp
+  - verify/extgcd.test.cpp
+  - verify/prime-factorize.test.cpp
+  - verify/rerooting.test.cpp
+  - verify/cc.test.cpp
+  - verify/enum-divisor.test.cpp
+documentation_of: template.hpp
 layout: document
 redirect_from:
-- /library/other/Macro.cpp
-- /library/other/Macro.cpp.html
-title: other/Macro.cpp
+- /library/template.hpp
+- /library/template.hpp.html
+title: template.hpp
 ---

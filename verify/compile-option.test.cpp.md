@@ -2,11 +2,11 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: other/CC.hpp
-    title: other/CC.hpp
+    path: other/compile-option.hpp
+    title: other/compile-option.hpp
   - icon: ':heavy_check_mark:'
-    path: other/Macro.cpp
-    title: other/Macro.cpp
+    path: template.hpp
+    title: template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -14,11 +14,11 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/5/ALDS1_5_D
+    PROBLEM: https://judge.yosupo.jp/problem/many_aplusb
     links:
-    - https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/5/ALDS1_5_D
-  bundledCode: "#line 1 \"verify/CC.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/5/ALDS1_5_D\"\
-    \n\n#include <bits/stdc++.h>\n#line 2 \"other/Macro.cpp\"\nusing namespace std;\n\
+    - https://judge.yosupo.jp/problem/many_aplusb
+  bundledCode: "#line 1 \"verify/compile-option.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/many_aplusb\"\
+    \n\n#include <bits/stdc++.h>\n#line 2 \"template.hpp\"\nusing namespace std;\n\
     \n#ifdef DEFINED_ONLY_IN_LOCAL\n#include <dump.hpp>\n#define dump(...) cpp_dump(__VA_ARGS__)\n\
     #else\n#undef dump\n#define dump(...)\n#endif\n#define rep1(i, a) for (int i =\
     \ 0; i < (int)(a); i++)\n#define rep2(i, a, b) for (int i = (int)(a); i < (int)(b);\
@@ -49,44 +49,28 @@ data:
     \ T2> &p) {\n    os << p.first << \" \" << p.second << '\\n';\n    return os;\n\
     }\n\nbool bit(ll x, int p) {\n    return (x >> p) & 1;\n}\n\nbool out(int ni,\
     \ int nj, int h, int w) {\n    return (ni < 0 or ni >= h or nj < 0 or nj >= w);\n\
-    }\n\nint pc(ll x) {\n    return __builtin_popcountll(x);\n}\n#line 1 \"other/CC.hpp\"\
-    \ntemplate<typename T=int>\nstruct CC {\n  bool initialized;\n  vector<T> xs;\n\
-    \  unordered_map<T, int> mp;\n  CC(): initialized(false) {}\n  void add(T x) {\
-    \ xs.push_back(x);}\n  void init() {\n    sort(xs.begin(), xs.end());\n    xs.erase(unique(xs.begin(),xs.end()),xs.end());\n\
-    \    for(int i = 0; i < (int)xs.size(); i++){\n      mp[xs[i]] = i;\n    }\n \
-    \   initialized = true;\n  }\n\t// x\u304C\u5EA7\u5727\u5F8C\u4F55\u756A\u76EE\
-    \u304B\u3092\u8FD4\u3059\n  int operator()(T x) {\n    if (!initialized) init();\n\
-    \    return mp[x];\n  }\n    // \u5EA7\u5727\u5F8C\u306Ei\u756A\u76EE\u306E\u5024\
-    \u3092\u8FD4\u3059\n  T operator[](int i) {\n    if (!initialized) init();\n \
-    \   return xs[i];\n  }\n    // \u5EA7\u5727\u5F8C\u306E\u30B5\u30A4\u30BA\u3092\
-    \u8FD4\u3059\n  int size() {\n    if (!initialized) init();\n    return xs.size();\n\
-    \  }\n};\n#line 6 \"verify/CC.test.cpp\"\n#include <atcoder/fenwicktree>\nusing\
-    \ namespace atcoder;\n\nint main() {\n    int n;\n    cin >> n;\n    vector<int>\
-    \ a(n);\n    cin >> a;\n    CC c;\n    rep(i, n) c.add(a[i]);\n    int m = c.size();\n\
-    \    rep(i, n) a[i] = c(a[i]);\n    fenwick_tree<int> f(m);\n    ll ans = 0;\n\
-    \    rep(i, n) {\n        ans += f.sum(a[i], m);\n        f.add(a[i], 1);\n  \
-    \  }\n    cout << ans << endl;\n    return 0;\n}\n"
-  code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/5/ALDS1_5_D\"\
-    \n\n#include <bits/stdc++.h>\n#include \"other/Macro\"\n#include \"other/CC\"\n\
-    #include <atcoder/fenwicktree>\nusing namespace atcoder;\n\nint main() {\n   \
-    \ int n;\n    cin >> n;\n    vector<int> a(n);\n    cin >> a;\n    CC c;\n   \
-    \ rep(i, n) c.add(a[i]);\n    int m = c.size();\n    rep(i, n) a[i] = c(a[i]);\n\
-    \    fenwick_tree<int> f(m);\n    ll ans = 0;\n    rep(i, n) {\n        ans +=\
-    \ f.sum(a[i], m);\n        f.add(a[i], 1);\n    }\n    cout << ans << endl;\n\
-    \    return 0;\n}"
+    }\n\nint pc(ll x) {\n    return __builtin_popcountll(x);\n}\n#line 1 \"other/compile-option.hpp\"\
+    \n#pragma GCC target(\"avx2\")\n#pragma GCC optimize(\"O3\")\n#pragma GCC optimize(\"\
+    unroll-loops\")\n#line 6 \"verify/compile-option.test.cpp\"\n\nint main(){\n \
+    \   int t;\n    cin >> t;\n    while(t--){\n        ll a, b;\n        cin >> a\
+    \ >> b;\n        cout << a + b << endl;\n    }\n    return 0;\n}\n"
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/many_aplusb\"\n\n#include\
+    \ <bits/stdc++.h>\n#include \"template\"\n#include \"other/compile-option\"\n\n\
+    int main(){\n    int t;\n    cin >> t;\n    while(t--){\n        ll a, b;\n  \
+    \      cin >> a >> b;\n        cout << a + b << endl;\n    }\n    return 0;\n}"
   dependsOn:
-  - other/Macro.cpp
-  - other/CC.hpp
+  - template.hpp
+  - other/compile-option.hpp
   isVerificationFile: true
-  path: verify/CC.test.cpp
+  path: verify/compile-option.test.cpp
   requiredBy: []
-  timestamp: '2024-06-09 17:51:02+09:00'
+  timestamp: '2024-06-10 17:44:10+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: verify/CC.test.cpp
+documentation_of: verify/compile-option.test.cpp
 layout: document
 redirect_from:
-- /verify/verify/CC.test.cpp
-- /verify/verify/CC.test.cpp.html
-title: verify/CC.test.cpp
+- /verify/verify/compile-option.test.cpp
+- /verify/verify/compile-option.test.cpp.html
+title: verify/compile-option.test.cpp
 ---

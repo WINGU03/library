@@ -4,14 +4,14 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: verify/Rerooting.test.cpp
-    title: verify/Rerooting.test.cpp
+    path: verify/rerooting.test.cpp
+    title: verify/rerooting.test.cpp
   _isVerificationFailed: false
-  _pathExtension: cpp
+  _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"graph/Rerooting.cpp\"\ntemplate<typename Cost>\nstruct Edge{\n\
+  bundledCode: "#line 1 \"graph/rerooting.hpp\"\ntemplate<typename Cost>\nstruct Edge{\n\
     \    int src,to;\n    Cost cost;\n    Edge(int s, int t, Cost c=1) : src(s), to(t),\
     \ cost(c) {}\n    // \u30C7\u30D5\u30A9\u30EB\u30C8\u3067\u306F\u884C\u304D\u5148\
     \u3092\u8FD4\u3059\n    operator int() const {return to;}\n};\n\ntemplate<typename\
@@ -79,16 +79,16 @@ data:
     \   }\n  }\n};"
   dependsOn: []
   isVerificationFile: false
-  path: graph/Rerooting.cpp
+  path: graph/rerooting.hpp
   requiredBy: []
-  timestamp: '2024-06-08 12:42:28+09:00'
+  timestamp: '2024-06-10 17:44:10+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/Rerooting.test.cpp
-documentation_of: graph/Rerooting.cpp
+  - verify/rerooting.test.cpp
+documentation_of: graph/rerooting.hpp
 layout: document
 redirect_from:
-- /library/graph/Rerooting.cpp
-- /library/graph/Rerooting.cpp.html
-title: graph/Rerooting.cpp
+- /library/graph/rerooting.hpp
+- /library/graph/rerooting.hpp.html
+title: graph/rerooting.hpp
 ---

@@ -2,11 +2,11 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: other/CompileOption.cpp
-    title: other/CompileOption.cpp
+    path: math/prime-factorize.hpp
+    title: math/prime-factorize.hpp
   - icon: ':heavy_check_mark:'
-    path: other/Macro.cpp
-    title: other/Macro.cpp
+    path: template.hpp
+    title: template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -14,11 +14,11 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.yosupo.jp/problem/many_aplusb
+    PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_A
     links:
-    - https://judge.yosupo.jp/problem/many_aplusb
-  bundledCode: "#line 1 \"verify/CompileOption.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/many_aplusb\"\
-    \n\n#include <bits/stdc++.h>\n#line 2 \"other/Macro.cpp\"\nusing namespace std;\n\
+    - https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_A
+  bundledCode: "#line 1 \"verify/prime-factorize.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_A\"\
+    \n\n#include <bits/stdc++.h>\n#line 2 \"template.hpp\"\nusing namespace std;\n\
     \n#ifdef DEFINED_ONLY_IN_LOCAL\n#include <dump.hpp>\n#define dump(...) cpp_dump(__VA_ARGS__)\n\
     #else\n#undef dump\n#define dump(...)\n#endif\n#define rep1(i, a) for (int i =\
     \ 0; i < (int)(a); i++)\n#define rep2(i, a, b) for (int i = (int)(a); i < (int)(b);\
@@ -49,29 +49,33 @@ data:
     \ T2> &p) {\n    os << p.first << \" \" << p.second << '\\n';\n    return os;\n\
     }\n\nbool bit(ll x, int p) {\n    return (x >> p) & 1;\n}\n\nbool out(int ni,\
     \ int nj, int h, int w) {\n    return (ni < 0 or ni >= h or nj < 0 or nj >= w);\n\
-    }\n\nint pc(ll x) {\n    return __builtin_popcountll(x);\n}\n#line 1 \"other/CompileOption.cpp\"\
-    \n#pragma GCC target(\"avx2\")\n#pragma GCC optimize(\"O3\")\n#pragma GCC optimize(\"\
-    unroll-loops\")\n#line 6 \"verify/CompileOption.test.cpp\"\n\nint main(){\n  \
-    \  int t;\n    cin >> t;\n    while(t--){\n        ll a, b;\n        cin >> a\
-    \ >> b;\n        cout << a + b << endl;\n    }\n    return 0;\n}\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/many_aplusb\"\n\n#include\
-    \ <bits/stdc++.h>\n#include \"other/Macro\"\n#include \"other/CompileOption\"\n\
-    \nint main(){\n    int t;\n    cin >> t;\n    while(t--){\n        ll a, b;\n\
-    \        cin >> a >> b;\n        cout << a + b << endl;\n    }\n    return 0;\n\
-    }"
+    }\n\nint pc(ll x) {\n    return __builtin_popcountll(x);\n}\n#line 1 \"math/prime-factorize.hpp\"\
+    \nvector<P> prime_factorize(ll n) {\n    vector<P> res;\n    for (int p = 2; (ll)p\
+    \ * p <= n; p++) {\n        if (n % p != 0) continue;\n        int num = 0;\n\
+    \        while (n % p == 0) {\n            num++;\n            n /= p;\n     \
+    \   }\n        res.push_back(make_pair(p, num));\n    }\n    if (n != 1) res.push_back(make_pair(n,\
+    \ 1));\n    return res;\n}\n#line 6 \"verify/prime-factorize.test.cpp\"\n\nint\
+    \ main() {\n    int n;\n    cin >> n;\n    auto p = prime_factorize(n);\n    cout\
+    \ << n << ':';\n    for (auto [number, val] : p) {\n        rep(i, val) cout <<\
+    \ \" \" << number;\n    }\n    cout << endl;\n    return 0;\n}\n"
+  code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_A\"\
+    \n\n#include <bits/stdc++.h>\n#include \"template\"\n#include \"math/prime-factorize\"\
+    \n\nint main() {\n    int n;\n    cin >> n;\n    auto p = prime_factorize(n);\n\
+    \    cout << n << ':';\n    for (auto [number, val] : p) {\n        rep(i, val)\
+    \ cout << \" \" << number;\n    }\n    cout << endl;\n    return 0;\n}"
   dependsOn:
-  - other/Macro.cpp
-  - other/CompileOption.cpp
+  - template.hpp
+  - math/prime-factorize.hpp
   isVerificationFile: true
-  path: verify/CompileOption.test.cpp
+  path: verify/prime-factorize.test.cpp
   requiredBy: []
-  timestamp: '2024-06-09 16:01:41+09:00'
+  timestamp: '2024-06-10 17:44:10+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: verify/CompileOption.test.cpp
+documentation_of: verify/prime-factorize.test.cpp
 layout: document
 redirect_from:
-- /verify/verify/CompileOption.test.cpp
-- /verify/verify/CompileOption.test.cpp.html
-title: verify/CompileOption.test.cpp
+- /verify/verify/prime-factorize.test.cpp
+- /verify/verify/prime-factorize.test.cpp.html
+title: verify/prime-factorize.test.cpp
 ---
