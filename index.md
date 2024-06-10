@@ -21,7 +21,7 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: other/cc.hpp
-      title: other/cc.hpp
+      title: "\u5EA7\u6A19\u5727\u7E2E"
     - icon: ':heavy_check_mark:'
       path: other/compile-option.hpp
       title: other/compile-option.hpp
@@ -32,7 +32,7 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: string/rolling-hash.hpp
-      title: RollingHash
+      title: Rolling Hash
   - name: .
     pages:
     - icon: ':heavy_check_mark:'

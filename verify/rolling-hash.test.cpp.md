@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: string/rolling-hash.hpp
-    title: RollingHash
+    title: Rolling Hash
   - icon: ':heavy_check_mark:'
     path: template.hpp
     title: template.hpp
