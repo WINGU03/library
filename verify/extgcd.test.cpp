@@ -1,8 +1,8 @@
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_E"
 
 #include <bits/stdc++.h>
-#include "other/Macro"
-#include "math/Extgcd"
+#include "template"
+#include "math/extgcd"
 
 int main() {
     int a, b;

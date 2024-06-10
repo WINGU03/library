@@ -1,6 +1,6 @@
 ---
 title: RollingHash
-documentation_of: //string/RollingHash.hpp
+documentation_of: //string/rolling-hash.hpp
 ---
 
 ## コンストラクタ
@@ -13,6 +13,12 @@ RollingHash R(string s)
 
 ```cpp
 ll get(int l, int r)
+```
+
+## all get
+
+```cpp
+ll get()
 ```
 
 ## getLCP

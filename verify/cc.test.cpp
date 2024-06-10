@@ -1,8 +1,8 @@
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/5/ALDS1_5_D"
 
 #include <bits/stdc++.h>
-#include "other/Macro"
-#include "other/CC"
+#include "template"
+#include "other/cc"
 #include <atcoder/fenwicktree>
 using namespace atcoder;
 

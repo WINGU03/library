@@ -1,8 +1,8 @@
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/14/ALDS1_14_B"
 
 #include<bits/stdc++.h>
-#include "other/Macro"
-#include "string/RollingHash"
+#include "template"
+#include "string/rolling-hash"
 
 int main() {
     string T, P;

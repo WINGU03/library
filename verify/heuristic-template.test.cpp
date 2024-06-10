@@ -1,7 +1,7 @@
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/13/ALDS1_13_B"
 
 #include <bits/stdc++.h>
-#include "other/Heuristic_Macro"
+#include "other/heuristic-template"
 
 int main() {
     int n = 3;
