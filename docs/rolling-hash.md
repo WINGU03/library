@@ -1,5 +1,5 @@
 ---
-title: RollingHash
+title: Rolling Hash
 documentation_of: //string/rolling-hash.hpp
 ---
 
@@ -12,23 +12,23 @@ RollingHash R(string s)
 ## get
 
 ```cpp
-ll get(int l, int r)
+ll R.get(int l, int r)
 ```
 
 ## all get
 
 ```cpp
-ll get()
+ll R.get()
 ```
 
 ## getLCP
 
 ```cpp
-int getLCP(int l,int r)
+int R.getLCP(int l,int r)
 ```
 
 ## getLCP(other RollingHash)
 
 ```cpp
-int getLCP(RollingHash other,int l,int r)
+int R.getLCP(RollingHash &other,int l,int r)
 ```
