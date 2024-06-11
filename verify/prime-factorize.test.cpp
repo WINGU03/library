@@ -1,8 +1,8 @@
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_A"
 
 #include <bits/stdc++.h>
-#include "template"
-#include "math/prime-factorize"
+#include "template.hpp"
+#include "math/prime-factorize.hpp"
 
 int main() {
     int n;

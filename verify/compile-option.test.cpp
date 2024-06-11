@@ -1,8 +1,8 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/many_aplusb"
 
 #include <bits/stdc++.h>
-#include "template"
-#include "other/compile-option"
+#include "template.hpp"
+#include "other/compile-option.hpp"
 
 int main(){
     int t;

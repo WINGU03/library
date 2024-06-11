@@ -1,10 +1,9 @@
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/5/ALDS1_5_D"
 
 #include <bits/stdc++.h>
-#include "template"
-#include "other/cc"
+#include "template.hpp"
+#include "other/cc.hpp"
 #include <atcoder/fenwicktree>
-using namespace atcoder;
 
 int main() {
     int n;

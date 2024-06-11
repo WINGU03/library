@@ -1,8 +1,8 @@
 #define PROBLEM "https://yukicoder.me/problems/no/888"
 
 #include <bits/stdc++.h>
-#include "template"
-#include "math/enum-divisor"
+#include "template.hpp"
+#include "math/enum-divisor.hpp"
 
 int main(){
     ll n;

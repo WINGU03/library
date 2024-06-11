@@ -2,7 +2,7 @@
 
 #include <bits/stdc++.h>
 
-#include "template"
+#include "template.hpp"
 
 #include "string/rolling-hash-tree.hpp"
 

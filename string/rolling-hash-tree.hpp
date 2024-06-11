@@ -31,7 +31,7 @@ struct RollingHashTree {
     segtree<TT, op_, e> r_seg;
     bool reverse;
 
-    RollingHashTree(const string &s = "", bool reverse_ = false)
+    explicit RollingHashTree(const string &s = "", bool reverse_ = false)
         : reverse(reverse_) {
         int n = s.size();
         seg = segtree<TT, op, e>(n);
