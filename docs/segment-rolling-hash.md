@@ -31,4 +31,8 @@ ll get(int l, int r)
 
 ## r_get
 
+```cpp
+ll r_get(int l, int r)
+```
+
 閉区間[l, r)の逆ハッシュ取得
