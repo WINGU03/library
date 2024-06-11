@@ -31,11 +31,11 @@ data:
   - name: string
     pages:
     - icon: ':heavy_check_mark:'
+      path: string/rolling-hash-tree.hpp
+      title: Rolling Hash Tree
+    - icon: ':heavy_check_mark:'
       path: string/rolling-hash.hpp
       title: Rolling Hash
-    - icon: ':heavy_check_mark:'
-      path: string/segment-rolling-hash.hpp
-      title: Segment Rolling Hash
   - name: .
     pages:
     - icon: ':heavy_check_mark:'
@@ -44,6 +44,9 @@ data:
   verificationCategories:
   - name: verify
     pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/aizu-rolling-hash.test.cpp
+      title: verify/aizu-rolling-hash.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/cc.test.cpp
       title: verify/cc.test.cpp
@@ -66,10 +69,7 @@ data:
       path: verify/rerooting.test.cpp
       title: verify/rerooting.test.cpp
     - icon: ':heavy_check_mark:'
-      path: verify/rolling-hash.test.cpp
-      title: verify/rolling-hash.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: verify/segment-rolling-hash.test.cpp
-      title: verify/segment-rolling-hash.test.cpp
+      path: verify/yuki-rolling-hash-tree.test.cpp
+      title: verify/yuki-rolling-hash-tree.test.cpp
 layout: toppage
 ---
