@@ -1,5 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
+#include <atcoder/modint>
+using namespace atcoder;
 
 #ifdef DEFINED_ONLY_IN_LOCAL
 #include <dump.hpp>

@@ -1,17 +1,18 @@
 #include <atcoder/segtree>
-using namespace atcoder;
 
 mt19937_64 r(time(0));
-const int mod1 = 1000000007, mod2 = 1000000009;
-const int base1 = r() % (mod1 - 4) + 2, base2 = r() % (mod2 - 4) + 2;
+static const int mod1 = 1000000007, mod2 = 1000000009;
+using mint1 = static_modint<mod1>;
+using mint2 = static_modint<mod2>;
+static const int base1 = r() % (mod1 - 4) + 2, base2 = r() % (mod2 - 4) + 2;
 
-using TT = tuple<int, int, int, int>;
+using TT = tuple<mint1, mint2, mint1, mint2>;
 TT op(TT l, TT r) {
     auto [a, b, c, d] = l;
     auto [e, f, g, h] = r;
-    int res1 = ((ll)a * g + e) % mod1;
-    int res2 = ((ll)b * h + f) % mod2;
-    return TT(res1, res2, ((ll)c * g) % mod1, ((ll)d * h) % mod2);
+    mint1 res1 = a * g + e;
+    mint2 res2 = b * h + f;
+    return TT(res1, res2, c * g, d * h);
 }
 TT e() {
     return TT(0, 0, 1, 1);
@@ -20,17 +21,17 @@ TT e() {
 TT op_(TT l, TT r) {
     auto [a, b, c, d] = l;
     auto [e, f, g, h] = r;
-    int res1 = ((ll)e * c + a) % mod1;
-    int res2 = ((ll)f * d + b) % mod2;
-    return TT(res1, res2, ((ll)c * g) % mod1, ((ll)d * h) % mod2);
+    mint1 res1 = e * c + a;
+    mint2 res2 = f * d + b;
+    return TT(res1, res2, c * g, d * h);
 }
 
-struct SegmentRollingHash {
+struct RollingHashTree {
     segtree<TT, op, e> seg;
     segtree<TT, op_, e> r_seg;
     bool reverse;
 
-    SegmentRollingHash(const string &s = "", bool reverse_ = false)
+    RollingHashTree(const string &s = "", bool reverse_ = false)
         : reverse(reverse_) {
         int n = s.size();
         seg = segtree<TT, op, e>(n);
@@ -48,11 +49,11 @@ struct SegmentRollingHash {
 
     inline ll get(int l, int r) {
         auto [a, b, c, d] = seg.prod(l, r);
-        return (ll)a * mod2 + b;
+        return (ll)a.val() * mod2 + b.val();
     }
 
     inline ll r_get(int l, int r) {
         auto [a, b, c, d] = r_seg.prod(l, r);
-        return (ll)a * mod2 + b;
+        return (ll)a.val() * mod2 + b.val();
     }
 };

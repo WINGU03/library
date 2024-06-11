@@ -2,7 +2,7 @@
 
 #include<bits/stdc++.h>
 #include "template"
-#include "string/rolling-hash"
+#include "string/rolling-hash.hpp"
 
 int main() {
     string T, P;
@@ -10,7 +10,7 @@ int main() {
     int N = T.size(), M = P.size();
     RollingHash RT(T), RP(P);
     rep(i, N - M + 1) {
-        if(RT.get(i, i + M) == RP.get(0, M)){
+        if(RT.get(i, i + M) == RP.get()) {
             cout << i << endl;
         }
     }

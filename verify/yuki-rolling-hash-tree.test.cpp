@@ -4,16 +4,16 @@
 
 #include "template"
 
-#include "string/segment-rolling-hash.hpp"
+#include "string/rolling-hash-tree.hpp"
 
 int main() {
     int n, l, q;
     cin >> n >> l >> q;
     vector<string> s(n);
     cin >> s;
-    vector<SegmentRollingHash> RollingHash(n);
+    vector<RollingHashTree> RollingHash(n);
     rep(i, n) {
-        RollingHash[i] = SegmentRollingHash(s[i]);
+        RollingHash[i] = RollingHashTree(s[i]);
     }
 
     while (q--) {

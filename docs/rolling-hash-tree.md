@@ -1,6 +1,6 @@
 ---
-title: Segment Rolling Hash
-documentation_of: ./string/segment-rolling-hash.hpp
+title: Rolling Hash Tree
+documentation_of: ./string/rolling-hash-tree.hpp
 ---
 
 ## コンストラクタ
