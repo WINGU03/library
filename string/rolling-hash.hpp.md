@@ -6,6 +6,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/aizu-rolling-hash.test.cpp
     title: verify/aizu-rolling-hash.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/lc-rolling-hash.test.cpp
+    title: verify/lc-rolling-hash.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -73,6 +76,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/aizu-rolling-hash.test.cpp
+  - verify/lc-rolling-hash.test.cpp
 documentation_of: string/rolling-hash.hpp
 layout: document
 title: Rolling Hash

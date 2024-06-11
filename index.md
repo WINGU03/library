@@ -63,6 +63,9 @@ data:
       path: verify/heuristic-template.test.cpp
       title: verify/heuristic-template.test.cpp
     - icon: ':heavy_check_mark:'
+      path: verify/lc-rolling-hash.test.cpp
+      title: verify/lc-rolling-hash.test.cpp
+    - icon: ':heavy_check_mark:'
       path: verify/prime-factorize.test.cpp
       title: verify/prime-factorize.test.cpp
     - icon: ':heavy_check_mark:'

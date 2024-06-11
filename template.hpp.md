@@ -19,6 +19,9 @@ data:
     path: verify/extgcd.test.cpp
     title: verify/extgcd.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/lc-rolling-hash.test.cpp
+    title: verify/lc-rolling-hash.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/prime-factorize.test.cpp
     title: verify/prime-factorize.test.cpp
   - icon: ':heavy_check_mark:'
@@ -107,6 +110,7 @@ data:
   verifiedWith:
   - verify/compile-option.test.cpp
   - verify/aizu-rolling-hash.test.cpp
+  - verify/lc-rolling-hash.test.cpp
   - verify/extgcd.test.cpp
   - verify/yuki-rolling-hash-tree.test.cpp
   - verify/prime-factorize.test.cpp
