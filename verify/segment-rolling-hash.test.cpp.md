@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: string/segment-rolling-hash.hpp
-    title: string/segment-rolling-hash.hpp
+    title: Segment Rolling Hash
   - icon: ':heavy_check_mark:'
     path: template.hpp
     title: template.hpp

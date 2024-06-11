@@ -35,7 +35,7 @@ data:
       title: Rolling Hash
     - icon: ':heavy_check_mark:'
       path: string/segment-rolling-hash.hpp
-      title: string/segment-rolling-hash.hpp
+      title: Segment Rolling Hash
   - name: .
     pages:
     - icon: ':heavy_check_mark:'
