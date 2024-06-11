@@ -24,6 +24,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/rolling-hash.test.cpp
     title: verify/rolling-hash.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/segment-rolling-hash.test.cpp
+    title: verify/segment-rolling-hash.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -101,6 +104,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/compile-option.test.cpp
+  - verify/segment-rolling-hash.test.cpp
   - verify/rolling-hash.test.cpp
   - verify/extgcd.test.cpp
   - verify/prime-factorize.test.cpp

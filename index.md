@@ -33,6 +33,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: string/rolling-hash.hpp
       title: Rolling Hash
+    - icon: ':heavy_check_mark:'
+      path: string/segment-rolling-hash.hpp
+      title: string/segment-rolling-hash.hpp
   - name: .
     pages:
     - icon: ':heavy_check_mark:'
@@ -65,5 +68,8 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/rolling-hash.test.cpp
       title: verify/rolling-hash.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/segment-rolling-hash.test.cpp
+      title: verify/segment-rolling-hash.test.cpp
 layout: toppage
 ---
