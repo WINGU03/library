@@ -6,5 +6,6 @@
 "verify/heuristic-template.test.cpp": "2024-06-10 17:44:10 +0900",
 "verify/prime-factorize.test.cpp": "2024-06-10 17:44:10 +0900",
 "verify/rerooting.test.cpp": "2024-06-10 17:44:10 +0900",
-"verify/rolling-hash.test.cpp": "2024-06-10 17:44:10 +0900"
+"verify/rolling-hash.test.cpp": "2024-06-10 17:44:10 +0900",
+"verify/segment-rolling-hash.test.cpp": "2024-06-11 17:46:25 +0900"
 }
