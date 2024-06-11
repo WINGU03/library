@@ -59,26 +59,26 @@ data:
     \ x) {\n        if (!initialized) init();\n        return mp[x];\n    }\n    T\
     \ operator[](int i) {\n        if (!initialized) init();\n        return xs[i];\n\
     \    }\n    int size() {\n        if (!initialized) init();\n        return xs.size();\n\
-    \    }\n};\n#line 6 \"verify/cc.test.cpp\"\n#include <atcoder/fenwicktree>\nusing\
-    \ namespace atcoder;\n\nint main() {\n    int n;\n    cin >> n;\n    vector<int>\
-    \ a(n);\n    cin >> a;\n    CC c;\n    rep(i, n) c.add(a[i]);\n    int m = c.size();\n\
-    \    rep(i, n) a[i] = c(a[i]);\n    fenwick_tree<int> f(m);\n    ll ans = 0;\n\
-    \    rep(i, n) {\n        ans += f.sum(a[i], m);\n        f.add(a[i], 1);\n  \
-    \  }\n    cout << ans << endl;\n    return 0;\n}\n"
+    \    }\n};\n#line 6 \"verify/cc.test.cpp\"\n#include <atcoder/fenwicktree>\n\n\
+    int main() {\n    int n;\n    cin >> n;\n    vector<int> a(n);\n    cin >> a;\n\
+    \    CC c;\n    rep(i, n) c.add(a[i]);\n    int m = c.size();\n    rep(i, n) a[i]\
+    \ = c(a[i]);\n    fenwick_tree<int> f(m);\n    ll ans = 0;\n    rep(i, n) {\n\
+    \        ans += f.sum(a[i], m);\n        f.add(a[i], 1);\n    }\n    cout << ans\
+    \ << endl;\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/5/ALDS1_5_D\"\
-    \n\n#include <bits/stdc++.h>\n#include \"template\"\n#include \"other/cc\"\n#include\
-    \ <atcoder/fenwicktree>\nusing namespace atcoder;\n\nint main() {\n    int n;\n\
-    \    cin >> n;\n    vector<int> a(n);\n    cin >> a;\n    CC c;\n    rep(i, n)\
-    \ c.add(a[i]);\n    int m = c.size();\n    rep(i, n) a[i] = c(a[i]);\n    fenwick_tree<int>\
-    \ f(m);\n    ll ans = 0;\n    rep(i, n) {\n        ans += f.sum(a[i], m);\n  \
-    \      f.add(a[i], 1);\n    }\n    cout << ans << endl;\n    return 0;\n}"
+    \n\n#include <bits/stdc++.h>\n#include \"template.hpp\"\n#include \"other/cc.hpp\"\
+    \n#include <atcoder/fenwicktree>\n\nint main() {\n    int n;\n    cin >> n;\n\
+    \    vector<int> a(n);\n    cin >> a;\n    CC c;\n    rep(i, n) c.add(a[i]);\n\
+    \    int m = c.size();\n    rep(i, n) a[i] = c(a[i]);\n    fenwick_tree<int> f(m);\n\
+    \    ll ans = 0;\n    rep(i, n) {\n        ans += f.sum(a[i], m);\n        f.add(a[i],\
+    \ 1);\n    }\n    cout << ans << endl;\n    return 0;\n}"
   dependsOn:
   - template.hpp
   - other/cc.hpp
   isVerificationFile: true
   path: verify/cc.test.cpp
   requiredBy: []
-  timestamp: '2024-06-11 21:25:26+09:00'
+  timestamp: '2024-06-11 21:35:26+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/cc.test.cpp

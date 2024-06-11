@@ -61,41 +61,42 @@ data:
     \ 0, 1, 1);\n}\n\nTT op_(TT l, TT r) {\n    auto [a, b, c, d] = l;\n    auto [e,\
     \ f, g, h] = r;\n    mint1 res1 = e * c + a;\n    mint2 res2 = f * d + b;\n  \
     \  return TT(res1, res2, c * g, d * h);\n}\n\nstruct RollingHashTree {\n    segtree<TT,\
-    \ op, e> seg;\n    segtree<TT, op_, e> r_seg;\n    bool reverse;\n\n    RollingHashTree(const\
-    \ string &s = \"\", bool reverse_ = false)\n        : reverse(reverse_) {\n  \
-    \      int n = s.size();\n        seg = segtree<TT, op, e>(n);\n        if (reverse)\
-    \ r_seg = segtree<TT, op_, e>(n);\n        rep(i, n) {\n            seg.set(i,\
-    \ TT(s[i], s[i], base1, base2));\n            if (reverse) r_seg.set(i, TT(s[i],\
-    \ s[i], base1, base2));\n        }\n    }\n\n    inline void set(int i, char c)\
-    \ {\n        seg.set(i, TT(c, c, base1, base2));\n        if (reverse) r_seg.set(i,\
-    \ TT(c, c, base1, base2));\n    }\n\n    inline ll get(int l, int r) {\n     \
-    \   auto [a, b, c, d] = seg.prod(l, r);\n        return (ll)a.val() * mod2 + b.val();\n\
-    \    }\n\n    inline ll r_get(int l, int r) {\n        auto [a, b, c, d] = r_seg.prod(l,\
-    \ r);\n        return (ll)a.val() * mod2 + b.val();\n    }\n};\n#line 8 \"verify/yuki-rolling-hash-tree.test.cpp\"\
-    \n\nint main() {\n    int n, l, q;\n    cin >> n >> l >> q;\n    vector<string>\
-    \ s(n);\n    cin >> s;\n    vector<RollingHashTree> RollingHash(n);\n    rep(i,\
-    \ n) {\n        RollingHash[i] = RollingHashTree(s[i]);\n    }\n\n    while (q--)\
-    \ {\n        int type;\n        cin >> type;\n        if (type == 1) {\n     \
-    \       int k;\n            char c, d;\n            cin >> k >> c >> d;\n    \
-    \        k--;\n            rep(i, n) {\n                if (s[i][k] == c) {\n\
-    \                    s[i][k] = d;\n                    RollingHash[i].set(k, d);\n\
-    \                }\n            }\n        } else {\n            string t;\n \
-    \           cin >> t;\n            int m = t.size();\n            ll cor1 = 0,\
-    \ cor2 = 0;\n            rep(i, m) {\n                cor1 = cor1 * base1 + t[i];\n\
-    \                cor1 %= mod1;\n            }\n            rep(i, m) {\n     \
-    \           cor2 = cor2 * base2 + t[i];\n                cor2 %= mod2;\n     \
-    \       }\n\n            int ans = 0;\n            rep(i, n) {\n             \
-    \   if (RollingHash[i].get(0, m) == cor1 * mod2 + cor2) ans++;\n            }\n\
-    \n            cout << ans << endl;\n        }\n    }\n    return 0;\n}\n"
+    \ op, e> seg;\n    segtree<TT, op_, e> r_seg;\n    bool reverse;\n\n    explicit\
+    \ RollingHashTree(const string &s = \"\", bool reverse_ = false)\n        : reverse(reverse_)\
+    \ {\n        int n = s.size();\n        seg = segtree<TT, op, e>(n);\n       \
+    \ if (reverse) r_seg = segtree<TT, op_, e>(n);\n        rep(i, n) {\n        \
+    \    seg.set(i, TT(s[i], s[i], base1, base2));\n            if (reverse) r_seg.set(i,\
+    \ TT(s[i], s[i], base1, base2));\n        }\n    }\n\n    inline void set(int\
+    \ i, char c) {\n        seg.set(i, TT(c, c, base1, base2));\n        if (reverse)\
+    \ r_seg.set(i, TT(c, c, base1, base2));\n    }\n\n    inline ll get(int l, int\
+    \ r) {\n        auto [a, b, c, d] = seg.prod(l, r);\n        return (ll)a.val()\
+    \ * mod2 + b.val();\n    }\n\n    inline ll r_get(int l, int r) {\n        auto\
+    \ [a, b, c, d] = r_seg.prod(l, r);\n        return (ll)a.val() * mod2 + b.val();\n\
+    \    }\n};\n#line 8 \"verify/yuki-rolling-hash-tree.test.cpp\"\n\nint main() {\n\
+    \    int n, l, q;\n    cin >> n >> l >> q;\n    vector<string> s(n);\n    cin\
+    \ >> s;\n    vector<RollingHashTree> RollingHash(n);\n    rep(i, n) {\n      \
+    \  RollingHash[i] = RollingHashTree(s[i]);\n    }\n\n    while (q--) {\n     \
+    \   int type;\n        cin >> type;\n        if (type == 1) {\n            int\
+    \ k;\n            char c, d;\n            cin >> k >> c >> d;\n            k--;\n\
+    \            rep(i, n) {\n                if (s[i][k] == c) {\n              \
+    \      s[i][k] = d;\n                    RollingHash[i].set(k, d);\n         \
+    \       }\n            }\n        } else {\n            string t;\n          \
+    \  cin >> t;\n            int m = t.size();\n            ll cor1 = 0, cor2 = 0;\n\
+    \            rep(i, m) {\n                cor1 = cor1 * base1 + t[i];\n      \
+    \          cor1 %= mod1;\n            }\n            rep(i, m) {\n           \
+    \     cor2 = cor2 * base2 + t[i];\n                cor2 %= mod2;\n           \
+    \ }\n\n            int ans = 0;\n            rep(i, n) {\n                if (RollingHash[i].get(0,\
+    \ m) == cor1 * mod2 + cor2) ans++;\n            }\n\n            cout << ans <<\
+    \ endl;\n        }\n    }\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://yukicoder.me/problems/no/2761\"\n\n#include <bits/stdc++.h>\n\
-    \n#include \"template\"\n\n#include \"string/rolling-hash-tree.hpp\"\n\nint main()\
-    \ {\n    int n, l, q;\n    cin >> n >> l >> q;\n    vector<string> s(n);\n   \
-    \ cin >> s;\n    vector<RollingHashTree> RollingHash(n);\n    rep(i, n) {\n  \
-    \      RollingHash[i] = RollingHashTree(s[i]);\n    }\n\n    while (q--) {\n \
-    \       int type;\n        cin >> type;\n        if (type == 1) {\n          \
-    \  int k;\n            char c, d;\n            cin >> k >> c >> d;\n         \
-    \   k--;\n            rep(i, n) {\n                if (s[i][k] == c) {\n     \
-    \               s[i][k] = d;\n                    RollingHash[i].set(k, d);\n\
+    \n#include \"template.hpp\"\n\n#include \"string/rolling-hash-tree.hpp\"\n\nint\
+    \ main() {\n    int n, l, q;\n    cin >> n >> l >> q;\n    vector<string> s(n);\n\
+    \    cin >> s;\n    vector<RollingHashTree> RollingHash(n);\n    rep(i, n) {\n\
+    \        RollingHash[i] = RollingHashTree(s[i]);\n    }\n\n    while (q--) {\n\
+    \        int type;\n        cin >> type;\n        if (type == 1) {\n         \
+    \   int k;\n            char c, d;\n            cin >> k >> c >> d;\n        \
+    \    k--;\n            rep(i, n) {\n                if (s[i][k] == c) {\n    \
+    \                s[i][k] = d;\n                    RollingHash[i].set(k, d);\n\
     \                }\n            }\n        } else {\n            string t;\n \
     \           cin >> t;\n            int m = t.size();\n            ll cor1 = 0,\
     \ cor2 = 0;\n            rep(i, m) {\n                cor1 = cor1 * base1 + t[i];\n\
@@ -110,7 +111,7 @@ data:
   isVerificationFile: true
   path: verify/yuki-rolling-hash-tree.test.cpp
   requiredBy: []
-  timestamp: '2024-06-11 21:25:26+09:00'
+  timestamp: '2024-06-11 21:35:26+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yuki-rolling-hash-tree.test.cpp

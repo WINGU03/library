@@ -56,16 +56,17 @@ data:
     \        cin >> a >> b;\n        cout << a + b << endl;\n    }\n    return 0;\n\
     }\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/many_aplusb\"\n\n#include\
-    \ <bits/stdc++.h>\n#include \"template\"\n#include \"other/compile-option\"\n\n\
-    int main(){\n    int t;\n    cin >> t;\n    while(t--){\n        ll a, b;\n  \
-    \      cin >> a >> b;\n        cout << a + b << endl;\n    }\n    return 0;\n}"
+    \ <bits/stdc++.h>\n#include \"template.hpp\"\n#include \"other/compile-option.hpp\"\
+    \n\nint main(){\n    int t;\n    cin >> t;\n    while(t--){\n        ll a, b;\n\
+    \        cin >> a >> b;\n        cout << a + b << endl;\n    }\n    return 0;\n\
+    }"
   dependsOn:
   - template.hpp
   - other/compile-option.hpp
   isVerificationFile: true
   path: verify/compile-option.test.cpp
   requiredBy: []
-  timestamp: '2024-06-11 21:25:26+09:00'
+  timestamp: '2024-06-11 21:35:26+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/compile-option.test.cpp

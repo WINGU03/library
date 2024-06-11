@@ -83,7 +83,7 @@ data:
     \ M) == RP.get()) {\n            cout << i << endl;\n        }\n    }\n    return\
     \ 0;\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/14/ALDS1_14_B\"\
-    \n\n#include<bits/stdc++.h>\n#include \"template\"\n#include \"string/rolling-hash.hpp\"\
+    \n\n#include<bits/stdc++.h>\n#include \"template.hpp\"\n#include \"string/rolling-hash.hpp\"\
     \n\nint main() {\n    string T, P;\n    cin >> T >> P;\n    int N = T.size(),\
     \ M = P.size();\n    RollingHash RT(T), RP(P);\n    rep(i, N - M + 1) {\n    \
     \    if(RT.get(i, i + M) == RP.get()) {\n            cout << i << endl;\n    \
@@ -94,7 +94,7 @@ data:
   isVerificationFile: true
   path: verify/aizu-rolling-hash.test.cpp
   requiredBy: []
-  timestamp: '2024-06-11 21:25:26+09:00'
+  timestamp: '2024-06-11 21:35:26+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aizu-rolling-hash.test.cpp

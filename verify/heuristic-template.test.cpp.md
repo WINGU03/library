@@ -58,9 +58,9 @@ data:
     \      dist[nex] = dist[cur] + 1;\n                used[nex] = true;\n       \
     \         q.push(nex);\n            }\n        }\n    }\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/13/ALDS1_13_B\"\
-    \n\n#include <bits/stdc++.h>\n#include \"other/heuristic-template\"\n\nint main()\
-    \ {\n    int n = 3;\n    vector a(n, vector<int>(3));\n    rep(i, n) rep(j, n)\
-    \ cin >> a[i][j];\n\n    vector<vector<int>> ans = {{1, 2, 3}, {4, 5, 6}, {7,\
+    \n\n#include <bits/stdc++.h>\n#include \"other/heuristic-template.hpp\"\n\nint\
+    \ main() {\n    int n = 3;\n    vector a(n, vector<int>(3));\n    rep(i, n) rep(j,\
+    \ n) cin >> a[i][j];\n\n    vector<vector<int>> ans = {{1, 2, 3}, {4, 5, 6}, {7,\
     \ 8, 0}};\n\n    if (ans == a) {\n        cout << 0 << endl;\n        return 0;\n\
     \    }\n\n    map<vector<vector<int>>, int> dist;\n    map<vector<vector<int>>,\
     \ bool> used;\n    queue<vector<vector<int>>> q;\n    used[a] = true;\n    q.push(a);\n\
@@ -78,7 +78,7 @@ data:
   isVerificationFile: true
   path: verify/heuristic-template.test.cpp
   requiredBy: []
-  timestamp: '2024-06-10 17:44:10+09:00'
+  timestamp: '2024-06-11 21:35:26+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/heuristic-template.test.cpp

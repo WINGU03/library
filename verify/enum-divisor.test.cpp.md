@@ -59,17 +59,17 @@ data:
     \ 0;\n    for (auto divisor : divisors) {\n        ans += divisor;\n    }\n  \
     \  cout << ans << endl;\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://yukicoder.me/problems/no/888\"\n\n#include <bits/stdc++.h>\n\
-    #include \"template\"\n#include \"math/enum-divisor\"\n\nint main(){\n    ll n;\n\
-    \    cin >> n;\n    auto divisors = enum_divisor(n);\n    ll ans = 0;\n    for\
-    \ (auto divisor : divisors) {\n        ans += divisor;\n    }\n    cout << ans\
-    \ << endl;\n    return 0;\n}"
+    #include \"template.hpp\"\n#include \"math/enum-divisor.hpp\"\n\nint main(){\n\
+    \    ll n;\n    cin >> n;\n    auto divisors = enum_divisor(n);\n    ll ans =\
+    \ 0;\n    for (auto divisor : divisors) {\n        ans += divisor;\n    }\n  \
+    \  cout << ans << endl;\n    return 0;\n}"
   dependsOn:
   - template.hpp
   - math/enum-divisor.hpp
   isVerificationFile: true
   path: verify/enum-divisor.test.cpp
   requiredBy: []
-  timestamp: '2024-06-11 21:25:26+09:00'
+  timestamp: '2024-06-11 21:35:26+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/enum-divisor.test.cpp

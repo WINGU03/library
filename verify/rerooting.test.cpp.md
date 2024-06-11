@@ -91,7 +91,7 @@ data:
     \   }\n    auto ans = g.run();\n    rep(i, n) {\n        cout << ans[i] << endl;\n\
     \    }\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/5/GRL_5_B\"\
-    \n\n#include <bits/stdc++.h>\n#include \"template\"\n#include \"graph/rerooting\"\
+    \n\n#include <bits/stdc++.h>\n#include \"template.hpp\"\n#include \"graph/rerooting.hpp\"\
     \n\nint merge(int a, int b) {\n    return max(a, b);\n}\nint e() {\n    return\
     \ 0;\n}\nint leaf() {\n    return 0;\n}\nint apply(int a, int c, int p, int w)\
     \ {\n    return a + w;\n}\n\nint main() {\n    int n;\n    cin >> n;\n    Rerooting<int,\
@@ -105,7 +105,7 @@ data:
   isVerificationFile: true
   path: verify/rerooting.test.cpp
   requiredBy: []
-  timestamp: '2024-06-11 21:25:26+09:00'
+  timestamp: '2024-06-11 21:35:26+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/rerooting.test.cpp

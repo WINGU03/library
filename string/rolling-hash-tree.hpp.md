@@ -22,8 +22,8 @@ data:
     \ l;\n    auto [e, f, g, h] = r;\n    mint1 res1 = e * c + a;\n    mint2 res2\
     \ = f * d + b;\n    return TT(res1, res2, c * g, d * h);\n}\n\nstruct RollingHashTree\
     \ {\n    segtree<TT, op, e> seg;\n    segtree<TT, op_, e> r_seg;\n    bool reverse;\n\
-    \n    RollingHashTree(const string &s = \"\", bool reverse_ = false)\n       \
-    \ : reverse(reverse_) {\n        int n = s.size();\n        seg = segtree<TT,\
+    \n    explicit RollingHashTree(const string &s = \"\", bool reverse_ = false)\n\
+    \        : reverse(reverse_) {\n        int n = s.size();\n        seg = segtree<TT,\
     \ op, e>(n);\n        if (reverse) r_seg = segtree<TT, op_, e>(n);\n        rep(i,\
     \ n) {\n            seg.set(i, TT(s[i], s[i], base1, base2));\n            if\
     \ (reverse) r_seg.set(i, TT(s[i], s[i], base1, base2));\n        }\n    }\n\n\
@@ -43,7 +43,7 @@ data:
     \ l, TT r) {\n    auto [a, b, c, d] = l;\n    auto [e, f, g, h] = r;\n    mint1\
     \ res1 = e * c + a;\n    mint2 res2 = f * d + b;\n    return TT(res1, res2, c\
     \ * g, d * h);\n}\n\nstruct RollingHashTree {\n    segtree<TT, op, e> seg;\n \
-    \   segtree<TT, op_, e> r_seg;\n    bool reverse;\n\n    RollingHashTree(const\
+    \   segtree<TT, op_, e> r_seg;\n    bool reverse;\n\n    explicit RollingHashTree(const\
     \ string &s = \"\", bool reverse_ = false)\n        : reverse(reverse_) {\n  \
     \      int n = s.size();\n        seg = segtree<TT, op, e>(n);\n        if (reverse)\
     \ r_seg = segtree<TT, op_, e>(n);\n        rep(i, n) {\n            seg.set(i,\
@@ -58,7 +58,7 @@ data:
   isVerificationFile: false
   path: string/rolling-hash-tree.hpp
   requiredBy: []
-  timestamp: '2024-06-11 21:25:26+09:00'
+  timestamp: '2024-06-11 21:35:26+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yuki-rolling-hash-tree.test.cpp

@@ -60,7 +60,7 @@ data:
     \ (auto [number, val] : p) {\n        rep(i, val) cout << \" \" << number;\n \
     \   }\n    cout << endl;\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_A\"\
-    \n\n#include <bits/stdc++.h>\n#include \"template\"\n#include \"math/prime-factorize\"\
+    \n\n#include <bits/stdc++.h>\n#include \"template.hpp\"\n#include \"math/prime-factorize.hpp\"\
     \n\nint main() {\n    int n;\n    cin >> n;\n    auto p = prime_factorize(n);\n\
     \    cout << n << ':';\n    for (auto [number, val] : p) {\n        rep(i, val)\
     \ cout << \" \" << number;\n    }\n    cout << endl;\n    return 0;\n}"
@@ -70,7 +70,7 @@ data:
   isVerificationFile: true
   path: verify/prime-factorize.test.cpp
   requiredBy: []
-  timestamp: '2024-06-11 21:25:26+09:00'
+  timestamp: '2024-06-11 21:35:26+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/prime-factorize.test.cpp
