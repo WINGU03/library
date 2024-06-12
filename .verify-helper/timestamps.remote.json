@@ -5,6 +5,7 @@
 "verify/enum-divisor.test.cpp": "2024-06-11 21:35:26 +0900",
 "verify/extgcd.test.cpp": "2024-06-11 21:35:26 +0900",
 "verify/heuristic-template.test.cpp": "2024-06-11 21:35:26 +0900",
+"verify/lc-rolling-hash.test.cpp": "2024-06-12 16:37:10 +0900",
 "verify/lc-rolling-hash2.test.cpp": "2024-06-12 15:03:14 +0900",
 "verify/prime-factorize.test.cpp": "2024-06-11 21:35:26 +0900",
 "verify/rerooting.test.cpp": "2024-06-11 21:35:26 +0900",
