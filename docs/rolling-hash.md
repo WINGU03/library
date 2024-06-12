@@ -15,20 +15,46 @@ RollingHash R(string s)
 ll R.get(int l, int r)
 ```
 
+閉区間[l, r) のハッシュを返す。
+
+$O(1)$
+
 ## all get
 
 ```cpp
 ll R.get()
 ```
 
-## getLCP
+S[0:] のハッシュを返す。
+
+$O(1)$
+
+## lcp
 
 ```cpp
-int R.getLCP(int l,int r)
+int R.lcp(int a,int b)
 ```
 
-## getLCP(other RollingHash)
+S[a:] と S[b:] の 最長共通部分接頭辞(LCP)を返す。
+
+$O(logN)$
+
+## lcp(other RollingHash)
 
 ```cpp
-int R.getLCP(RollingHash &other,int l,int r)
+int R.lcp(RollingHash &other,int a,int b)
 ```
+
+S[l:] と T[b:] の 最長共通部分接頭辞(LCP)を返す。
+
+$O(logN)$
+
+## suffix_array
+
+```cpp
+vector<int> suffix_array()
+```
+
+S の 接尾辞配列(Suffix-Array)を返す。
+
+$O(log(N)^2)$
