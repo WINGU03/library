@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: string/rolling-hash.hpp
     title: Rolling Hash
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
@@ -55,33 +55,37 @@ data:
     \ mod1 = 1000000007, mod2 = 1000000009;\nusing mint1 = static_modint<mod1>;\n\
     using mint2 = static_modint<mod2>;\nstatic const int base1 = r() % (mod1 - 4)\
     \ + 2, base2 = r() % (mod2 - 4) + 2;\n\nstruct RollingHash {\n    vector<mint1>\
-    \ hash1, power1;\n    vector<mint2> hash2, power2;\n    int n;\n\n    explicit\
-    \ RollingHash(const string &S = \"\") {\n        n = (int)S.size();\n        hash1.assign(n\
-    \ + 1, 0), hash2.assign(n + 1, 0);\n        power1.assign(n + 1, 1), power2.assign(n\
-    \ + 1, 1);\n        for (int i = 0; i < n; ++i) {\n            hash1[i + 1] =\
-    \ hash1[i] * base1 + S[i];\n            hash2[i + 1] = hash2[i] * base2 + S[i];\n\
-    \            power1[i + 1] = power1[i] * base1;\n            power2[i + 1] = power2[i]\
-    \ * base2;\n        }\n    }\n\n    inline long long get(int l, int r) const {\n\
-    \        mint1 res1 = hash1[r] - hash1[l] * power1[r - l];\n        mint2 res2\
-    \ = hash2[r] - hash2[l] * power2[r - l];\n        return (ll)res1.val() * mod2\
-    \ + res2.val();\n    }\n\n    inline long long get() const {\n        return (ll)hash1.back().val()\
-    \ * mod2 + hash2.back().val();\n    }\n\n    inline int getLCP(int a, int b) const\
+    \ hash1, power1;\n    vector<mint2> hash2, power2;\n    int n;\n    string s;\n\
+    \n    explicit RollingHash(const string &S = \"\") {\n        s = S;\n       \
+    \ n = (int)S.size();\n        hash1.assign(n + 1, 0), hash2.assign(n + 1, 0);\n\
+    \        power1.assign(n + 1, 1), power2.assign(n + 1, 1);\n        for (int i\
+    \ = 0; i < n; ++i) {\n            hash1[i + 1] = hash1[i] * base1 + S[i];\n  \
+    \          hash2[i + 1] = hash2[i] * base2 + S[i];\n            power1[i + 1]\
+    \ = power1[i] * base1;\n            power2[i + 1] = power2[i] * base2;\n     \
+    \   }\n    }\n\n    inline long long get(int l, int r) const {\n        mint1\
+    \ res1 = hash1[r] - hash1[l] * power1[r - l];\n        mint2 res2 = hash2[r] -\
+    \ hash2[l] * power2[r - l];\n        return (ll)res1.val() * mod2 + res2.val();\n\
+    \    }\n\n    inline long long get() const {\n        return (ll)hash1.back().val()\
+    \ * mod2 + hash2.back().val();\n    }\n\n    inline int lcp(int a, int b) const\
     \ {\n        int len = min((int)hash1.size() - a, (int)hash1.size() - b);\n  \
     \      int left = 0, right = len;\n        while (right - left > 1) {\n      \
     \      int mid = (left + right) / 2;\n            if (get(a, a + mid) != get(b,\
     \ b + mid)) {\n                right = mid;\n            } else {\n          \
     \      left = mid;\n            }\n        }\n        return left;\n    }\n\n\
-    \    // get lcp of S[a:] and T[b:]\n    inline int getLCP(const RollingHash &T,\
-    \ int a, int b) const {\n        int len = min((int)hash1.size() - a, (int)hash1.size()\
-    \ - b);\n        int left = 0, right = len;\n        while (right - left > 1)\
-    \ {\n            int mid = (left + right) / 2;\n            if (get(a, a + mid)\
-    \ != T.get(b, b + mid)) {\n                right = mid;\n            } else {\n\
-    \                left = mid;\n            }\n        }\n        return left;\n\
-    \    }\n};\n#line 6 \"verify/aizu-rolling-hash.test.cpp\"\n\nint main() {\n  \
-    \  string T, P;\n    cin >> T >> P;\n    int N = T.size(), M = P.size();\n   \
-    \ RollingHash RT(T), RP(P);\n    rep(i, N - M + 1) {\n        if(RT.get(i, i +\
-    \ M) == RP.get()) {\n            cout << i << endl;\n        }\n    }\n    return\
-    \ 0;\n}\n"
+    \    inline int lcp(const RollingHash &T, int a, int b) const {\n        int len\
+    \ = min((int)hash1.size() - a, (int)hash1.size() - b);\n        int left = 0,\
+    \ right = len;\n        while (right - left > 1) {\n            int mid = (left\
+    \ + right) / 2;\n            if (get(a, a + mid) != T.get(b, b + mid)) {\n   \
+    \             right = mid;\n            } else {\n                left = mid;\n\
+    \            }\n        }\n        return left;\n    }\n\n    inline vector<int>\
+    \ suffix_array() {\n        vector<int> p(n);\n        iota(all(p), 0);\n    \
+    \    sort(all(p), [&](int i,int j){\n            int k = lcp(i, j);\n        \
+    \    return i+k >= n ? true : j+k >= n ? false : s[i+k] <= s[j+k];\n        });\n\
+    \        return p;\n    }\n};\n#line 6 \"verify/aizu-rolling-hash.test.cpp\"\n\
+    \nint main() {\n    string T, P;\n    cin >> T >> P;\n    int N = T.size(), M\
+    \ = P.size();\n    RollingHash RT(T), RP(P);\n    rep(i, N - M + 1) {\n      \
+    \  if(RT.get(i, i + M) == RP.get()) {\n            cout << i << endl;\n      \
+    \  }\n    }\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/14/ALDS1_14_B\"\
     \n\n#include<bits/stdc++.h>\n#include \"template.hpp\"\n#include \"string/rolling-hash.hpp\"\
     \n\nint main() {\n    string T, P;\n    cin >> T >> P;\n    int N = T.size(),\
@@ -94,7 +98,7 @@ data:
   isVerificationFile: true
   path: verify/aizu-rolling-hash.test.cpp
   requiredBy: []
-  timestamp: '2024-06-11 21:35:26+09:00'
+  timestamp: '2024-06-12 15:03:14+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aizu-rolling-hash.test.cpp

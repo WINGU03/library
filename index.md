@@ -33,12 +33,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: string/rolling-hash-tree.hpp
       title: Rolling Hash Tree
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: string/rolling-hash.hpp
       title: Rolling Hash
   - name: .
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template.hpp
       title: template.hpp
   verificationCategories:
@@ -62,9 +62,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/heuristic-template.test.cpp
       title: verify/heuristic-template.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/lc-rolling-hash.test.cpp
       title: verify/lc-rolling-hash.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/lc-rolling-hash2.test.cpp
+      title: verify/lc-rolling-hash2.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/prime-factorize.test.cpp
       title: verify/prime-factorize.test.cpp

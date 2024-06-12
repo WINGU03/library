@@ -18,9 +18,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/extgcd.test.cpp
     title: verify/extgcd.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/lc-rolling-hash.test.cpp
     title: verify/lc-rolling-hash.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/lc-rolling-hash2.test.cpp
+    title: verify/lc-rolling-hash2.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/prime-factorize.test.cpp
     title: verify/prime-factorize.test.cpp
@@ -30,9 +33,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yuki-rolling-hash-tree.test.cpp
     title: verify/yuki-rolling-hash-tree.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"template.hpp\"\n#include <bits/stdc++.h>\nusing namespace\
@@ -106,7 +109,7 @@ data:
   path: template.hpp
   requiredBy: []
   timestamp: '2024-06-11 21:25:26+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/compile-option.test.cpp
   - verify/aizu-rolling-hash.test.cpp
@@ -117,6 +120,7 @@ data:
   - verify/rerooting.test.cpp
   - verify/cc.test.cpp
   - verify/enum-divisor.test.cpp
+  - verify/lc-rolling-hash2.test.cpp
 documentation_of: template.hpp
 layout: document
 redirect_from:

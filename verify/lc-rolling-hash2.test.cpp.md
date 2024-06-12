@@ -9,15 +9,15 @@ data:
     title: template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.yosupo.jp/problem/enumerate_palindromes
+    PROBLEM: https://judge.yosupo.jp/problem/suffixarray
     links:
-    - https://judge.yosupo.jp/problem/enumerate_palindromes
-  bundledCode: "#line 1 \"verify/lc-rolling-hash.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/enumerate_palindromes\"\
+    - https://judge.yosupo.jp/problem/suffixarray
+  bundledCode: "#line 1 \"verify/lc-rolling-hash2.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/suffixarray\"\
     \n\n#include <bits/stdc++.h>\n\n#line 2 \"template.hpp\"\nusing namespace std;\n\
     #include <atcoder/modint>\nusing namespace atcoder;\n\n#ifdef DEFINED_ONLY_IN_LOCAL\n\
     #include <dump.hpp>\n#define dump(...) cpp_dump(__VA_ARGS__)\n#else\n#undef dump\n\
@@ -50,7 +50,7 @@ data:
     n';\n    return os;\n}\n\nbool bit(ll x, int p) {\n    return (x >> p) & 1;\n\
     }\n\nbool out(int ni, int nj, int h, int w) {\n    return (ni < 0 or ni >= h or\
     \ nj < 0 or nj >= w);\n}\n\nint pc(ll x) {\n    return __builtin_popcountll(x);\n\
-    }\n#line 6 \"verify/lc-rolling-hash.test.cpp\"\n\n#line 1 \"string/rolling-hash.hpp\"\
+    }\n#line 6 \"verify/lc-rolling-hash2.test.cpp\"\n\n#line 1 \"string/rolling-hash.hpp\"\
     \nmt19937_64 r(time(0));\nstatic const int mod1 = 1000000007, mod2 = 1000000009;\n\
     using mint1 = static_modint<mod1>;\nusing mint2 = static_modint<mod2>;\nstatic\
     \ const int base1 = r() % (mod1 - 4) + 2, base2 = r() % (mod2 - 4) + 2;\n\nstruct\
@@ -80,34 +80,26 @@ data:
     \ suffix_array() {\n        vector<int> p(n);\n        iota(all(p), 0);\n    \
     \    sort(all(p), [&](int i,int j){\n            int k = lcp(i, j);\n        \
     \    return i+k >= n ? true : j+k >= n ? false : s[i+k] <= s[j+k];\n        });\n\
-    \        return p;\n    }\n};\n#line 8 \"verify/lc-rolling-hash.test.cpp\"\n\n\
-    int main() {\n    string s;\n    cin >> s;\n    int n = s.size();\n\n    RollingHash\
-    \ rol(s);\n\n    reverse(all(s));\n    RollingHash reverse_rol(s);\n\n    rep(i,\
-    \ n - 1) {\n        int ans1 = rol.getLCP(reverse_rol, i, n - i - 1);\n      \
-    \  int ans2 = rol.getLCP(reverse_rol, i + 1, n - i - 1);\n\n        cout << ans1\
-    \ * 2 - 1 << \" \" << ans2 * 2 << \" \";\n    }\n    cout << rol.getLCP(reverse_rol,\
-    \ n - 1, 0) * 2 - 1 << endl;\n    return 0;\n}\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/enumerate_palindromes\"\
-    \n\n#include <bits/stdc++.h>\n\n#include \"template.hpp\"\n\n#include \"string/rolling-hash.hpp\"\
-    \n\nint main() {\n    string s;\n    cin >> s;\n    int n = s.size();\n\n    RollingHash\
-    \ rol(s);\n\n    reverse(all(s));\n    RollingHash reverse_rol(s);\n\n    rep(i,\
-    \ n - 1) {\n        int ans1 = rol.getLCP(reverse_rol, i, n - i - 1);\n      \
-    \  int ans2 = rol.getLCP(reverse_rol, i + 1, n - i - 1);\n\n        cout << ans1\
-    \ * 2 - 1 << \" \" << ans2 * 2 << \" \";\n    }\n    cout << rol.getLCP(reverse_rol,\
-    \ n - 1, 0) * 2 - 1 << endl;\n    return 0;\n}"
+    \        return p;\n    }\n};\n#line 8 \"verify/lc-rolling-hash2.test.cpp\"\n\n\
+    int main(){\n    string s;\n    cin >> s;\n    RollingHash rol(s);\n    auto ans\
+    \ = rol.suffix_array();\n    cout << ans;\n    return 0;\n}\n"
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/suffixarray\"\n\n#include\
+    \ <bits/stdc++.h>\n\n#include \"template.hpp\"\n\n#include \"string/rolling-hash.hpp\"\
+    \n\nint main(){\n    string s;\n    cin >> s;\n    RollingHash rol(s);\n    auto\
+    \ ans = rol.suffix_array();\n    cout << ans;\n    return 0;\n}"
   dependsOn:
   - template.hpp
   - string/rolling-hash.hpp
   isVerificationFile: true
-  path: verify/lc-rolling-hash.test.cpp
+  path: verify/lc-rolling-hash2.test.cpp
   requiredBy: []
   timestamp: '2024-06-12 15:03:14+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: verify/lc-rolling-hash.test.cpp
+documentation_of: verify/lc-rolling-hash2.test.cpp
 layout: document
 redirect_from:
-- /verify/verify/lc-rolling-hash.test.cpp
-- /verify/verify/lc-rolling-hash.test.cpp.html
-title: verify/lc-rolling-hash.test.cpp
+- /verify/verify/lc-rolling-hash2.test.cpp
+- /verify/verify/lc-rolling-hash2.test.cpp.html
+title: verify/lc-rolling-hash2.test.cpp
 ---
