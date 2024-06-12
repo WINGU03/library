@@ -6,15 +6,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/aizu-rolling-hash.test.cpp
     title: verify/aizu-rolling-hash.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/lc-rolling-hash.test.cpp
     title: verify/lc-rolling-hash.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/lc-rolling-hash2.test.cpp
     title: verify/lc-rolling-hash2.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"string/rolling-hash.hpp\"\nmt19937_64 r(time(0));\nstatic\
@@ -83,7 +83,7 @@ data:
   path: string/rolling-hash.hpp
   requiredBy: []
   timestamp: '2024-06-12 15:03:14+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/aizu-rolling-hash.test.cpp
   - verify/lc-rolling-hash.test.cpp

@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: string/rolling-hash.hpp
     title: Rolling Hash
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/enumerate_palindromes
@@ -83,26 +83,26 @@ data:
     \        return p;\n    }\n};\n#line 8 \"verify/lc-rolling-hash.test.cpp\"\n\n\
     int main() {\n    string s;\n    cin >> s;\n    int n = s.size();\n\n    RollingHash\
     \ rol(s);\n\n    reverse(all(s));\n    RollingHash reverse_rol(s);\n\n    rep(i,\
-    \ n - 1) {\n        int ans1 = rol.getLCP(reverse_rol, i, n - i - 1);\n      \
-    \  int ans2 = rol.getLCP(reverse_rol, i + 1, n - i - 1);\n\n        cout << ans1\
-    \ * 2 - 1 << \" \" << ans2 * 2 << \" \";\n    }\n    cout << rol.getLCP(reverse_rol,\
-    \ n - 1, 0) * 2 - 1 << endl;\n    return 0;\n}\n"
+    \ n - 1) {\n        int ans1 = rol.lcp(reverse_rol, i, n - i - 1);\n        int\
+    \ ans2 = rol.lcp(reverse_rol, i + 1, n - i - 1);\n\n        cout << ans1 * 2 -\
+    \ 1 << \" \" << ans2 * 2 << \" \";\n    }\n    cout << rol.lcp(reverse_rol, n\
+    \ - 1, 0) * 2 - 1 << endl;\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/enumerate_palindromes\"\
     \n\n#include <bits/stdc++.h>\n\n#include \"template.hpp\"\n\n#include \"string/rolling-hash.hpp\"\
     \n\nint main() {\n    string s;\n    cin >> s;\n    int n = s.size();\n\n    RollingHash\
     \ rol(s);\n\n    reverse(all(s));\n    RollingHash reverse_rol(s);\n\n    rep(i,\
-    \ n - 1) {\n        int ans1 = rol.getLCP(reverse_rol, i, n - i - 1);\n      \
-    \  int ans2 = rol.getLCP(reverse_rol, i + 1, n - i - 1);\n\n        cout << ans1\
-    \ * 2 - 1 << \" \" << ans2 * 2 << \" \";\n    }\n    cout << rol.getLCP(reverse_rol,\
-    \ n - 1, 0) * 2 - 1 << endl;\n    return 0;\n}"
+    \ n - 1) {\n        int ans1 = rol.lcp(reverse_rol, i, n - i - 1);\n        int\
+    \ ans2 = rol.lcp(reverse_rol, i + 1, n - i - 1);\n\n        cout << ans1 * 2 -\
+    \ 1 << \" \" << ans2 * 2 << \" \";\n    }\n    cout << rol.lcp(reverse_rol, n\
+    \ - 1, 0) * 2 - 1 << endl;\n    return 0;\n}"
   dependsOn:
   - template.hpp
   - string/rolling-hash.hpp
   isVerificationFile: true
   path: verify/lc-rolling-hash.test.cpp
   requiredBy: []
-  timestamp: '2024-06-12 15:03:14+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-06-12 16:37:10+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/lc-rolling-hash.test.cpp
 layout: document
