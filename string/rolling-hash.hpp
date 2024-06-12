@@ -8,8 +8,10 @@ struct RollingHash {
     vector<mint1> hash1, power1;
     vector<mint2> hash2, power2;
     int n;
+    string s;
 
     explicit RollingHash(const string &S = "") {
+        s = S;
         n = (int)S.size();
         hash1.assign(n + 1, 0), hash2.assign(n + 1, 0);
         power1.assign(n + 1, 1), power2.assign(n + 1, 1);
@@ -31,7 +33,7 @@ struct RollingHash {
         return (ll)hash1.back().val() * mod2 + hash2.back().val();
     }
 
-    inline int getLCP(int a, int b) const {
+    inline int lcp(int a, int b) const {
         int len = min((int)hash1.size() - a, (int)hash1.size() - b);
         int left = 0, right = len;
         while (right - left > 1) {
@@ -45,8 +47,7 @@ struct RollingHash {
         return left;
     }
 
-    // get lcp of S[a:] and T[b:]
-    inline int getLCP(const RollingHash &T, int a, int b) const {
+    inline int lcp(const RollingHash &T, int a, int b) const {
         int len = min((int)hash1.size() - a, (int)hash1.size() - b);
         int left = 0, right = len;
         while (right - left > 1) {
@@ -58,5 +59,15 @@ struct RollingHash {
             }
         }
         return left;
+    }
+
+    inline vector<int> suffix_array() {
+        vector<int> p(n);
+        iota(all(p), 0);
+        sort(all(p), [&](int i,int j){
+            int k = lcp(i, j);
+            return i+k >= n ? true : j+k >= n ? false : s[i+k] <= s[j+k];
+        });
+        return p;
     }
 };
