@@ -135,7 +135,7 @@ $O(logN)$
 int R.lcp(RollingHash &other,int a,int b)
 ```
 
-S[l:] と T[b:] の 最長共通部分接頭辞(LCP)を返す。
+S[a:] と T[b:] の 最長共通部分接頭辞(LCP)を返す。
 
 $O(logN)$
 
@@ -147,4 +147,4 @@ vector<int> suffix_array()
 
 S の 接尾辞配列(Suffix-Array)を返す。
 
-$O(log(N)^2)$
+$O(Nlog(N)^2)$
