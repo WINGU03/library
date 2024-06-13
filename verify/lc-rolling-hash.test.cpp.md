@@ -28,60 +28,60 @@ data:
     #define rrep(i, a, b) for (int i = (int)(a); i <= (int)(b); i++)\n#define drep(i,\
     \ a, b) for (int i = (int)(a); i >= (int)(b); i--)\n#define all(a) a.begin(),\
     \ a.end()\n#define rall(a) a.rbegin(), a.rend()\nusing ll = long long;\nusing\
-    \ P = pair<ll, ll>;\nusing T = tuple<ll, ll, ll>;\nconst int inf = 1e9;\nconst\
-    \ ll INF = 1e18;\nconst int dx[4] = {0, 1, 0, -1};\nconst int dy[4] = {1, 0, -1,\
-    \ 0};\n\nstruct cincout {\n    cincout() {\n        ios_base::sync_with_stdio(false);\n\
-    \        cin.tie(nullptr);\n        cout << fixed << setprecision(15);\n    }\n\
-    } init;\n\ntemplate <class T>\ninline bool chmax(T &a, T b) {\n    if (a < b)\
-    \ {\n        a = b;\n        return true;\n    }\n    return false;\n}\n\ntemplate\
-    \ <class T>\ninline bool chmin(T &a, T b) {\n    if (a > b) {\n        a = b;\n\
-    \        return true;\n    }\n    return false;\n}\n\ntemplate <class T>\nistream\
-    \ &operator>>(istream &is, vector<T> &v) {\n    for (T &in : v) {\n        is\
-    \ >> in;\n    }\n    return is;\n}\n\ntemplate <class T>\nostream &operator<<(ostream\
-    \ &os, const vector<T> &v) {\n    rep(i, (int)v.size()) {\n        os << v[i]\
-    \ << \" \\n\"[i + 1 == (int)v.size()];\n    }\n    return os;\n}\n\ntemplate <class\
-    \ T>\nistream &operator>>(istream &is, vector<vector<T>> &vv) {\n    for (vector<T>\
-    \ &v : vv) {\n        is >> v;\n    }\n    return is;\n}\n\ntemplate <class T>\n\
-    ostream &operator<<(ostream &os, vector<vector<T>> &vv) {\n    for (vector<T>\
-    \ &v : vv) {\n        os << v;\n    }\n    return os;\n}\n\ntemplate <class T1,\
-    \ class T2>\nistream &operator>>(istream &is, pair<T1, T2> &p) {\n    is >> p.first\
-    \ >> p.second;\n    return is;\n}\n\ntemplate <class T1, class T2>\nostream &operator<<(ostream\
-    \ &os, const pair<T1, T2> &p) {\n    os << p.first << \" \" << p.second << '\\\
-    n';\n    return os;\n}\n\nbool bit(ll x, int p) {\n    return (x >> p) & 1;\n\
-    }\n\nbool out(int ni, int nj, int h, int w) {\n    return (ni < 0 or ni >= h or\
-    \ nj < 0 or nj >= w);\n}\n\nint pc(ll x) {\n    return __builtin_popcountll(x);\n\
-    }\n#line 6 \"verify/lc-rolling-hash.test.cpp\"\n\n#line 1 \"string/rolling-hash.hpp\"\
-    \nmt19937_64 r(time(0));\nstatic const int mod1 = 1000000007, mod2 = 1000000009;\n\
-    using mint1 = static_modint<mod1>;\nusing mint2 = static_modint<mod2>;\nstatic\
-    \ const int base1 = r() % (mod1 - 4) + 2, base2 = r() % (mod2 - 4) + 2;\n\nstruct\
-    \ RollingHash {\n    vector<mint1> hash1, power1;\n    vector<mint2> hash2, power2;\n\
-    \    int n;\n    string s;\n\n    explicit RollingHash(const string &S = \"\"\
-    ) {\n        s = S;\n        n = (int)S.size();\n        hash1.assign(n + 1, 0),\
-    \ hash2.assign(n + 1, 0);\n        power1.assign(n + 1, 1), power2.assign(n +\
-    \ 1, 1);\n        for (int i = 0; i < n; ++i) {\n            hash1[i + 1] = hash1[i]\
-    \ * base1 + S[i];\n            hash2[i + 1] = hash2[i] * base2 + S[i];\n     \
-    \       power1[i + 1] = power1[i] * base1;\n            power2[i + 1] = power2[i]\
-    \ * base2;\n        }\n    }\n\n    inline long long get(int l, int r) const {\n\
-    \        mint1 res1 = hash1[r] - hash1[l] * power1[r - l];\n        mint2 res2\
-    \ = hash2[r] - hash2[l] * power2[r - l];\n        return (ll)res1.val() * mod2\
-    \ + res2.val();\n    }\n\n    inline long long get() const {\n        return (ll)hash1.back().val()\
-    \ * mod2 + hash2.back().val();\n    }\n\n    inline int lcp(int a, int b) const\
-    \ {\n        int len = min((int)hash1.size() - a, (int)hash1.size() - b);\n  \
-    \      int left = 0, right = len;\n        while (right - left > 1) {\n      \
-    \      int mid = (left + right) / 2;\n            if (get(a, a + mid) != get(b,\
-    \ b + mid)) {\n                right = mid;\n            } else {\n          \
-    \      left = mid;\n            }\n        }\n        return left;\n    }\n\n\
-    \    inline int lcp(const RollingHash &T, int a, int b) const {\n        int len\
-    \ = min((int)hash1.size() - a, (int)hash1.size() - b);\n        int left = 0,\
-    \ right = len;\n        while (right - left > 1) {\n            int mid = (left\
-    \ + right) / 2;\n            if (get(a, a + mid) != T.get(b, b + mid)) {\n   \
-    \             right = mid;\n            } else {\n                left = mid;\n\
-    \            }\n        }\n        return left;\n    }\n\n    inline vector<int>\
-    \ suffix_array() {\n        vector<int> p(n);\n        iota(all(p), 0);\n    \
-    \    sort(all(p), [&](int i,int j){\n            int k = lcp(i, j);\n        \
-    \    return i+k >= n ? true : j+k >= n ? false : s[i+k] <= s[j+k];\n        });\n\
-    \        return p;\n    }\n};\n#line 8 \"verify/lc-rolling-hash.test.cpp\"\n\n\
-    int main() {\n    string s;\n    cin >> s;\n    int n = s.size();\n\n    RollingHash\
+    \ ull = unsigned long long;\nusing P = pair<ll, ll>;\nusing T = tuple<ll, ll,\
+    \ ll>;\nconst int inf = 1e9;\nconst ll INF = 1e18;\nconst int dx[4] = {0, 1, 0,\
+    \ -1};\nconst int dy[4] = {1, 0, -1, 0};\n\nstruct cincout {\n    cincout() {\n\
+    \        ios_base::sync_with_stdio(false);\n        cin.tie(nullptr);\n      \
+    \  cout << fixed << setprecision(15);\n    }\n} init;\n\ntemplate <class T>\n\
+    inline bool chmax(T &a, T b) {\n    if (a < b) {\n        a = b;\n        return\
+    \ true;\n    }\n    return false;\n}\n\ntemplate <class T>\ninline bool chmin(T\
+    \ &a, T b) {\n    if (a > b) {\n        a = b;\n        return true;\n    }\n\
+    \    return false;\n}\n\ntemplate <class T>\nistream &operator>>(istream &is,\
+    \ vector<T> &v) {\n    for (T &in : v) {\n        is >> in;\n    }\n    return\
+    \ is;\n}\n\ntemplate <class T>\nostream &operator<<(ostream &os, const vector<T>\
+    \ &v) {\n    rep(i, (int)v.size()) {\n        os << v[i] << \" \\n\"[i + 1 ==\
+    \ (int)v.size()];\n    }\n    return os;\n}\n\ntemplate <class T>\nistream &operator>>(istream\
+    \ &is, vector<vector<T>> &vv) {\n    for (vector<T> &v : vv) {\n        is >>\
+    \ v;\n    }\n    return is;\n}\n\ntemplate <class T>\nostream &operator<<(ostream\
+    \ &os, vector<vector<T>> &vv) {\n    for (vector<T> &v : vv) {\n        os <<\
+    \ v;\n    }\n    return os;\n}\n\ntemplate <class T1, class T2>\nistream &operator>>(istream\
+    \ &is, pair<T1, T2> &p) {\n    is >> p.first >> p.second;\n    return is;\n}\n\
+    \ntemplate <class T1, class T2>\nostream &operator<<(ostream &os, const pair<T1,\
+    \ T2> &p) {\n    os << p.first << \" \" << p.second << '\\n';\n    return os;\n\
+    }\n\nbool bit(ll x, int p) {\n    return (x >> p) & 1;\n}\n\nbool out(int ni,\
+    \ int nj, int h, int w) {\n    return (ni < 0 or ni >= h or nj < 0 or nj >= w);\n\
+    }\n\nint pc(ll x) {\n    return __builtin_popcountll(x);\n}\n#line 6 \"verify/lc-rolling-hash.test.cpp\"\
+    \n\n#line 1 \"string/rolling-hash.hpp\"\nmt19937_64 r(time(0));\nstatic constexpr\
+    \ ll mod = (1LL << 61) - 1;\nstatic const ll base = r() % (mod - 4) + 2;\n\nstruct\
+    \ RollingHash {\n    using i128 = __int128_t;\n    vector<ll> hash, power;\n \
+    \   int n;\n    string s;\n\n    inline ll add(ll a, ll b) const {\n        if\
+    \ ((a += b) >= mod) a -= mod;\n        return a;\n    }\n\n    inline ll mul(ll\
+    \ a, ll b) const {\n        i128 x = (i128)a * b;\n        return add(x >> 61,\
+    \ x & mod);\n    }\n\n    explicit RollingHash(const string& S) {\n        n =\
+    \ (int)S.size();\n        s = S;\n        hash.resize(n + 1, 0);\n        power.resize(n\
+    \ + 1, 1);\n        for (int i = 0; i < n; i++) {\n            hash[i + 1] = add(mul(hash[i],\
+    \ base), S[i]);\n            power[i + 1] = mul(power[i], base);\n        }\n\
+    \    }\n\n    inline ll get(int l, int r) const {\n        return add(hash[r],\
+    \ mod - mul(hash[l], power[r - l]));\n    }\n\n    inline ll get() const {\n \
+    \       return hash.back();\n    }\n\n    inline ll connect(ll hash1, ll hash2,\
+    \ int hash2_len) const {\n        return add(mul(hash1, power[hash2_len]), hash2);\n\
+    \    }\n\n    inline int lcp(int a, int b) const {\n        int len = min((int)hash.size()\
+    \ - a, (int)hash.size() - b);\n        int left = 0, right = len;\n        while\
+    \ (right - left > 1) {\n            int mid = (left + right) / 2;\n          \
+    \  if (get(a, a + mid) != get(b, b + mid)) {\n                right = mid;\n \
+    \           } else {\n                left = mid;\n            }\n        }\n\
+    \        return left;\n    }\n\n    inline int lcp(const RollingHash& T, int a,\
+    \ int b) const {\n        int len = min((int)hash.size() - a, (int)hash.size()\
+    \ - b);\n        int left = 0, right = len;\n        while (right - left > 1)\
+    \ {\n            int mid = (left + right) / 2;\n            if (get(a, a + mid)\
+    \ != T.get(b, b + mid)) {\n                right = mid;\n            } else {\n\
+    \                left = mid;\n            }\n        }\n        return left;\n\
+    \    }\n\n    inline vector<int> suffix_array() {\n        vector<int> p(n);\n\
+    \        iota(all(p), 0);\n        sort(all(p), [&](int i, int j) {\n        \
+    \    int k = lcp(i, j);\n            if (i + k >= n) return true;\n          \
+    \  if (j + k >= n) return false;\n            return (s[i + k] <= s[j + k]);\n\
+    \        });\n        return p;\n    }\n};\n#line 8 \"verify/lc-rolling-hash.test.cpp\"\
+    \n\nint main() {\n    string s;\n    cin >> s;\n    int n = s.size();\n\n    RollingHash\
     \ rol(s);\n\n    reverse(all(s));\n    RollingHash reverse_rol(s);\n\n    rep(i,\
     \ n - 1) {\n        int ans1 = rol.lcp(reverse_rol, i, n - i - 1);\n        int\
     \ ans2 = rol.lcp(reverse_rol, i + 1, n - i - 1);\n\n        cout << ans1 * 2 -\
@@ -101,7 +101,7 @@ data:
   isVerificationFile: true
   path: verify/lc-rolling-hash.test.cpp
   requiredBy: []
-  timestamp: '2024-06-12 16:37:10+09:00'
+  timestamp: '2024-06-13 19:27:31+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/lc-rolling-hash.test.cpp
