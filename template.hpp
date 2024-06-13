@@ -20,6 +20,7 @@ using namespace atcoder;
 #define all(a) a.begin(), a.end()
 #define rall(a) a.rbegin(), a.rend()
 using ll = long long;
+using ull = unsigned long long;
 using P = pair<ll, ll>;
 using T = tuple<ll, ll, ll>;
 const int inf = 1e9;
