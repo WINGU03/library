@@ -30,7 +30,7 @@ data:
       title: other/heuristic-template.hpp
   - name: string
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: string/rolling-hash-tree.hpp
       title: Rolling Hash Tree
     - icon: ':heavy_check_mark:'
@@ -38,7 +38,7 @@ data:
       title: Rolling Hash
   - name: .
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template.hpp
       title: template.hpp
   verificationCategories:
@@ -74,7 +74,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/rerooting.test.cpp
       title: verify/rerooting.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yuki-rolling-hash-tree.test.cpp
       title: verify/yuki-rolling-hash-tree.test.cpp
 layout: toppage

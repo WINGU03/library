@@ -1,10 +1,7 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy:
-  - icon: ':x:'
-    path: string/rolling-hash-tree.hpp
-    title: Rolling Hash Tree
+  _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/aizu-rolling-hash.test.cpp
@@ -33,12 +30,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/rerooting.test.cpp
     title: verify/rerooting.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yuki-rolling-hash-tree.test.cpp
     title: verify/yuki-rolling-hash-tree.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"template.hpp\"\n#include <bits/stdc++.h>\nusing namespace\
@@ -110,10 +107,9 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: template.hpp
-  requiredBy:
-  - string/rolling-hash-tree.hpp
+  requiredBy: []
   timestamp: '2024-06-13 19:27:31+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/compile-option.test.cpp
   - verify/aizu-rolling-hash.test.cpp
