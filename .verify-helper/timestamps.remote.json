@@ -8,5 +8,6 @@
 "verify/lc-rolling-hash.test.cpp": "2024-06-13 19:27:31 +0900",
 "verify/lc-rolling-hash2.test.cpp": "2024-06-13 19:27:31 +0900",
 "verify/prime-factorize.test.cpp": "2024-06-13 19:27:31 +0900",
-"verify/rerooting.test.cpp": "2024-06-13 19:27:31 +0900"
+"verify/rerooting.test.cpp": "2024-06-13 19:27:31 +0900",
+"verify/yuki-rolling-hash-tree.test.cpp": "2024-06-15 16:25:33 +0900"
 }
