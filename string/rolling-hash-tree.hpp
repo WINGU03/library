@@ -1,3 +1,4 @@
+#include "template.hpp"
 #include <atcoder/segtree>
 
 mt19937_64 r(time(0));
