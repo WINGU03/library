@@ -19,13 +19,14 @@ template<class T>inline bool chmin(T &a,T b){if(a>b){a=b;return true;}return fal
 #define drep(i,a,b) for(int i=(int)(a);i>=(int)(b);i--)
 #define all(a) a.begin(),a.end()
 #define rall(a) a.rbegin(),a.rend()
+using ll = long long;
 const int inf=1e9;
-const long INF=1e18;
+const ll INF=1e18;
 const int dx[4]={0,1,0,-1};
 const int dy[4]={1,0,-1,0};
-bool bit(long x, int p){return (x>>p)&1;}
+bool bit(ll x, int p){return (x>>p)&1;}
 bool out(int ni, int nj, int h, int w){return (ni<0 or ni>=h or nj<0 or nj>=w);}
-int pc(long x){return __builtin_popcountl(x);}
+int pc(ll x){return __builtin_popcountll(x);}
 class Random {
    public:
     mt19937 mt;
