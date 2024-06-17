@@ -54,6 +54,18 @@ inline bool chmin(T &a, T b) {
     return false;
 }
 
+template <class T1, class T2>
+istream &operator>>(istream &is, pair<T1, T2> &p) {
+    is >> p.first >> p.second;
+    return is;
+}
+
+template <class T1, class T2>
+ostream &operator<<(ostream &os, const pair<T1, T2> &p) {
+    os << p.first << " " << p.second << '\n';
+    return os;
+}
+
 template <class T>
 istream &operator>>(istream &is, vector<T> &v) {
     for (T &in : v) {
@@ -83,18 +95,6 @@ ostream &operator<<(ostream &os, vector<vector<T>> &vv) {
     for (vector<T> &v : vv) {
         os << v;
     }
-    return os;
-}
-
-template <class T1, class T2>
-istream &operator>>(istream &is, pair<T1, T2> &p) {
-    is >> p.first >> p.second;
-    return is;
-}
-
-template <class T1, class T2>
-ostream &operator<<(ostream &os, const pair<T1, T2> &p) {
-    os << p.first << " " << p.second << '\n';
     return os;
 }
 
