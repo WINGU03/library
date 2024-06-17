@@ -36,21 +36,21 @@ data:
     } init;\n\ntemplate <class T>\ninline bool chmax(T &a, T b) {\n    if (a < b)\
     \ {\n        a = b;\n        return true;\n    }\n    return false;\n}\n\ntemplate\
     \ <class T>\ninline bool chmin(T &a, T b) {\n    if (a > b) {\n        a = b;\n\
-    \        return true;\n    }\n    return false;\n}\n\ntemplate <class T>\nistream\
-    \ &operator>>(istream &is, vector<T> &v) {\n    for (T &in : v) {\n        is\
-    \ >> in;\n    }\n    return is;\n}\n\ntemplate <class T>\nostream &operator<<(ostream\
-    \ &os, const vector<T> &v) {\n    rep(i, (int)v.size()) {\n        os << v[i]\
-    \ << \" \\n\"[i + 1 == (int)v.size()];\n    }\n    return os;\n}\n\ntemplate <class\
-    \ T>\nistream &operator>>(istream &is, vector<vector<T>> &vv) {\n    for (vector<T>\
-    \ &v : vv) {\n        is >> v;\n    }\n    return is;\n}\n\ntemplate <class T>\n\
-    ostream &operator<<(ostream &os, vector<vector<T>> &vv) {\n    for (vector<T>\
-    \ &v : vv) {\n        os << v;\n    }\n    return os;\n}\n\ntemplate <class T1,\
-    \ class T2>\nistream &operator>>(istream &is, pair<T1, T2> &p) {\n    is >> p.first\
+    \        return true;\n    }\n    return false;\n}\n\ntemplate <class T1, class\
+    \ T2>\nistream &operator>>(istream &is, pair<T1, T2> &p) {\n    is >> p.first\
     \ >> p.second;\n    return is;\n}\n\ntemplate <class T1, class T2>\nostream &operator<<(ostream\
     \ &os, const pair<T1, T2> &p) {\n    os << p.first << \" \" << p.second << '\\\
-    n';\n    return os;\n}\n\nbool bit(ll x, int p) {\n    return (x >> p) & 1;\n\
-    }\n\nbool out(int ni, int nj, int h, int w) {\n    return (ni < 0 or ni >= h or\
-    \ nj < 0 or nj >= w);\n}\n\nint pc(ll x) {\n    return __builtin_popcountll(x);\n\
+    n';\n    return os;\n}\n\ntemplate <class T>\nistream &operator>>(istream &is,\
+    \ vector<T> &v) {\n    for (T &in : v) {\n        is >> in;\n    }\n    return\
+    \ is;\n}\n\ntemplate <class T>\nostream &operator<<(ostream &os, const vector<T>\
+    \ &v) {\n    rep(i, (int)v.size()) {\n        os << v[i] << \" \\n\"[i + 1 ==\
+    \ (int)v.size()];\n    }\n    return os;\n}\n\ntemplate <class T>\nistream &operator>>(istream\
+    \ &is, vector<vector<T>> &vv) {\n    for (vector<T> &v : vv) {\n        is >>\
+    \ v;\n    }\n    return is;\n}\n\ntemplate <class T>\nostream &operator<<(ostream\
+    \ &os, vector<vector<T>> &vv) {\n    for (vector<T> &v : vv) {\n        os <<\
+    \ v;\n    }\n    return os;\n}\n\nbool bit(ll x, int p) {\n    return (x >> p)\
+    \ & 1;\n}\n\nbool out(int ni, int nj, int h, int w) {\n    return (ni < 0 or ni\
+    \ >= h or nj < 0 or nj >= w);\n}\n\nint pc(ll x) {\n    return __builtin_popcountll(x);\n\
     }\n#line 6 \"verify/yuki-rolling-hash-tree.test.cpp\"\n\n#line 1 \"string/rolling-hash-tree.hpp\"\
     \n#include <atcoder/segtree>\n\nmt19937_64 r(time(0));\nstatic const int mod1\
     \ = 1000000007, mod2 = 1000000009;\nusing mint1 = static_modint<mod1>;\nusing\
@@ -111,7 +111,7 @@ data:
   isVerificationFile: true
   path: verify/yuki-rolling-hash-tree.test.cpp
   requiredBy: []
-  timestamp: '2024-06-15 16:25:33+09:00'
+  timestamp: '2024-06-17 20:15:00+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yuki-rolling-hash-tree.test.cpp
