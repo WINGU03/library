@@ -28,6 +28,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: other/heuristic-template.hpp
       title: other/heuristic-template.hpp
+    - icon: ':warning:'
+      path: other/next_combination.hpp
+      title: other/next_combination.hpp
   - name: string
     pages:
     - icon: ':heavy_check_mark:'
@@ -38,12 +41,15 @@ data:
       title: Rolling Hash
   - name: .
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template.hpp
       title: template.hpp
   verificationCategories:
   - name: verify
     pages:
+    - icon: ':x:'
+      path: verify/aizu-next-combination.test.cpp
+      title: verify/aizu-next-combination.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/aizu-rolling-hash.test.cpp
       title: verify/aizu-rolling-hash.test.cpp
@@ -63,17 +69,14 @@ data:
       path: verify/heuristic-template.test.cpp
       title: verify/heuristic-template.test.cpp
     - icon: ':heavy_check_mark:'
-      path: verify/lc-rolling-hash.test.cpp
-      title: verify/lc-rolling-hash.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: verify/lc-rolling-hash2.test.cpp
-      title: verify/lc-rolling-hash2.test.cpp
-    - icon: ':heavy_check_mark:'
       path: verify/prime-factorize.test.cpp
       title: verify/prime-factorize.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/rerooting.test.cpp
       title: verify/rerooting.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/yosupo-rolling-hash.test.cpp
+      title: verify/yosupo-rolling-hash.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/yuki-rolling-hash-tree.test.cpp
       title: verify/yuki-rolling-hash-tree.test.cpp

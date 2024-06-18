@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: string/rolling-hash.hpp
     title: Rolling Hash
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
@@ -17,14 +17,15 @@ data:
     PROBLEM: https://judge.yosupo.jp/problem/enumerate_palindromes
     links:
     - https://judge.yosupo.jp/problem/enumerate_palindromes
-  bundledCode: "#line 1 \"verify/lc-rolling-hash.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/enumerate_palindromes\"\
-    \n\n#include <bits/stdc++.h>\n\n#line 2 \"template.hpp\"\nusing namespace std;\n\
-    #include <atcoder/modint>\nusing namespace atcoder;\n\n#ifdef DEFINED_ONLY_IN_LOCAL\n\
-    #include <dump.hpp>\n#define dump(...) cpp_dump(__VA_ARGS__)\n#else\n#undef dump\n\
-    #define dump(...)\n#endif\n#define rep1(i, a) for (int i = 0; i < (int)(a); i++)\n\
-    #define rep2(i, a, b) for (int i = (int)(a); i < (int)(b); i++)\n#define rep3(i,\
-    \ a, b, c) for (int i = (int)(a); i < (int)(b); i += (int)(c))\n#define overloadRep(a,\
-    \ b, c, d, e, ...) e\n#define rep(...) overloadRep(__VA_ARGS__, rep3, rep2, rep1)(__VA_ARGS__)\n\
+  bundledCode: "#line 1 \"verify/yosupo-rolling-hash.test.cpp\"\n#define PROBLEM \"\
+    https://judge.yosupo.jp/problem/enumerate_palindromes\"\n\n#include <bits/stdc++.h>\n\
+    \n#line 2 \"template.hpp\"\nusing namespace std;\n#include <atcoder/modint>\n\
+    using namespace atcoder;\n\n#ifdef DEFINED_ONLY_IN_LOCAL\n#include <dump.hpp>\n\
+    #define dump(...) cpp_dump(__VA_ARGS__)\n#else\n#undef dump\n#define dump(...)\n\
+    #endif\n#define rep1(i, a) for (int i = 0; i < (int)(a); i++)\n#define rep2(i,\
+    \ a, b) for (int i = (int)(a); i < (int)(b); i++)\n#define rep3(i, a, b, c) for\
+    \ (int i = (int)(a); i < (int)(b); i += (int)(c))\n#define overloadRep(a, b, c,\
+    \ d, e, ...) e\n#define rep(...) overloadRep(__VA_ARGS__, rep3, rep2, rep1)(__VA_ARGS__)\n\
     #define rrep(i, a, b) for (int i = (int)(a); i <= (int)(b); i++)\n#define drep(i,\
     \ a, b) for (int i = (int)(a); i >= (int)(b); i--)\n#define all(a) a.begin(),\
     \ a.end()\n#define rall(a) a.rbegin(), a.rend()\nusing ll = long long;\nusing\
@@ -51,7 +52,7 @@ data:
     \    }\n    return os;\n}\n\nbool bit(ll x, int p) {\n    return (x >> p) & 1;\n\
     }\n\nbool out(int ni, int nj, int h, int w) {\n    return (ni < 0 or ni >= h or\
     \ nj < 0 or nj >= w);\n}\n\nint pc(ll x) {\n    return __builtin_popcountll(x);\n\
-    }\n#line 6 \"verify/lc-rolling-hash.test.cpp\"\n\n#line 1 \"string/rolling-hash.hpp\"\
+    }\n#line 6 \"verify/yosupo-rolling-hash.test.cpp\"\n\n#line 1 \"string/rolling-hash.hpp\"\
     \nmt19937_64 r(time(0));\nstatic constexpr ll mod = (1LL << 61) - 1;\nstatic const\
     \ ll base = r() % (mod - 4) + 2;\n\nstruct RollingHash {\n    using i128 = __int128_t;\n\
     \    vector<ll> hash, power;\n    int n;\n    string s;\n\n    inline ll add(ll\
@@ -76,18 +77,13 @@ data:
     \ left = 0, right = len;\n        while (right - left > 1) {\n            int\
     \ mid = (left + right) / 2;\n            if (get(a, a + mid) != T.get(b, b + mid))\
     \ {\n                right = mid;\n            } else {\n                left\
-    \ = mid;\n            }\n        }\n        return left;\n    }\n\n    inline\
-    \ vector<int> suffix_array() {\n        vector<int> p(n);\n        iota(all(p),\
-    \ 0);\n        sort(all(p), [&](int i, int j) {\n            int k = lcp(i, j);\n\
-    \            if (i + k >= n) return true;\n            if (j + k >= n) return\
-    \ false;\n            return (s[i + k] <= s[j + k]);\n        });\n        return\
-    \ p;\n    }\n};\n#line 8 \"verify/lc-rolling-hash.test.cpp\"\n\nint main() {\n\
-    \    string s;\n    cin >> s;\n    int n = s.size();\n\n    RollingHash rol(s);\n\
-    \n    reverse(all(s));\n    RollingHash reverse_rol(s);\n\n    rep(i, n - 1) {\n\
-    \        int ans1 = rol.lcp(reverse_rol, i, n - i - 1);\n        int ans2 = rol.lcp(reverse_rol,\
-    \ i + 1, n - i - 1);\n\n        cout << ans1 * 2 - 1 << \" \" << ans2 * 2 << \"\
-    \ \";\n    }\n    cout << rol.lcp(reverse_rol, n - 1, 0) * 2 - 1 << endl;\n  \
-    \  return 0;\n}\n"
+    \ = mid;\n            }\n        }\n        return left;\n    }\n};\n#line 8 \"\
+    verify/yosupo-rolling-hash.test.cpp\"\n\nint main() {\n    string s;\n    cin\
+    \ >> s;\n    int n = s.size();\n\n    RollingHash rol(s);\n\n    reverse(all(s));\n\
+    \    RollingHash reverse_rol(s);\n\n    rep(i, n - 1) {\n        int ans1 = rol.lcp(reverse_rol,\
+    \ i, n - i - 1);\n        int ans2 = rol.lcp(reverse_rol, i + 1, n - i - 1);\n\
+    \n        cout << ans1 * 2 - 1 << \" \" << ans2 * 2 << \" \";\n    }\n    cout\
+    \ << rol.lcp(reverse_rol, n - 1, 0) * 2 - 1 << endl;\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/enumerate_palindromes\"\
     \n\n#include <bits/stdc++.h>\n\n#include \"template.hpp\"\n\n#include \"string/rolling-hash.hpp\"\
     \n\nint main() {\n    string s;\n    cin >> s;\n    int n = s.size();\n\n    RollingHash\
@@ -100,15 +96,15 @@ data:
   - template.hpp
   - string/rolling-hash.hpp
   isVerificationFile: true
-  path: verify/lc-rolling-hash.test.cpp
+  path: verify/yosupo-rolling-hash.test.cpp
   requiredBy: []
-  timestamp: '2024-06-17 20:15:00+09:00'
+  timestamp: '2024-06-18 21:24:13+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: verify/lc-rolling-hash.test.cpp
+documentation_of: verify/yosupo-rolling-hash.test.cpp
 layout: document
 redirect_from:
-- /verify/verify/lc-rolling-hash.test.cpp
-- /verify/verify/lc-rolling-hash.test.cpp.html
-title: verify/lc-rolling-hash.test.cpp
+- /verify/verify/yosupo-rolling-hash.test.cpp
+- /verify/verify/yosupo-rolling-hash.test.cpp.html
+title: verify/yosupo-rolling-hash.test.cpp
 ---

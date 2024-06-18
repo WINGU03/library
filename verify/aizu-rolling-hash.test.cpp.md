@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: string/rolling-hash.hpp
     title: Rolling Hash
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
@@ -77,15 +77,11 @@ data:
     \ {\n            int mid = (left + right) / 2;\n            if (get(a, a + mid)\
     \ != T.get(b, b + mid)) {\n                right = mid;\n            } else {\n\
     \                left = mid;\n            }\n        }\n        return left;\n\
-    \    }\n\n    inline vector<int> suffix_array() {\n        vector<int> p(n);\n\
-    \        iota(all(p), 0);\n        sort(all(p), [&](int i, int j) {\n        \
-    \    int k = lcp(i, j);\n            if (i + k >= n) return true;\n          \
-    \  if (j + k >= n) return false;\n            return (s[i + k] <= s[j + k]);\n\
-    \        });\n        return p;\n    }\n};\n#line 6 \"verify/aizu-rolling-hash.test.cpp\"\
-    \n\nint main() {\n    string T, P;\n    cin >> T >> P;\n    int N = T.size(),\
-    \ M = P.size();\n    RollingHash RT(T), RP(P);\n    rep(i, N - M + 1) {\n    \
-    \    if(RT.get(i, i + M) == RP.get()) {\n            cout << i << endl;\n    \
-    \    }\n    }\n    return 0;\n}\n"
+    \    }\n};\n#line 6 \"verify/aizu-rolling-hash.test.cpp\"\n\nint main() {\n  \
+    \  string T, P;\n    cin >> T >> P;\n    int N = T.size(), M = P.size();\n   \
+    \ RollingHash RT(T), RP(P);\n    rep(i, N - M + 1) {\n        if(RT.get(i, i +\
+    \ M) == RP.get()) {\n            cout << i << endl;\n        }\n    }\n    return\
+    \ 0;\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/14/ALDS1_14_B\"\
     \n\n#include<bits/stdc++.h>\n#include \"template.hpp\"\n#include \"string/rolling-hash.hpp\"\
     \n\nint main() {\n    string T, P;\n    cin >> T >> P;\n    int N = T.size(),\
@@ -98,7 +94,7 @@ data:
   isVerificationFile: true
   path: verify/aizu-rolling-hash.test.cpp
   requiredBy: []
-  timestamp: '2024-06-17 20:15:00+09:00'
+  timestamp: '2024-06-18 21:24:13+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aizu-rolling-hash.test.cpp

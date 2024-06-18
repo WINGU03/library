@@ -3,6 +3,9 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
+  - icon: ':x:'
+    path: verify/aizu-next-combination.test.cpp
+    title: verify/aizu-next-combination.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/aizu-rolling-hash.test.cpp
     title: verify/aizu-rolling-hash.test.cpp
@@ -19,23 +22,20 @@ data:
     path: verify/extgcd.test.cpp
     title: verify/extgcd.test.cpp
   - icon: ':heavy_check_mark:'
-    path: verify/lc-rolling-hash.test.cpp
-    title: verify/lc-rolling-hash.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/lc-rolling-hash2.test.cpp
-    title: verify/lc-rolling-hash2.test.cpp
-  - icon: ':heavy_check_mark:'
     path: verify/prime-factorize.test.cpp
     title: verify/prime-factorize.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/rerooting.test.cpp
     title: verify/rerooting.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/yosupo-rolling-hash.test.cpp
+    title: verify/yosupo-rolling-hash.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/yuki-rolling-hash-tree.test.cpp
     title: verify/yuki-rolling-hash-tree.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"template.hpp\"\n#include <bits/stdc++.h>\nusing namespace\
@@ -111,18 +111,18 @@ data:
   path: template.hpp
   requiredBy: []
   timestamp: '2024-06-17 20:15:00+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
-  - verify/compile-option.test.cpp
-  - verify/aizu-rolling-hash.test.cpp
-  - verify/lc-rolling-hash.test.cpp
   - verify/extgcd.test.cpp
+  - verify/compile-option.test.cpp
+  - verify/enum-divisor.test.cpp
+  - verify/yosupo-rolling-hash.test.cpp
   - verify/yuki-rolling-hash-tree.test.cpp
-  - verify/prime-factorize.test.cpp
   - verify/rerooting.test.cpp
   - verify/cc.test.cpp
-  - verify/enum-divisor.test.cpp
-  - verify/lc-rolling-hash2.test.cpp
+  - verify/prime-factorize.test.cpp
+  - verify/aizu-rolling-hash.test.cpp
+  - verify/aizu-next-combination.test.cpp
 documentation_of: template.hpp
 layout: document
 redirect_from:
