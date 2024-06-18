@@ -4,14 +4,14 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: verify/aizu-cc.test.cpp
+    title: verify/aizu-cc.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/aizu-next-combination.test.cpp
     title: verify/aizu-next-combination.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/aizu-rolling-hash.test.cpp
     title: verify/aizu-rolling-hash.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/cc.test.cpp
-    title: verify/cc.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/compile-option.test.cpp
     title: verify/compile-option.test.cpp
@@ -116,12 +116,12 @@ data:
   - verify/compile-option.test.cpp
   - verify/aizu-rolling-hash.test.cpp
   - verify/yosupo-rolling-hash.test.cpp
+  - verify/aizu-cc.test.cpp
   - verify/extgcd.test.cpp
   - verify/yuki-rolling-hash-tree.test.cpp
   - verify/aizu-next-combination.test.cpp
   - verify/prime-factorize.test.cpp
   - verify/rerooting.test.cpp
-  - verify/cc.test.cpp
   - verify/enum-divisor.test.cpp
 documentation_of: template.hpp
 layout: document

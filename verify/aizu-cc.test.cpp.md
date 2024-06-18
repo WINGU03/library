@@ -17,7 +17,7 @@ data:
     PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/5/ALDS1_5_D
     links:
     - https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/5/ALDS1_5_D
-  bundledCode: "#line 1 \"verify/cc.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/5/ALDS1_5_D\"\
+  bundledCode: "#line 1 \"verify/aizu-cc.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/5/ALDS1_5_D\"\
     \n\n#include <bits/stdc++.h>\n#line 2 \"template.hpp\"\nusing namespace std;\n\
     #include <atcoder/modint>\nusing namespace atcoder;\n\n#ifdef DEFINED_ONLY_IN_LOCAL\n\
     #include <dump.hpp>\n#define dump(...) cpp_dump(__VA_ARGS__)\n#else\n#undef dump\n\
@@ -60,8 +60,8 @@ data:
     \ x) {\n        if (!initialized) init();\n        return mp[x];\n    }\n    T\
     \ operator[](int i) {\n        if (!initialized) init();\n        return xs[i];\n\
     \    }\n    int size() {\n        if (!initialized) init();\n        return xs.size();\n\
-    \    }\n};\n#line 6 \"verify/cc.test.cpp\"\n#include <atcoder/fenwicktree>\n\n\
-    int main() {\n    int n;\n    cin >> n;\n    vector<int> a(n);\n    cin >> a;\n\
+    \    }\n};\n#line 6 \"verify/aizu-cc.test.cpp\"\n#include <atcoder/fenwicktree>\n\
+    \nint main() {\n    int n;\n    cin >> n;\n    vector<int> a(n);\n    cin >> a;\n\
     \    CC c;\n    rep(i, n) c.add(a[i]);\n    int m = c.size();\n    rep(i, n) a[i]\
     \ = c(a[i]);\n    fenwick_tree<int> f(m);\n    ll ans = 0;\n    rep(i, n) {\n\
     \        ans += f.sum(a[i], m);\n        f.add(a[i], 1);\n    }\n    cout << ans\
@@ -77,15 +77,15 @@ data:
   - template.hpp
   - other/cc.hpp
   isVerificationFile: true
-  path: verify/cc.test.cpp
+  path: verify/aizu-cc.test.cpp
   requiredBy: []
-  timestamp: '2024-06-17 20:15:00+09:00'
+  timestamp: '2024-06-18 21:44:21+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: verify/cc.test.cpp
+documentation_of: verify/aizu-cc.test.cpp
 layout: document
 redirect_from:
-- /verify/verify/cc.test.cpp
-- /verify/verify/cc.test.cpp.html
-title: verify/cc.test.cpp
+- /verify/verify/aizu-cc.test.cpp
+- /verify/verify/aizu-cc.test.cpp.html
+title: verify/aizu-cc.test.cpp
 ---

@@ -28,7 +28,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: other/heuristic-template.hpp
       title: other/heuristic-template.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: other/next_combination.hpp
       title: other/next_combination.hpp
   - name: string
@@ -48,14 +48,14 @@ data:
   - name: verify
     pages:
     - icon: ':heavy_check_mark:'
+      path: verify/aizu-cc.test.cpp
+      title: verify/aizu-cc.test.cpp
+    - icon: ':heavy_check_mark:'
       path: verify/aizu-next-combination.test.cpp
       title: verify/aizu-next-combination.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/aizu-rolling-hash.test.cpp
       title: verify/aizu-rolling-hash.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: verify/cc.test.cpp
-      title: verify/cc.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/compile-option.test.cpp
       title: verify/compile-option.test.cpp

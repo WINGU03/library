@@ -4,8 +4,8 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: verify/cc.test.cpp
-    title: verify/cc.test.cpp
+    path: verify/aizu-cc.test.cpp
+    title: verify/aizu-cc.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -38,7 +38,7 @@ data:
   timestamp: '2024-06-10 17:44:10+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/cc.test.cpp
+  - verify/aizu-cc.test.cpp
 documentation_of: other/cc.hpp
 layout: document
 title: "\u5EA7\u6A19\u5727\u7E2E"
