@@ -1,4 +1,4 @@
-#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/problems/0070"
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/problems/ITP1_7_B"
 
 #include <bits/stdc++.h>
 #include "template.hpp"
@@ -29,19 +29,16 @@ bool next_combination(const T first, const T last, int k) {
 
 int main() {
     int n, s;
-    vector<int> p(10);
-    iota(all(p), 0);
     while (cin >> n >> s) {
+        if (n == 0 and s == 0) exit(0);
+        vector<int> p(n);
+        iota(all(p), 1);
         int ans = 0;
         do {
-            vector<int> now;
-            rep(i, n) now.push_back(p[i]);
-            do {
-                int cur = 0;
-                for (int i = 1; i <= n; i++) cur += i * now[i - 1];
-                if (cur == s) ans++;
-            } while (next_permutation(all(now)));
-        } while (next_combination(all(p), n));
+            int cur = 0;
+            rep(i, 3) cur += p[i];
+            if (cur == s) ans++;
+        } while (next_combination(all(p), 3));
         cout << ans << endl;
     }
     return 0;
