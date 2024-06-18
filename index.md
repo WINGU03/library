@@ -41,13 +41,13 @@ data:
       title: Rolling Hash
   - name: .
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template.hpp
       title: template.hpp
   verificationCategories:
   - name: verify
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/aizu-next-combination.test.cpp
       title: verify/aizu-next-combination.test.cpp
     - icon: ':heavy_check_mark:'

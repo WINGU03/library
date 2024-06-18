@@ -3,7 +3,7 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/aizu-next-combination.test.cpp
     title: verify/aizu-next-combination.test.cpp
   - icon: ':heavy_check_mark:'
@@ -33,9 +33,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yuki-rolling-hash-tree.test.cpp
     title: verify/yuki-rolling-hash-tree.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"template.hpp\"\n#include <bits/stdc++.h>\nusing namespace\
@@ -111,18 +111,18 @@ data:
   path: template.hpp
   requiredBy: []
   timestamp: '2024-06-17 20:15:00+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/extgcd.test.cpp
   - verify/compile-option.test.cpp
-  - verify/enum-divisor.test.cpp
+  - verify/aizu-rolling-hash.test.cpp
   - verify/yosupo-rolling-hash.test.cpp
+  - verify/extgcd.test.cpp
   - verify/yuki-rolling-hash-tree.test.cpp
+  - verify/aizu-next-combination.test.cpp
+  - verify/prime-factorize.test.cpp
   - verify/rerooting.test.cpp
   - verify/cc.test.cpp
-  - verify/prime-factorize.test.cpp
-  - verify/aizu-rolling-hash.test.cpp
-  - verify/aizu-next-combination.test.cpp
+  - verify/enum-divisor.test.cpp
 documentation_of: template.hpp
 layout: document
 redirect_from:
