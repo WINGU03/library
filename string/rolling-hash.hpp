@@ -68,16 +68,4 @@ struct RollingHash {
         }
         return left;
     }
-
-    inline vector<int> suffix_array() {
-        vector<int> p(n);
-        iota(all(p), 0);
-        sort(all(p), [&](int i, int j) {
-            int k = lcp(i, j);
-            if (i + k >= n) return true;
-            if (j + k >= n) return false;
-            return (s[i + k] <= s[j + k]);
-        });
-        return p;
-    }
 };
