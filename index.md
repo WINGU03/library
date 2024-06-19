@@ -31,7 +31,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: misc/mo.hpp
       title: "Mo\u2019s algorithm"
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: misc/next-combination.hpp
       title: misc/next-combination.hpp
   - name: string
@@ -53,7 +53,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/aizu-cc.test.cpp
       title: verify/aizu-cc.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/aizu-next-combination.test.cpp
       title: verify/aizu-next-combination.test.cpp
     - icon: ':heavy_check_mark:'

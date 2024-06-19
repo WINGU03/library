@@ -7,6 +7,9 @@ data:
     path: verify/aizu-cc.test.cpp
     title: verify/aizu-cc.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/aizu-next-combination.test.cpp
+    title: verify/aizu-next-combination.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/aizu-rolling-hash.test.cpp
     title: verify/aizu-rolling-hash.test.cpp
   - icon: ':heavy_check_mark:'
@@ -123,6 +126,7 @@ data:
   - verify/aizu-cc.test.cpp
   - verify/extgcd.test.cpp
   - verify/yuki-rolling-hash-tree.test.cpp
+  - verify/aizu-next-combination.test.cpp
   - verify/prime-factorize.test.cpp
   - verify/rerooting.test.cpp
   - verify/yosupo-mo2.test.cpp
