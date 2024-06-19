@@ -17,7 +17,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"other/cc.hpp\"\ntemplate <typename T = int>\nstruct CC {\n\
+  bundledCode: "#line 1 \"misc/cc.hpp\"\ntemplate <typename T = int>\nstruct CC {\n\
     \    bool initialized;\n    vector<T> xs;\n    unordered_map<T, int> mp;\n   \
     \ CC() : initialized(false) {}\n    void add(T x) {\n        xs.push_back(x);\n\
     \    }\n    void init() {\n        sort(xs.begin(), xs.end());\n        xs.erase(unique(xs.begin(),\
@@ -39,32 +39,42 @@ data:
     \ }\n};"
   dependsOn: []
   isVerificationFile: false
-  path: other/cc.hpp
+  path: misc/cc.hpp
   requiredBy: []
-  timestamp: '2024-06-10 17:44:10+09:00'
+  timestamp: '2024-06-19 21:24:21+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo-mo1.test.cpp
   - verify/aizu-cc.test.cpp
   - verify/yosupo-mo2.test.cpp
-documentation_of: other/cc.hpp
+documentation_of: misc/cc.hpp
 layout: document
 title: "\u5EA7\u6A19\u5727\u7E2E"
 ---
 
-## コンストラクタ
+数列を座標圧縮し、
+- ある値$x$が座標圧縮後、何番目か
+- 座標圧縮後の$i$番目の値
+- 座標圧縮後の配列サイズ
+を$O(1)$で取得できる。
+
+# コンストラクタ
 
 ```cpp
-CC c;
+CC<T> c
 ```
 
-long long型である必要がある場合
+- $T$は'int / ll'
+
+# add
 
 ```cpp
-CC<long long> c;
+void c.add(T x)
 ```
 
-## ()
+- $O(1)$
+
+# ()
 
 ```cpp
 int c(T x)

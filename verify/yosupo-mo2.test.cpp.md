@@ -2,11 +2,11 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: other/Mo.hpp
-    title: other/Mo.hpp
-  - icon: ':heavy_check_mark:'
-    path: other/cc.hpp
+    path: misc/cc.hpp
     title: "\u5EA7\u6A19\u5727\u7E2E"
+  - icon: ':heavy_check_mark:'
+    path: misc/mo.hpp
+    title: "Mo\u2019s algorithm"
   - icon: ':heavy_check_mark:'
     path: template.hpp
     title: template.hpp
@@ -54,7 +54,7 @@ data:
     \    }\n    return os;\n}\n\nbool bit(ll x, int p) {\n    return (x >> p) & 1;\n\
     }\n\nbool out(int ni, int nj, int h, int w) {\n    return (ni < 0 or ni >= h or\
     \ nj < 0 or nj >= w);\n}\n\nint pc(ll x) {\n    return __builtin_popcountll(x);\n\
-    }\n#line 1 \"other/cc.hpp\"\ntemplate <typename T = int>\nstruct CC {\n    bool\
+    }\n#line 1 \"misc/cc.hpp\"\ntemplate <typename T = int>\nstruct CC {\n    bool\
     \ initialized;\n    vector<T> xs;\n    unordered_map<T, int> mp;\n    CC() : initialized(false)\
     \ {}\n    void add(T x) {\n        xs.push_back(x);\n    }\n    void init() {\n\
     \        sort(xs.begin(), xs.end());\n        xs.erase(unique(xs.begin(), xs.end()),\
@@ -63,7 +63,7 @@ data:
     \ x) {\n        if (!initialized) init();\n        return mp[x];\n    }\n    T\
     \ operator[](int i) {\n        if (!initialized) init();\n        return xs[i];\n\
     \    }\n    int size() {\n        if (!initialized) init();\n        return xs.size();\n\
-    \    }\n};\n#line 1 \"other/Mo.hpp\"\ntemplate <class M>\nstruct Mo {\n    using\
+    \    }\n};\n#line 1 \"misc/mo.hpp\"\ntemplate <class M>\nstruct Mo {\n    using\
     \ T = typename M::T;\n    int backet;\n    vector<int> left, right, order;\n \
     \   Mo(int N, int Q) {\n        order.resize(Q);\n        backet = max<int>(1,\
     \ (double)(N) / max<double>(1, sqrt(Q * 2.0 / 3)));\n        iota(order.begin(),\
@@ -94,10 +94,10 @@ data:
     \       mo.add_query(l[i], r[i]);\n    }\n    auto res = mo.run();\n    for (auto\
     \ i : res) cout << i << '\\n';\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/static_range_frequency\"\
-    \n\n#include <bits/stdc++.h>\n#include \"template.hpp\"\n#include \"other/cc.hpp\"\
-    \n#include \"other/Mo.hpp\"\n\nint main() {\n    static int n, q;\n    cin >>\
-    \ n >> q;\n    static vector<int> a(n);\n    cin >> a;\n\n    static CC c;\n \
-    \   rep(i, n) c.add(a[i]);\n    rep(i, n) a[i] = c(a[i]);\n    static vector<int>\
+    \n\n#include <bits/stdc++.h>\n#include \"template.hpp\"\n#include \"misc/cc.hpp\"\
+    \n#include \"misc/mo.hpp\"\n\nint main() {\n    static int n, q;\n    cin >> n\
+    \ >> q;\n    static vector<int> a(n);\n    cin >> a;\n\n    static CC c;\n   \
+    \ rep(i, n) c.add(a[i]);\n    rep(i, n) a[i] = c(a[i]);\n    static vector<int>\
     \ cnt(c.size());\n    static vector<int> l(q), r(q), x(q);\n    rep(i, q) cin\
     \ >> l[i] >> r[i] >> x[i];\n    struct M {\n        using T = int;\n        static\
     \ void add_left(int pos) {\n            cnt[a[pos]]++;\n        }\n        static\
@@ -111,12 +111,12 @@ data:
     \    return 0;\n}"
   dependsOn:
   - template.hpp
-  - other/cc.hpp
-  - other/Mo.hpp
+  - misc/cc.hpp
+  - misc/mo.hpp
   isVerificationFile: true
   path: verify/yosupo-mo2.test.cpp
   requiredBy: []
-  timestamp: '2024-06-19 14:02:03+09:00'
+  timestamp: '2024-06-19 21:24:21+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo-mo2.test.cpp

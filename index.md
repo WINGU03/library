@@ -17,23 +17,23 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/prime-factorize.hpp
       title: math/prime-factorize.hpp
-  - name: other
+  - name: misc
     pages:
     - icon: ':heavy_check_mark:'
-      path: other/Mo.hpp
-      title: other/Mo.hpp
-    - icon: ':heavy_check_mark:'
-      path: other/cc.hpp
+      path: misc/cc.hpp
       title: "\u5EA7\u6A19\u5727\u7E2E"
     - icon: ':heavy_check_mark:'
-      path: other/compile-option.hpp
-      title: other/compile-option.hpp
+      path: misc/compile-option.hpp
+      title: misc/compile-option.hpp
     - icon: ':heavy_check_mark:'
-      path: other/heuristic-template.hpp
-      title: other/heuristic-template.hpp
+      path: misc/heuristic-template.hpp
+      title: misc/heuristic-template.hpp
     - icon: ':heavy_check_mark:'
-      path: other/next_combination.hpp
-      title: other/next_combination.hpp
+      path: misc/mo.hpp
+      title: "Mo\u2019s algorithm"
+    - icon: ':warning:'
+      path: misc/next-combination.hpp
+      title: misc/next-combination.hpp
   - name: string
     pages:
     - icon: ':heavy_check_mark:'
@@ -53,7 +53,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/aizu-cc.test.cpp
       title: verify/aizu-cc.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/aizu-next-combination.test.cpp
       title: verify/aizu-next-combination.test.cpp
     - icon: ':heavy_check_mark:'

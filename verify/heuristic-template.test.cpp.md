@@ -2,8 +2,8 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: other/heuristic-template.hpp
-    title: other/heuristic-template.hpp
+    path: misc/heuristic-template.hpp
+    title: misc/heuristic-template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -16,7 +16,7 @@ data:
     - https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/13/ALDS1_13_B
   bundledCode: "#line 1 \"verify/heuristic-template.test.cpp\"\n#define PROBLEM \"\
     https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/13/ALDS1_13_B\"\n\n#include\
-    \ <bits/stdc++.h>\n#line 2 \"other/heuristic-template.hpp\"\nusing namespace std;\n\
+    \ <bits/stdc++.h>\n#line 2 \"misc/heuristic-template.hpp\"\nusing namespace std;\n\
     using namespace chrono;\n#ifdef DEFINED_ONLY_IN_LOCAL\n#include <dump.hpp>\n#define\
     \ dump(...) cpp_dump(__VA_ARGS__)\n#else\n#undef dump\n#define dump(...)\n#endif\n\
     template<class T>inline bool chmax(T &a,T b){if(a<b){a=b;return true;}return false;}\n\
@@ -58,7 +58,7 @@ data:
     \      dist[nex] = dist[cur] + 1;\n                used[nex] = true;\n       \
     \         q.push(nex);\n            }\n        }\n    }\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/13/ALDS1_13_B\"\
-    \n\n#include <bits/stdc++.h>\n#include \"other/heuristic-template.hpp\"\n\nint\
+    \n\n#include <bits/stdc++.h>\n#include \"misc/heuristic-template.hpp\"\n\nint\
     \ main() {\n    int n = 3;\n    vector a(n, vector<int>(3));\n    rep(i, n) rep(j,\
     \ n) cin >> a[i][j];\n\n    vector<vector<int>> ans = {{1, 2, 3}, {4, 5, 6}, {7,\
     \ 8, 0}};\n\n    if (ans == a) {\n        cout << 0 << endl;\n        return 0;\n\
@@ -74,11 +74,11 @@ data:
     \      dist[nex] = dist[cur] + 1;\n                used[nex] = true;\n       \
     \         q.push(nex);\n            }\n        }\n    }\n    return 0;\n}"
   dependsOn:
-  - other/heuristic-template.hpp
+  - misc/heuristic-template.hpp
   isVerificationFile: true
   path: verify/heuristic-template.test.cpp
   requiredBy: []
-  timestamp: '2024-06-16 16:28:30+09:00'
+  timestamp: '2024-06-19 21:24:21+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/heuristic-template.test.cpp

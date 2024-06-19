@@ -1,86 +1,37 @@
 ---
 data:
-  _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: other/next_combination.hpp
-    title: other/next_combination.hpp
-  - icon: ':heavy_check_mark:'
-    path: template.hpp
-    title: template.hpp
+  _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
-  attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://onlinejudge.u-aizu.ac.jp/problems/ITP1_7_B
-    links:
-    - https://onlinejudge.u-aizu.ac.jp/problems/ITP1_7_B
-  bundledCode: "#line 1 \"verify/aizu-next-combination.test.cpp\"\n#define PROBLEM\
-    \ \"https://onlinejudge.u-aizu.ac.jp/problems/ITP1_7_B\"\n\n#include <bits/stdc++.h>\n\
-    #line 2 \"template.hpp\"\nusing namespace std;\n#include <atcoder/modint>\nusing\
-    \ namespace atcoder;\n\n#ifdef DEFINED_ONLY_IN_LOCAL\n#include <dump.hpp>\n#define\
-    \ dump(...) cpp_dump(__VA_ARGS__)\n#else\n#undef dump\n#define dump(...)\n#endif\n\
-    #define rep1(i, a) for (int i = 0; i < (int)(a); i++)\n#define rep2(i, a, b) for\
-    \ (int i = (int)(a); i < (int)(b); i++)\n#define rep3(i, a, b, c) for (int i =\
-    \ (int)(a); i < (int)(b); i += (int)(c))\n#define overloadRep(a, b, c, d, e, ...)\
-    \ e\n#define rep(...) overloadRep(__VA_ARGS__, rep3, rep2, rep1)(__VA_ARGS__)\n\
-    #define rrep(i, a, b) for (int i = (int)(a); i <= (int)(b); i++)\n#define drep(i,\
-    \ a, b) for (int i = (int)(a); i >= (int)(b); i--)\n#define all(a) a.begin(),\
-    \ a.end()\n#define rall(a) a.rbegin(), a.rend()\nusing ll = long long;\nusing\
-    \ ull = unsigned long long;\nusing P = pair<ll, ll>;\nusing T = tuple<ll, ll,\
-    \ ll>;\nconst int inf = 1e9;\nconst ll INF = 1e18;\nconst int dx[4] = {0, 1, 0,\
-    \ -1};\nconst int dy[4] = {1, 0, -1, 0};\n\nstruct cincout {\n    cincout() {\n\
-    \        ios_base::sync_with_stdio(false);\n        cin.tie(nullptr);\n      \
-    \  cout << fixed << setprecision(15);\n    }\n} init;\n\ntemplate <class T>\n\
-    inline bool chmax(T &a, T b) {\n    if (a < b) {\n        a = b;\n        return\
-    \ true;\n    }\n    return false;\n}\n\ntemplate <class T>\ninline bool chmin(T\
-    \ &a, T b) {\n    if (a > b) {\n        a = b;\n        return true;\n    }\n\
-    \    return false;\n}\n\ntemplate <class T1, class T2>\nistream &operator>>(istream\
-    \ &is, pair<T1, T2> &p) {\n    is >> p.first >> p.second;\n    return is;\n}\n\
-    \ntemplate <class T1, class T2>\nostream &operator<<(ostream &os, const pair<T1,\
-    \ T2> &p) {\n    os << p.first << \" \" << p.second << '\\n';\n    return os;\n\
-    }\n\ntemplate <class T>\nistream &operator>>(istream &is, vector<T> &v) {\n  \
-    \  for (T &in : v) {\n        is >> in;\n    }\n    return is;\n}\n\ntemplate\
-    \ <class T>\nostream &operator<<(ostream &os, const vector<T> &v) {\n    rep(i,\
-    \ (int)v.size()) {\n        os << v[i] << \" \\n\"[i + 1 == (int)v.size()];\n\
-    \    }\n    return os;\n}\n\ntemplate <class T>\nistream &operator>>(istream &is,\
-    \ vector<vector<T>> &vv) {\n    for (vector<T> &v : vv) {\n        is >> v;\n\
-    \    }\n    return is;\n}\n\ntemplate <class T>\nostream &operator<<(ostream &os,\
-    \ vector<vector<T>> &vv) {\n    for (vector<T> &v : vv) {\n        os << v;\n\
-    \    }\n    return os;\n}\n\nbool bit(ll x, int p) {\n    return (x >> p) & 1;\n\
-    }\n\nbool out(int ni, int nj, int h, int w) {\n    return (ni < 0 or ni >= h or\
-    \ nj < 0 or nj >= w);\n}\n\nint pc(ll x) {\n    return __builtin_popcountll(x);\n\
-    }\n#line 1 \"other/next_combination.hpp\"\ntemplate <typename T>\nbool next_combination(const\
-    \ T first, const T last, int k) {\n    const T subset = first + k;\n    if (first\
-    \ == last || first == subset || last == subset) {\n        return false;\n   \
-    \ }\n    T src = subset;\n    while (first != src) {\n        src--;\n       \
-    \ if (*src < *(last - 1)) {\n            T dest = subset;\n            while (*src\
-    \ >= *dest) {\n                dest++;\n            }\n            iter_swap(src,\
-    \ dest);\n            rotate(src + 1, dest + 1, last);\n            rotate(subset,\
-    \ subset + (last - dest) - 1, last);\n            return true;\n        }\n  \
-    \  }\n    rotate(first, subset, last);\n    return false;\n}\n#line 6 \"verify/aizu-next-combination.test.cpp\"\
-    \n\nint main() {\n    int n, s;\n    while (cin >> n >> s) {\n        if (n ==\
-    \ 0 and s == 0) exit(0);\n        vector<int> p(n);\n        iota(all(p), 1);\n\
-    \        int ans = 0;\n        do {\n            int cur = 0;\n            rep(i,\
-    \ 3) cur += p[i];\n            if (cur == s) ans++;\n        } while (next_combination(all(p),\
-    \ 3));\n        cout << ans << endl;\n    }\n    return 0;\n}\n"
+  _verificationStatusIcon: ':x:'
+  attributes: {}
+  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.12.0/x64/lib/python3.12/site-packages/onlinejudge_verify/documentation/build.py\"\
+    , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
+    \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n          \
+    \         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\
+    \  File \"/opt/hostedtoolcache/Python/3.12.0/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
+    , line 187, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.12.0/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
+    , line 401, in update\n    self.update(self._resolve(pathlib.Path(included), included_from=path))\n\
+    \                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n \
+    \ File \"/opt/hostedtoolcache/Python/3.12.0/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
+    , line 260, in _resolve\n    raise BundleErrorAt(path, -1, \"no such header\"\
+    )\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: misc/next_combination.hpp:\
+    \ line -1: no such header\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/ITP1_7_B\"\n\n\
-    #include <bits/stdc++.h>\n#include \"template.hpp\"\n#include \"other/next_combination.hpp\"\
+    #include <bits/stdc++.h>\n#include \"template.hpp\"\n#include \"misc/next_combination.hpp\"\
     \n\nint main() {\n    int n, s;\n    while (cin >> n >> s) {\n        if (n ==\
     \ 0 and s == 0) exit(0);\n        vector<int> p(n);\n        iota(all(p), 1);\n\
     \        int ans = 0;\n        do {\n            int cur = 0;\n            rep(i,\
     \ 3) cur += p[i];\n            if (cur == s) ans++;\n        } while (next_combination(all(p),\
     \ 3));\n        cout << ans << endl;\n    }\n    return 0;\n}"
-  dependsOn:
-  - template.hpp
-  - other/next_combination.hpp
+  dependsOn: []
   isVerificationFile: true
   path: verify/aizu-next-combination.test.cpp
   requiredBy: []
-  timestamp: '2024-06-18 21:44:21+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '1970-01-01 00:00:00+00:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/aizu-next-combination.test.cpp
 layout: document

@@ -14,7 +14,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"other/Mo.hpp\"\ntemplate <class M>\nstruct Mo {\n    using\
+  bundledCode: "#line 1 \"misc/mo.hpp\"\ntemplate <class M>\nstruct Mo {\n    using\
     \ T = typename M::T;\n    int backet;\n    vector<int> left, right, order;\n \
     \   Mo(int N, int Q) {\n        order.resize(Q);\n        backet = max<int>(1,\
     \ (double)(N) / max<double>(1, sqrt(Q * 2.0 / 3)));\n        iota(order.begin(),\
@@ -49,17 +49,14 @@ data:
     \ answer;\n    }\n};"
   dependsOn: []
   isVerificationFile: false
-  path: other/Mo.hpp
+  path: misc/mo.hpp
   requiredBy: []
-  timestamp: '2024-06-19 14:02:03+09:00'
+  timestamp: '2024-06-19 21:24:21+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo-mo1.test.cpp
   - verify/yosupo-mo2.test.cpp
-documentation_of: other/Mo.hpp
+documentation_of: misc/mo.hpp
 layout: document
-redirect_from:
-- /library/other/Mo.hpp
-- /library/other/Mo.hpp.html
-title: other/Mo.hpp
+title: "Mo\u2019s algorithm"
 ---

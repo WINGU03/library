@@ -2,16 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: verify/aizu-next-combination.test.cpp
-    title: verify/aizu-next-combination.test.cpp
+  _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"other/next_combination.hpp\"\ntemplate <typename T>\nbool\
+  bundledCode: "#line 1 \"misc/next-combination.hpp\"\ntemplate <typename T>\nbool\
     \ next_combination(const T first, const T last, int k) {\n    const T subset =\
     \ first + k;\n    if (first == last || first == subset || last == subset) {\n\
     \        return false;\n    }\n    T src = subset;\n    while (first != src) {\n\
@@ -32,16 +29,15 @@ data:
     \ subset, last);\n    return false;\n}"
   dependsOn: []
   isVerificationFile: false
-  path: other/next_combination.hpp
+  path: misc/next-combination.hpp
   requiredBy: []
-  timestamp: '2024-06-18 21:24:13+09:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - verify/aizu-next-combination.test.cpp
-documentation_of: other/next_combination.hpp
+  timestamp: '2024-06-19 21:24:21+09:00'
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
+documentation_of: misc/next-combination.hpp
 layout: document
 redirect_from:
-- /library/other/next_combination.hpp
-- /library/other/next_combination.hpp.html
-title: other/next_combination.hpp
+- /library/misc/next-combination.hpp
+- /library/misc/next-combination.hpp.html
+title: misc/next-combination.hpp
 ---

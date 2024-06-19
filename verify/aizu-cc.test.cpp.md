@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: other/cc.hpp
+    path: misc/cc.hpp
     title: "\u5EA7\u6A19\u5727\u7E2E"
   - icon: ':heavy_check_mark:'
     path: template.hpp
@@ -51,7 +51,7 @@ data:
     \    }\n    return os;\n}\n\nbool bit(ll x, int p) {\n    return (x >> p) & 1;\n\
     }\n\nbool out(int ni, int nj, int h, int w) {\n    return (ni < 0 or ni >= h or\
     \ nj < 0 or nj >= w);\n}\n\nint pc(ll x) {\n    return __builtin_popcountll(x);\n\
-    }\n#line 1 \"other/cc.hpp\"\ntemplate <typename T = int>\nstruct CC {\n    bool\
+    }\n#line 1 \"misc/cc.hpp\"\ntemplate <typename T = int>\nstruct CC {\n    bool\
     \ initialized;\n    vector<T> xs;\n    unordered_map<T, int> mp;\n    CC() : initialized(false)\
     \ {}\n    void add(T x) {\n        xs.push_back(x);\n    }\n    void init() {\n\
     \        sort(xs.begin(), xs.end());\n        xs.erase(unique(xs.begin(), xs.end()),\
@@ -67,7 +67,7 @@ data:
     \        ans += f.sum(a[i], m);\n        f.add(a[i], 1);\n    }\n    cout << ans\
     \ << endl;\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/5/ALDS1_5_D\"\
-    \n\n#include <bits/stdc++.h>\n#include \"template.hpp\"\n#include \"other/cc.hpp\"\
+    \n\n#include <bits/stdc++.h>\n#include \"template.hpp\"\n#include \"misc/cc.hpp\"\
     \n#include <atcoder/fenwicktree>\n\nint main() {\n    int n;\n    cin >> n;\n\
     \    vector<int> a(n);\n    cin >> a;\n    CC c;\n    rep(i, n) c.add(a[i]);\n\
     \    int m = c.size();\n    rep(i, n) a[i] = c(a[i]);\n    fenwick_tree<int> f(m);\n\
@@ -75,11 +75,11 @@ data:
     \ 1);\n    }\n    cout << ans << endl;\n    return 0;\n}"
   dependsOn:
   - template.hpp
-  - other/cc.hpp
+  - misc/cc.hpp
   isVerificationFile: true
   path: verify/aizu-cc.test.cpp
   requiredBy: []
-  timestamp: '2024-06-18 21:44:21+09:00'
+  timestamp: '2024-06-19 21:24:21+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aizu-cc.test.cpp

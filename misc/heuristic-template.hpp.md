@@ -11,7 +11,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"other/heuristic-template.hpp\"\n#include <bits/stdc++.h>\n\
+  bundledCode: "#line 1 \"misc/heuristic-template.hpp\"\n#include <bits/stdc++.h>\n\
     using namespace std;\nusing namespace chrono;\n#ifdef DEFINED_ONLY_IN_LOCAL\n\
     #include <dump.hpp>\n#define dump(...) cpp_dump(__VA_ARGS__)\n#else\n#undef dump\n\
     #define dump(...)\n#endif\ntemplate<class T>inline bool chmax(T &a,T b){if(a<b){a=b;return\
@@ -68,16 +68,16 @@ data:
     \ isTimeOver() const {return now_time_ >= time_threshold_;}\n};"
   dependsOn: []
   isVerificationFile: false
-  path: other/heuristic-template.hpp
+  path: misc/heuristic-template.hpp
   requiredBy: []
-  timestamp: '2024-06-16 16:28:30+09:00'
+  timestamp: '2024-06-19 21:24:21+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/heuristic-template.test.cpp
-documentation_of: other/heuristic-template.hpp
+documentation_of: misc/heuristic-template.hpp
 layout: document
 redirect_from:
-- /library/other/heuristic-template.hpp
-- /library/other/heuristic-template.hpp.html
-title: other/heuristic-template.hpp
+- /library/misc/heuristic-template.hpp
+- /library/misc/heuristic-template.hpp.html
+title: misc/heuristic-template.hpp
 ---
