@@ -8,6 +8,8 @@
 "verify/heuristic-template.test.cpp": "2024-06-16 16:28:30 +0900",
 "verify/prime-factorize.test.cpp": "2024-06-17 20:15:00 +0900",
 "verify/rerooting.test.cpp": "2024-06-17 20:15:00 +0900",
+"verify/yosupo-mo1.test.cpp": "2024-06-19 14:02:03 +0900",
+"verify/yosupo-mo2.test.cpp": "2024-06-19 14:02:03 +0900",
 "verify/yosupo-rolling-hash.test.cpp": "2024-06-18 21:24:13 +0900",
 "verify/yuki-rolling-hash-tree.test.cpp": "2024-06-17 20:15:00 +0900"
 }
