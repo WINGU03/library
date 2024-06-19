@@ -20,6 +20,9 @@ data:
   - name: other
     pages:
     - icon: ':heavy_check_mark:'
+      path: other/Mo.hpp
+      title: other/Mo.hpp
+    - icon: ':heavy_check_mark:'
       path: other/cc.hpp
       title: "\u5EA7\u6A19\u5727\u7E2E"
     - icon: ':heavy_check_mark:'
@@ -74,6 +77,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/rerooting.test.cpp
       title: verify/rerooting.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/yosupo-mo1.test.cpp
+      title: verify/yosupo-mo1.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/yosupo-mo2.test.cpp
+      title: verify/yosupo-mo2.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/yosupo-rolling-hash.test.cpp
       title: verify/yosupo-rolling-hash.test.cpp

@@ -6,6 +6,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/aizu-cc.test.cpp
     title: verify/aizu-cc.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/yosupo-mo1.test.cpp
+    title: verify/yosupo-mo1.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/yosupo-mo2.test.cpp
+    title: verify/yosupo-mo2.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -38,7 +44,9 @@ data:
   timestamp: '2024-06-10 17:44:10+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - verify/yosupo-mo1.test.cpp
   - verify/aizu-cc.test.cpp
+  - verify/yosupo-mo2.test.cpp
 documentation_of: other/cc.hpp
 layout: document
 title: "\u5EA7\u6A19\u5727\u7E2E"

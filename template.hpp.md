@@ -28,6 +28,12 @@ data:
     path: verify/rerooting.test.cpp
     title: verify/rerooting.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/yosupo-mo1.test.cpp
+    title: verify/yosupo-mo1.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/yosupo-mo2.test.cpp
+    title: verify/yosupo-mo2.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo-rolling-hash.test.cpp
     title: verify/yosupo-rolling-hash.test.cpp
   - icon: ':heavy_check_mark:'
@@ -116,12 +122,14 @@ data:
   - verify/compile-option.test.cpp
   - verify/aizu-rolling-hash.test.cpp
   - verify/yosupo-rolling-hash.test.cpp
+  - verify/yosupo-mo1.test.cpp
   - verify/aizu-cc.test.cpp
   - verify/extgcd.test.cpp
   - verify/yuki-rolling-hash-tree.test.cpp
   - verify/aizu-next-combination.test.cpp
   - verify/prime-factorize.test.cpp
   - verify/rerooting.test.cpp
+  - verify/yosupo-mo2.test.cpp
   - verify/enum-divisor.test.cpp
 documentation_of: template.hpp
 layout: document
