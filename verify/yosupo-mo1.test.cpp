@@ -2,8 +2,8 @@
 
 #include <bits/stdc++.h>
 #include "template.hpp"
-#include "other/Mo.hpp"
-#include "other/cc.hpp"
+#include "misc/mo.hpp"
+#include "misc/cc.hpp"
 #include <atcoder/fenwicktree>
 
 int main() {

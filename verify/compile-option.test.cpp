@@ -2,7 +2,7 @@
 
 #include <bits/stdc++.h>
 #include "template.hpp"
-#include "other/compile-option.hpp"
+#include "misc/compile-option.hpp"
 
 int main(){
     int t;

@@ -2,7 +2,7 @@
 
 #include <bits/stdc++.h>
 #include "template.hpp"
-#include "other/next_combination.hpp"
+#include "misc/next_combination.hpp"
 
 int main() {
     int n, s;

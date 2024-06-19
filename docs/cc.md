@@ -1,21 +1,31 @@
 ---
 title: 座標圧縮
-documentation_of: ./other/cc.hpp
+documentation_of: ./misc/cc.hpp
 ---
 
-## コンストラクタ
+数列を座標圧縮し、
+- ある値$x$が座標圧縮後、何番目か
+- 座標圧縮後の$i$番目の値
+- 座標圧縮後の配列サイズ
+を$O(1)$で取得できる。
+
+# コンストラクタ
 
 ```cpp
-CC c;
+CC<T> c
 ```
 
-long long型である必要がある場合
+- $T$は'int / ll'
+
+# add
 
 ```cpp
-CC<long long> c;
+void c.add(T x)
 ```
 
-## ()
+- $O(1)$
+
+# ()
 
 ```cpp
 int c(T x)

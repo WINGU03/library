@@ -2,7 +2,7 @@
 
 #include <bits/stdc++.h>
 #include "template.hpp"
-#include "other/cc.hpp"
+#include "misc/cc.hpp"
 #include <atcoder/fenwicktree>
 
 int main() {

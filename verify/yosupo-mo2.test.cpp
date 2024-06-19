@@ -2,8 +2,8 @@
 
 #include <bits/stdc++.h>
 #include "template.hpp"
-#include "other/cc.hpp"
-#include "other/Mo.hpp"
+#include "misc/cc.hpp"
+#include "misc/mo.hpp"
 
 int main() {
     static int n, q;
