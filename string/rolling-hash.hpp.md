@@ -72,8 +72,8 @@ data:
   timestamp: '2024-06-18 21:24:13+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/aizu-rolling-hash.test.cpp
   - verify/yosupo-rolling-hash.test.cpp
+  - verify/aizu-rolling-hash.test.cpp
 documentation_of: string/rolling-hash.hpp
 layout: document
 title: Rolling Hash
