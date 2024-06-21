@@ -5,18 +5,18 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: graph/rerooting.hpp
-      title: graph/rerooting.hpp
+      title: "\u5168\u65B9\u4F4D\u6728DP"
   - name: math
     pages:
     - icon: ':heavy_check_mark:'
       path: math/enum-divisor.hpp
-      title: math/enum-divisor.hpp
+      title: "\u7D04\u6570\u5217\u6319"
     - icon: ':heavy_check_mark:'
       path: math/extgcd.hpp
-      title: math/extgcd.hpp
+      title: "\u62E1\u5F35\u30E6\u30FC\u30AF\u30EA\u30C3\u30C9\u306E\u4E92\u9664\u6CD5"
     - icon: ':heavy_check_mark:'
       path: math/prime-factorize.hpp
-      title: math/prime-factorize.hpp
+      title: "\u7D20\u56E0\u6570\u5206\u89E3"
   - name: misc
     pages:
     - icon: ':heavy_check_mark:'
@@ -24,16 +24,16 @@ data:
       title: "\u5EA7\u6A19\u5727\u7E2E"
     - icon: ':heavy_check_mark:'
       path: misc/compile-option.hpp
-      title: misc/compile-option.hpp
+      title: "\u30B3\u30F3\u30D1\u30A4\u30EB\u30AA\u30D7\u30B7\u30E7\u30F3"
     - icon: ':heavy_check_mark:'
       path: misc/heuristic-template.hpp
-      title: misc/heuristic-template.hpp
+      title: Heuristic-template
     - icon: ':heavy_check_mark:'
       path: misc/mo.hpp
       title: "Mo\u2019s algorithm"
     - icon: ':heavy_check_mark:'
       path: misc/next-combination.hpp
-      title: misc/next-combination.hpp
+      title: Next-combination
   - name: string
     pages:
     - icon: ':heavy_check_mark:'

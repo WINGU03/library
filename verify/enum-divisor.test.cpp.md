@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: math/enum-divisor.hpp
-    title: math/enum-divisor.hpp
+    title: "\u7D04\u6570\u5217\u6319"
   - icon: ':heavy_check_mark:'
     path: template.hpp
     title: template.hpp

@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: misc/heuristic-template.hpp
-    title: misc/heuristic-template.hpp
+    title: Heuristic-template
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false

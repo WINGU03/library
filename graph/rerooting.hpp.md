@@ -87,8 +87,5 @@ data:
   - verify/rerooting.test.cpp
 documentation_of: graph/rerooting.hpp
 layout: document
-redirect_from:
-- /library/graph/rerooting.hpp
-- /library/graph/rerooting.hpp.html
-title: graph/rerooting.hpp
+title: "\u5168\u65B9\u4F4D\u6728DP"
 ---

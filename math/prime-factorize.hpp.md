@@ -32,8 +32,5 @@ data:
   - verify/prime-factorize.test.cpp
 documentation_of: math/prime-factorize.hpp
 layout: document
-redirect_from:
-- /library/math/prime-factorize.hpp
-- /library/math/prime-factorize.hpp.html
-title: math/prime-factorize.hpp
+title: "\u7D20\u56E0\u6570\u5206\u89E3"
 ---

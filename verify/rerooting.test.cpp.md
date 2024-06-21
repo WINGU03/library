@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: graph/rerooting.hpp
-    title: graph/rerooting.hpp
+    title: "\u5168\u65B9\u4F4D\u6728DP"
   - icon: ':heavy_check_mark:'
     path: template.hpp
     title: template.hpp

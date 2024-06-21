@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: misc/next-combination.hpp
-    title: misc/next-combination.hpp
+    title: Next-combination
   - icon: ':heavy_check_mark:'
     path: template.hpp
     title: template.hpp

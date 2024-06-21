@@ -40,8 +40,5 @@ data:
   - verify/aizu-next-combination.test.cpp
 documentation_of: misc/next-combination.hpp
 layout: document
-redirect_from:
-- /library/misc/next-combination.hpp
-- /library/misc/next-combination.hpp.html
-title: misc/next-combination.hpp
+title: Next-combination
 ---

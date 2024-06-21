@@ -27,8 +27,5 @@ data:
   - verify/extgcd.test.cpp
 documentation_of: math/extgcd.hpp
 layout: document
-redirect_from:
-- /library/math/extgcd.hpp
-- /library/math/extgcd.hpp.html
-title: math/extgcd.hpp
+title: "\u62E1\u5F35\u30E6\u30FC\u30AF\u30EA\u30C3\u30C9\u306E\u4E92\u9664\u6CD5"
 ---

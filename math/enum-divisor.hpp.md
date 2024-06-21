@@ -30,8 +30,5 @@ data:
   - verify/enum-divisor.test.cpp
 documentation_of: math/enum-divisor.hpp
 layout: document
-redirect_from:
-- /library/math/enum-divisor.hpp
-- /library/math/enum-divisor.hpp.html
-title: math/enum-divisor.hpp
+title: "\u7D04\u6570\u5217\u6319"
 ---
