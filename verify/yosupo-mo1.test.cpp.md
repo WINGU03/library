@@ -58,16 +58,18 @@ data:
     \ M::T;\n    int backet;\n    vector<int> left, right, order;\n    Mo(int N, int\
     \ Q) {\n        order.resize(Q);\n        backet = max<int>(1, (double)(N) / max<double>(1,\
     \ sqrt(Q * 2.0 / 3)));\n        iota(order.begin(), order.end(), 0);\n    }\n\
-    \    void add_query(int lf, int ri) {\n        left.emplace_back(lf);\n      \
-    \  right.emplace_back(ri);\n    }\n    vector<T> run() {\n        vector<T> answer(order.size());\n\
-    \        sort(order.begin(), order.end(), [&](int a, int b) {\n            int\
-    \ ab = left[a] / backet, bb = left[b] / backet;\n            if (ab != bb) return\
-    \ ab < bb;\n            if (ab & 1) return right[a] < right[b];\n            return\
-    \ right[a] > right[b];\n        });\n        int nl = 0, nr = 0;\n        for\
-    \ (int i : order) {\n            while (nl > left[i]) {\n                M::add_left(--nl);\n\
-    \            }\n            while (right[i] > nr) {\n                M::add_right(nr++);\n\
-    \            }\n            while (nl < left[i]) {\n                M::del_left(nl++);\n\
-    \            }\n            while (right[i] < nr) {\n                M::del_right(--nr);\n\
+    \    void add_query(int left_id, int right_id) {\n        left.emplace_back(left_id);\n\
+    \        right.emplace_back(right_id);\n    }\n    vector<T> run() {\n       \
+    \ vector<T> answer(order.size());\n        sort(order.begin(), order.end(), [&](int\
+    \ a, int b) {\n            int a_block = left[a] / backet, b_block = left[b] /\
+    \ backet;\n            if (a_block != b_block) return a_block < b_block;\n   \
+    \         if (a_block & 1) return right[a] < right[b];\n            return right[a]\
+    \ > right[b];\n        });\n        int now_left = 0, now_right = 0;\n       \
+    \ for (int i : order) {\n            while (now_left > left[i]) {\n          \
+    \      M::add_left(--now_left);\n            }\n            while (right[i] >\
+    \ now_right) {\n                M::add_right(now_right++);\n            }\n  \
+    \          while (now_left < left[i]) {\n                M::del_left(now_left++);\n\
+    \            }\n            while (right[i] < now_right) {\n                M::del_right(--now_right);\n\
     \            }\n            answer[i] = M::res(i);\n        }\n        return\
     \ answer;\n    }\n};\n#line 1 \"misc/cc.hpp\"\ntemplate <typename T = int>\nstruct\
     \ CC {\n    bool initialized;\n    vector<T> xs;\n    unordered_map<T, int> mp;\n\
@@ -117,7 +119,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo-mo1.test.cpp
   requiredBy: []
-  timestamp: '2024-06-19 21:24:21+09:00'
+  timestamp: '2024-06-22 09:18:57+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo-mo1.test.cpp
