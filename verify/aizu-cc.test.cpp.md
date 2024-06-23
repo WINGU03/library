@@ -6,7 +6,7 @@ data:
     title: "\u5EA7\u6A19\u5727\u7E2E"
   - icon: ':heavy_check_mark:'
     path: template.hpp
-    title: template.hpp
+    title: Template
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false

@@ -6,7 +6,7 @@ data:
     title: Rolling Hash Tree
   - icon: ':heavy_check_mark:'
     path: template.hpp
-    title: template.hpp
+    title: Template
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false

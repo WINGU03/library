@@ -76,5 +76,5 @@ data:
   - verify/heuristic-template.test.cpp
 documentation_of: misc/heuristic-template.hpp
 layout: document
-title: Heuristic-template
+title: Heuristic template
 ---

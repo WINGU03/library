@@ -3,10 +3,10 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: misc/next-combination.hpp
-    title: Next-combination
+    title: Next combination
   - icon: ':heavy_check_mark:'
     path: template.hpp
-    title: template.hpp
+    title: Template
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false

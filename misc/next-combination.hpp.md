@@ -40,5 +40,5 @@ data:
   - verify/aizu-next-combination.test.cpp
 documentation_of: misc/next-combination.hpp
 layout: document
-title: Next-combination
+title: Next combination
 ---
