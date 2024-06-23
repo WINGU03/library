@@ -9,7 +9,7 @@ data:
     title: "Mo\u2019s algorithm"
   - icon: ':heavy_check_mark:'
     path: template.hpp
-    title: Template
+    title: template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false

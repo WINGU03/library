@@ -46,7 +46,7 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: template.hpp
-      title: Template
+      title: template.hpp
   verificationCategories:
   - name: verify
     pages:

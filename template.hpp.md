@@ -133,5 +133,8 @@ data:
   - verify/aizu-next-combination.test.cpp
 documentation_of: template.hpp
 layout: document
-title: Template
+redirect_from:
+- /library/template.hpp
+- /library/template.hpp.html
+title: template.hpp
 ---
