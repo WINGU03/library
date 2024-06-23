@@ -1,6 +1,6 @@
 ---
 title: Rolling Hash Tree
-documentation_of: ./string/rolling-hash-tree.hpp
+documentation_of: //string/rolling-hash-tree.hpp
 ---
 
 ## コンストラクタ
