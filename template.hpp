@@ -21,8 +21,8 @@ using namespace atcoder;
 #define rall(a) a.rbegin(), a.rend()
 using ll = long long;
 using ull = unsigned long long;
-using P = pair<ll, ll>;
-using T = tuple<ll, ll, ll>;
+using P = pair<int, int>;
+using T = tuple<int, int, int>;
 const int inf = 1e9;
 const ll INF = 1e18;
 const int dx[4] = {0, 1, 0, -1};
@@ -36,6 +36,7 @@ struct cincout {
     }
 } init;
 
+// chmax chmin
 template <class T>
 inline bool chmax(T &a, T b) {
     if (a < b) {
@@ -54,6 +55,7 @@ inline bool chmin(T &a, T b) {
     return false;
 }
 
+// pair
 template <class T1, class T2>
 istream &operator>>(istream &is, pair<T1, T2> &p) {
     is >> p.first >> p.second;
@@ -66,6 +68,7 @@ ostream &operator<<(ostream &os, const pair<T1, T2> &p) {
     return os;
 }
 
+// vector
 template <class T>
 istream &operator>>(istream &is, vector<T> &v) {
     for (T &in : v) {
