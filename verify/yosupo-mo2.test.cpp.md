@@ -31,29 +31,29 @@ data:
     #define rrep(i, a, b) for (int i = (int)(a); i <= (int)(b); i++)\n#define drep(i,\
     \ a, b) for (int i = (int)(a); i >= (int)(b); i--)\n#define all(a) a.begin(),\
     \ a.end()\n#define rall(a) a.rbegin(), a.rend()\nusing ll = long long;\nusing\
-    \ ull = unsigned long long;\nusing P = pair<ll, ll>;\nusing T = tuple<ll, ll,\
-    \ ll>;\nconst int inf = 1e9;\nconst ll INF = 1e18;\nconst int dx[4] = {0, 1, 0,\
-    \ -1};\nconst int dy[4] = {1, 0, -1, 0};\n\nstruct cincout {\n    cincout() {\n\
-    \        ios_base::sync_with_stdio(false);\n        cin.tie(nullptr);\n      \
-    \  cout << fixed << setprecision(15);\n    }\n} init;\n\ntemplate <class T>\n\
-    inline bool chmax(T &a, T b) {\n    if (a < b) {\n        a = b;\n        return\
-    \ true;\n    }\n    return false;\n}\n\ntemplate <class T>\ninline bool chmin(T\
-    \ &a, T b) {\n    if (a > b) {\n        a = b;\n        return true;\n    }\n\
-    \    return false;\n}\n\ntemplate <class T1, class T2>\nistream &operator>>(istream\
-    \ &is, pair<T1, T2> &p) {\n    is >> p.first >> p.second;\n    return is;\n}\n\
-    \ntemplate <class T1, class T2>\nostream &operator<<(ostream &os, const pair<T1,\
-    \ T2> &p) {\n    os << p.first << \" \" << p.second << '\\n';\n    return os;\n\
-    }\n\ntemplate <class T>\nistream &operator>>(istream &is, vector<T> &v) {\n  \
-    \  for (T &in : v) {\n        is >> in;\n    }\n    return is;\n}\n\ntemplate\
-    \ <class T>\nostream &operator<<(ostream &os, const vector<T> &v) {\n    rep(i,\
-    \ (int)v.size()) {\n        os << v[i] << \" \\n\"[i + 1 == (int)v.size()];\n\
-    \    }\n    return os;\n}\n\ntemplate <class T>\nistream &operator>>(istream &is,\
-    \ vector<vector<T>> &vv) {\n    for (vector<T> &v : vv) {\n        is >> v;\n\
-    \    }\n    return is;\n}\n\ntemplate <class T>\nostream &operator<<(ostream &os,\
-    \ vector<vector<T>> &vv) {\n    for (vector<T> &v : vv) {\n        os << v;\n\
-    \    }\n    return os;\n}\n\nbool bit(ll x, int p) {\n    return (x >> p) & 1;\n\
-    }\n\nbool out(int ni, int nj, int h, int w) {\n    return (ni < 0 or ni >= h or\
-    \ nj < 0 or nj >= w);\n}\n\nint pc(ll x) {\n    return __builtin_popcountll(x);\n\
+    \ ull = unsigned long long;\nusing P = pair<int, int>;\nusing T = tuple<int, int,\
+    \ int>;\nconst int inf = 1e9;\nconst ll INF = 1e18;\nconst int dx[4] = {0, 1,\
+    \ 0, -1};\nconst int dy[4] = {1, 0, -1, 0};\n\nstruct cincout {\n    cincout()\
+    \ {\n        ios_base::sync_with_stdio(false);\n        cin.tie(nullptr);\n  \
+    \      cout << fixed << setprecision(15);\n    }\n} init;\n\n// chmax chmin\n\
+    template <class T>\ninline bool chmax(T &a, T b) {\n    if (a < b) {\n       \
+    \ a = b;\n        return true;\n    }\n    return false;\n}\n\ntemplate <class\
+    \ T>\ninline bool chmin(T &a, T b) {\n    if (a > b) {\n        a = b;\n     \
+    \   return true;\n    }\n    return false;\n}\n\n// pair\ntemplate <class T1,\
+    \ class T2>\nistream &operator>>(istream &is, pair<T1, T2> &p) {\n    is >> p.first\
+    \ >> p.second;\n    return is;\n}\n\ntemplate <class T1, class T2>\nostream &operator<<(ostream\
+    \ &os, const pair<T1, T2> &p) {\n    os << p.first << \" \" << p.second << '\\\
+    n';\n    return os;\n}\n\n// vector\ntemplate <class T>\nistream &operator>>(istream\
+    \ &is, vector<T> &v) {\n    for (T &in : v) {\n        is >> in;\n    }\n    return\
+    \ is;\n}\n\ntemplate <class T>\nostream &operator<<(ostream &os, const vector<T>\
+    \ &v) {\n    rep(i, (int)v.size()) {\n        os << v[i] << \" \\n\"[i + 1 ==\
+    \ (int)v.size()];\n    }\n    return os;\n}\n\ntemplate <class T>\nistream &operator>>(istream\
+    \ &is, vector<vector<T>> &vv) {\n    for (vector<T> &v : vv) {\n        is >>\
+    \ v;\n    }\n    return is;\n}\n\ntemplate <class T>\nostream &operator<<(ostream\
+    \ &os, vector<vector<T>> &vv) {\n    for (vector<T> &v : vv) {\n        os <<\
+    \ v;\n    }\n    return os;\n}\n\nbool bit(ll x, int p) {\n    return (x >> p)\
+    \ & 1;\n}\n\nbool out(int ni, int nj, int h, int w) {\n    return (ni < 0 or ni\
+    \ >= h or nj < 0 or nj >= w);\n}\n\nint pc(ll x) {\n    return __builtin_popcountll(x);\n\
     }\n#line 1 \"misc/cc.hpp\"\ntemplate <typename T = int>\nstruct CC {\n    bool\
     \ initialized;\n    vector<T> xs;\n    unordered_map<T, int> mp;\n    CC() : initialized(false)\
     \ {}\n    void add(T x) {\n        xs.push_back(x);\n    }\n    void init() {\n\
@@ -117,7 +117,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo-mo2.test.cpp
   requiredBy: []
-  timestamp: '2024-06-22 09:18:57+09:00'
+  timestamp: '2024-06-30 20:09:53+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo-mo2.test.cpp
