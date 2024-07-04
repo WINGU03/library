@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/prime-factorize.hpp
     title: "\u7D20\u56E0\u6570\u5206\u89E3"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_A
@@ -51,10 +51,10 @@ data:
     \ & 1;\n}\n\nbool out(int ni, int nj, int h, int w) {\n    return (ni < 0 or ni\
     \ >= h or nj < 0 or nj >= w);\n}\n\nint pc(ll x) {\n    return __builtin_popcountll(x);\n\
     }\n\ntemplate <class T>\nT max(vector<T> x) {\n    return *max_element(x.begin(),\
-    \ x.end());\n}\n#line 1 \"math/prime-factorize.hpp\"\nvector<P> prime_factorize(ll\
-    \ n) {\n    vector<P> res;\n    for (int p = 2; (ll)p * p <= n; p++) {\n     \
-    \   if (n % p != 0) continue;\n        int num = 0;\n        while (n % p == 0)\
-    \ {\n            num++;\n            n /= p;\n        }\n        res.push_back(make_pair(p,\
+    \ x.end());\n}\n#line 1 \"math/prime-factorize.hpp\"\nvector<pair<ll, ll>> prime_factorize(ll\
+    \ n) {\n    vector<pair<ll, ll>> res;\n    for (int p = 2; (ll)p * p <= n; p++)\
+    \ {\n        if (n % p != 0) continue;\n        int num = 0;\n        while (n\
+    \ % p == 0) {\n            num++;\n            n /= p;\n        }\n        res.push_back(make_pair(p,\
     \ num));\n    }\n    if (n != 1) res.push_back(make_pair(n, 1));\n    return res;\n\
     }\n#line 6 \"verify/prime-factorize.test.cpp\"\n\nint main() {\n    int n;\n \
     \   cin >> n;\n    auto p = prime_factorize(n);\n    cout << n << ':';\n    for\
@@ -71,8 +71,8 @@ data:
   isVerificationFile: true
   path: verify/prime-factorize.test.cpp
   requiredBy: []
-  timestamp: '2024-07-04 21:35:39+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-07-04 21:42:09+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/prime-factorize.test.cpp
 layout: document
