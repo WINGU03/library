@@ -21,8 +21,6 @@ using namespace atcoder;
 #define rall(a) a.rbegin(), a.rend()
 using ll = long long;
 using ull = unsigned long long;
-using P = pair<int, int>;
-using T = tuple<int, int, int>;
 const int inf = 1e9;
 const ll INF = 1e18;
 const int dx[4] = {0, 1, 0, -1};
@@ -111,4 +109,9 @@ bool out(int ni, int nj, int h, int w) {
 
 int pc(ll x) {
     return __builtin_popcountll(x);
+}
+
+template <class T>
+T max(vector<T> x) {
+    return *max_element(x.begin(), x.end());
 }
