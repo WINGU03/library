@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/rerooting.hpp
     title: "\u5168\u65B9\u4F4D\u6728DP"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
@@ -28,11 +28,10 @@ data:
     #define rrep(i, a, b) for (int i = (int)(a); i <= (int)(b); i++)\n#define drep(i,\
     \ a, b) for (int i = (int)(a); i >= (int)(b); i--)\n#define all(a) a.begin(),\
     \ a.end()\n#define rall(a) a.rbegin(), a.rend()\nusing ll = long long;\nusing\
-    \ ull = unsigned long long;\nusing P = pair<int, int>;\nusing T = tuple<int, int,\
-    \ int>;\nconst int inf = 1e9;\nconst ll INF = 1e18;\nconst int dx[4] = {0, 1,\
-    \ 0, -1};\nconst int dy[4] = {1, 0, -1, 0};\n\nstruct cincout {\n    cincout()\
-    \ {\n        ios_base::sync_with_stdio(false);\n        cin.tie(nullptr);\n  \
-    \      cout << fixed << setprecision(15);\n    }\n} init;\n\n// chmax chmin\n\
+    \ ull = unsigned long long;\nconst int inf = 1e9;\nconst ll INF = 1e18;\nconst\
+    \ int dx[4] = {0, 1, 0, -1};\nconst int dy[4] = {1, 0, -1, 0};\n\nstruct cincout\
+    \ {\n    cincout() {\n        ios_base::sync_with_stdio(false);\n        cin.tie(nullptr);\n\
+    \        cout << fixed << setprecision(15);\n    }\n} init;\n\n// chmax chmin\n\
     template <class T>\ninline bool chmax(T &a, T b) {\n    if (a < b) {\n       \
     \ a = b;\n        return true;\n    }\n    return false;\n}\n\ntemplate <class\
     \ T>\ninline bool chmin(T &a, T b) {\n    if (a > b) {\n        a = b;\n     \
@@ -51,18 +50,19 @@ data:
     \ v;\n    }\n    return os;\n}\n\nbool bit(ll x, int p) {\n    return (x >> p)\
     \ & 1;\n}\n\nbool out(int ni, int nj, int h, int w) {\n    return (ni < 0 or ni\
     \ >= h or nj < 0 or nj >= w);\n}\n\nint pc(ll x) {\n    return __builtin_popcountll(x);\n\
-    }\n#line 1 \"graph/rerooting.hpp\"\ntemplate <typename Cost>\nstruct Edge {\n\
-    \    int src, to;\n    Cost cost;\n    Edge(int s, int t, Cost c = 1) : src(s),\
-    \ to(t), cost(c) {}\n    // \u30C7\u30D5\u30A9\u30EB\u30C8\u3067\u306F\u884C\u304D\
-    \u5148\u3092\u8FD4\u3059\n    operator int() const { return to; }\n};\n\ntemplate\
-    \ <typename Cost>\nstruct Graph : vector<vector<Edge<Cost>>> {\n    Graph(int\
-    \ n) : vector<vector<Edge<Cost>>>(n) {}\n    void add_edge(int s, int t, Cost\
-    \ c = 1) { (*this)[s].emplace_back(s, t, c); }\n};\n\ntemplate <\n    typename\
-    \ Cost,\n    typename Data,\n    Data (*merge)(Data, Data),\n    Data (*e)(),\n\
-    \    Data (*leaf)(),\n    Data (*apply)(Data, int, int, Cost)>\nstruct Rerooting\
-    \ : Graph<Cost> {\n    // memo : 0\u3092\u6839\u3068\u3057\u305F\u3068\u304D\u306E\
-    i\u306E\u90E8\u5206\u6728\u306E\u5024(i\u81EA\u8EAB\u306F\u542B\u307E\u308C\u306A\
-    \u3044)\n    vector<Data> dp, memo;\n\n    Rerooting(int n) : Graph<Cost>::Graph(n)\
+    }\n\ntemplate <class T>\nT max(vector<T> x) {\n    return *max_element(x.begin(),\
+    \ x.end());\n}\n#line 1 \"graph/rerooting.hpp\"\ntemplate <typename Cost>\nstruct\
+    \ Edge {\n    int src, to;\n    Cost cost;\n    Edge(int s, int t, Cost c = 1)\
+    \ : src(s), to(t), cost(c) {}\n    // \u30C7\u30D5\u30A9\u30EB\u30C8\u3067\u306F\
+    \u884C\u304D\u5148\u3092\u8FD4\u3059\n    operator int() const { return to; }\n\
+    };\n\ntemplate <typename Cost>\nstruct Graph : vector<vector<Edge<Cost>>> {\n\
+    \    Graph(int n) : vector<vector<Edge<Cost>>>(n) {}\n    void add_edge(int s,\
+    \ int t, Cost c = 1) { (*this)[s].emplace_back(s, t, c); }\n};\n\ntemplate <\n\
+    \    typename Cost,\n    typename Data,\n    Data (*merge)(Data, Data),\n    Data\
+    \ (*e)(),\n    Data (*leaf)(),\n    Data (*apply)(Data, int, int, Cost)>\nstruct\
+    \ Rerooting : Graph<Cost> {\n    // memo : 0\u3092\u6839\u3068\u3057\u305F\u3068\
+    \u304D\u306Ei\u306E\u90E8\u5206\u6728\u306E\u5024(i\u81EA\u8EAB\u306F\u542B\u307E\
+    \u308C\u306A\u3044)\n    vector<Data> dp, memo;\n\n    Rerooting(int n) : Graph<Cost>::Graph(n)\
     \ {}\n\n    vector<Data> run() {\n        memo.resize((*this).size(), e());\n\
     \        dp.resize((*this).size());\n        dfs1(0, -1);\n        dfs2(0, -1,\
     \ e());\n        return dp;\n    }\n    // 0\u3092\u6839\u3068\u3057\u305F\u6728\
@@ -110,7 +110,7 @@ data:
   isVerificationFile: true
   path: verify/rerooting.test.cpp
   requiredBy: []
-  timestamp: '2024-06-30 20:16:33+09:00'
+  timestamp: '2024-07-04 21:35:39+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/rerooting.test.cpp

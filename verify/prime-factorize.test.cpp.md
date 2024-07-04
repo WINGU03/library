@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: math/prime-factorize.hpp
     title: "\u7D20\u56E0\u6570\u5206\u89E3"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_A
@@ -28,11 +28,10 @@ data:
     #define rrep(i, a, b) for (int i = (int)(a); i <= (int)(b); i++)\n#define drep(i,\
     \ a, b) for (int i = (int)(a); i >= (int)(b); i--)\n#define all(a) a.begin(),\
     \ a.end()\n#define rall(a) a.rbegin(), a.rend()\nusing ll = long long;\nusing\
-    \ ull = unsigned long long;\nusing P = pair<int, int>;\nusing T = tuple<int, int,\
-    \ int>;\nconst int inf = 1e9;\nconst ll INF = 1e18;\nconst int dx[4] = {0, 1,\
-    \ 0, -1};\nconst int dy[4] = {1, 0, -1, 0};\n\nstruct cincout {\n    cincout()\
-    \ {\n        ios_base::sync_with_stdio(false);\n        cin.tie(nullptr);\n  \
-    \      cout << fixed << setprecision(15);\n    }\n} init;\n\n// chmax chmin\n\
+    \ ull = unsigned long long;\nconst int inf = 1e9;\nconst ll INF = 1e18;\nconst\
+    \ int dx[4] = {0, 1, 0, -1};\nconst int dy[4] = {1, 0, -1, 0};\n\nstruct cincout\
+    \ {\n    cincout() {\n        ios_base::sync_with_stdio(false);\n        cin.tie(nullptr);\n\
+    \        cout << fixed << setprecision(15);\n    }\n} init;\n\n// chmax chmin\n\
     template <class T>\ninline bool chmax(T &a, T b) {\n    if (a < b) {\n       \
     \ a = b;\n        return true;\n    }\n    return false;\n}\n\ntemplate <class\
     \ T>\ninline bool chmin(T &a, T b) {\n    if (a > b) {\n        a = b;\n     \
@@ -51,10 +50,11 @@ data:
     \ v;\n    }\n    return os;\n}\n\nbool bit(ll x, int p) {\n    return (x >> p)\
     \ & 1;\n}\n\nbool out(int ni, int nj, int h, int w) {\n    return (ni < 0 or ni\
     \ >= h or nj < 0 or nj >= w);\n}\n\nint pc(ll x) {\n    return __builtin_popcountll(x);\n\
-    }\n#line 1 \"math/prime-factorize.hpp\"\nvector<P> prime_factorize(ll n) {\n \
-    \   vector<P> res;\n    for (int p = 2; (ll)p * p <= n; p++) {\n        if (n\
-    \ % p != 0) continue;\n        int num = 0;\n        while (n % p == 0) {\n  \
-    \          num++;\n            n /= p;\n        }\n        res.push_back(make_pair(p,\
+    }\n\ntemplate <class T>\nT max(vector<T> x) {\n    return *max_element(x.begin(),\
+    \ x.end());\n}\n#line 1 \"math/prime-factorize.hpp\"\nvector<P> prime_factorize(ll\
+    \ n) {\n    vector<P> res;\n    for (int p = 2; (ll)p * p <= n; p++) {\n     \
+    \   if (n % p != 0) continue;\n        int num = 0;\n        while (n % p == 0)\
+    \ {\n            num++;\n            n /= p;\n        }\n        res.push_back(make_pair(p,\
     \ num));\n    }\n    if (n != 1) res.push_back(make_pair(n, 1));\n    return res;\n\
     }\n#line 6 \"verify/prime-factorize.test.cpp\"\n\nint main() {\n    int n;\n \
     \   cin >> n;\n    auto p = prime_factorize(n);\n    cout << n << ':';\n    for\
@@ -71,8 +71,8 @@ data:
   isVerificationFile: true
   path: verify/prime-factorize.test.cpp
   requiredBy: []
-  timestamp: '2024-06-30 20:09:53+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2024-07-04 21:35:39+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/prime-factorize.test.cpp
 layout: document

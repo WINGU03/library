@@ -14,7 +14,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/extgcd.hpp
       title: "\u62E1\u5F35\u30E6\u30FC\u30AF\u30EA\u30C3\u30C9\u306E\u4E92\u9664\u6CD5"
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: math/prime-factorize.hpp
       title: "\u7D20\u56E0\u6570\u5206\u89E3"
   - name: misc
@@ -44,7 +44,7 @@ data:
       title: Rolling Hash
   - name: .
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template.hpp
       title: template.hpp
   verificationCategories:
@@ -71,7 +71,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/heuristic-template.test.cpp
       title: verify/heuristic-template.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/prime-factorize.test.cpp
       title: verify/prime-factorize.test.cpp
     - icon: ':heavy_check_mark:'

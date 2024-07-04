@@ -21,7 +21,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/extgcd.test.cpp
     title: verify/extgcd.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/prime-factorize.test.cpp
     title: verify/prime-factorize.test.cpp
   - icon: ':heavy_check_mark:'
@@ -39,9 +39,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yuki-rolling-hash-tree.test.cpp
     title: verify/yuki-rolling-hash-tree.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"template.hpp\"\n#include <bits/stdc++.h>\nusing namespace\
@@ -54,11 +54,10 @@ data:
     #define rrep(i, a, b) for (int i = (int)(a); i <= (int)(b); i++)\n#define drep(i,\
     \ a, b) for (int i = (int)(a); i >= (int)(b); i--)\n#define all(a) a.begin(),\
     \ a.end()\n#define rall(a) a.rbegin(), a.rend()\nusing ll = long long;\nusing\
-    \ ull = unsigned long long;\nusing P = pair<int, int>;\nusing T = tuple<int, int,\
-    \ int>;\nconst int inf = 1e9;\nconst ll INF = 1e18;\nconst int dx[4] = {0, 1,\
-    \ 0, -1};\nconst int dy[4] = {1, 0, -1, 0};\n\nstruct cincout {\n    cincout()\
-    \ {\n        ios_base::sync_with_stdio(false);\n        cin.tie(nullptr);\n  \
-    \      cout << fixed << setprecision(15);\n    }\n} init;\n\n// chmax chmin\n\
+    \ ull = unsigned long long;\nconst int inf = 1e9;\nconst ll INF = 1e18;\nconst\
+    \ int dx[4] = {0, 1, 0, -1};\nconst int dy[4] = {1, 0, -1, 0};\n\nstruct cincout\
+    \ {\n    cincout() {\n        ios_base::sync_with_stdio(false);\n        cin.tie(nullptr);\n\
+    \        cout << fixed << setprecision(15);\n    }\n} init;\n\n// chmax chmin\n\
     template <class T>\ninline bool chmax(T &a, T b) {\n    if (a < b) {\n       \
     \ a = b;\n        return true;\n    }\n    return false;\n}\n\ntemplate <class\
     \ T>\ninline bool chmin(T &a, T b) {\n    if (a > b) {\n        a = b;\n     \
@@ -77,7 +76,8 @@ data:
     \ v;\n    }\n    return os;\n}\n\nbool bit(ll x, int p) {\n    return (x >> p)\
     \ & 1;\n}\n\nbool out(int ni, int nj, int h, int w) {\n    return (ni < 0 or ni\
     \ >= h or nj < 0 or nj >= w);\n}\n\nint pc(ll x) {\n    return __builtin_popcountll(x);\n\
-    }\n"
+    }\n\ntemplate <class T>\nT max(vector<T> x) {\n    return *max_element(x.begin(),\
+    \ x.end());\n}\n"
   code: "#include <bits/stdc++.h>\nusing namespace std;\n#include <atcoder/modint>\n\
     using namespace atcoder;\n\n#ifdef DEFINED_ONLY_IN_LOCAL\n#include <dump.hpp>\n\
     #define dump(...) cpp_dump(__VA_ARGS__)\n#else\n#undef dump\n#define dump(...)\n\
@@ -88,11 +88,10 @@ data:
     #define rrep(i, a, b) for (int i = (int)(a); i <= (int)(b); i++)\n#define drep(i,\
     \ a, b) for (int i = (int)(a); i >= (int)(b); i--)\n#define all(a) a.begin(),\
     \ a.end()\n#define rall(a) a.rbegin(), a.rend()\nusing ll = long long;\nusing\
-    \ ull = unsigned long long;\nusing P = pair<int, int>;\nusing T = tuple<int, int,\
-    \ int>;\nconst int inf = 1e9;\nconst ll INF = 1e18;\nconst int dx[4] = {0, 1,\
-    \ 0, -1};\nconst int dy[4] = {1, 0, -1, 0};\n\nstruct cincout {\n    cincout()\
-    \ {\n        ios_base::sync_with_stdio(false);\n        cin.tie(nullptr);\n  \
-    \      cout << fixed << setprecision(15);\n    }\n} init;\n\n// chmax chmin\n\
+    \ ull = unsigned long long;\nconst int inf = 1e9;\nconst ll INF = 1e18;\nconst\
+    \ int dx[4] = {0, 1, 0, -1};\nconst int dy[4] = {1, 0, -1, 0};\n\nstruct cincout\
+    \ {\n    cincout() {\n        ios_base::sync_with_stdio(false);\n        cin.tie(nullptr);\n\
+    \        cout << fixed << setprecision(15);\n    }\n} init;\n\n// chmax chmin\n\
     template <class T>\ninline bool chmax(T &a, T b) {\n    if (a < b) {\n       \
     \ a = b;\n        return true;\n    }\n    return false;\n}\n\ntemplate <class\
     \ T>\ninline bool chmin(T &a, T b) {\n    if (a > b) {\n        a = b;\n     \
@@ -111,13 +110,14 @@ data:
     \ v;\n    }\n    return os;\n}\n\nbool bit(ll x, int p) {\n    return (x >> p)\
     \ & 1;\n}\n\nbool out(int ni, int nj, int h, int w) {\n    return (ni < 0 or ni\
     \ >= h or nj < 0 or nj >= w);\n}\n\nint pc(ll x) {\n    return __builtin_popcountll(x);\n\
-    }"
+    }\n\ntemplate <class T>\nT max(vector<T> x) {\n    return *max_element(x.begin(),\
+    \ x.end());\n}"
   dependsOn: []
   isVerificationFile: false
   path: template.hpp
   requiredBy: []
-  timestamp: '2024-06-30 20:09:53+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2024-07-04 21:35:39+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/extgcd.test.cpp
   - verify/aizu-cc.test.cpp

@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: misc/cc.hpp
     title: "\u5EA7\u6A19\u5727\u7E2E"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
@@ -28,11 +28,10 @@ data:
     #define rrep(i, a, b) for (int i = (int)(a); i <= (int)(b); i++)\n#define drep(i,\
     \ a, b) for (int i = (int)(a); i >= (int)(b); i--)\n#define all(a) a.begin(),\
     \ a.end()\n#define rall(a) a.rbegin(), a.rend()\nusing ll = long long;\nusing\
-    \ ull = unsigned long long;\nusing P = pair<int, int>;\nusing T = tuple<int, int,\
-    \ int>;\nconst int inf = 1e9;\nconst ll INF = 1e18;\nconst int dx[4] = {0, 1,\
-    \ 0, -1};\nconst int dy[4] = {1, 0, -1, 0};\n\nstruct cincout {\n    cincout()\
-    \ {\n        ios_base::sync_with_stdio(false);\n        cin.tie(nullptr);\n  \
-    \      cout << fixed << setprecision(15);\n    }\n} init;\n\n// chmax chmin\n\
+    \ ull = unsigned long long;\nconst int inf = 1e9;\nconst ll INF = 1e18;\nconst\
+    \ int dx[4] = {0, 1, 0, -1};\nconst int dy[4] = {1, 0, -1, 0};\n\nstruct cincout\
+    \ {\n    cincout() {\n        ios_base::sync_with_stdio(false);\n        cin.tie(nullptr);\n\
+    \        cout << fixed << setprecision(15);\n    }\n} init;\n\n// chmax chmin\n\
     template <class T>\ninline bool chmax(T &a, T b) {\n    if (a < b) {\n       \
     \ a = b;\n        return true;\n    }\n    return false;\n}\n\ntemplate <class\
     \ T>\ninline bool chmin(T &a, T b) {\n    if (a > b) {\n        a = b;\n     \
@@ -51,21 +50,22 @@ data:
     \ v;\n    }\n    return os;\n}\n\nbool bit(ll x, int p) {\n    return (x >> p)\
     \ & 1;\n}\n\nbool out(int ni, int nj, int h, int w) {\n    return (ni < 0 or ni\
     \ >= h or nj < 0 or nj >= w);\n}\n\nint pc(ll x) {\n    return __builtin_popcountll(x);\n\
-    }\n#line 1 \"misc/cc.hpp\"\ntemplate <typename T = int>\nstruct CC {\n    bool\
-    \ initialized;\n    vector<T> xs;\n    unordered_map<T, int> mp;\n    CC() : initialized(false)\
-    \ {}\n    void add(T x) {\n        xs.push_back(x);\n    }\n    void init() {\n\
-    \        sort(xs.begin(), xs.end());\n        xs.erase(unique(xs.begin(), xs.end()),\
-    \ xs.end());\n        for (int i = 0; i < (int)xs.size(); i++) {\n           \
-    \ mp[xs[i]] = i;\n        }\n        initialized = true;\n    }\n    int operator()(T\
-    \ x) {\n        if (!initialized) init();\n        return mp[x];\n    }\n    T\
-    \ operator[](int i) {\n        if (!initialized) init();\n        return xs[i];\n\
-    \    }\n    int size() {\n        if (!initialized) init();\n        return xs.size();\n\
-    \    }\n};\n#line 6 \"verify/aizu-cc.test.cpp\"\n#include <atcoder/fenwicktree>\n\
-    \nint main() {\n    int n;\n    cin >> n;\n    vector<int> a(n);\n    cin >> a;\n\
-    \    CC c;\n    rep(i, n) c.add(a[i]);\n    int m = c.size();\n    rep(i, n) a[i]\
-    \ = c(a[i]);\n    fenwick_tree<int> f(m);\n    ll ans = 0;\n    rep(i, n) {\n\
-    \        ans += f.sum(a[i], m);\n        f.add(a[i], 1);\n    }\n    cout << ans\
-    \ << endl;\n    return 0;\n}\n"
+    }\n\ntemplate <class T>\nT max(vector<T> x) {\n    return *max_element(x.begin(),\
+    \ x.end());\n}\n#line 1 \"misc/cc.hpp\"\ntemplate <typename T = int>\nstruct CC\
+    \ {\n    bool initialized;\n    vector<T> xs;\n    unordered_map<T, int> mp;\n\
+    \    CC() : initialized(false) {}\n    void add(T x) {\n        xs.push_back(x);\n\
+    \    }\n    void init() {\n        sort(xs.begin(), xs.end());\n        xs.erase(unique(xs.begin(),\
+    \ xs.end()), xs.end());\n        for (int i = 0; i < (int)xs.size(); i++) {\n\
+    \            mp[xs[i]] = i;\n        }\n        initialized = true;\n    }\n \
+    \   int operator()(T x) {\n        if (!initialized) init();\n        return mp[x];\n\
+    \    }\n    T operator[](int i) {\n        if (!initialized) init();\n       \
+    \ return xs[i];\n    }\n    int size() {\n        if (!initialized) init();\n\
+    \        return xs.size();\n    }\n};\n#line 6 \"verify/aizu-cc.test.cpp\"\n#include\
+    \ <atcoder/fenwicktree>\n\nint main() {\n    int n;\n    cin >> n;\n    vector<int>\
+    \ a(n);\n    cin >> a;\n    CC c;\n    rep(i, n) c.add(a[i]);\n    int m = c.size();\n\
+    \    rep(i, n) a[i] = c(a[i]);\n    fenwick_tree<int> f(m);\n    ll ans = 0;\n\
+    \    rep(i, n) {\n        ans += f.sum(a[i], m);\n        f.add(a[i], 1);\n  \
+    \  }\n    cout << ans << endl;\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/5/ALDS1_5_D\"\
     \n\n#include <bits/stdc++.h>\n#include \"template.hpp\"\n#include \"misc/cc.hpp\"\
     \n#include <atcoder/fenwicktree>\n\nint main() {\n    int n;\n    cin >> n;\n\
@@ -79,7 +79,7 @@ data:
   isVerificationFile: true
   path: verify/aizu-cc.test.cpp
   requiredBy: []
-  timestamp: '2024-06-30 20:09:53+09:00'
+  timestamp: '2024-07-04 21:35:39+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aizu-cc.test.cpp

@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: misc/next-combination.hpp
     title: Next combination
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
@@ -29,11 +29,10 @@ data:
     #define rrep(i, a, b) for (int i = (int)(a); i <= (int)(b); i++)\n#define drep(i,\
     \ a, b) for (int i = (int)(a); i >= (int)(b); i--)\n#define all(a) a.begin(),\
     \ a.end()\n#define rall(a) a.rbegin(), a.rend()\nusing ll = long long;\nusing\
-    \ ull = unsigned long long;\nusing P = pair<int, int>;\nusing T = tuple<int, int,\
-    \ int>;\nconst int inf = 1e9;\nconst ll INF = 1e18;\nconst int dx[4] = {0, 1,\
-    \ 0, -1};\nconst int dy[4] = {1, 0, -1, 0};\n\nstruct cincout {\n    cincout()\
-    \ {\n        ios_base::sync_with_stdio(false);\n        cin.tie(nullptr);\n  \
-    \      cout << fixed << setprecision(15);\n    }\n} init;\n\n// chmax chmin\n\
+    \ ull = unsigned long long;\nconst int inf = 1e9;\nconst ll INF = 1e18;\nconst\
+    \ int dx[4] = {0, 1, 0, -1};\nconst int dy[4] = {1, 0, -1, 0};\n\nstruct cincout\
+    \ {\n    cincout() {\n        ios_base::sync_with_stdio(false);\n        cin.tie(nullptr);\n\
+    \        cout << fixed << setprecision(15);\n    }\n} init;\n\n// chmax chmin\n\
     template <class T>\ninline bool chmax(T &a, T b) {\n    if (a < b) {\n       \
     \ a = b;\n        return true;\n    }\n    return false;\n}\n\ntemplate <class\
     \ T>\ninline bool chmin(T &a, T b) {\n    if (a > b) {\n        a = b;\n     \
@@ -52,20 +51,22 @@ data:
     \ v;\n    }\n    return os;\n}\n\nbool bit(ll x, int p) {\n    return (x >> p)\
     \ & 1;\n}\n\nbool out(int ni, int nj, int h, int w) {\n    return (ni < 0 or ni\
     \ >= h or nj < 0 or nj >= w);\n}\n\nint pc(ll x) {\n    return __builtin_popcountll(x);\n\
-    }\n#line 1 \"misc/next-combination.hpp\"\ntemplate <typename T>\nbool next_combination(const\
-    \ T first, const T last, int k) {\n    const T subset = first + k;\n    if (first\
-    \ == last || first == subset || last == subset) {\n        return false;\n   \
-    \ }\n    T src = subset;\n    while (first != src) {\n        src--;\n       \
-    \ if (*src < *(last - 1)) {\n            T dest = subset;\n            while (*src\
-    \ >= *dest) {\n                dest++;\n            }\n            iter_swap(src,\
-    \ dest);\n            rotate(src + 1, dest + 1, last);\n            rotate(subset,\
-    \ subset + (last - dest) - 1, last);\n            return true;\n        }\n  \
-    \  }\n    rotate(first, subset, last);\n    return false;\n}\n#line 6 \"verify/aizu-next-combination.test.cpp\"\
-    \n\nint main() {\n    int n, s;\n    while (cin >> n >> s) {\n        if (n ==\
-    \ 0 and s == 0) exit(0);\n        vector<int> p(n);\n        iota(all(p), 1);\n\
-    \        int ans = 0;\n        do {\n            int cur = 0;\n            rep(i,\
-    \ 3) cur += p[i];\n            if (cur == s) ans++;\n        } while (next_combination(all(p),\
-    \ 3));\n        cout << ans << endl;\n    }\n    return 0;\n}\n"
+    }\n\ntemplate <class T>\nT max(vector<T> x) {\n    return *max_element(x.begin(),\
+    \ x.end());\n}\n#line 1 \"misc/next-combination.hpp\"\ntemplate <typename T>\n\
+    bool next_combination(const T first, const T last, int k) {\n    const T subset\
+    \ = first + k;\n    if (first == last || first == subset || last == subset) {\n\
+    \        return false;\n    }\n    T src = subset;\n    while (first != src) {\n\
+    \        src--;\n        if (*src < *(last - 1)) {\n            T dest = subset;\n\
+    \            while (*src >= *dest) {\n                dest++;\n            }\n\
+    \            iter_swap(src, dest);\n            rotate(src + 1, dest + 1, last);\n\
+    \            rotate(subset, subset + (last - dest) - 1, last);\n            return\
+    \ true;\n        }\n    }\n    rotate(first, subset, last);\n    return false;\n\
+    }\n#line 6 \"verify/aizu-next-combination.test.cpp\"\n\nint main() {\n    int\
+    \ n, s;\n    while (cin >> n >> s) {\n        if (n == 0 and s == 0) exit(0);\n\
+    \        vector<int> p(n);\n        iota(all(p), 1);\n        int ans = 0;\n \
+    \       do {\n            int cur = 0;\n            rep(i, 3) cur += p[i];\n \
+    \           if (cur == s) ans++;\n        } while (next_combination(all(p), 3));\n\
+    \        cout << ans << endl;\n    }\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/ITP1_7_B\"\n\n\
     #include <bits/stdc++.h>\n#include \"template.hpp\"\n#include \"misc/next-combination.hpp\"\
     \n\nint main() {\n    int n, s;\n    while (cin >> n >> s) {\n        if (n ==\
@@ -79,7 +80,7 @@ data:
   isVerificationFile: true
   path: verify/aizu-next-combination.test.cpp
   requiredBy: []
-  timestamp: '2024-06-30 20:09:53+09:00'
+  timestamp: '2024-07-04 21:35:39+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aizu-next-combination.test.cpp
