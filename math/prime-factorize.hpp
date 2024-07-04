@@ -1,5 +1,5 @@
-vector<P> prime_factorize(ll n) {
-    vector<P> res;
+vector<pair<ll, ll>> prime_factorize(ll n) {
+    vector<pair<ll, ll>> res;
     for (int p = 2; (ll)p * p <= n; p++) {
         if (n % p != 0) continue;
         int num = 0;
