@@ -99,18 +99,22 @@ ostream &operator<<(ostream &os, vector<vector<T>> &vv) {
     return os;
 }
 
+// bit
 bool bit(ll x, int p) {
     return (x >> p) & 1;
 }
 
+// grid out
 bool out(int ni, int nj, int h, int w) {
     return (ni < 0 or ni >= h or nj < 0 or nj >= w);
 }
 
+// popcount
 int pc(ll x) {
     return __builtin_popcountll(x);
 }
 
+// max(vector)
 template <class T>
 T max(vector<T> x) {
     return *max_element(x.begin(), x.end());
