@@ -73,11 +73,11 @@ data:
     \ &is, vector<vector<T>> &vv) {\n    for (vector<T> &v : vv) {\n        is >>\
     \ v;\n    }\n    return is;\n}\n\ntemplate <class T>\nostream &operator<<(ostream\
     \ &os, vector<vector<T>> &vv) {\n    for (vector<T> &v : vv) {\n        os <<\
-    \ v;\n    }\n    return os;\n}\n\nbool bit(ll x, int p) {\n    return (x >> p)\
-    \ & 1;\n}\n\nbool out(int ni, int nj, int h, int w) {\n    return (ni < 0 or ni\
-    \ >= h or nj < 0 or nj >= w);\n}\n\nint pc(ll x) {\n    return __builtin_popcountll(x);\n\
-    }\n\ntemplate <class T>\nT max(vector<T> x) {\n    return *max_element(x.begin(),\
-    \ x.end());\n}\n"
+    \ v;\n    }\n    return os;\n}\n\n// bit\nbool bit(ll x, int p) {\n    return\
+    \ (x >> p) & 1;\n}\n\n// grid out\nbool out(int ni, int nj, int h, int w) {\n\
+    \    return (ni < 0 or ni >= h or nj < 0 or nj >= w);\n}\n\n// popcount\nint pc(ll\
+    \ x) {\n    return __builtin_popcountll(x);\n}\n\n// max(vector)\ntemplate <class\
+    \ T>\nT max(vector<T> x) {\n    return *max_element(x.begin(), x.end());\n}\n"
   code: "#include <bits/stdc++.h>\nusing namespace std;\n#include <atcoder/modint>\n\
     using namespace atcoder;\n\n#ifdef DEFINED_ONLY_IN_LOCAL\n#include <dump.hpp>\n\
     #define dump(...) cpp_dump(__VA_ARGS__)\n#else\n#undef dump\n#define dump(...)\n\
@@ -107,16 +107,16 @@ data:
     \ &is, vector<vector<T>> &vv) {\n    for (vector<T> &v : vv) {\n        is >>\
     \ v;\n    }\n    return is;\n}\n\ntemplate <class T>\nostream &operator<<(ostream\
     \ &os, vector<vector<T>> &vv) {\n    for (vector<T> &v : vv) {\n        os <<\
-    \ v;\n    }\n    return os;\n}\n\nbool bit(ll x, int p) {\n    return (x >> p)\
-    \ & 1;\n}\n\nbool out(int ni, int nj, int h, int w) {\n    return (ni < 0 or ni\
-    \ >= h or nj < 0 or nj >= w);\n}\n\nint pc(ll x) {\n    return __builtin_popcountll(x);\n\
-    }\n\ntemplate <class T>\nT max(vector<T> x) {\n    return *max_element(x.begin(),\
-    \ x.end());\n}"
+    \ v;\n    }\n    return os;\n}\n\n// bit\nbool bit(ll x, int p) {\n    return\
+    \ (x >> p) & 1;\n}\n\n// grid out\nbool out(int ni, int nj, int h, int w) {\n\
+    \    return (ni < 0 or ni >= h or nj < 0 or nj >= w);\n}\n\n// popcount\nint pc(ll\
+    \ x) {\n    return __builtin_popcountll(x);\n}\n\n// max(vector)\ntemplate <class\
+    \ T>\nT max(vector<T> x) {\n    return *max_element(x.begin(), x.end());\n}"
   dependsOn: []
   isVerificationFile: false
   path: template.hpp
   requiredBy: []
-  timestamp: '2024-07-04 21:35:39+09:00'
+  timestamp: '2024-07-06 13:08:31+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/extgcd.test.cpp

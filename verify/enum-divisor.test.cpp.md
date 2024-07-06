@@ -47,18 +47,19 @@ data:
     \ &is, vector<vector<T>> &vv) {\n    for (vector<T> &v : vv) {\n        is >>\
     \ v;\n    }\n    return is;\n}\n\ntemplate <class T>\nostream &operator<<(ostream\
     \ &os, vector<vector<T>> &vv) {\n    for (vector<T> &v : vv) {\n        os <<\
-    \ v;\n    }\n    return os;\n}\n\nbool bit(ll x, int p) {\n    return (x >> p)\
-    \ & 1;\n}\n\nbool out(int ni, int nj, int h, int w) {\n    return (ni < 0 or ni\
-    \ >= h or nj < 0 or nj >= w);\n}\n\nint pc(ll x) {\n    return __builtin_popcountll(x);\n\
-    }\n\ntemplate <class T>\nT max(vector<T> x) {\n    return *max_element(x.begin(),\
-    \ x.end());\n}\n#line 1 \"math/enum-divisor.hpp\"\nvector<ll> enum_divisor(ll\
-    \ n) {\n    vector<ll> res;\n    for (int i = 1; (ll)i * i <= n; i++) {\n    \
-    \    if (n % i == 0) {\n            res.push_back(i);\n            ll j = n /\
-    \ i;\n            if (j != i) res.push_back(j);\n        }\n    }\n    sort(res.begin(),\
-    \ res.end());\n    return res;\n}\n#line 6 \"verify/enum-divisor.test.cpp\"\n\n\
-    int main(){\n    ll n;\n    cin >> n;\n    auto divisors = enum_divisor(n);\n\
-    \    ll ans = 0;\n    for (auto divisor : divisors) {\n        ans += divisor;\n\
-    \    }\n    cout << ans << endl;\n    return 0;\n}\n"
+    \ v;\n    }\n    return os;\n}\n\n// bit\nbool bit(ll x, int p) {\n    return\
+    \ (x >> p) & 1;\n}\n\n// grid out\nbool out(int ni, int nj, int h, int w) {\n\
+    \    return (ni < 0 or ni >= h or nj < 0 or nj >= w);\n}\n\n// popcount\nint pc(ll\
+    \ x) {\n    return __builtin_popcountll(x);\n}\n\n// max(vector)\ntemplate <class\
+    \ T>\nT max(vector<T> x) {\n    return *max_element(x.begin(), x.end());\n}\n\
+    #line 1 \"math/enum-divisor.hpp\"\nvector<ll> enum_divisor(ll n) {\n    vector<ll>\
+    \ res;\n    for (int i = 1; (ll)i * i <= n; i++) {\n        if (n % i == 0) {\n\
+    \            res.push_back(i);\n            ll j = n / i;\n            if (j !=\
+    \ i) res.push_back(j);\n        }\n    }\n    sort(res.begin(), res.end());\n\
+    \    return res;\n}\n#line 6 \"verify/enum-divisor.test.cpp\"\n\nint main(){\n\
+    \    ll n;\n    cin >> n;\n    auto divisors = enum_divisor(n);\n    ll ans =\
+    \ 0;\n    for (auto divisor : divisors) {\n        ans += divisor;\n    }\n  \
+    \  cout << ans << endl;\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://yukicoder.me/problems/no/888\"\n\n#include <bits/stdc++.h>\n\
     #include \"template.hpp\"\n#include \"math/enum-divisor.hpp\"\n\nint main(){\n\
     \    ll n;\n    cin >> n;\n    auto divisors = enum_divisor(n);\n    ll ans =\
@@ -70,7 +71,7 @@ data:
   isVerificationFile: true
   path: verify/enum-divisor.test.cpp
   requiredBy: []
-  timestamp: '2024-07-04 21:35:39+09:00'
+  timestamp: '2024-07-06 13:08:31+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/enum-divisor.test.cpp

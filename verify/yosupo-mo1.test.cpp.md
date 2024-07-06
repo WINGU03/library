@@ -50,25 +50,26 @@ data:
     \ &is, vector<vector<T>> &vv) {\n    for (vector<T> &v : vv) {\n        is >>\
     \ v;\n    }\n    return is;\n}\n\ntemplate <class T>\nostream &operator<<(ostream\
     \ &os, vector<vector<T>> &vv) {\n    for (vector<T> &v : vv) {\n        os <<\
-    \ v;\n    }\n    return os;\n}\n\nbool bit(ll x, int p) {\n    return (x >> p)\
-    \ & 1;\n}\n\nbool out(int ni, int nj, int h, int w) {\n    return (ni < 0 or ni\
-    \ >= h or nj < 0 or nj >= w);\n}\n\nint pc(ll x) {\n    return __builtin_popcountll(x);\n\
-    }\n\ntemplate <class T>\nT max(vector<T> x) {\n    return *max_element(x.begin(),\
-    \ x.end());\n}\n#line 1 \"misc/mo.hpp\"\ntemplate <class M>\nstruct Mo {\n   \
-    \ using T = typename M::T;\n    int backet;\n    vector<int> left, right, order;\n\
-    \    Mo(int N, int Q) {\n        order.resize(Q);\n        backet = max<int>(1,\
-    \ (double)(N) / max<double>(1, sqrt(Q * 2.0 / 3)));\n        iota(order.begin(),\
-    \ order.end(), 0);\n    }\n    void add_query(int left_id, int right_id) {\n \
-    \       left.emplace_back(left_id);\n        right.emplace_back(right_id);\n \
-    \   }\n    vector<T> run() {\n        vector<T> answer(order.size());\n      \
-    \  sort(order.begin(), order.end(), [&](int a, int b) {\n            int a_block\
-    \ = left[a] / backet, b_block = left[b] / backet;\n            if (a_block !=\
-    \ b_block) return a_block < b_block;\n            if (a_block & 1) return right[a]\
-    \ < right[b];\n            return right[a] > right[b];\n        });\n        int\
-    \ now_left = 0, now_right = 0;\n        for (int i : order) {\n            while\
-    \ (now_left > left[i]) {\n                M::add_left(--now_left);\n         \
-    \   }\n            while (right[i] > now_right) {\n                M::add_right(now_right++);\n\
-    \            }\n            while (now_left < left[i]) {\n                M::del_left(now_left++);\n\
+    \ v;\n    }\n    return os;\n}\n\n// bit\nbool bit(ll x, int p) {\n    return\
+    \ (x >> p) & 1;\n}\n\n// grid out\nbool out(int ni, int nj, int h, int w) {\n\
+    \    return (ni < 0 or ni >= h or nj < 0 or nj >= w);\n}\n\n// popcount\nint pc(ll\
+    \ x) {\n    return __builtin_popcountll(x);\n}\n\n// max(vector)\ntemplate <class\
+    \ T>\nT max(vector<T> x) {\n    return *max_element(x.begin(), x.end());\n}\n\
+    #line 1 \"misc/mo.hpp\"\ntemplate <class M>\nstruct Mo {\n    using T = typename\
+    \ M::T;\n    int backet;\n    vector<int> left, right, order;\n    Mo(int N, int\
+    \ Q) {\n        order.resize(Q);\n        backet = max<int>(1, (double)(N) / max<double>(1,\
+    \ sqrt(Q * 2.0 / 3)));\n        iota(order.begin(), order.end(), 0);\n    }\n\
+    \    void add_query(int left_id, int right_id) {\n        left.emplace_back(left_id);\n\
+    \        right.emplace_back(right_id);\n    }\n    vector<T> run() {\n       \
+    \ vector<T> answer(order.size());\n        sort(order.begin(), order.end(), [&](int\
+    \ a, int b) {\n            int a_block = left[a] / backet, b_block = left[b] /\
+    \ backet;\n            if (a_block != b_block) return a_block < b_block;\n   \
+    \         if (a_block & 1) return right[a] < right[b];\n            return right[a]\
+    \ > right[b];\n        });\n        int now_left = 0, now_right = 0;\n       \
+    \ for (int i : order) {\n            while (now_left > left[i]) {\n          \
+    \      M::add_left(--now_left);\n            }\n            while (right[i] >\
+    \ now_right) {\n                M::add_right(now_right++);\n            }\n  \
+    \          while (now_left < left[i]) {\n                M::del_left(now_left++);\n\
     \            }\n            while (right[i] < now_right) {\n                M::del_right(--now_right);\n\
     \            }\n            answer[i] = M::res(i);\n        }\n        return\
     \ answer;\n    }\n};\n#line 1 \"misc/cc.hpp\"\ntemplate <typename T = int>\nstruct\
@@ -119,7 +120,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo-mo1.test.cpp
   requiredBy: []
-  timestamp: '2024-07-04 21:35:39+09:00'
+  timestamp: '2024-07-06 13:08:31+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo-mo1.test.cpp

@@ -47,11 +47,12 @@ data:
     \ &is, vector<vector<T>> &vv) {\n    for (vector<T> &v : vv) {\n        is >>\
     \ v;\n    }\n    return is;\n}\n\ntemplate <class T>\nostream &operator<<(ostream\
     \ &os, vector<vector<T>> &vv) {\n    for (vector<T> &v : vv) {\n        os <<\
-    \ v;\n    }\n    return os;\n}\n\nbool bit(ll x, int p) {\n    return (x >> p)\
-    \ & 1;\n}\n\nbool out(int ni, int nj, int h, int w) {\n    return (ni < 0 or ni\
-    \ >= h or nj < 0 or nj >= w);\n}\n\nint pc(ll x) {\n    return __builtin_popcountll(x);\n\
-    }\n\ntemplate <class T>\nT max(vector<T> x) {\n    return *max_element(x.begin(),\
-    \ x.end());\n}\n#line 1 \"math/prime-factorize.hpp\"\nvector<pair<ll, ll>> prime_factorize(ll\
+    \ v;\n    }\n    return os;\n}\n\n// bit\nbool bit(ll x, int p) {\n    return\
+    \ (x >> p) & 1;\n}\n\n// grid out\nbool out(int ni, int nj, int h, int w) {\n\
+    \    return (ni < 0 or ni >= h or nj < 0 or nj >= w);\n}\n\n// popcount\nint pc(ll\
+    \ x) {\n    return __builtin_popcountll(x);\n}\n\n// max(vector)\ntemplate <class\
+    \ T>\nT max(vector<T> x) {\n    return *max_element(x.begin(), x.end());\n}\n\
+    #line 1 \"math/prime-factorize.hpp\"\nvector<pair<ll, ll>> prime_factorize(ll\
     \ n) {\n    vector<pair<ll, ll>> res;\n    for (int p = 2; (ll)p * p <= n; p++)\
     \ {\n        if (n % p != 0) continue;\n        int num = 0;\n        while (n\
     \ % p == 0) {\n            num++;\n            n /= p;\n        }\n        res.push_back(make_pair(p,\
@@ -71,7 +72,7 @@ data:
   isVerificationFile: true
   path: verify/prime-factorize.test.cpp
   requiredBy: []
-  timestamp: '2024-07-04 21:42:09+09:00'
+  timestamp: '2024-07-06 13:08:31+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/prime-factorize.test.cpp

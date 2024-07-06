@@ -48,22 +48,23 @@ data:
     \ &is, vector<vector<T>> &vv) {\n    for (vector<T> &v : vv) {\n        is >>\
     \ v;\n    }\n    return is;\n}\n\ntemplate <class T>\nostream &operator<<(ostream\
     \ &os, vector<vector<T>> &vv) {\n    for (vector<T> &v : vv) {\n        os <<\
-    \ v;\n    }\n    return os;\n}\n\nbool bit(ll x, int p) {\n    return (x >> p)\
-    \ & 1;\n}\n\nbool out(int ni, int nj, int h, int w) {\n    return (ni < 0 or ni\
-    \ >= h or nj < 0 or nj >= w);\n}\n\nint pc(ll x) {\n    return __builtin_popcountll(x);\n\
-    }\n\ntemplate <class T>\nT max(vector<T> x) {\n    return *max_element(x.begin(),\
-    \ x.end());\n}\n#line 6 \"verify/yuki-rolling-hash-tree.test.cpp\"\n\n#line 1\
-    \ \"string/rolling-hash-tree.hpp\"\n#include <atcoder/segtree>\n\nmt19937_64 r(time(0));\n\
-    static const int mod1 = 1000000007, mod2 = 1000000009;\nusing mint1 = static_modint<mod1>;\n\
-    using mint2 = static_modint<mod2>;\nstatic const int base1 = r() % (mod1 - 4)\
-    \ + 2, base2 = r() % (mod2 - 4) + 2;\n\nusing TT = tuple<mint1, mint2, mint1,\
-    \ mint2>;\nTT op(TT l, TT r) {\n    auto [a, b, c, d] = l;\n    auto [e, f, g,\
-    \ h] = r;\n    mint1 res1 = a * g + e;\n    mint2 res2 = b * h + f;\n    return\
-    \ TT(res1, res2, c * g, d * h);\n}\nTT e() {\n    return TT(0, 0, 1, 1);\n}\n\n\
-    TT op_(TT l, TT r) {\n    auto [a, b, c, d] = l;\n    auto [e, f, g, h] = r;\n\
-    \    mint1 res1 = e * c + a;\n    mint2 res2 = f * d + b;\n    return TT(res1,\
-    \ res2, c * g, d * h);\n}\n\nstruct RollingHashTree {\n    segtree<TT, op, e>\
-    \ seg;\n    segtree<TT, op_, e> r_seg;\n    bool reverse;\n\n    explicit RollingHashTree(const\
+    \ v;\n    }\n    return os;\n}\n\n// bit\nbool bit(ll x, int p) {\n    return\
+    \ (x >> p) & 1;\n}\n\n// grid out\nbool out(int ni, int nj, int h, int w) {\n\
+    \    return (ni < 0 or ni >= h or nj < 0 or nj >= w);\n}\n\n// popcount\nint pc(ll\
+    \ x) {\n    return __builtin_popcountll(x);\n}\n\n// max(vector)\ntemplate <class\
+    \ T>\nT max(vector<T> x) {\n    return *max_element(x.begin(), x.end());\n}\n\
+    #line 6 \"verify/yuki-rolling-hash-tree.test.cpp\"\n\n#line 1 \"string/rolling-hash-tree.hpp\"\
+    \n#include <atcoder/segtree>\n\nmt19937_64 r(time(0));\nstatic const int mod1\
+    \ = 1000000007, mod2 = 1000000009;\nusing mint1 = static_modint<mod1>;\nusing\
+    \ mint2 = static_modint<mod2>;\nstatic const int base1 = r() % (mod1 - 4) + 2,\
+    \ base2 = r() % (mod2 - 4) + 2;\n\nusing TT = tuple<mint1, mint2, mint1, mint2>;\n\
+    TT op(TT l, TT r) {\n    auto [a, b, c, d] = l;\n    auto [e, f, g, h] = r;\n\
+    \    mint1 res1 = a * g + e;\n    mint2 res2 = b * h + f;\n    return TT(res1,\
+    \ res2, c * g, d * h);\n}\nTT e() {\n    return TT(0, 0, 1, 1);\n}\n\nTT op_(TT\
+    \ l, TT r) {\n    auto [a, b, c, d] = l;\n    auto [e, f, g, h] = r;\n    mint1\
+    \ res1 = e * c + a;\n    mint2 res2 = f * d + b;\n    return TT(res1, res2, c\
+    \ * g, d * h);\n}\n\nstruct RollingHashTree {\n    segtree<TT, op, e> seg;\n \
+    \   segtree<TT, op_, e> r_seg;\n    bool reverse;\n\n    explicit RollingHashTree(const\
     \ string &s = \"\", bool reverse_ = false)\n        : reverse(reverse_) {\n  \
     \      int n = s.size();\n        seg = segtree<TT, op, e>(n);\n        if (reverse)\
     \ r_seg = segtree<TT, op_, e>(n);\n        rep(i, n) {\n            seg.set(i,\
@@ -112,7 +113,7 @@ data:
   isVerificationFile: true
   path: verify/yuki-rolling-hash-tree.test.cpp
   requiredBy: []
-  timestamp: '2024-07-04 21:35:39+09:00'
+  timestamp: '2024-07-06 13:08:31+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yuki-rolling-hash-tree.test.cpp

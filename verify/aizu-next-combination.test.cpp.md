@@ -48,25 +48,25 @@ data:
     \ &is, vector<vector<T>> &vv) {\n    for (vector<T> &v : vv) {\n        is >>\
     \ v;\n    }\n    return is;\n}\n\ntemplate <class T>\nostream &operator<<(ostream\
     \ &os, vector<vector<T>> &vv) {\n    for (vector<T> &v : vv) {\n        os <<\
-    \ v;\n    }\n    return os;\n}\n\nbool bit(ll x, int p) {\n    return (x >> p)\
-    \ & 1;\n}\n\nbool out(int ni, int nj, int h, int w) {\n    return (ni < 0 or ni\
-    \ >= h or nj < 0 or nj >= w);\n}\n\nint pc(ll x) {\n    return __builtin_popcountll(x);\n\
-    }\n\ntemplate <class T>\nT max(vector<T> x) {\n    return *max_element(x.begin(),\
-    \ x.end());\n}\n#line 1 \"misc/next-combination.hpp\"\ntemplate <typename T>\n\
-    bool next_combination(const T first, const T last, int k) {\n    const T subset\
-    \ = first + k;\n    if (first == last || first == subset || last == subset) {\n\
-    \        return false;\n    }\n    T src = subset;\n    while (first != src) {\n\
-    \        src--;\n        if (*src < *(last - 1)) {\n            T dest = subset;\n\
-    \            while (*src >= *dest) {\n                dest++;\n            }\n\
-    \            iter_swap(src, dest);\n            rotate(src + 1, dest + 1, last);\n\
-    \            rotate(subset, subset + (last - dest) - 1, last);\n            return\
-    \ true;\n        }\n    }\n    rotate(first, subset, last);\n    return false;\n\
-    }\n#line 6 \"verify/aizu-next-combination.test.cpp\"\n\nint main() {\n    int\
-    \ n, s;\n    while (cin >> n >> s) {\n        if (n == 0 and s == 0) exit(0);\n\
-    \        vector<int> p(n);\n        iota(all(p), 1);\n        int ans = 0;\n \
-    \       do {\n            int cur = 0;\n            rep(i, 3) cur += p[i];\n \
-    \           if (cur == s) ans++;\n        } while (next_combination(all(p), 3));\n\
-    \        cout << ans << endl;\n    }\n    return 0;\n}\n"
+    \ v;\n    }\n    return os;\n}\n\n// bit\nbool bit(ll x, int p) {\n    return\
+    \ (x >> p) & 1;\n}\n\n// grid out\nbool out(int ni, int nj, int h, int w) {\n\
+    \    return (ni < 0 or ni >= h or nj < 0 or nj >= w);\n}\n\n// popcount\nint pc(ll\
+    \ x) {\n    return __builtin_popcountll(x);\n}\n\n// max(vector)\ntemplate <class\
+    \ T>\nT max(vector<T> x) {\n    return *max_element(x.begin(), x.end());\n}\n\
+    #line 1 \"misc/next-combination.hpp\"\ntemplate <typename T>\nbool next_combination(const\
+    \ T first, const T last, int k) {\n    const T subset = first + k;\n    if (first\
+    \ == last || first == subset || last == subset) {\n        return false;\n   \
+    \ }\n    T src = subset;\n    while (first != src) {\n        src--;\n       \
+    \ if (*src < *(last - 1)) {\n            T dest = subset;\n            while (*src\
+    \ >= *dest) {\n                dest++;\n            }\n            iter_swap(src,\
+    \ dest);\n            rotate(src + 1, dest + 1, last);\n            rotate(subset,\
+    \ subset + (last - dest) - 1, last);\n            return true;\n        }\n  \
+    \  }\n    rotate(first, subset, last);\n    return false;\n}\n#line 6 \"verify/aizu-next-combination.test.cpp\"\
+    \n\nint main() {\n    int n, s;\n    while (cin >> n >> s) {\n        if (n ==\
+    \ 0 and s == 0) exit(0);\n        vector<int> p(n);\n        iota(all(p), 1);\n\
+    \        int ans = 0;\n        do {\n            int cur = 0;\n            rep(i,\
+    \ 3) cur += p[i];\n            if (cur == s) ans++;\n        } while (next_combination(all(p),\
+    \ 3));\n        cout << ans << endl;\n    }\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/ITP1_7_B\"\n\n\
     #include <bits/stdc++.h>\n#include \"template.hpp\"\n#include \"misc/next-combination.hpp\"\
     \n\nint main() {\n    int n, s;\n    while (cin >> n >> s) {\n        if (n ==\
@@ -80,7 +80,7 @@ data:
   isVerificationFile: true
   path: verify/aizu-next-combination.test.cpp
   requiredBy: []
-  timestamp: '2024-07-04 21:35:39+09:00'
+  timestamp: '2024-07-06 13:08:31+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aizu-next-combination.test.cpp
