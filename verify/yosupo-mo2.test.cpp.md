@@ -7,7 +7,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: misc/mo.hpp
     title: "Mo\u2019s algorithm"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []

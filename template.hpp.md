@@ -6,6 +6,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/aizu-cc.test.cpp
     title: verify/aizu-cc.test.cpp
+  - icon: ':x:'
+    path: verify/aizu-dynamic-bfs.test.cpp
+    title: verify/aizu-dynamic-bfs.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/aizu-next-combination.test.cpp
     title: verify/aizu-next-combination.test.cpp
@@ -39,9 +42,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yuki-rolling-hash-tree.test.cpp
     title: verify/yuki-rolling-hash-tree.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"template.hpp\"\n#include <bits/stdc++.h>\nusing namespace\
@@ -117,7 +120,7 @@ data:
   path: template.hpp
   requiredBy: []
   timestamp: '2024-07-06 13:08:31+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/extgcd.test.cpp
   - verify/aizu-cc.test.cpp
@@ -126,6 +129,7 @@ data:
   - verify/enum-divisor.test.cpp
   - verify/yosupo-rolling-hash.test.cpp
   - verify/yuki-rolling-hash-tree.test.cpp
+  - verify/aizu-dynamic-bfs.test.cpp
   - verify/rerooting.test.cpp
   - verify/yosupo-mo2.test.cpp
   - verify/prime-factorize.test.cpp
