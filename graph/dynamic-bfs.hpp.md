@@ -34,8 +34,5 @@ data:
   - verify/aizu-dynamic-bfs.test.cpp
 documentation_of: graph/dynamic-bfs.hpp
 layout: document
-redirect_from:
-- /library/graph/dynamic-bfs.hpp
-- /library/graph/dynamic-bfs.hpp.html
-title: graph/dynamic-bfs.hpp
+title: "\u52D5\u7684BFS"
 ---

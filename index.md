@@ -5,7 +5,7 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: graph/dynamic-bfs.hpp
-      title: graph/dynamic-bfs.hpp
+      title: "\u52D5\u7684BFS"
     - icon: ':heavy_check_mark:'
       path: graph/rerooting.hpp
       title: "\u5168\u65B9\u4F4D\u6728DP"
