@@ -1,5 +1,6 @@
 template <class T, class f>
 int dynamic_bfs(T& s, f& nxt, T& g) {
+    if (s == g) return 0;
     map<T, int> dist;
     queue<T> q;
     dist[s] = 0;
@@ -8,8 +9,8 @@ int dynamic_bfs(T& s, f& nxt, T& g) {
         auto v = q.front();
         q.pop();
         for (const auto& u : nxt(v)) {
-            if (u == g) return dist[v] + 1;
             if (dist.count(u)) continue;
+            if (u == g) return dist[v] + 1;
             dist[u] = dist[v] + 1;
             q.push(u);
         }
