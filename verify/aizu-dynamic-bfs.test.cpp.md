@@ -1,23 +1,23 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph/dynamic-bfs.hpp
     title: graph/dynamic-bfs.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_13_B&lang=jp
+    PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/13/ALDS1_13_B
     links:
-    - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_13_B&lang=jp
-  bundledCode: "#line 1 \"verify/aizu-dynamic-bfs.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_13_B&lang=jp\"\
+    - https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/13/ALDS1_13_B
+  bundledCode: "#line 1 \"verify/aizu-dynamic-bfs.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/13/ALDS1_13_B\"\
     \n\n#include <bits/stdc++.h>\n#line 2 \"template.hpp\"\nusing namespace std;\n\
     #include <atcoder/modint>\nusing namespace atcoder;\n\n#ifdef DEFINED_ONLY_IN_LOCAL\n\
     #include <dump.hpp>\n#define dump(...) cpp_dump(__VA_ARGS__)\n#else\n#undef dump\n\
@@ -53,22 +53,22 @@ data:
     \ x) {\n    return __builtin_popcountll(x);\n}\n\n// max(vector)\ntemplate <class\
     \ T>\nT max(vector<T> x) {\n    return *max_element(x.begin(), x.end());\n}\n\
     #line 1 \"graph/dynamic-bfs.hpp\"\ntemplate <class T, class f>\nint dynamic_bfs(T&\
-    \ s, f& nxt, T& g) {\n    map<T, int> dist;\n    queue<T> q;\n    dist[s] = 0;\n\
-    \    q.push(s);\n    while (!q.empty()) {\n        auto v = q.front();\n     \
-    \   q.pop();\n        for (const auto& u : nxt(v)) {\n            if (u == g)\
-    \ return dist[v] + 1;\n            if (dist.count(u)) continue;\n            dist[u]\
-    \ = dist[v] + 1;\n            q.push(u);\n        }\n    }\n    return -1;\n}\n\
-    #line 6 \"verify/aizu-dynamic-bfs.test.cpp\"\n\nint main() {\n    int n = 3;\n\
-    \    vector p(n, vector<int>(n));\n    cin >> p;\n\n    vector ans(n, vector<int>(n));\n\
-    \    rep(i, n) rep(j, n) if (i != 2 or j != 2) ans[i][j] = i * n + j + 1;\n\n\
-    \    auto f = [&](vector<vector<int>> &x) {\n        vector<vector<vector<int>>>\
-    \ res;\n        rep(i, n) rep(j, n) if (x[i][j] == 0) {\n            rep(d, 4)\
-    \ {\n                int ni = i + dx[d], nj = j + dy[d];\n                if (out(ni,\
-    \ nj, n, n)) continue;\n                auto nex = x;\n                swap(nex[i][j],\
-    \ nex[ni][nj]);\n                res.push_back(nex);\n            }\n        }\n\
-    \        return res;\n    };\n\n    cout << dynamic_bfs(p, f, ans) << endl;\n\
-    \    return 0;\n}\n"
-  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_13_B&lang=jp\"\
+    \ s, f& nxt, T& g) {\n    if (s == g) return 0;\n    map<T, int> dist;\n    queue<T>\
+    \ q;\n    dist[s] = 0;\n    q.push(s);\n    while (!q.empty()) {\n        auto\
+    \ v = q.front();\n        q.pop();\n        for (const auto& u : nxt(v)) {\n \
+    \           if (dist.count(u)) continue;\n            if (u == g) return dist[v]\
+    \ + 1;\n            dist[u] = dist[v] + 1;\n            q.push(u);\n        }\n\
+    \    }\n    return -1;\n}\n#line 6 \"verify/aizu-dynamic-bfs.test.cpp\"\n\nint\
+    \ main() {\n    int n = 3;\n    vector p(n, vector<int>(n));\n    cin >> p;\n\n\
+    \    vector ans(n, vector<int>(n));\n    rep(i, n) rep(j, n) if (i != 2 or j !=\
+    \ 2) ans[i][j] = i * n + j + 1;\n\n    auto f = [&](vector<vector<int>> &x) {\n\
+    \        vector<vector<vector<int>>> res;\n        rep(i, n) rep(j, n) if (x[i][j]\
+    \ == 0) {\n            rep(d, 4) {\n                int ni = i + dx[d], nj = j\
+    \ + dy[d];\n                if (out(ni, nj, n, n)) continue;\n               \
+    \ auto nex = x;\n                swap(nex[i][j], nex[ni][nj]);\n             \
+    \   res.push_back(nex);\n            }\n        }\n        return res;\n    };\n\
+    \n    cout << dynamic_bfs(p, f, ans) << endl;\n    return 0;\n}\n"
+  code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/13/ALDS1_13_B\"\
     \n\n#include <bits/stdc++.h>\n#include \"template.hpp\"\n#include \"graph/dynamic-bfs.hpp\"\
     \n\nint main() {\n    int n = 3;\n    vector p(n, vector<int>(n));\n    cin >>\
     \ p;\n\n    vector ans(n, vector<int>(n));\n    rep(i, n) rep(j, n) if (i != 2\
@@ -85,8 +85,8 @@ data:
   isVerificationFile: true
   path: verify/aizu-dynamic-bfs.test.cpp
   requiredBy: []
-  timestamp: '2024-07-09 20:41:09+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-07-09 20:45:55+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aizu-dynamic-bfs.test.cpp
 layout: document

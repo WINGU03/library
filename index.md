@@ -3,7 +3,7 @@ data:
   libraryCategories:
   - name: graph
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graph/dynamic-bfs.hpp
       title: graph/dynamic-bfs.hpp
     - icon: ':heavy_check_mark:'
@@ -47,7 +47,7 @@ data:
       title: Rolling Hash
   - name: .
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template.hpp
       title: template.hpp
   verificationCategories:
@@ -56,7 +56,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/aizu-cc.test.cpp
       title: verify/aizu-cc.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/aizu-dynamic-bfs.test.cpp
       title: verify/aizu-dynamic-bfs.test.cpp
     - icon: ':heavy_check_mark:'
