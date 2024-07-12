@@ -25,6 +25,8 @@ const int inf = 1e9;
 const ll INF = 1e18;
 const int dx[4] = {0, 1, 0, -1};
 const int dy[4] = {1, 0, -1, 0};
+const int ddx[8] = {1, 0, -1, 0, 1, -1, 1, -1};
+const int ddy[8] = {0, 1, 0, -1, 1, -1, -1, 1};
 
 struct cincout {
     cincout() {
