@@ -82,7 +82,8 @@ data:
     bool out(int ni, int nj, int h, int w) {\n    return (ni < 0 or ni >= h or nj\
     \ < 0 or nj >= w);\n}\n\n// popcount\nint pc(ll x) {\n    return __builtin_popcountll(x);\n\
     }\n\n// max(vector)\ntemplate <class T>\nT max(vector<T> x) {\n    return *max_element(x.begin(),\
-    \ x.end());\n}\n"
+    \ x.end());\n}\n\n// sum(vector)\ntemplate <class T>\nT sum(vector<T> x) {\n \
+    \   return reduce(x.begin(), x.end());\n}\n"
   code: "#include <bits/stdc++.h>\nusing namespace std;\n#include <atcoder/modint>\n\
     using namespace atcoder;\n\n#ifdef DEFINED_ONLY_IN_LOCAL\n#include <dump.hpp>\n\
     #define dump(...) cpp_dump(__VA_ARGS__)\n#else\n#undef dump\n#define dump(...)\n\
@@ -118,12 +119,13 @@ data:
     bool out(int ni, int nj, int h, int w) {\n    return (ni < 0 or ni >= h or nj\
     \ < 0 or nj >= w);\n}\n\n// popcount\nint pc(ll x) {\n    return __builtin_popcountll(x);\n\
     }\n\n// max(vector)\ntemplate <class T>\nT max(vector<T> x) {\n    return *max_element(x.begin(),\
-    \ x.end());\n}"
+    \ x.end());\n}\n\n// sum(vector)\ntemplate <class T>\nT sum(vector<T> x) {\n \
+    \   return reduce(x.begin(), x.end());\n}"
   dependsOn: []
   isVerificationFile: false
   path: template.hpp
   requiredBy: []
-  timestamp: '2024-07-12 20:31:39+09:00'
+  timestamp: '2024-07-18 21:32:12+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/aizu-next-combination.test.cpp

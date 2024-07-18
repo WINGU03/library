@@ -56,9 +56,10 @@ data:
     bool out(int ni, int nj, int h, int w) {\n    return (ni < 0 or ni >= h or nj\
     \ < 0 or nj >= w);\n}\n\n// popcount\nint pc(ll x) {\n    return __builtin_popcountll(x);\n\
     }\n\n// max(vector)\ntemplate <class T>\nT max(vector<T> x) {\n    return *max_element(x.begin(),\
-    \ x.end());\n}\n#line 1 \"misc/cc.hpp\"\ntemplate <typename T = int>\nstruct CC\
-    \ {\n    bool initialized;\n    vector<T> xs;\n    unordered_map<T, int> mp;\n\
-    \    CC() : initialized(false) {}\n    void add(T x) {\n        xs.push_back(x);\n\
+    \ x.end());\n}\n\n// sum(vector)\ntemplate <class T>\nT sum(vector<T> x) {\n \
+    \   return reduce(x.begin(), x.end());\n}\n#line 1 \"misc/cc.hpp\"\ntemplate <typename\
+    \ T = int>\nstruct CC {\n    bool initialized;\n    vector<T> xs;\n    unordered_map<T,\
+    \ int> mp;\n    CC() : initialized(false) {}\n    void add(T x) {\n        xs.push_back(x);\n\
     \    }\n    void init() {\n        sort(xs.begin(), xs.end());\n        xs.erase(unique(xs.begin(),\
     \ xs.end()), xs.end());\n        for (int i = 0; i < (int)xs.size(); i++) {\n\
     \            mp[xs[i]] = i;\n        }\n        initialized = true;\n    }\n \
@@ -119,7 +120,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo-mo2.test.cpp
   requiredBy: []
-  timestamp: '2024-07-12 20:31:39+09:00'
+  timestamp: '2024-07-18 21:32:12+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo-mo2.test.cpp

@@ -54,16 +54,17 @@ data:
     bool out(int ni, int nj, int h, int w) {\n    return (ni < 0 or ni >= h or nj\
     \ < 0 or nj >= w);\n}\n\n// popcount\nint pc(ll x) {\n    return __builtin_popcountll(x);\n\
     }\n\n// max(vector)\ntemplate <class T>\nT max(vector<T> x) {\n    return *max_element(x.begin(),\
-    \ x.end());\n}\n#line 6 \"verify/yosupo-rolling-hash.test.cpp\"\n\n#line 1 \"\
-    string/rolling-hash.hpp\"\nmt19937_64 r(time(0));\nstatic constexpr ll mod = (1LL\
-    \ << 61) - 1;\nstatic const ll base = r() % (mod - 4) + 2;\n\nstruct RollingHash\
-    \ {\n    using i128 = __int128_t;\n    vector<ll> hash, power;\n    int n;\n \
-    \   string s;\n\n    inline ll add(ll a, ll b) const {\n        if ((a += b) >=\
-    \ mod) a -= mod;\n        return a;\n    }\n\n    inline ll mul(ll a, ll b) const\
-    \ {\n        i128 x = (i128)a * b;\n        return add(x >> 61, x & mod);\n  \
-    \  }\n\n    explicit RollingHash(const string& S) {\n        n = (int)S.size();\n\
-    \        s = S;\n        hash.resize(n + 1, 0);\n        power.resize(n + 1, 1);\n\
-    \        for (int i = 0; i < n; i++) {\n            hash[i + 1] = add(mul(hash[i],\
+    \ x.end());\n}\n\n// sum(vector)\ntemplate <class T>\nT sum(vector<T> x) {\n \
+    \   return reduce(x.begin(), x.end());\n}\n#line 6 \"verify/yosupo-rolling-hash.test.cpp\"\
+    \n\n#line 1 \"string/rolling-hash.hpp\"\nmt19937_64 r(time(0));\nstatic constexpr\
+    \ ll mod = (1LL << 61) - 1;\nstatic const ll base = r() % (mod - 4) + 2;\n\nstruct\
+    \ RollingHash {\n    using i128 = __int128_t;\n    vector<ll> hash, power;\n \
+    \   int n;\n    string s;\n\n    inline ll add(ll a, ll b) const {\n        if\
+    \ ((a += b) >= mod) a -= mod;\n        return a;\n    }\n\n    inline ll mul(ll\
+    \ a, ll b) const {\n        i128 x = (i128)a * b;\n        return add(x >> 61,\
+    \ x & mod);\n    }\n\n    explicit RollingHash(const string& S) {\n        n =\
+    \ (int)S.size();\n        s = S;\n        hash.resize(n + 1, 0);\n        power.resize(n\
+    \ + 1, 1);\n        for (int i = 0; i < n; i++) {\n            hash[i + 1] = add(mul(hash[i],\
     \ base), S[i]);\n            power[i + 1] = mul(power[i], base);\n        }\n\
     \    }\n\n    inline ll get(int l, int r) const {\n        return add(hash[r],\
     \ mod - mul(hash[l], power[r - l]));\n    }\n\n    inline ll get() const {\n \
@@ -101,7 +102,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo-rolling-hash.test.cpp
   requiredBy: []
-  timestamp: '2024-07-12 20:31:39+09:00'
+  timestamp: '2024-07-18 21:32:12+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo-rolling-hash.test.cpp

@@ -53,11 +53,12 @@ data:
     bool out(int ni, int nj, int h, int w) {\n    return (ni < 0 or ni >= h or nj\
     \ < 0 or nj >= w);\n}\n\n// popcount\nint pc(ll x) {\n    return __builtin_popcountll(x);\n\
     }\n\n// max(vector)\ntemplate <class T>\nT max(vector<T> x) {\n    return *max_element(x.begin(),\
-    \ x.end());\n}\n#line 1 \"misc/compile-option.hpp\"\n#pragma GCC target(\"avx2\"\
-    )\n#pragma GCC optimize(\"O3\")\n#pragma GCC optimize(\"unroll-loops\")\n#line\
-    \ 6 \"verify/compile-option.test.cpp\"\n\nint main(){\n    int t;\n    cin >>\
-    \ t;\n    while(t--){\n        ll a, b;\n        cin >> a >> b;\n        cout\
-    \ << a + b << endl;\n    }\n    return 0;\n}\n"
+    \ x.end());\n}\n\n// sum(vector)\ntemplate <class T>\nT sum(vector<T> x) {\n \
+    \   return reduce(x.begin(), x.end());\n}\n#line 1 \"misc/compile-option.hpp\"\
+    \n#pragma GCC target(\"avx2\")\n#pragma GCC optimize(\"O3\")\n#pragma GCC optimize(\"\
+    unroll-loops\")\n#line 6 \"verify/compile-option.test.cpp\"\n\nint main(){\n \
+    \   int t;\n    cin >> t;\n    while(t--){\n        ll a, b;\n        cin >> a\
+    \ >> b;\n        cout << a + b << endl;\n    }\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/many_aplusb\"\n\n#include\
     \ <bits/stdc++.h>\n#include \"template.hpp\"\n#include \"misc/compile-option.hpp\"\
     \n\nint main(){\n    int t;\n    cin >> t;\n    while(t--){\n        ll a, b;\n\
@@ -69,7 +70,7 @@ data:
   isVerificationFile: true
   path: verify/compile-option.test.cpp
   requiredBy: []
-  timestamp: '2024-07-12 20:31:39+09:00'
+  timestamp: '2024-07-18 21:32:12+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/compile-option.test.cpp
