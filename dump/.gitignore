@@ -1,7 +1,0 @@
-.vscode/
-.cache/
-build/
-log/
-*.out
-*.o
-*.log
