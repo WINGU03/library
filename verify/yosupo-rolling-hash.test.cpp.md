@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: string/rolling-hash.hpp
     title: Rolling Hash
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/enumerate_palindromes
@@ -20,7 +20,7 @@ data:
   bundledCode: "#line 1 \"verify/yosupo-rolling-hash.test.cpp\"\n#define PROBLEM \"\
     https://judge.yosupo.jp/problem/enumerate_palindromes\"\n\n#include <bits/stdc++.h>\n\
     \n#line 2 \"template.hpp\"\nusing namespace std;\n#include <atcoder/modint>\n\
-    using namespace atcoder;\n\n#ifdef DEFINED_ONLY_IN_LOCAL\n#include <dump/dump.hpp>\n\
+    using namespace atcoder;\n\n#ifdef DEFINED_ONLY_IN_LOCAL\n#include <dump.hpp>\n\
     #define dump(...) cpp_dump(__VA_ARGS__)\n#else\n#undef dump\n#define dump(...)\n\
     #endif\n#define rep1(i, a) for (int i = 0; i < (int)(a); i++)\n#define rep2(i,\
     \ a, b) for (int i = (int)(a); i < (int)(b); i++)\n#define rep3(i, a, b, c) for\
@@ -102,8 +102,8 @@ data:
   isVerificationFile: true
   path: verify/yosupo-rolling-hash.test.cpp
   requiredBy: []
-  timestamp: '2024-07-19 14:57:21+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2024-07-19 15:26:13+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/yosupo-rolling-hash.test.cpp
 layout: document

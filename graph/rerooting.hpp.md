@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/rerooting.test.cpp
     title: verify/rerooting.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 1 \"graph/rerooting.hpp\"\ntemplate <typename Cost>\nstruct\
@@ -89,7 +89,7 @@ data:
   path: graph/rerooting.hpp
   requiredBy: []
   timestamp: '2024-06-30 20:16:33+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - verify/rerooting.test.cpp
 documentation_of: graph/rerooting.hpp
