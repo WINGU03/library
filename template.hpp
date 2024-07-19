@@ -116,13 +116,17 @@ int pc(ll x) {
     return __builtin_popcountll(x);
 }
 
-// max(vector)
+// max min sum(vector)
 template <class T>
 T max(vector<T> x) {
     return *max_element(x.begin(), x.end());
 }
 
-// sum(vector)
+template <class T>
+T min(vector<T> x) {
+    return *min_element(x.begin(), x.end());
+}
+
 template <class T>
 T sum(vector<T> x) {
     return reduce(x.begin(), x.end());
