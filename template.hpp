@@ -4,7 +4,7 @@ using namespace std;
 using namespace atcoder;
 
 #ifdef DEFINED_ONLY_IN_LOCAL
-#include <dump/dump.hpp>
+#include <dump.hpp>
 #define dump(...) cpp_dump(__VA_ARGS__)
 #else
 #undef dump
