@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: string/rolling-hash.hpp
     title: Rolling Hash
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/enumerate_palindromes
@@ -53,9 +53,10 @@ data:
     }\n\n// bit\nbool bit(ll x, int p) {\n    return (x >> p) & 1;\n}\n\n// grid out\n\
     bool out(int ni, int nj, int h, int w) {\n    return (ni < 0 or ni >= h or nj\
     \ < 0 or nj >= w);\n}\n\n// popcount\nint pc(ll x) {\n    return __builtin_popcountll(x);\n\
-    }\n\n// max(vector)\ntemplate <class T>\nT max(vector<T> x) {\n    return *max_element(x.begin(),\
-    \ x.end());\n}\n\n// sum(vector)\ntemplate <class T>\nT sum(vector<T> x) {\n \
-    \   return reduce(x.begin(), x.end());\n}\n#line 6 \"verify/yosupo-rolling-hash.test.cpp\"\
+    }\n\n// max min sum(vector)\ntemplate <class T>\nT max(vector<T> x) {\n    return\
+    \ *max_element(x.begin(), x.end());\n}\n\ntemplate <class T>\nT min(vector<T>\
+    \ x) {\n    return *min_element(x.begin(), x.end());\n}\n\ntemplate <class T>\n\
+    T sum(vector<T> x) {\n    return reduce(x.begin(), x.end());\n}\n#line 6 \"verify/yosupo-rolling-hash.test.cpp\"\
     \n\n#line 1 \"string/rolling-hash.hpp\"\nmt19937_64 r(time(0));\nstatic constexpr\
     \ ll mod = (1LL << 61) - 1;\nstatic const ll base = r() % (mod - 4) + 2;\n\nstruct\
     \ RollingHash {\n    using i128 = __int128_t;\n    vector<ll> hash, power;\n \
@@ -102,8 +103,8 @@ data:
   isVerificationFile: true
   path: verify/yosupo-rolling-hash.test.cpp
   requiredBy: []
-  timestamp: '2024-07-19 15:26:13+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-07-19 15:46:46+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo-rolling-hash.test.cpp
 layout: document

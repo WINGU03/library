@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/aizu-next-combination.test.cpp
     title: verify/aizu-next-combination.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"misc/next-combination.hpp\"\ntemplate <typename T>\nbool\
@@ -35,7 +35,7 @@ data:
   path: misc/next-combination.hpp
   requiredBy: []
   timestamp: '2024-06-19 21:24:21+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/aizu-next-combination.test.cpp
 documentation_of: misc/next-combination.hpp

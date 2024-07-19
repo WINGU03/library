@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/extgcd.hpp
     title: "\u62E1\u5F35\u30E6\u30FC\u30AF\u30EA\u30C3\u30C9\u306E\u4E92\u9664\u6CD5"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_E
@@ -52,14 +52,15 @@ data:
     }\n\n// bit\nbool bit(ll x, int p) {\n    return (x >> p) & 1;\n}\n\n// grid out\n\
     bool out(int ni, int nj, int h, int w) {\n    return (ni < 0 or ni >= h or nj\
     \ < 0 or nj >= w);\n}\n\n// popcount\nint pc(ll x) {\n    return __builtin_popcountll(x);\n\
-    }\n\n// max(vector)\ntemplate <class T>\nT max(vector<T> x) {\n    return *max_element(x.begin(),\
-    \ x.end());\n}\n\n// sum(vector)\ntemplate <class T>\nT sum(vector<T> x) {\n \
-    \   return reduce(x.begin(), x.end());\n}\n#line 1 \"math/extgcd.hpp\"\nll extgcd(ll\
-    \ a, ll b, ll &x, ll &y) {\n    if (b == 0) {\n        x = 1;\n        y = 0;\n\
-    \        return a;\n    }\n    ll d = extgcd(b, a % b, y, x);\n    y -= a / b\
-    \ * x;\n    return d;\n}\n#line 6 \"verify/extgcd.test.cpp\"\n\nint main() {\n\
-    \    int a, b;\n    cin >> a >> b;\n    ll x, y;\n    extgcd(a, b, x, y);\n  \
-    \  cout << x << \" \" << y << endl;\n    return 0;\n}\n"
+    }\n\n// max min sum(vector)\ntemplate <class T>\nT max(vector<T> x) {\n    return\
+    \ *max_element(x.begin(), x.end());\n}\n\ntemplate <class T>\nT min(vector<T>\
+    \ x) {\n    return *min_element(x.begin(), x.end());\n}\n\ntemplate <class T>\n\
+    T sum(vector<T> x) {\n    return reduce(x.begin(), x.end());\n}\n#line 1 \"math/extgcd.hpp\"\
+    \nll extgcd(ll a, ll b, ll &x, ll &y) {\n    if (b == 0) {\n        x = 1;\n \
+    \       y = 0;\n        return a;\n    }\n    ll d = extgcd(b, a % b, y, x);\n\
+    \    y -= a / b * x;\n    return d;\n}\n#line 6 \"verify/extgcd.test.cpp\"\n\n\
+    int main() {\n    int a, b;\n    cin >> a >> b;\n    ll x, y;\n    extgcd(a, b,\
+    \ x, y);\n    cout << x << \" \" << y << endl;\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_E\"\
     \n\n#include <bits/stdc++.h>\n#include \"template.hpp\"\n#include \"math/extgcd.hpp\"\
     \n\nint main() {\n    int a, b;\n    cin >> a >> b;\n    ll x, y;\n    extgcd(a,\
@@ -70,8 +71,8 @@ data:
   isVerificationFile: true
   path: verify/extgcd.test.cpp
   requiredBy: []
-  timestamp: '2024-07-19 15:26:13+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-07-19 15:46:46+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/extgcd.test.cpp
 layout: document

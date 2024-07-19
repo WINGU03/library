@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/enum-divisor.hpp
     title: "\u7D04\u6570\u5217\u6319"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://yukicoder.me/problems/no/888
@@ -52,10 +52,11 @@ data:
     }\n\n// bit\nbool bit(ll x, int p) {\n    return (x >> p) & 1;\n}\n\n// grid out\n\
     bool out(int ni, int nj, int h, int w) {\n    return (ni < 0 or ni >= h or nj\
     \ < 0 or nj >= w);\n}\n\n// popcount\nint pc(ll x) {\n    return __builtin_popcountll(x);\n\
-    }\n\n// max(vector)\ntemplate <class T>\nT max(vector<T> x) {\n    return *max_element(x.begin(),\
-    \ x.end());\n}\n\n// sum(vector)\ntemplate <class T>\nT sum(vector<T> x) {\n \
-    \   return reduce(x.begin(), x.end());\n}\n#line 1 \"math/enum-divisor.hpp\"\n\
-    vector<ll> enum_divisor(ll n) {\n    vector<ll> res;\n    for (int i = 1; (ll)i\
+    }\n\n// max min sum(vector)\ntemplate <class T>\nT max(vector<T> x) {\n    return\
+    \ *max_element(x.begin(), x.end());\n}\n\ntemplate <class T>\nT min(vector<T>\
+    \ x) {\n    return *min_element(x.begin(), x.end());\n}\n\ntemplate <class T>\n\
+    T sum(vector<T> x) {\n    return reduce(x.begin(), x.end());\n}\n#line 1 \"math/enum-divisor.hpp\"\
+    \nvector<ll> enum_divisor(ll n) {\n    vector<ll> res;\n    for (int i = 1; (ll)i\
     \ * i <= n; i++) {\n        if (n % i == 0) {\n            res.push_back(i);\n\
     \            ll j = n / i;\n            if (j != i) res.push_back(j);\n      \
     \  }\n    }\n    sort(res.begin(), res.end());\n    return res;\n}\n#line 6 \"\
@@ -74,8 +75,8 @@ data:
   isVerificationFile: true
   path: verify/enum-divisor.test.cpp
   requiredBy: []
-  timestamp: '2024-07-19 15:26:13+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-07-19 15:46:46+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/enum-divisor.test.cpp
 layout: document

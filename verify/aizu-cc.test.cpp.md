@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: misc/cc.hpp
     title: "\u5EA7\u6A19\u5727\u7E2E"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
@@ -52,23 +52,25 @@ data:
     }\n\n// bit\nbool bit(ll x, int p) {\n    return (x >> p) & 1;\n}\n\n// grid out\n\
     bool out(int ni, int nj, int h, int w) {\n    return (ni < 0 or ni >= h or nj\
     \ < 0 or nj >= w);\n}\n\n// popcount\nint pc(ll x) {\n    return __builtin_popcountll(x);\n\
-    }\n\n// max(vector)\ntemplate <class T>\nT max(vector<T> x) {\n    return *max_element(x.begin(),\
-    \ x.end());\n}\n\n// sum(vector)\ntemplate <class T>\nT sum(vector<T> x) {\n \
-    \   return reduce(x.begin(), x.end());\n}\n#line 1 \"misc/cc.hpp\"\ntemplate <typename\
-    \ T = int>\nstruct CC {\n    bool initialized;\n    vector<T> xs;\n    unordered_map<T,\
-    \ int> mp;\n    CC() : initialized(false) {}\n    void add(T x) {\n        xs.push_back(x);\n\
-    \    }\n    void init() {\n        sort(xs.begin(), xs.end());\n        xs.erase(unique(xs.begin(),\
-    \ xs.end()), xs.end());\n        for (int i = 0; i < (int)xs.size(); i++) {\n\
-    \            mp[xs[i]] = i;\n        }\n        initialized = true;\n    }\n \
-    \   int operator()(T x) {\n        if (!initialized) init();\n        return mp[x];\n\
-    \    }\n    T operator[](int i) {\n        if (!initialized) init();\n       \
-    \ return xs[i];\n    }\n    int size() {\n        if (!initialized) init();\n\
-    \        return xs.size();\n    }\n};\n#line 6 \"verify/aizu-cc.test.cpp\"\n#include\
-    \ <atcoder/fenwicktree>\n\nint main() {\n    int n;\n    cin >> n;\n    vector<int>\
-    \ a(n);\n    cin >> a;\n    CC c;\n    rep(i, n) c.add(a[i]);\n    int m = c.size();\n\
-    \    rep(i, n) a[i] = c(a[i]);\n    fenwick_tree<int> f(m);\n    ll ans = 0;\n\
-    \    rep(i, n) {\n        ans += f.sum(a[i], m);\n        f.add(a[i], 1);\n  \
-    \  }\n    cout << ans << endl;\n    return 0;\n}\n"
+    }\n\n// max min sum(vector)\ntemplate <class T>\nT max(vector<T> x) {\n    return\
+    \ *max_element(x.begin(), x.end());\n}\n\ntemplate <class T>\nT min(vector<T>\
+    \ x) {\n    return *min_element(x.begin(), x.end());\n}\n\ntemplate <class T>\n\
+    T sum(vector<T> x) {\n    return reduce(x.begin(), x.end());\n}\n#line 1 \"misc/cc.hpp\"\
+    \ntemplate <typename T = int>\nstruct CC {\n    bool initialized;\n    vector<T>\
+    \ xs;\n    unordered_map<T, int> mp;\n    CC() : initialized(false) {}\n    void\
+    \ add(T x) {\n        xs.push_back(x);\n    }\n    void init() {\n        sort(xs.begin(),\
+    \ xs.end());\n        xs.erase(unique(xs.begin(), xs.end()), xs.end());\n    \
+    \    for (int i = 0; i < (int)xs.size(); i++) {\n            mp[xs[i]] = i;\n\
+    \        }\n        initialized = true;\n    }\n    int operator()(T x) {\n  \
+    \      if (!initialized) init();\n        return mp[x];\n    }\n    T operator[](int\
+    \ i) {\n        if (!initialized) init();\n        return xs[i];\n    }\n    int\
+    \ size() {\n        if (!initialized) init();\n        return xs.size();\n   \
+    \ }\n};\n#line 6 \"verify/aizu-cc.test.cpp\"\n#include <atcoder/fenwicktree>\n\
+    \nint main() {\n    int n;\n    cin >> n;\n    vector<int> a(n);\n    cin >> a;\n\
+    \    CC c;\n    rep(i, n) c.add(a[i]);\n    int m = c.size();\n    rep(i, n) a[i]\
+    \ = c(a[i]);\n    fenwick_tree<int> f(m);\n    ll ans = 0;\n    rep(i, n) {\n\
+    \        ans += f.sum(a[i], m);\n        f.add(a[i], 1);\n    }\n    cout << ans\
+    \ << endl;\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/5/ALDS1_5_D\"\
     \n\n#include <bits/stdc++.h>\n#include \"template.hpp\"\n#include \"misc/cc.hpp\"\
     \n#include <atcoder/fenwicktree>\n\nint main() {\n    int n;\n    cin >> n;\n\
@@ -82,7 +84,7 @@ data:
   isVerificationFile: true
   path: verify/aizu-cc.test.cpp
   requiredBy: []
-  timestamp: '2024-07-19 15:26:13+09:00'
+  timestamp: '2024-07-19 15:46:46+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aizu-cc.test.cpp

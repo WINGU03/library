@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: misc/cc.hpp
     title: "\u5EA7\u6A19\u5727\u7E2E"
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: misc/mo.hpp
     title: "Mo\u2019s algorithm"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/static_range_frequency
@@ -55,32 +55,34 @@ data:
     }\n\n// bit\nbool bit(ll x, int p) {\n    return (x >> p) & 1;\n}\n\n// grid out\n\
     bool out(int ni, int nj, int h, int w) {\n    return (ni < 0 or ni >= h or nj\
     \ < 0 or nj >= w);\n}\n\n// popcount\nint pc(ll x) {\n    return __builtin_popcountll(x);\n\
-    }\n\n// max(vector)\ntemplate <class T>\nT max(vector<T> x) {\n    return *max_element(x.begin(),\
-    \ x.end());\n}\n\n// sum(vector)\ntemplate <class T>\nT sum(vector<T> x) {\n \
-    \   return reduce(x.begin(), x.end());\n}\n#line 1 \"misc/cc.hpp\"\ntemplate <typename\
-    \ T = int>\nstruct CC {\n    bool initialized;\n    vector<T> xs;\n    unordered_map<T,\
-    \ int> mp;\n    CC() : initialized(false) {}\n    void add(T x) {\n        xs.push_back(x);\n\
-    \    }\n    void init() {\n        sort(xs.begin(), xs.end());\n        xs.erase(unique(xs.begin(),\
-    \ xs.end()), xs.end());\n        for (int i = 0; i < (int)xs.size(); i++) {\n\
-    \            mp[xs[i]] = i;\n        }\n        initialized = true;\n    }\n \
-    \   int operator()(T x) {\n        if (!initialized) init();\n        return mp[x];\n\
-    \    }\n    T operator[](int i) {\n        if (!initialized) init();\n       \
-    \ return xs[i];\n    }\n    int size() {\n        if (!initialized) init();\n\
-    \        return xs.size();\n    }\n};\n#line 1 \"misc/mo.hpp\"\ntemplate <class\
-    \ M>\nstruct Mo {\n    using T = typename M::T;\n    int backet;\n    vector<int>\
-    \ left, right, order;\n    Mo(int N, int Q) {\n        order.resize(Q);\n    \
-    \    backet = max<int>(1, (double)(N) / max<double>(1, sqrt(Q * 2.0 / 3)));\n\
-    \        iota(order.begin(), order.end(), 0);\n    }\n    void add_query(int left_id,\
-    \ int right_id) {\n        left.emplace_back(left_id);\n        right.emplace_back(right_id);\n\
-    \    }\n    vector<T> run() {\n        vector<T> answer(order.size());\n     \
-    \   sort(order.begin(), order.end(), [&](int a, int b) {\n            int a_block\
-    \ = left[a] / backet, b_block = left[b] / backet;\n            if (a_block !=\
-    \ b_block) return a_block < b_block;\n            if (a_block & 1) return right[a]\
-    \ < right[b];\n            return right[a] > right[b];\n        });\n        int\
-    \ now_left = 0, now_right = 0;\n        for (int i : order) {\n            while\
-    \ (now_left > left[i]) {\n                M::add_left(--now_left);\n         \
-    \   }\n            while (right[i] > now_right) {\n                M::add_right(now_right++);\n\
-    \            }\n            while (now_left < left[i]) {\n                M::del_left(now_left++);\n\
+    }\n\n// max min sum(vector)\ntemplate <class T>\nT max(vector<T> x) {\n    return\
+    \ *max_element(x.begin(), x.end());\n}\n\ntemplate <class T>\nT min(vector<T>\
+    \ x) {\n    return *min_element(x.begin(), x.end());\n}\n\ntemplate <class T>\n\
+    T sum(vector<T> x) {\n    return reduce(x.begin(), x.end());\n}\n#line 1 \"misc/cc.hpp\"\
+    \ntemplate <typename T = int>\nstruct CC {\n    bool initialized;\n    vector<T>\
+    \ xs;\n    unordered_map<T, int> mp;\n    CC() : initialized(false) {}\n    void\
+    \ add(T x) {\n        xs.push_back(x);\n    }\n    void init() {\n        sort(xs.begin(),\
+    \ xs.end());\n        xs.erase(unique(xs.begin(), xs.end()), xs.end());\n    \
+    \    for (int i = 0; i < (int)xs.size(); i++) {\n            mp[xs[i]] = i;\n\
+    \        }\n        initialized = true;\n    }\n    int operator()(T x) {\n  \
+    \      if (!initialized) init();\n        return mp[x];\n    }\n    T operator[](int\
+    \ i) {\n        if (!initialized) init();\n        return xs[i];\n    }\n    int\
+    \ size() {\n        if (!initialized) init();\n        return xs.size();\n   \
+    \ }\n};\n#line 1 \"misc/mo.hpp\"\ntemplate <class M>\nstruct Mo {\n    using T\
+    \ = typename M::T;\n    int backet;\n    vector<int> left, right, order;\n   \
+    \ Mo(int N, int Q) {\n        order.resize(Q);\n        backet = max<int>(1, (double)(N)\
+    \ / max<double>(1, sqrt(Q * 2.0 / 3)));\n        iota(order.begin(), order.end(),\
+    \ 0);\n    }\n    void add_query(int left_id, int right_id) {\n        left.emplace_back(left_id);\n\
+    \        right.emplace_back(right_id);\n    }\n    vector<T> run() {\n       \
+    \ vector<T> answer(order.size());\n        sort(order.begin(), order.end(), [&](int\
+    \ a, int b) {\n            int a_block = left[a] / backet, b_block = left[b] /\
+    \ backet;\n            if (a_block != b_block) return a_block < b_block;\n   \
+    \         if (a_block & 1) return right[a] < right[b];\n            return right[a]\
+    \ > right[b];\n        });\n        int now_left = 0, now_right = 0;\n       \
+    \ for (int i : order) {\n            while (now_left > left[i]) {\n          \
+    \      M::add_left(--now_left);\n            }\n            while (right[i] >\
+    \ now_right) {\n                M::add_right(now_right++);\n            }\n  \
+    \          while (now_left < left[i]) {\n                M::del_left(now_left++);\n\
     \            }\n            while (right[i] < now_right) {\n                M::del_right(--now_right);\n\
     \            }\n            answer[i] = M::res(i);\n        }\n        return\
     \ answer;\n    }\n};\n#line 7 \"verify/yosupo-mo2.test.cpp\"\n\nint main() {\n\
@@ -120,8 +122,8 @@ data:
   isVerificationFile: true
   path: verify/yosupo-mo2.test.cpp
   requiredBy: []
-  timestamp: '2024-07-19 15:26:13+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-07-19 15:46:46+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo-mo2.test.cpp
 layout: document
