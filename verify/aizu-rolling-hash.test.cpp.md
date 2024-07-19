@@ -20,12 +20,12 @@ data:
   bundledCode: "#line 1 \"verify/aizu-rolling-hash.test.cpp\"\n#define PROBLEM \"\
     https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/14/ALDS1_14_B\"\n\n#include<bits/stdc++.h>\n\
     #line 2 \"template.hpp\"\nusing namespace std;\n#include <atcoder/modint>\nusing\
-    \ namespace atcoder;\n\n#ifdef DEFINED_ONLY_IN_LOCAL\n#include <dump.hpp>\n#define\
-    \ dump(...) cpp_dump(__VA_ARGS__)\n#else\n#undef dump\n#define dump(...)\n#endif\n\
-    #define rep1(i, a) for (int i = 0; i < (int)(a); i++)\n#define rep2(i, a, b) for\
-    \ (int i = (int)(a); i < (int)(b); i++)\n#define rep3(i, a, b, c) for (int i =\
-    \ (int)(a); i < (int)(b); i += (int)(c))\n#define overloadRep(a, b, c, d, e, ...)\
-    \ e\n#define rep(...) overloadRep(__VA_ARGS__, rep3, rep2, rep1)(__VA_ARGS__)\n\
+    \ namespace atcoder;\n\n#ifdef DEFINED_ONLY_IN_LOCAL\n#include <dump/dump.hpp>\n\
+    #define dump(...) cpp_dump(__VA_ARGS__)\n#else\n#undef dump\n#define dump(...)\n\
+    #endif\n#define rep1(i, a) for (int i = 0; i < (int)(a); i++)\n#define rep2(i,\
+    \ a, b) for (int i = (int)(a); i < (int)(b); i++)\n#define rep3(i, a, b, c) for\
+    \ (int i = (int)(a); i < (int)(b); i += (int)(c))\n#define overloadRep(a, b, c,\
+    \ d, e, ...) e\n#define rep(...) overloadRep(__VA_ARGS__, rep3, rep2, rep1)(__VA_ARGS__)\n\
     #define rrep(i, a, b) for (int i = (int)(a); i <= (int)(b); i++)\n#define drep(i,\
     \ a, b) for (int i = (int)(a); i >= (int)(b); i--)\n#define all(a) a.begin(),\
     \ a.end()\n#define rall(a) a.rbegin(), a.rend()\nusing ll = long long;\nusing\
@@ -97,7 +97,7 @@ data:
   isVerificationFile: true
   path: verify/aizu-rolling-hash.test.cpp
   requiredBy: []
-  timestamp: '2024-07-18 21:32:12+09:00'
+  timestamp: '2024-07-19 14:57:21+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aizu-rolling-hash.test.cpp

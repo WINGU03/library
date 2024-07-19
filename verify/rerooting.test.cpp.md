@@ -20,57 +20,58 @@ data:
   bundledCode: "#line 1 \"verify/rerooting.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/5/GRL_5_B\"\
     \n\n#include <bits/stdc++.h>\n#line 2 \"template.hpp\"\nusing namespace std;\n\
     #include <atcoder/modint>\nusing namespace atcoder;\n\n#ifdef DEFINED_ONLY_IN_LOCAL\n\
-    #include <dump.hpp>\n#define dump(...) cpp_dump(__VA_ARGS__)\n#else\n#undef dump\n\
-    #define dump(...)\n#endif\n#define rep1(i, a) for (int i = 0; i < (int)(a); i++)\n\
-    #define rep2(i, a, b) for (int i = (int)(a); i < (int)(b); i++)\n#define rep3(i,\
-    \ a, b, c) for (int i = (int)(a); i < (int)(b); i += (int)(c))\n#define overloadRep(a,\
-    \ b, c, d, e, ...) e\n#define rep(...) overloadRep(__VA_ARGS__, rep3, rep2, rep1)(__VA_ARGS__)\n\
-    #define rrep(i, a, b) for (int i = (int)(a); i <= (int)(b); i++)\n#define drep(i,\
-    \ a, b) for (int i = (int)(a); i >= (int)(b); i--)\n#define all(a) a.begin(),\
-    \ a.end()\n#define rall(a) a.rbegin(), a.rend()\nusing ll = long long;\nusing\
-    \ ull = unsigned long long;\nconst int inf = 1e9;\nconst ll INF = 1e18;\nconst\
-    \ int dx[4] = {0, 1, 0, -1};\nconst int dy[4] = {1, 0, -1, 0};\nconst int ddx[8]\
-    \ = {1, 0, -1, 0, 1, -1, 1, -1};\nconst int ddy[8] = {0, 1, 0, -1, 1, -1, -1,\
-    \ 1};\n\nstruct cincout {\n    cincout() {\n        ios_base::sync_with_stdio(false);\n\
-    \        cin.tie(nullptr);\n        cout << fixed << setprecision(15);\n    }\n\
-    } init;\n\n// chmax chmin\ntemplate <class T>\ninline bool chmax(T &a, T b) {\n\
-    \    if (a < b) {\n        a = b;\n        return true;\n    }\n    return false;\n\
-    }\n\ntemplate <class T>\ninline bool chmin(T &a, T b) {\n    if (a > b) {\n  \
-    \      a = b;\n        return true;\n    }\n    return false;\n}\n\n// pair\n\
-    template <class T1, class T2>\nistream &operator>>(istream &is, pair<T1, T2> &p)\
-    \ {\n    is >> p.first >> p.second;\n    return is;\n}\n\ntemplate <class T1,\
-    \ class T2>\nostream &operator<<(ostream &os, const pair<T1, T2> &p) {\n    os\
-    \ << p.first << \" \" << p.second << '\\n';\n    return os;\n}\n\n// vector\n\
-    template <class T>\nistream &operator>>(istream &is, vector<T> &v) {\n    for\
-    \ (T &in : v) {\n        is >> in;\n    }\n    return is;\n}\n\ntemplate <class\
-    \ T>\nostream &operator<<(ostream &os, const vector<T> &v) {\n    rep(i, (int)v.size())\
-    \ {\n        os << v[i] << \" \\n\"[i + 1 == (int)v.size()];\n    }\n    return\
-    \ os;\n}\n\ntemplate <class T>\nistream &operator>>(istream &is, vector<vector<T>>\
-    \ &vv) {\n    for (vector<T> &v : vv) {\n        is >> v;\n    }\n    return is;\n\
-    }\n\ntemplate <class T>\nostream &operator<<(ostream &os, vector<vector<T>> &vv)\
-    \ {\n    for (vector<T> &v : vv) {\n        os << v;\n    }\n    return os;\n\
-    }\n\n// bit\nbool bit(ll x, int p) {\n    return (x >> p) & 1;\n}\n\n// grid out\n\
-    bool out(int ni, int nj, int h, int w) {\n    return (ni < 0 or ni >= h or nj\
-    \ < 0 or nj >= w);\n}\n\n// popcount\nint pc(ll x) {\n    return __builtin_popcountll(x);\n\
-    }\n\n// max(vector)\ntemplate <class T>\nT max(vector<T> x) {\n    return *max_element(x.begin(),\
-    \ x.end());\n}\n\n// sum(vector)\ntemplate <class T>\nT sum(vector<T> x) {\n \
-    \   return reduce(x.begin(), x.end());\n}\n#line 1 \"graph/rerooting.hpp\"\ntemplate\
-    \ <typename Cost>\nstruct Edge {\n    int src, to;\n    Cost cost;\n    Edge(int\
-    \ s, int t, Cost c = 1) : src(s), to(t), cost(c) {}\n    // \u30C7\u30D5\u30A9\
-    \u30EB\u30C8\u3067\u306F\u884C\u304D\u5148\u3092\u8FD4\u3059\n    operator int()\
-    \ const { return to; }\n};\n\ntemplate <typename Cost>\nstruct Graph : vector<vector<Edge<Cost>>>\
-    \ {\n    Graph(int n) : vector<vector<Edge<Cost>>>(n) {}\n    void add_edge(int\
-    \ s, int t, Cost c = 1) { (*this)[s].emplace_back(s, t, c); }\n};\n\ntemplate\
-    \ <\n    typename Cost,\n    typename Data,\n    Data (*merge)(Data, Data),\n\
-    \    Data (*e)(),\n    Data (*leaf)(),\n    Data (*apply)(Data, int, int, Cost)>\n\
-    struct Rerooting : Graph<Cost> {\n    // memo : 0\u3092\u6839\u3068\u3057\u305F\
-    \u3068\u304D\u306Ei\u306E\u90E8\u5206\u6728\u306E\u5024(i\u81EA\u8EAB\u306F\u542B\
-    \u307E\u308C\u306A\u3044)\n    vector<Data> dp, memo;\n\n    Rerooting(int n)\
-    \ : Graph<Cost>::Graph(n) {}\n\n    vector<Data> run() {\n        memo.resize((*this).size(),\
-    \ e());\n        dp.resize((*this).size());\n        dfs1(0, -1);\n        dfs2(0,\
-    \ -1, e());\n        return dp;\n    }\n    // 0\u3092\u6839\u3068\u3057\u305F\
-    \u6728\u306E\u5168\u3066\u306E\u90E8\u5206\u6728\u306B\u3064\u3044\u3066\u5024\
-    \u3092\u6C42\u3081\u308B\n    void dfs1(int c, int p) {\n        bool upd = false;\n\
+    #include <dump/dump.hpp>\n#define dump(...) cpp_dump(__VA_ARGS__)\n#else\n#undef\
+    \ dump\n#define dump(...)\n#endif\n#define rep1(i, a) for (int i = 0; i < (int)(a);\
+    \ i++)\n#define rep2(i, a, b) for (int i = (int)(a); i < (int)(b); i++)\n#define\
+    \ rep3(i, a, b, c) for (int i = (int)(a); i < (int)(b); i += (int)(c))\n#define\
+    \ overloadRep(a, b, c, d, e, ...) e\n#define rep(...) overloadRep(__VA_ARGS__,\
+    \ rep3, rep2, rep1)(__VA_ARGS__)\n#define rrep(i, a, b) for (int i = (int)(a);\
+    \ i <= (int)(b); i++)\n#define drep(i, a, b) for (int i = (int)(a); i >= (int)(b);\
+    \ i--)\n#define all(a) a.begin(), a.end()\n#define rall(a) a.rbegin(), a.rend()\n\
+    using ll = long long;\nusing ull = unsigned long long;\nconst int inf = 1e9;\n\
+    const ll INF = 1e18;\nconst int dx[4] = {0, 1, 0, -1};\nconst int dy[4] = {1,\
+    \ 0, -1, 0};\nconst int ddx[8] = {1, 0, -1, 0, 1, -1, 1, -1};\nconst int ddy[8]\
+    \ = {0, 1, 0, -1, 1, -1, -1, 1};\n\nstruct cincout {\n    cincout() {\n      \
+    \  ios_base::sync_with_stdio(false);\n        cin.tie(nullptr);\n        cout\
+    \ << fixed << setprecision(15);\n    }\n} init;\n\n// chmax chmin\ntemplate <class\
+    \ T>\ninline bool chmax(T &a, T b) {\n    if (a < b) {\n        a = b;\n     \
+    \   return true;\n    }\n    return false;\n}\n\ntemplate <class T>\ninline bool\
+    \ chmin(T &a, T b) {\n    if (a > b) {\n        a = b;\n        return true;\n\
+    \    }\n    return false;\n}\n\n// pair\ntemplate <class T1, class T2>\nistream\
+    \ &operator>>(istream &is, pair<T1, T2> &p) {\n    is >> p.first >> p.second;\n\
+    \    return is;\n}\n\ntemplate <class T1, class T2>\nostream &operator<<(ostream\
+    \ &os, const pair<T1, T2> &p) {\n    os << p.first << \" \" << p.second << '\\\
+    n';\n    return os;\n}\n\n// vector\ntemplate <class T>\nistream &operator>>(istream\
+    \ &is, vector<T> &v) {\n    for (T &in : v) {\n        is >> in;\n    }\n    return\
+    \ is;\n}\n\ntemplate <class T>\nostream &operator<<(ostream &os, const vector<T>\
+    \ &v) {\n    rep(i, (int)v.size()) {\n        os << v[i] << \" \\n\"[i + 1 ==\
+    \ (int)v.size()];\n    }\n    return os;\n}\n\ntemplate <class T>\nistream &operator>>(istream\
+    \ &is, vector<vector<T>> &vv) {\n    for (vector<T> &v : vv) {\n        is >>\
+    \ v;\n    }\n    return is;\n}\n\ntemplate <class T>\nostream &operator<<(ostream\
+    \ &os, vector<vector<T>> &vv) {\n    for (vector<T> &v : vv) {\n        os <<\
+    \ v;\n    }\n    return os;\n}\n\n// bit\nbool bit(ll x, int p) {\n    return\
+    \ (x >> p) & 1;\n}\n\n// grid out\nbool out(int ni, int nj, int h, int w) {\n\
+    \    return (ni < 0 or ni >= h or nj < 0 or nj >= w);\n}\n\n// popcount\nint pc(ll\
+    \ x) {\n    return __builtin_popcountll(x);\n}\n\n// max(vector)\ntemplate <class\
+    \ T>\nT max(vector<T> x) {\n    return *max_element(x.begin(), x.end());\n}\n\n\
+    // sum(vector)\ntemplate <class T>\nT sum(vector<T> x) {\n    return reduce(x.begin(),\
+    \ x.end());\n}\n#line 1 \"graph/rerooting.hpp\"\ntemplate <typename Cost>\nstruct\
+    \ Edge {\n    int src, to;\n    Cost cost;\n    Edge(int s, int t, Cost c = 1)\
+    \ : src(s), to(t), cost(c) {}\n    // \u30C7\u30D5\u30A9\u30EB\u30C8\u3067\u306F\
+    \u884C\u304D\u5148\u3092\u8FD4\u3059\n    operator int() const { return to; }\n\
+    };\n\ntemplate <typename Cost>\nstruct Graph : vector<vector<Edge<Cost>>> {\n\
+    \    Graph(int n) : vector<vector<Edge<Cost>>>(n) {}\n    void add_edge(int s,\
+    \ int t, Cost c = 1) { (*this)[s].emplace_back(s, t, c); }\n};\n\ntemplate <\n\
+    \    typename Cost,\n    typename Data,\n    Data (*merge)(Data, Data),\n    Data\
+    \ (*e)(),\n    Data (*leaf)(),\n    Data (*apply)(Data, int, int, Cost)>\nstruct\
+    \ Rerooting : Graph<Cost> {\n    // memo : 0\u3092\u6839\u3068\u3057\u305F\u3068\
+    \u304D\u306Ei\u306E\u90E8\u5206\u6728\u306E\u5024(i\u81EA\u8EAB\u306F\u542B\u307E\
+    \u308C\u306A\u3044)\n    vector<Data> dp, memo;\n\n    Rerooting(int n) : Graph<Cost>::Graph(n)\
+    \ {}\n\n    vector<Data> run() {\n        memo.resize((*this).size(), e());\n\
+    \        dp.resize((*this).size());\n        dfs1(0, -1);\n        dfs2(0, -1,\
+    \ e());\n        return dp;\n    }\n    // 0\u3092\u6839\u3068\u3057\u305F\u6728\
+    \u306E\u5168\u3066\u306E\u90E8\u5206\u6728\u306B\u3064\u3044\u3066\u5024\u3092\
+    \u6C42\u3081\u308B\n    void dfs1(int c, int p) {\n        bool upd = false;\n\
     \        for (Edge<Cost>& d : (*this)[c]) {\n            if (d != p) {\n     \
     \           dfs1(d, c);\n                upd = true;\n                memo[c]\
     \ = merge(memo[c], apply(memo[d], d, c, d.cost));\n            }\n        }\n\
@@ -113,7 +114,7 @@ data:
   isVerificationFile: true
   path: verify/rerooting.test.cpp
   requiredBy: []
-  timestamp: '2024-07-18 21:32:12+09:00'
+  timestamp: '2024-07-19 14:57:21+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/rerooting.test.cpp
