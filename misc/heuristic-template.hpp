@@ -24,6 +24,8 @@ const int inf=1e9;
 const ll INF=1e18;
 const int dx[4]={0,1,0,-1};
 const int dy[4]={1,0,-1,0};
+const int ddx[8]={1,1,1,0,-1,-1,-1,0};
+const int ddy[8]={1,0,-1,-1,-1,0,1,1};
 bool bit(ll x, int p){return (x>>p)&1;}
 bool out(int ni, int nj, int h, int w){return (ni<0 or ni>=h or nj<0 or nj>=w);}
 int pc(ll x){return __builtin_popcountll(x);}
