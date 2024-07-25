@@ -23,12 +23,13 @@ data:
     \ for(int i=(int)(a);i<=(int)(b);i++)\n#define drep(i,a,b) for(int i=(int)(a);i>=(int)(b);i--)\n\
     #define all(a) a.begin(),a.end()\n#define rall(a) a.rbegin(),a.rend()\nusing ll\
     \ = long long;\nconst int inf=1e9;\nconst ll INF=1e18;\nconst int dx[4]={0,1,0,-1};\n\
-    const int dy[4]={1,0,-1,0};\nbool bit(ll x, int p){return (x>>p)&1;}\nbool out(int\
-    \ ni, int nj, int h, int w){return (ni<0 or ni>=h or nj<0 or nj>=w);}\nint pc(ll\
-    \ x){return __builtin_popcountll(x);}\nclass Random {\n   public:\n    mt19937\
-    \ mt;\n    uniform_real_distribution<double> dd_{0, 1.0};\n    Random(const int\
-    \ seed = 0): mt(mt19937(seed)) {}\n    inline int nextInt(const int l,const int\
-    \ r) {uniform_int_distribution<int> di(l,r);return di(mt);}\n    inline double\
+    const int dy[4]={1,0,-1,0};\nconst int ddx[8]={1,1,1,0,-1,-1,-1,0};\nconst int\
+    \ ddy[8]={1,0,-1,-1,-1,0,1,1};\nbool bit(ll x, int p){return (x>>p)&1;}\nbool\
+    \ out(int ni, int nj, int h, int w){return (ni<0 or ni>=h or nj<0 or nj>=w);}\n\
+    int pc(ll x){return __builtin_popcountll(x);}\nclass Random {\n   public:\n  \
+    \  mt19937 mt;\n    uniform_real_distribution<double> dd_{0, 1.0};\n    Random(const\
+    \ int seed = 0): mt(mt19937(seed)) {}\n    inline int nextInt(const int l,const\
+    \ int r) {uniform_int_distribution<int> di(l,r);return di(mt);}\n    inline double\
     \ nextDouble() {return dd_(mt);}\n    inline double nextLog() {return log(dd_(mt));}\n\
     };\nRandom rnd{};\nusing time_data = high_resolution_clock::time_point;\n#define\
     \ now_time high_resolution_clock::now()\n#define change_mil(a) duration_cast<milliseconds>(a).count()\n\
@@ -50,15 +51,16 @@ data:
     \ rrep(i,a,b) for(int i=(int)(a);i<=(int)(b);i++)\n#define drep(i,a,b) for(int\
     \ i=(int)(a);i>=(int)(b);i--)\n#define all(a) a.begin(),a.end()\n#define rall(a)\
     \ a.rbegin(),a.rend()\nusing ll = long long;\nconst int inf=1e9;\nconst ll INF=1e18;\n\
-    const int dx[4]={0,1,0,-1};\nconst int dy[4]={1,0,-1,0};\nbool bit(ll x, int p){return\
-    \ (x>>p)&1;}\nbool out(int ni, int nj, int h, int w){return (ni<0 or ni>=h or\
-    \ nj<0 or nj>=w);}\nint pc(ll x){return __builtin_popcountll(x);}\nclass Random\
-    \ {\n   public:\n    mt19937 mt;\n    uniform_real_distribution<double> dd_{0,\
-    \ 1.0};\n    Random(const int seed = 0): mt(mt19937(seed)) {}\n    inline int\
-    \ nextInt(const int l,const int r) {uniform_int_distribution<int> di(l,r);return\
-    \ di(mt);}\n    inline double nextDouble() {return dd_(mt);}\n    inline double\
-    \ nextLog() {return log(dd_(mt));}\n};\nRandom rnd{};\nusing time_data = high_resolution_clock::time_point;\n\
-    #define now_time high_resolution_clock::now()\n#define change_mil(a) duration_cast<milliseconds>(a).count()\n\
+    const int dx[4]={0,1,0,-1};\nconst int dy[4]={1,0,-1,0};\nconst int ddx[8]={1,1,1,0,-1,-1,-1,0};\n\
+    const int ddy[8]={1,0,-1,-1,-1,0,1,1};\nbool bit(ll x, int p){return (x>>p)&1;}\n\
+    bool out(int ni, int nj, int h, int w){return (ni<0 or ni>=h or nj<0 or nj>=w);}\n\
+    int pc(ll x){return __builtin_popcountll(x);}\nclass Random {\n   public:\n  \
+    \  mt19937 mt;\n    uniform_real_distribution<double> dd_{0, 1.0};\n    Random(const\
+    \ int seed = 0): mt(mt19937(seed)) {}\n    inline int nextInt(const int l,const\
+    \ int r) {uniform_int_distribution<int> di(l,r);return di(mt);}\n    inline double\
+    \ nextDouble() {return dd_(mt);}\n    inline double nextLog() {return log(dd_(mt));}\n\
+    };\nRandom rnd{};\nusing time_data = high_resolution_clock::time_point;\n#define\
+    \ now_time high_resolution_clock::now()\n#define change_mil(a) duration_cast<milliseconds>(a).count()\n\
     #define change_mic(a) duration_cast<microseconds>(a).count()\nclass TimeKeeperDouble\
     \ {\n   private:\n    time_data start_time_;\n    double time_threshold_;\n  \
     \  double now_time_ = 0;\n   public:\n    TimeKeeperDouble(const double time_threshold):\
@@ -70,7 +72,7 @@ data:
   isVerificationFile: false
   path: misc/heuristic-template.hpp
   requiredBy: []
-  timestamp: '2024-06-19 21:24:21+09:00'
+  timestamp: '2024-07-25 16:52:06+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/heuristic-template.test.cpp

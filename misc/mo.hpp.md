@@ -56,8 +56,8 @@ data:
   timestamp: '2024-06-22 09:18:57+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/yosupo-mo1.test.cpp
   - verify/yosupo-mo2.test.cpp
+  - verify/yosupo-mo1.test.cpp
 documentation_of: misc/mo.hpp
 layout: document
 title: "Mo\u2019s algorithm"

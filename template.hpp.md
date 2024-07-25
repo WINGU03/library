@@ -130,19 +130,19 @@ data:
   timestamp: '2024-07-19 15:46:46+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/aizu-next-combination.test.cpp
-  - verify/yosupo-mo1.test.cpp
-  - verify/rerooting.test.cpp
-  - verify/yuki-rolling-hash-tree.test.cpp
-  - verify/compile-option.test.cpp
-  - verify/yosupo-rolling-hash.test.cpp
-  - verify/enum-divisor.test.cpp
-  - verify/extgcd.test.cpp
   - verify/prime-factorize.test.cpp
-  - verify/aizu-cc.test.cpp
-  - verify/aizu-rolling-hash.test.cpp
-  - verify/yosupo-mo2.test.cpp
   - verify/aizu-dynamic-bfs.test.cpp
+  - verify/aizu-cc.test.cpp
+  - verify/aizu-next-combination.test.cpp
+  - verify/rerooting.test.cpp
+  - verify/aizu-rolling-hash.test.cpp
+  - verify/enum-divisor.test.cpp
+  - verify/yuki-rolling-hash-tree.test.cpp
+  - verify/extgcd.test.cpp
+  - verify/compile-option.test.cpp
+  - verify/yosupo-mo2.test.cpp
+  - verify/yosupo-mo1.test.cpp
+  - verify/yosupo-rolling-hash.test.cpp
 documentation_of: template.hpp
 layout: document
 redirect_from:
