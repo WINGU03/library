@@ -51,8 +51,8 @@ data:
     \ int pc(ll x) {return __builtin_popcountll(x);}\ntemplate <class T> inline T\
     \ max(vector<T> x) {return *max_element(x.begin(), x.end());}\ntemplate <class\
     \ T> inline T min(vector<T> x) {return *min_element(x.begin(), x.end());}\ntemplate\
-    \ <class T> inline T sum(vector<T> x) {return reduce(x.begin(), x.end()); }\n\
-    #line 1 \"misc/next-combination.hpp\"\ntemplate <typename T>\nbool next_combination(const\
+    \ <class T> inline T sum(vector<T> x) {return reduce(x.begin(), x.end());}\n#line\
+    \ 1 \"misc/next-combination.hpp\"\ntemplate <typename T>\nbool next_combination(const\
     \ T first, const T last, int k) {\n    const T subset = first + k;\n    if (first\
     \ == last || first == subset || last == subset) {\n        return false;\n   \
     \ }\n    T src = subset;\n    while (first != src) {\n        src--;\n       \
@@ -79,7 +79,7 @@ data:
   isVerificationFile: true
   path: verify/aizu-next-combination.test.cpp
   requiredBy: []
-  timestamp: '2024-08-04 18:25:12+09:00'
+  timestamp: '2024-08-04 19:01:07+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aizu-next-combination.test.cpp

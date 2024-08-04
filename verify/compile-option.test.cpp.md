@@ -50,9 +50,9 @@ data:
     \ int pc(ll x) {return __builtin_popcountll(x);}\ntemplate <class T> inline T\
     \ max(vector<T> x) {return *max_element(x.begin(), x.end());}\ntemplate <class\
     \ T> inline T min(vector<T> x) {return *min_element(x.begin(), x.end());}\ntemplate\
-    \ <class T> inline T sum(vector<T> x) {return reduce(x.begin(), x.end()); }\n\
-    #line 1 \"misc/compile-option.hpp\"\n#pragma GCC target(\"avx2\")\n#pragma GCC\
-    \ optimize(\"O3\")\n#pragma GCC optimize(\"unroll-loops\")\n#line 6 \"verify/compile-option.test.cpp\"\
+    \ <class T> inline T sum(vector<T> x) {return reduce(x.begin(), x.end());}\n#line\
+    \ 1 \"misc/compile-option.hpp\"\n#pragma GCC target(\"avx2\")\n#pragma GCC optimize(\"\
+    O3\")\n#pragma GCC optimize(\"unroll-loops\")\n#line 6 \"verify/compile-option.test.cpp\"\
     \n\nint main(){\n    int t;\n    cin >> t;\n    while(t--){\n        ll a, b;\n\
     \        cin >> a >> b;\n        cout << a + b << endl;\n    }\n    return 0;\n\
     }\n"
@@ -67,7 +67,7 @@ data:
   isVerificationFile: true
   path: verify/compile-option.test.cpp
   requiredBy: []
-  timestamp: '2024-08-04 18:25:12+09:00'
+  timestamp: '2024-08-04 19:01:07+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/compile-option.test.cpp

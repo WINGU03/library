@@ -145,8 +145,7 @@ data:
 
     template <class T> inline T min(vector<T> x) {return *min_element(x.begin(), x.end());}
 
-    template <class T> inline T sum(vector<T> x) {return reduce(x.begin(), x.end());
-    }
+    template <class T> inline T sum(vector<T> x) {return reduce(x.begin(), x.end());}
 
     '
   code: '#include <bits/stdc++.h>
@@ -245,15 +244,12 @@ data:
 
     template <class T> inline T min(vector<T> x) {return *min_element(x.begin(), x.end());}
 
-    template <class T> inline T sum(vector<T> x) {return reduce(x.begin(), x.end());
-    }
-
-    '
+    template <class T> inline T sum(vector<T> x) {return reduce(x.begin(), x.end());}'
   dependsOn: []
   isVerificationFile: false
   path: template.hpp
   requiredBy: []
-  timestamp: '2024-08-04 18:25:12+09:00'
+  timestamp: '2024-08-04 19:01:07+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/aizu-dynamic-bfs.test.cpp

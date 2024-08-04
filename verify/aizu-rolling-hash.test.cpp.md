@@ -51,16 +51,16 @@ data:
     \ int pc(ll x) {return __builtin_popcountll(x);}\ntemplate <class T> inline T\
     \ max(vector<T> x) {return *max_element(x.begin(), x.end());}\ntemplate <class\
     \ T> inline T min(vector<T> x) {return *min_element(x.begin(), x.end());}\ntemplate\
-    \ <class T> inline T sum(vector<T> x) {return reduce(x.begin(), x.end()); }\n\
-    #line 1 \"string/rolling-hash.hpp\"\nmt19937_64 r(time(0));\nstatic constexpr\
-    \ ll mod = (1LL << 61) - 1;\nstatic const ll base = r() % (mod - 4) + 2;\n\nstruct\
-    \ RollingHash {\n    using i128 = __int128_t;\n    vector<ll> hash, power;\n \
-    \   int n;\n    string s;\n\n    inline ll add(ll a, ll b) const {\n        if\
-    \ ((a += b) >= mod) a -= mod;\n        return a;\n    }\n\n    inline ll mul(ll\
-    \ a, ll b) const {\n        i128 x = (i128)a * b;\n        return add(x >> 61,\
-    \ x & mod);\n    }\n\n    explicit RollingHash(const string& S) {\n        n =\
-    \ (int)S.size();\n        s = S;\n        hash.resize(n + 1, 0);\n        power.resize(n\
-    \ + 1, 1);\n        for (int i = 0; i < n; i++) {\n            hash[i + 1] = add(mul(hash[i],\
+    \ <class T> inline T sum(vector<T> x) {return reduce(x.begin(), x.end());}\n#line\
+    \ 1 \"string/rolling-hash.hpp\"\nmt19937_64 r(time(0));\nstatic constexpr ll mod\
+    \ = (1LL << 61) - 1;\nstatic const ll base = r() % (mod - 4) + 2;\n\nstruct RollingHash\
+    \ {\n    using i128 = __int128_t;\n    vector<ll> hash, power;\n    int n;\n \
+    \   string s;\n\n    inline ll add(ll a, ll b) const {\n        if ((a += b) >=\
+    \ mod) a -= mod;\n        return a;\n    }\n\n    inline ll mul(ll a, ll b) const\
+    \ {\n        i128 x = (i128)a * b;\n        return add(x >> 61, x & mod);\n  \
+    \  }\n\n    explicit RollingHash(const string& S) {\n        n = (int)S.size();\n\
+    \        s = S;\n        hash.resize(n + 1, 0);\n        power.resize(n + 1, 1);\n\
+    \        for (int i = 0; i < n; i++) {\n            hash[i + 1] = add(mul(hash[i],\
     \ base), S[i]);\n            power[i + 1] = mul(power[i], base);\n        }\n\
     \    }\n\n    inline ll get(int l, int r) const {\n        return add(hash[r],\
     \ mod - mul(hash[l], power[r - l]));\n    }\n\n    inline ll get() const {\n \
@@ -94,7 +94,7 @@ data:
   isVerificationFile: true
   path: verify/aizu-rolling-hash.test.cpp
   requiredBy: []
-  timestamp: '2024-08-04 18:25:12+09:00'
+  timestamp: '2024-08-04 19:01:07+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aizu-rolling-hash.test.cpp

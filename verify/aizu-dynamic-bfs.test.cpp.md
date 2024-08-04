@@ -50,8 +50,8 @@ data:
     \ int pc(ll x) {return __builtin_popcountll(x);}\ntemplate <class T> inline T\
     \ max(vector<T> x) {return *max_element(x.begin(), x.end());}\ntemplate <class\
     \ T> inline T min(vector<T> x) {return *min_element(x.begin(), x.end());}\ntemplate\
-    \ <class T> inline T sum(vector<T> x) {return reduce(x.begin(), x.end()); }\n\
-    #line 1 \"graph/dynamic-bfs.hpp\"\ntemplate <class T, class f>\nint dynamic_bfs(T&\
+    \ <class T> inline T sum(vector<T> x) {return reduce(x.begin(), x.end());}\n#line\
+    \ 1 \"graph/dynamic-bfs.hpp\"\ntemplate <class T, class f>\nint dynamic_bfs(T&\
     \ s, f& nxt, T& g) {\n    if (s == g) return 0;\n    map<T, int> dist;\n    queue<T>\
     \ q;\n    dist[s] = 0;\n    q.push(s);\n    while (!q.empty()) {\n        auto\
     \ v = q.front();\n        q.pop();\n        for (const auto& u : nxt(v)) {\n \
@@ -84,7 +84,7 @@ data:
   isVerificationFile: true
   path: verify/aizu-dynamic-bfs.test.cpp
   requiredBy: []
-  timestamp: '2024-08-04 18:25:12+09:00'
+  timestamp: '2024-08-04 19:01:07+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aizu-dynamic-bfs.test.cpp

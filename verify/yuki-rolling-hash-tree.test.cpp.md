@@ -51,8 +51,8 @@ data:
     \ int pc(ll x) {return __builtin_popcountll(x);}\ntemplate <class T> inline T\
     \ max(vector<T> x) {return *max_element(x.begin(), x.end());}\ntemplate <class\
     \ T> inline T min(vector<T> x) {return *min_element(x.begin(), x.end());}\ntemplate\
-    \ <class T> inline T sum(vector<T> x) {return reduce(x.begin(), x.end()); }\n\
-    #line 6 \"verify/yuki-rolling-hash-tree.test.cpp\"\n\n#line 1 \"string/rolling-hash-tree.hpp\"\
+    \ <class T> inline T sum(vector<T> x) {return reduce(x.begin(), x.end());}\n#line\
+    \ 6 \"verify/yuki-rolling-hash-tree.test.cpp\"\n\n#line 1 \"string/rolling-hash-tree.hpp\"\
     \n#include <atcoder/segtree>\n\nmt19937_64 r(time(0));\nstatic const int mod1\
     \ = 1000000007, mod2 = 1000000009;\nusing mint1 = static_modint<mod1>;\nusing\
     \ mint2 = static_modint<mod2>;\nstatic const int base1 = r() % (mod1 - 4) + 2,\
@@ -112,7 +112,7 @@ data:
   isVerificationFile: true
   path: verify/yuki-rolling-hash-tree.test.cpp
   requiredBy: []
-  timestamp: '2024-08-04 18:25:12+09:00'
+  timestamp: '2024-08-04 19:01:07+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yuki-rolling-hash-tree.test.cpp

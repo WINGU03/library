@@ -50,8 +50,8 @@ data:
     \ int pc(ll x) {return __builtin_popcountll(x);}\ntemplate <class T> inline T\
     \ max(vector<T> x) {return *max_element(x.begin(), x.end());}\ntemplate <class\
     \ T> inline T min(vector<T> x) {return *min_element(x.begin(), x.end());}\ntemplate\
-    \ <class T> inline T sum(vector<T> x) {return reduce(x.begin(), x.end()); }\n\
-    #line 1 \"misc/cc.hpp\"\ntemplate <typename T = int>\nstruct CC {\n    bool initialized;\n\
+    \ <class T> inline T sum(vector<T> x) {return reduce(x.begin(), x.end());}\n#line\
+    \ 1 \"misc/cc.hpp\"\ntemplate <typename T = int>\nstruct CC {\n    bool initialized;\n\
     \    vector<T> xs;\n    unordered_map<T, int> mp;\n    CC() : initialized(false)\
     \ {}\n    void add(T x) {\n        xs.push_back(x);\n    }\n    void init() {\n\
     \        sort(xs.begin(), xs.end());\n        xs.erase(unique(xs.begin(), xs.end()),\
@@ -79,7 +79,7 @@ data:
   isVerificationFile: true
   path: verify/aizu-cc.test.cpp
   requiredBy: []
-  timestamp: '2024-08-04 18:25:12+09:00'
+  timestamp: '2024-08-04 19:01:07+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aizu-cc.test.cpp

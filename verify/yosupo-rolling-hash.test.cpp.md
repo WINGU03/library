@@ -51,8 +51,8 @@ data:
     \ int pc(ll x) {return __builtin_popcountll(x);}\ntemplate <class T> inline T\
     \ max(vector<T> x) {return *max_element(x.begin(), x.end());}\ntemplate <class\
     \ T> inline T min(vector<T> x) {return *min_element(x.begin(), x.end());}\ntemplate\
-    \ <class T> inline T sum(vector<T> x) {return reduce(x.begin(), x.end()); }\n\
-    #line 6 \"verify/yosupo-rolling-hash.test.cpp\"\n\n#line 1 \"string/rolling-hash.hpp\"\
+    \ <class T> inline T sum(vector<T> x) {return reduce(x.begin(), x.end());}\n#line\
+    \ 6 \"verify/yosupo-rolling-hash.test.cpp\"\n\n#line 1 \"string/rolling-hash.hpp\"\
     \nmt19937_64 r(time(0));\nstatic constexpr ll mod = (1LL << 61) - 1;\nstatic const\
     \ ll base = r() % (mod - 4) + 2;\n\nstruct RollingHash {\n    using i128 = __int128_t;\n\
     \    vector<ll> hash, power;\n    int n;\n    string s;\n\n    inline ll add(ll\
@@ -98,7 +98,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo-rolling-hash.test.cpp
   requiredBy: []
-  timestamp: '2024-08-04 18:25:12+09:00'
+  timestamp: '2024-08-04 19:01:07+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo-rolling-hash.test.cpp

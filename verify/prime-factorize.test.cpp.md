@@ -50,11 +50,11 @@ data:
     \ int pc(ll x) {return __builtin_popcountll(x);}\ntemplate <class T> inline T\
     \ max(vector<T> x) {return *max_element(x.begin(), x.end());}\ntemplate <class\
     \ T> inline T min(vector<T> x) {return *min_element(x.begin(), x.end());}\ntemplate\
-    \ <class T> inline T sum(vector<T> x) {return reduce(x.begin(), x.end()); }\n\
-    #line 1 \"math/prime-factorize.hpp\"\nvector<pair<ll, ll>> prime_factorize(ll\
-    \ n) {\n    vector<pair<ll, ll>> res;\n    for (int p = 2; (ll)p * p <= n; p++)\
-    \ {\n        if (n % p != 0) continue;\n        int num = 0;\n        while (n\
-    \ % p == 0) {\n            num++;\n            n /= p;\n        }\n        res.push_back(make_pair(p,\
+    \ <class T> inline T sum(vector<T> x) {return reduce(x.begin(), x.end());}\n#line\
+    \ 1 \"math/prime-factorize.hpp\"\nvector<pair<ll, ll>> prime_factorize(ll n) {\n\
+    \    vector<pair<ll, ll>> res;\n    for (int p = 2; (ll)p * p <= n; p++) {\n \
+    \       if (n % p != 0) continue;\n        int num = 0;\n        while (n % p\
+    \ == 0) {\n            num++;\n            n /= p;\n        }\n        res.push_back(make_pair(p,\
     \ num));\n    }\n    if (n != 1) res.push_back(make_pair(n, 1));\n    return res;\n\
     }\n#line 6 \"verify/prime-factorize.test.cpp\"\n\nint main() {\n    int n;\n \
     \   cin >> n;\n    auto p = prime_factorize(n);\n    cout << n << ':';\n    for\
@@ -71,7 +71,7 @@ data:
   isVerificationFile: true
   path: verify/prime-factorize.test.cpp
   requiredBy: []
-  timestamp: '2024-08-04 18:25:12+09:00'
+  timestamp: '2024-08-04 19:01:07+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/prime-factorize.test.cpp

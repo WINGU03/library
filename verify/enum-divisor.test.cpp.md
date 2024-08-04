@@ -50,8 +50,8 @@ data:
     \ int pc(ll x) {return __builtin_popcountll(x);}\ntemplate <class T> inline T\
     \ max(vector<T> x) {return *max_element(x.begin(), x.end());}\ntemplate <class\
     \ T> inline T min(vector<T> x) {return *min_element(x.begin(), x.end());}\ntemplate\
-    \ <class T> inline T sum(vector<T> x) {return reduce(x.begin(), x.end()); }\n\
-    #line 1 \"math/enum-divisor.hpp\"\nvector<ll> enum_divisor(ll n) {\n    vector<ll>\
+    \ <class T> inline T sum(vector<T> x) {return reduce(x.begin(), x.end());}\n#line\
+    \ 1 \"math/enum-divisor.hpp\"\nvector<ll> enum_divisor(ll n) {\n    vector<ll>\
     \ res;\n    for (int i = 1; (ll)i * i <= n; i++) {\n        if (n % i == 0) {\n\
     \            res.push_back(i);\n            ll j = n / i;\n            if (j !=\
     \ i) res.push_back(j);\n        }\n    }\n    sort(res.begin(), res.end());\n\
@@ -70,7 +70,7 @@ data:
   isVerificationFile: true
   path: verify/enum-divisor.test.cpp
   requiredBy: []
-  timestamp: '2024-08-04 18:25:12+09:00'
+  timestamp: '2024-08-04 19:01:07+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/enum-divisor.test.cpp

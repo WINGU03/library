@@ -53,10 +53,10 @@ data:
     \ int pc(ll x) {return __builtin_popcountll(x);}\ntemplate <class T> inline T\
     \ max(vector<T> x) {return *max_element(x.begin(), x.end());}\ntemplate <class\
     \ T> inline T min(vector<T> x) {return *min_element(x.begin(), x.end());}\ntemplate\
-    \ <class T> inline T sum(vector<T> x) {return reduce(x.begin(), x.end()); }\n\
-    #line 1 \"misc/mo.hpp\"\ntemplate <class M>\nstruct Mo {\n    using T = typename\
-    \ M::T;\n    int backet;\n    vector<int> left, right, order;\n    Mo(int N, int\
-    \ Q) {\n        order.resize(Q);\n        backet = max<int>(1, (double)(N) / max<double>(1,\
+    \ <class T> inline T sum(vector<T> x) {return reduce(x.begin(), x.end());}\n#line\
+    \ 1 \"misc/mo.hpp\"\ntemplate <class M>\nstruct Mo {\n    using T = typename M::T;\n\
+    \    int backet;\n    vector<int> left, right, order;\n    Mo(int N, int Q) {\n\
+    \        order.resize(Q);\n        backet = max<int>(1, (double)(N) / max<double>(1,\
     \ sqrt(Q * 2.0 / 3)));\n        iota(order.begin(), order.end(), 0);\n    }\n\
     \    void add_query(int left_id, int right_id) {\n        left.emplace_back(left_id);\n\
     \        right.emplace_back(right_id);\n    }\n    vector<T> run() {\n       \
@@ -119,7 +119,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo-mo1.test.cpp
   requiredBy: []
-  timestamp: '2024-08-04 18:25:12+09:00'
+  timestamp: '2024-08-04 19:01:07+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo-mo1.test.cpp
