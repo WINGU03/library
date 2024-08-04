@@ -22,7 +22,7 @@ data:
     - https://judge.yosupo.jp/problem/static_range_frequency
   bundledCode: "#line 1 \"verify/yosupo-mo2.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/static_range_frequency\"\
     \n\n#include <bits/stdc++.h>\n#line 2 \"template.hpp\"\nusing namespace std;\n\
-    #include <atcoder/modint>\nusing namespace atcoder;\n\n#ifdef DEFINED_ONLY_IN_LOCAL\n\
+    #include <atcoder/modint>\nusing namespace atcoder;\n#ifdef DEFINED_ONLY_IN_LOCAL\n\
     #include <dump.hpp>\n#define dump(...) cpp_dump(__VA_ARGS__)\n#else\n#undef dump\n\
     #define dump(...)\n#endif\n#define rep1(i, a) for (int i = 0; i < (int)(a); i++)\n\
     #define rep2(i, a, b) for (int i = (int)(a); i < (int)(b); i++)\n#define rep3(i,\
@@ -34,48 +34,43 @@ data:
     \ ull = unsigned long long;\nconst int inf = 1e9;\nconst ll INF = 1e18;\nconst\
     \ int dx[4] = {0, 1, 0, -1};\nconst int dy[4] = {1, 0, -1, 0};\nconst int ddx[8]\
     \ = {1, 0, -1, 0, 1, -1, 1, -1};\nconst int ddy[8] = {0, 1, 0, -1, 1, -1, -1,\
-    \ 1};\nconst string d4 = \"RDLU\";\n\nstruct cincout {\n    cincout() {\n    \
-    \    ios_base::sync_with_stdio(false);\n        cin.tie(nullptr);\n        cout\
-    \ << fixed << setprecision(15);\n    }\n} init;\n\n// chmax chmin\ntemplate <class\
-    \ T>\ninline bool chmax(T &a, T b) {\n    if (a < b) {\n        a = b;\n     \
-    \   return true;\n    }\n    return false;\n}\n\ntemplate <class T>\ninline bool\
-    \ chmin(T &a, T b) {\n    if (a > b) {\n        a = b;\n        return true;\n\
-    \    }\n    return false;\n}\n\n// pair\ntemplate <class T1, class T2>\nistream\
-    \ &operator>>(istream &is, pair<T1, T2> &p) {\n    is >> p.first >> p.second;\n\
-    \    return is;\n}\n\ntemplate <class T1, class T2>\nostream &operator<<(ostream\
-    \ &os, const pair<T1, T2> &p) {\n    os << p.first << \" \" << p.second << '\\\
-    n';\n    return os;\n}\n\n// vector\ntemplate <class T>\nistream &operator>>(istream\
-    \ &is, vector<T> &v) {\n    for (T &in : v) {\n        is >> in;\n    }\n    return\
-    \ is;\n}\n\ntemplate <class T>\nostream &operator<<(ostream &os, const vector<T>\
-    \ &v) {\n    rep(i, (int)v.size()) {\n        os << v[i] << \" \\n\"[i + 1 ==\
-    \ (int)v.size()];\n    }\n    return os;\n}\n\ntemplate <class T>\nistream &operator>>(istream\
-    \ &is, vector<vector<T>> &vv) {\n    for (vector<T> &v : vv) {\n        is >>\
-    \ v;\n    }\n    return is;\n}\n\ntemplate <class T>\nostream &operator<<(ostream\
-    \ &os, vector<vector<T>> &vv) {\n    for (vector<T> &v : vv) {\n        os <<\
-    \ v;\n    }\n    return os;\n}\n\n// bit\nbool bit(ll x, int p) {\n    return\
-    \ (x >> p) & 1;\n}\n\n// grid out\nbool out(int ni, int nj, int h, int w) {\n\
-    \    return (ni < 0 or ni >= h or nj < 0 or nj >= w);\n}\n\n// popcount\nint pc(ll\
-    \ x) {\n    return __builtin_popcountll(x);\n}\n\n// max min sum(vector)\ntemplate\
-    \ <class T>\nT max(vector<T> x) {\n    return *max_element(x.begin(), x.end());\n\
-    }\n\ntemplate <class T>\nT min(vector<T> x) {\n    return *min_element(x.begin(),\
-    \ x.end());\n}\n\ntemplate <class T>\nT sum(vector<T> x) {\n    return reduce(x.begin(),\
-    \ x.end());\n}\n#line 1 \"misc/cc.hpp\"\ntemplate <typename T = int>\nstruct CC\
-    \ {\n    bool initialized;\n    vector<T> xs;\n    unordered_map<T, int> mp;\n\
-    \    CC() : initialized(false) {}\n    void add(T x) {\n        xs.push_back(x);\n\
-    \    }\n    void init() {\n        sort(xs.begin(), xs.end());\n        xs.erase(unique(xs.begin(),\
-    \ xs.end()), xs.end());\n        for (int i = 0; i < (int)xs.size(); i++) {\n\
-    \            mp[xs[i]] = i;\n        }\n        initialized = true;\n    }\n \
-    \   int operator()(T x) {\n        if (!initialized) init();\n        return mp[x];\n\
-    \    }\n    T operator[](int i) {\n        if (!initialized) init();\n       \
-    \ return xs[i];\n    }\n    int size() {\n        if (!initialized) init();\n\
-    \        return xs.size();\n    }\n};\n#line 1 \"misc/mo.hpp\"\ntemplate <class\
-    \ M>\nstruct Mo {\n    using T = typename M::T;\n    int backet;\n    vector<int>\
-    \ left, right, order;\n    Mo(int N, int Q) {\n        order.resize(Q);\n    \
-    \    backet = max<int>(1, (double)(N) / max<double>(1, sqrt(Q * 2.0 / 3)));\n\
-    \        iota(order.begin(), order.end(), 0);\n    }\n    void add_query(int left_id,\
-    \ int right_id) {\n        left.emplace_back(left_id);\n        right.emplace_back(right_id);\n\
-    \    }\n    vector<T> run() {\n        vector<T> answer(order.size());\n     \
-    \   sort(order.begin(), order.end(), [&](int a, int b) {\n            int a_block\
+    \ 1};\nconst string d4 = \"RDLU\";\nstruct cincout {cincout() {ios_base::sync_with_stdio(false);\
+    \ cin.tie(nullptr); cout << fixed << setprecision(15);}} init;\ntemplate <class\
+    \ T> inline bool chmax(T& a, T b) {if (a < b) {a = b; return true;} return false;}\n\
+    template <class T> inline bool chmin(T& a, T b) {if (a > b) {a = b; return true;}\
+    \ return false;}\ntemplate <class T1, class T2> istream& operator>>(istream& is,\
+    \ pair<T1, T2>& p) {is >> p.first >> p.second; return is;}\ntemplate <class T1,\
+    \ class T2> ostream& operator<<(ostream& os, const pair<T1, T2>& p) {os << p.first\
+    \ << \" \" << p.second << '\\n'; return os;}\ntemplate <class T> istream& operator>>(istream&\
+    \ is, vector<T>& v) {for (T& in : v) {is >> in;} return is;}\ntemplate <class\
+    \ T> ostream& operator<<(ostream& os, const vector<T>& v) {rep(i, (int)v.size())\
+    \ {os << v[i] << \" \\n\"[i + 1 == (int)v.size()];} return os;}\ntemplate <class\
+    \ T> istream& operator>>(istream& is, vector<vector<T>>& vv) {for (vector<T>&\
+    \ v : vv) {is >> v;} return is;}\ntemplate <class T> ostream& operator<<(ostream&\
+    \ os, vector<vector<T>>& vv) {for (vector<T>& v : vv) {os << v;} return os;}\n\
+    inline bool bit(ll x, int p) {return (x >> p) & 1;}\ninline bool out(int ni, int\
+    \ nj, int h, int w) {return (ni < 0 or ni >= h or nj < 0 or nj >= w);}\ninline\
+    \ int pc(ll x) {return __builtin_popcountll(x);}\ntemplate <class T> inline T\
+    \ max(vector<T> x) {return *max_element(x.begin(), x.end());}\ntemplate <class\
+    \ T> inline T min(vector<T> x) {return *min_element(x.begin(), x.end());}\ntemplate\
+    \ <class T> inline T sum(vector<T> x) {return reduce(x.begin(), x.end()); }\n\
+    #line 1 \"misc/cc.hpp\"\ntemplate <typename T = int>\nstruct CC {\n    bool initialized;\n\
+    \    vector<T> xs;\n    unordered_map<T, int> mp;\n    CC() : initialized(false)\
+    \ {}\n    void add(T x) {\n        xs.push_back(x);\n    }\n    void init() {\n\
+    \        sort(xs.begin(), xs.end());\n        xs.erase(unique(xs.begin(), xs.end()),\
+    \ xs.end());\n        for (int i = 0; i < (int)xs.size(); i++) {\n           \
+    \ mp[xs[i]] = i;\n        }\n        initialized = true;\n    }\n    int operator()(T\
+    \ x) {\n        if (!initialized) init();\n        return mp[x];\n    }\n    T\
+    \ operator[](int i) {\n        if (!initialized) init();\n        return xs[i];\n\
+    \    }\n    int size() {\n        if (!initialized) init();\n        return xs.size();\n\
+    \    }\n};\n#line 1 \"misc/mo.hpp\"\ntemplate <class M>\nstruct Mo {\n    using\
+    \ T = typename M::T;\n    int backet;\n    vector<int> left, right, order;\n \
+    \   Mo(int N, int Q) {\n        order.resize(Q);\n        backet = max<int>(1,\
+    \ (double)(N) / max<double>(1, sqrt(Q * 2.0 / 3)));\n        iota(order.begin(),\
+    \ order.end(), 0);\n    }\n    void add_query(int left_id, int right_id) {\n \
+    \       left.emplace_back(left_id);\n        right.emplace_back(right_id);\n \
+    \   }\n    vector<T> run() {\n        vector<T> answer(order.size());\n      \
+    \  sort(order.begin(), order.end(), [&](int a, int b) {\n            int a_block\
     \ = left[a] / backet, b_block = left[b] / backet;\n            if (a_block !=\
     \ b_block) return a_block < b_block;\n            if (a_block & 1) return right[a]\
     \ < right[b];\n            return right[a] > right[b];\n        });\n        int\
@@ -122,7 +117,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo-mo2.test.cpp
   requiredBy: []
-  timestamp: '2024-07-29 16:24:34+09:00'
+  timestamp: '2024-08-04 18:25:12+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo-mo2.test.cpp

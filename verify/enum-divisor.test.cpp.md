@@ -19,7 +19,7 @@ data:
     - https://yukicoder.me/problems/no/888
   bundledCode: "#line 1 \"verify/enum-divisor.test.cpp\"\n#define PROBLEM \"https://yukicoder.me/problems/no/888\"\
     \n\n#include <bits/stdc++.h>\n#line 2 \"template.hpp\"\nusing namespace std;\n\
-    #include <atcoder/modint>\nusing namespace atcoder;\n\n#ifdef DEFINED_ONLY_IN_LOCAL\n\
+    #include <atcoder/modint>\nusing namespace atcoder;\n#ifdef DEFINED_ONLY_IN_LOCAL\n\
     #include <dump.hpp>\n#define dump(...) cpp_dump(__VA_ARGS__)\n#else\n#undef dump\n\
     #define dump(...)\n#endif\n#define rep1(i, a) for (int i = 0; i < (int)(a); i++)\n\
     #define rep2(i, a, b) for (int i = (int)(a); i < (int)(b); i++)\n#define rep3(i,\
@@ -31,39 +31,34 @@ data:
     \ ull = unsigned long long;\nconst int inf = 1e9;\nconst ll INF = 1e18;\nconst\
     \ int dx[4] = {0, 1, 0, -1};\nconst int dy[4] = {1, 0, -1, 0};\nconst int ddx[8]\
     \ = {1, 0, -1, 0, 1, -1, 1, -1};\nconst int ddy[8] = {0, 1, 0, -1, 1, -1, -1,\
-    \ 1};\nconst string d4 = \"RDLU\";\n\nstruct cincout {\n    cincout() {\n    \
-    \    ios_base::sync_with_stdio(false);\n        cin.tie(nullptr);\n        cout\
-    \ << fixed << setprecision(15);\n    }\n} init;\n\n// chmax chmin\ntemplate <class\
-    \ T>\ninline bool chmax(T &a, T b) {\n    if (a < b) {\n        a = b;\n     \
-    \   return true;\n    }\n    return false;\n}\n\ntemplate <class T>\ninline bool\
-    \ chmin(T &a, T b) {\n    if (a > b) {\n        a = b;\n        return true;\n\
-    \    }\n    return false;\n}\n\n// pair\ntemplate <class T1, class T2>\nistream\
-    \ &operator>>(istream &is, pair<T1, T2> &p) {\n    is >> p.first >> p.second;\n\
-    \    return is;\n}\n\ntemplate <class T1, class T2>\nostream &operator<<(ostream\
-    \ &os, const pair<T1, T2> &p) {\n    os << p.first << \" \" << p.second << '\\\
-    n';\n    return os;\n}\n\n// vector\ntemplate <class T>\nistream &operator>>(istream\
-    \ &is, vector<T> &v) {\n    for (T &in : v) {\n        is >> in;\n    }\n    return\
-    \ is;\n}\n\ntemplate <class T>\nostream &operator<<(ostream &os, const vector<T>\
-    \ &v) {\n    rep(i, (int)v.size()) {\n        os << v[i] << \" \\n\"[i + 1 ==\
-    \ (int)v.size()];\n    }\n    return os;\n}\n\ntemplate <class T>\nistream &operator>>(istream\
-    \ &is, vector<vector<T>> &vv) {\n    for (vector<T> &v : vv) {\n        is >>\
-    \ v;\n    }\n    return is;\n}\n\ntemplate <class T>\nostream &operator<<(ostream\
-    \ &os, vector<vector<T>> &vv) {\n    for (vector<T> &v : vv) {\n        os <<\
-    \ v;\n    }\n    return os;\n}\n\n// bit\nbool bit(ll x, int p) {\n    return\
-    \ (x >> p) & 1;\n}\n\n// grid out\nbool out(int ni, int nj, int h, int w) {\n\
-    \    return (ni < 0 or ni >= h or nj < 0 or nj >= w);\n}\n\n// popcount\nint pc(ll\
-    \ x) {\n    return __builtin_popcountll(x);\n}\n\n// max min sum(vector)\ntemplate\
-    \ <class T>\nT max(vector<T> x) {\n    return *max_element(x.begin(), x.end());\n\
-    }\n\ntemplate <class T>\nT min(vector<T> x) {\n    return *min_element(x.begin(),\
-    \ x.end());\n}\n\ntemplate <class T>\nT sum(vector<T> x) {\n    return reduce(x.begin(),\
-    \ x.end());\n}\n#line 1 \"math/enum-divisor.hpp\"\nvector<ll> enum_divisor(ll\
-    \ n) {\n    vector<ll> res;\n    for (int i = 1; (ll)i * i <= n; i++) {\n    \
-    \    if (n % i == 0) {\n            res.push_back(i);\n            ll j = n /\
-    \ i;\n            if (j != i) res.push_back(j);\n        }\n    }\n    sort(res.begin(),\
-    \ res.end());\n    return res;\n}\n#line 6 \"verify/enum-divisor.test.cpp\"\n\n\
-    int main(){\n    ll n;\n    cin >> n;\n    auto divisors = enum_divisor(n);\n\
-    \    ll ans = 0;\n    for (auto divisor : divisors) {\n        ans += divisor;\n\
-    \    }\n    cout << ans << endl;\n    return 0;\n}\n"
+    \ 1};\nconst string d4 = \"RDLU\";\nstruct cincout {cincout() {ios_base::sync_with_stdio(false);\
+    \ cin.tie(nullptr); cout << fixed << setprecision(15);}} init;\ntemplate <class\
+    \ T> inline bool chmax(T& a, T b) {if (a < b) {a = b; return true;} return false;}\n\
+    template <class T> inline bool chmin(T& a, T b) {if (a > b) {a = b; return true;}\
+    \ return false;}\ntemplate <class T1, class T2> istream& operator>>(istream& is,\
+    \ pair<T1, T2>& p) {is >> p.first >> p.second; return is;}\ntemplate <class T1,\
+    \ class T2> ostream& operator<<(ostream& os, const pair<T1, T2>& p) {os << p.first\
+    \ << \" \" << p.second << '\\n'; return os;}\ntemplate <class T> istream& operator>>(istream&\
+    \ is, vector<T>& v) {for (T& in : v) {is >> in;} return is;}\ntemplate <class\
+    \ T> ostream& operator<<(ostream& os, const vector<T>& v) {rep(i, (int)v.size())\
+    \ {os << v[i] << \" \\n\"[i + 1 == (int)v.size()];} return os;}\ntemplate <class\
+    \ T> istream& operator>>(istream& is, vector<vector<T>>& vv) {for (vector<T>&\
+    \ v : vv) {is >> v;} return is;}\ntemplate <class T> ostream& operator<<(ostream&\
+    \ os, vector<vector<T>>& vv) {for (vector<T>& v : vv) {os << v;} return os;}\n\
+    inline bool bit(ll x, int p) {return (x >> p) & 1;}\ninline bool out(int ni, int\
+    \ nj, int h, int w) {return (ni < 0 or ni >= h or nj < 0 or nj >= w);}\ninline\
+    \ int pc(ll x) {return __builtin_popcountll(x);}\ntemplate <class T> inline T\
+    \ max(vector<T> x) {return *max_element(x.begin(), x.end());}\ntemplate <class\
+    \ T> inline T min(vector<T> x) {return *min_element(x.begin(), x.end());}\ntemplate\
+    \ <class T> inline T sum(vector<T> x) {return reduce(x.begin(), x.end()); }\n\
+    #line 1 \"math/enum-divisor.hpp\"\nvector<ll> enum_divisor(ll n) {\n    vector<ll>\
+    \ res;\n    for (int i = 1; (ll)i * i <= n; i++) {\n        if (n % i == 0) {\n\
+    \            res.push_back(i);\n            ll j = n / i;\n            if (j !=\
+    \ i) res.push_back(j);\n        }\n    }\n    sort(res.begin(), res.end());\n\
+    \    return res;\n}\n#line 6 \"verify/enum-divisor.test.cpp\"\n\nint main(){\n\
+    \    ll n;\n    cin >> n;\n    auto divisors = enum_divisor(n);\n    ll ans =\
+    \ 0;\n    for (auto divisor : divisors) {\n        ans += divisor;\n    }\n  \
+    \  cout << ans << endl;\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://yukicoder.me/problems/no/888\"\n\n#include <bits/stdc++.h>\n\
     #include \"template.hpp\"\n#include \"math/enum-divisor.hpp\"\n\nint main(){\n\
     \    ll n;\n    cin >> n;\n    auto divisors = enum_divisor(n);\n    ll ans =\
@@ -75,7 +70,7 @@ data:
   isVerificationFile: true
   path: verify/enum-divisor.test.cpp
   requiredBy: []
-  timestamp: '2024-07-29 16:24:34+09:00'
+  timestamp: '2024-08-04 18:25:12+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/enum-divisor.test.cpp

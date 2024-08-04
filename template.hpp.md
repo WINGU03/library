@@ -47,104 +47,228 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"template.hpp\"\n#include <bits/stdc++.h>\nusing namespace\
-    \ std;\n#include <atcoder/modint>\nusing namespace atcoder;\n\n#ifdef DEFINED_ONLY_IN_LOCAL\n\
-    #include <dump.hpp>\n#define dump(...) cpp_dump(__VA_ARGS__)\n#else\n#undef dump\n\
-    #define dump(...)\n#endif\n#define rep1(i, a) for (int i = 0; i < (int)(a); i++)\n\
-    #define rep2(i, a, b) for (int i = (int)(a); i < (int)(b); i++)\n#define rep3(i,\
-    \ a, b, c) for (int i = (int)(a); i < (int)(b); i += (int)(c))\n#define overloadRep(a,\
-    \ b, c, d, e, ...) e\n#define rep(...) overloadRep(__VA_ARGS__, rep3, rep2, rep1)(__VA_ARGS__)\n\
-    #define rrep(i, a, b) for (int i = (int)(a); i <= (int)(b); i++)\n#define drep(i,\
-    \ a, b) for (int i = (int)(a); i >= (int)(b); i--)\n#define all(a) a.begin(),\
-    \ a.end()\n#define rall(a) a.rbegin(), a.rend()\nusing ll = long long;\nusing\
-    \ ull = unsigned long long;\nconst int inf = 1e9;\nconst ll INF = 1e18;\nconst\
-    \ int dx[4] = {0, 1, 0, -1};\nconst int dy[4] = {1, 0, -1, 0};\nconst int ddx[8]\
-    \ = {1, 0, -1, 0, 1, -1, 1, -1};\nconst int ddy[8] = {0, 1, 0, -1, 1, -1, -1,\
-    \ 1};\nconst string d4 = \"RDLU\";\n\nstruct cincout {\n    cincout() {\n    \
-    \    ios_base::sync_with_stdio(false);\n        cin.tie(nullptr);\n        cout\
-    \ << fixed << setprecision(15);\n    }\n} init;\n\n// chmax chmin\ntemplate <class\
-    \ T>\ninline bool chmax(T &a, T b) {\n    if (a < b) {\n        a = b;\n     \
-    \   return true;\n    }\n    return false;\n}\n\ntemplate <class T>\ninline bool\
-    \ chmin(T &a, T b) {\n    if (a > b) {\n        a = b;\n        return true;\n\
-    \    }\n    return false;\n}\n\n// pair\ntemplate <class T1, class T2>\nistream\
-    \ &operator>>(istream &is, pair<T1, T2> &p) {\n    is >> p.first >> p.second;\n\
-    \    return is;\n}\n\ntemplate <class T1, class T2>\nostream &operator<<(ostream\
-    \ &os, const pair<T1, T2> &p) {\n    os << p.first << \" \" << p.second << '\\\
-    n';\n    return os;\n}\n\n// vector\ntemplate <class T>\nistream &operator>>(istream\
-    \ &is, vector<T> &v) {\n    for (T &in : v) {\n        is >> in;\n    }\n    return\
-    \ is;\n}\n\ntemplate <class T>\nostream &operator<<(ostream &os, const vector<T>\
-    \ &v) {\n    rep(i, (int)v.size()) {\n        os << v[i] << \" \\n\"[i + 1 ==\
-    \ (int)v.size()];\n    }\n    return os;\n}\n\ntemplate <class T>\nistream &operator>>(istream\
-    \ &is, vector<vector<T>> &vv) {\n    for (vector<T> &v : vv) {\n        is >>\
-    \ v;\n    }\n    return is;\n}\n\ntemplate <class T>\nostream &operator<<(ostream\
-    \ &os, vector<vector<T>> &vv) {\n    for (vector<T> &v : vv) {\n        os <<\
-    \ v;\n    }\n    return os;\n}\n\n// bit\nbool bit(ll x, int p) {\n    return\
-    \ (x >> p) & 1;\n}\n\n// grid out\nbool out(int ni, int nj, int h, int w) {\n\
-    \    return (ni < 0 or ni >= h or nj < 0 or nj >= w);\n}\n\n// popcount\nint pc(ll\
-    \ x) {\n    return __builtin_popcountll(x);\n}\n\n// max min sum(vector)\ntemplate\
-    \ <class T>\nT max(vector<T> x) {\n    return *max_element(x.begin(), x.end());\n\
-    }\n\ntemplate <class T>\nT min(vector<T> x) {\n    return *min_element(x.begin(),\
-    \ x.end());\n}\n\ntemplate <class T>\nT sum(vector<T> x) {\n    return reduce(x.begin(),\
-    \ x.end());\n}\n"
-  code: "#include <bits/stdc++.h>\nusing namespace std;\n#include <atcoder/modint>\n\
-    using namespace atcoder;\n\n#ifdef DEFINED_ONLY_IN_LOCAL\n#include <dump.hpp>\n\
-    #define dump(...) cpp_dump(__VA_ARGS__)\n#else\n#undef dump\n#define dump(...)\n\
-    #endif\n#define rep1(i, a) for (int i = 0; i < (int)(a); i++)\n#define rep2(i,\
-    \ a, b) for (int i = (int)(a); i < (int)(b); i++)\n#define rep3(i, a, b, c) for\
-    \ (int i = (int)(a); i < (int)(b); i += (int)(c))\n#define overloadRep(a, b, c,\
-    \ d, e, ...) e\n#define rep(...) overloadRep(__VA_ARGS__, rep3, rep2, rep1)(__VA_ARGS__)\n\
-    #define rrep(i, a, b) for (int i = (int)(a); i <= (int)(b); i++)\n#define drep(i,\
-    \ a, b) for (int i = (int)(a); i >= (int)(b); i--)\n#define all(a) a.begin(),\
-    \ a.end()\n#define rall(a) a.rbegin(), a.rend()\nusing ll = long long;\nusing\
-    \ ull = unsigned long long;\nconst int inf = 1e9;\nconst ll INF = 1e18;\nconst\
-    \ int dx[4] = {0, 1, 0, -1};\nconst int dy[4] = {1, 0, -1, 0};\nconst int ddx[8]\
-    \ = {1, 0, -1, 0, 1, -1, 1, -1};\nconst int ddy[8] = {0, 1, 0, -1, 1, -1, -1,\
-    \ 1};\nconst string d4 = \"RDLU\";\n\nstruct cincout {\n    cincout() {\n    \
-    \    ios_base::sync_with_stdio(false);\n        cin.tie(nullptr);\n        cout\
-    \ << fixed << setprecision(15);\n    }\n} init;\n\n// chmax chmin\ntemplate <class\
-    \ T>\ninline bool chmax(T &a, T b) {\n    if (a < b) {\n        a = b;\n     \
-    \   return true;\n    }\n    return false;\n}\n\ntemplate <class T>\ninline bool\
-    \ chmin(T &a, T b) {\n    if (a > b) {\n        a = b;\n        return true;\n\
-    \    }\n    return false;\n}\n\n// pair\ntemplate <class T1, class T2>\nistream\
-    \ &operator>>(istream &is, pair<T1, T2> &p) {\n    is >> p.first >> p.second;\n\
-    \    return is;\n}\n\ntemplate <class T1, class T2>\nostream &operator<<(ostream\
-    \ &os, const pair<T1, T2> &p) {\n    os << p.first << \" \" << p.second << '\\\
-    n';\n    return os;\n}\n\n// vector\ntemplate <class T>\nistream &operator>>(istream\
-    \ &is, vector<T> &v) {\n    for (T &in : v) {\n        is >> in;\n    }\n    return\
-    \ is;\n}\n\ntemplate <class T>\nostream &operator<<(ostream &os, const vector<T>\
-    \ &v) {\n    rep(i, (int)v.size()) {\n        os << v[i] << \" \\n\"[i + 1 ==\
-    \ (int)v.size()];\n    }\n    return os;\n}\n\ntemplate <class T>\nistream &operator>>(istream\
-    \ &is, vector<vector<T>> &vv) {\n    for (vector<T> &v : vv) {\n        is >>\
-    \ v;\n    }\n    return is;\n}\n\ntemplate <class T>\nostream &operator<<(ostream\
-    \ &os, vector<vector<T>> &vv) {\n    for (vector<T> &v : vv) {\n        os <<\
-    \ v;\n    }\n    return os;\n}\n\n// bit\nbool bit(ll x, int p) {\n    return\
-    \ (x >> p) & 1;\n}\n\n// grid out\nbool out(int ni, int nj, int h, int w) {\n\
-    \    return (ni < 0 or ni >= h or nj < 0 or nj >= w);\n}\n\n// popcount\nint pc(ll\
-    \ x) {\n    return __builtin_popcountll(x);\n}\n\n// max min sum(vector)\ntemplate\
-    \ <class T>\nT max(vector<T> x) {\n    return *max_element(x.begin(), x.end());\n\
-    }\n\ntemplate <class T>\nT min(vector<T> x) {\n    return *min_element(x.begin(),\
-    \ x.end());\n}\n\ntemplate <class T>\nT sum(vector<T> x) {\n    return reduce(x.begin(),\
-    \ x.end());\n}"
+  bundledCode: '#line 1 "template.hpp"
+
+    #include <bits/stdc++.h>
+
+    using namespace std;
+
+    #include <atcoder/modint>
+
+    using namespace atcoder;
+
+    #ifdef DEFINED_ONLY_IN_LOCAL
+
+    #include <dump.hpp>
+
+    #define dump(...) cpp_dump(__VA_ARGS__)
+
+    #else
+
+    #undef dump
+
+    #define dump(...)
+
+    #endif
+
+    #define rep1(i, a) for (int i = 0; i < (int)(a); i++)
+
+    #define rep2(i, a, b) for (int i = (int)(a); i < (int)(b); i++)
+
+    #define rep3(i, a, b, c) for (int i = (int)(a); i < (int)(b); i += (int)(c))
+
+    #define overloadRep(a, b, c, d, e, ...) e
+
+    #define rep(...) overloadRep(__VA_ARGS__, rep3, rep2, rep1)(__VA_ARGS__)
+
+    #define rrep(i, a, b) for (int i = (int)(a); i <= (int)(b); i++)
+
+    #define drep(i, a, b) for (int i = (int)(a); i >= (int)(b); i--)
+
+    #define all(a) a.begin(), a.end()
+
+    #define rall(a) a.rbegin(), a.rend()
+
+    using ll = long long;
+
+    using ull = unsigned long long;
+
+    const int inf = 1e9;
+
+    const ll INF = 1e18;
+
+    const int dx[4] = {0, 1, 0, -1};
+
+    const int dy[4] = {1, 0, -1, 0};
+
+    const int ddx[8] = {1, 0, -1, 0, 1, -1, 1, -1};
+
+    const int ddy[8] = {0, 1, 0, -1, 1, -1, -1, 1};
+
+    const string d4 = "RDLU";
+
+    struct cincout {cincout() {ios_base::sync_with_stdio(false); cin.tie(nullptr);
+    cout << fixed << setprecision(15);}} init;
+
+    template <class T> inline bool chmax(T& a, T b) {if (a < b) {a = b; return true;}
+    return false;}
+
+    template <class T> inline bool chmin(T& a, T b) {if (a > b) {a = b; return true;}
+    return false;}
+
+    template <class T1, class T2> istream& operator>>(istream& is, pair<T1, T2>& p)
+    {is >> p.first >> p.second; return is;}
+
+    template <class T1, class T2> ostream& operator<<(ostream& os, const pair<T1,
+    T2>& p) {os << p.first << " " << p.second << ''\n''; return os;}
+
+    template <class T> istream& operator>>(istream& is, vector<T>& v) {for (T& in
+    : v) {is >> in;} return is;}
+
+    template <class T> ostream& operator<<(ostream& os, const vector<T>& v) {rep(i,
+    (int)v.size()) {os << v[i] << " \n"[i + 1 == (int)v.size()];} return os;}
+
+    template <class T> istream& operator>>(istream& is, vector<vector<T>>& vv) {for
+    (vector<T>& v : vv) {is >> v;} return is;}
+
+    template <class T> ostream& operator<<(ostream& os, vector<vector<T>>& vv) {for
+    (vector<T>& v : vv) {os << v;} return os;}
+
+    inline bool bit(ll x, int p) {return (x >> p) & 1;}
+
+    inline bool out(int ni, int nj, int h, int w) {return (ni < 0 or ni >= h or nj
+    < 0 or nj >= w);}
+
+    inline int pc(ll x) {return __builtin_popcountll(x);}
+
+    template <class T> inline T max(vector<T> x) {return *max_element(x.begin(), x.end());}
+
+    template <class T> inline T min(vector<T> x) {return *min_element(x.begin(), x.end());}
+
+    template <class T> inline T sum(vector<T> x) {return reduce(x.begin(), x.end());
+    }
+
+    '
+  code: '#include <bits/stdc++.h>
+
+    using namespace std;
+
+    #include <atcoder/modint>
+
+    using namespace atcoder;
+
+    #ifdef DEFINED_ONLY_IN_LOCAL
+
+    #include <dump.hpp>
+
+    #define dump(...) cpp_dump(__VA_ARGS__)
+
+    #else
+
+    #undef dump
+
+    #define dump(...)
+
+    #endif
+
+    #define rep1(i, a) for (int i = 0; i < (int)(a); i++)
+
+    #define rep2(i, a, b) for (int i = (int)(a); i < (int)(b); i++)
+
+    #define rep3(i, a, b, c) for (int i = (int)(a); i < (int)(b); i += (int)(c))
+
+    #define overloadRep(a, b, c, d, e, ...) e
+
+    #define rep(...) overloadRep(__VA_ARGS__, rep3, rep2, rep1)(__VA_ARGS__)
+
+    #define rrep(i, a, b) for (int i = (int)(a); i <= (int)(b); i++)
+
+    #define drep(i, a, b) for (int i = (int)(a); i >= (int)(b); i--)
+
+    #define all(a) a.begin(), a.end()
+
+    #define rall(a) a.rbegin(), a.rend()
+
+    using ll = long long;
+
+    using ull = unsigned long long;
+
+    const int inf = 1e9;
+
+    const ll INF = 1e18;
+
+    const int dx[4] = {0, 1, 0, -1};
+
+    const int dy[4] = {1, 0, -1, 0};
+
+    const int ddx[8] = {1, 0, -1, 0, 1, -1, 1, -1};
+
+    const int ddy[8] = {0, 1, 0, -1, 1, -1, -1, 1};
+
+    const string d4 = "RDLU";
+
+    struct cincout {cincout() {ios_base::sync_with_stdio(false); cin.tie(nullptr);
+    cout << fixed << setprecision(15);}} init;
+
+    template <class T> inline bool chmax(T& a, T b) {if (a < b) {a = b; return true;}
+    return false;}
+
+    template <class T> inline bool chmin(T& a, T b) {if (a > b) {a = b; return true;}
+    return false;}
+
+    template <class T1, class T2> istream& operator>>(istream& is, pair<T1, T2>& p)
+    {is >> p.first >> p.second; return is;}
+
+    template <class T1, class T2> ostream& operator<<(ostream& os, const pair<T1,
+    T2>& p) {os << p.first << " " << p.second << ''\n''; return os;}
+
+    template <class T> istream& operator>>(istream& is, vector<T>& v) {for (T& in
+    : v) {is >> in;} return is;}
+
+    template <class T> ostream& operator<<(ostream& os, const vector<T>& v) {rep(i,
+    (int)v.size()) {os << v[i] << " \n"[i + 1 == (int)v.size()];} return os;}
+
+    template <class T> istream& operator>>(istream& is, vector<vector<T>>& vv) {for
+    (vector<T>& v : vv) {is >> v;} return is;}
+
+    template <class T> ostream& operator<<(ostream& os, vector<vector<T>>& vv) {for
+    (vector<T>& v : vv) {os << v;} return os;}
+
+    inline bool bit(ll x, int p) {return (x >> p) & 1;}
+
+    inline bool out(int ni, int nj, int h, int w) {return (ni < 0 or ni >= h or nj
+    < 0 or nj >= w);}
+
+    inline int pc(ll x) {return __builtin_popcountll(x);}
+
+    template <class T> inline T max(vector<T> x) {return *max_element(x.begin(), x.end());}
+
+    template <class T> inline T min(vector<T> x) {return *min_element(x.begin(), x.end());}
+
+    template <class T> inline T sum(vector<T> x) {return reduce(x.begin(), x.end());
+    }
+
+    '
   dependsOn: []
   isVerificationFile: false
   path: template.hpp
   requiredBy: []
-  timestamp: '2024-07-29 16:24:34+09:00'
+  timestamp: '2024-08-04 18:25:12+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/prime-factorize.test.cpp
   - verify/aizu-dynamic-bfs.test.cpp
-  - verify/aizu-cc.test.cpp
-  - verify/aizu-next-combination.test.cpp
-  - verify/rerooting.test.cpp
   - verify/aizu-rolling-hash.test.cpp
+  - verify/compile-option.test.cpp
+  - verify/aizu-next-combination.test.cpp
   - verify/enum-divisor.test.cpp
   - verify/yuki-rolling-hash-tree.test.cpp
-  - verify/extgcd.test.cpp
-  - verify/compile-option.test.cpp
+  - verify/prime-factorize.test.cpp
+  - verify/rerooting.test.cpp
+  - verify/aizu-cc.test.cpp
   - verify/yosupo-mo2.test.cpp
-  - verify/yosupo-mo1.test.cpp
+  - verify/extgcd.test.cpp
   - verify/yosupo-rolling-hash.test.cpp
+  - verify/yosupo-mo1.test.cpp
 documentation_of: template.hpp
 layout: document
 redirect_from:
