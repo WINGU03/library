@@ -2,7 +2,6 @@
 using namespace std;
 #include <atcoder/modint>
 using namespace atcoder;
-
 #ifdef DEFINED_ONLY_IN_LOCAL
 #include <dump.hpp>
 #define dump(...) cpp_dump(__VA_ARGS__)
@@ -28,107 +27,18 @@ const int dy[4] = {1, 0, -1, 0};
 const int ddx[8] = {1, 0, -1, 0, 1, -1, 1, -1};
 const int ddy[8] = {0, 1, 0, -1, 1, -1, -1, 1};
 const string d4 = "RDLU";
-
-struct cincout {
-    cincout() {
-        ios_base::sync_with_stdio(false);
-        cin.tie(nullptr);
-        cout << fixed << setprecision(15);
-    }
-} init;
-
-// chmax chmin
-template <class T>
-inline bool chmax(T &a, T b) {
-    if (a < b) {
-        a = b;
-        return true;
-    }
-    return false;
-}
-
-template <class T>
-inline bool chmin(T &a, T b) {
-    if (a > b) {
-        a = b;
-        return true;
-    }
-    return false;
-}
-
-// pair
-template <class T1, class T2>
-istream &operator>>(istream &is, pair<T1, T2> &p) {
-    is >> p.first >> p.second;
-    return is;
-}
-
-template <class T1, class T2>
-ostream &operator<<(ostream &os, const pair<T1, T2> &p) {
-    os << p.first << " " << p.second << '\n';
-    return os;
-}
-
-// vector
-template <class T>
-istream &operator>>(istream &is, vector<T> &v) {
-    for (T &in : v) {
-        is >> in;
-    }
-    return is;
-}
-
-template <class T>
-ostream &operator<<(ostream &os, const vector<T> &v) {
-    rep(i, (int)v.size()) {
-        os << v[i] << " \n"[i + 1 == (int)v.size()];
-    }
-    return os;
-}
-
-template <class T>
-istream &operator>>(istream &is, vector<vector<T>> &vv) {
-    for (vector<T> &v : vv) {
-        is >> v;
-    }
-    return is;
-}
-
-template <class T>
-ostream &operator<<(ostream &os, vector<vector<T>> &vv) {
-    for (vector<T> &v : vv) {
-        os << v;
-    }
-    return os;
-}
-
-// bit
-bool bit(ll x, int p) {
-    return (x >> p) & 1;
-}
-
-// grid out
-bool out(int ni, int nj, int h, int w) {
-    return (ni < 0 or ni >= h or nj < 0 or nj >= w);
-}
-
-// popcount
-int pc(ll x) {
-    return __builtin_popcountll(x);
-}
-
-// max min sum(vector)
-template <class T>
-T max(vector<T> x) {
-    return *max_element(x.begin(), x.end());
-}
-
-template <class T>
-T min(vector<T> x) {
-    return *min_element(x.begin(), x.end());
-}
-
-template <class T>
-T sum(vector<T> x) {
-    return reduce(x.begin(), x.end());
-}
+struct cincout {cincout() {ios_base::sync_with_stdio(false); cin.tie(nullptr); cout << fixed << setprecision(15);}} init;
+template <class T> inline bool chmax(T& a, T b) {if (a < b) {a = b; return true;} return false;}
+template <class T> inline bool chmin(T& a, T b) {if (a > b) {a = b; return true;} return false;}
+template <class T1, class T2> istream& operator>>(istream& is, pair<T1, T2>& p) {is >> p.first >> p.second; return is;}
+template <class T1, class T2> ostream& operator<<(ostream& os, const pair<T1, T2>& p) {os << p.first << " " << p.second << '\n'; return os;}
+template <class T> istream& operator>>(istream& is, vector<T>& v) {for (T& in : v) {is >> in;} return is;}
+template <class T> ostream& operator<<(ostream& os, const vector<T>& v) {rep(i, (int)v.size()) {os << v[i] << " \n"[i + 1 == (int)v.size()];} return os;}
+template <class T> istream& operator>>(istream& is, vector<vector<T>>& vv) {for (vector<T>& v : vv) {is >> v;} return is;}
+template <class T> ostream& operator<<(ostream& os, vector<vector<T>>& vv) {for (vector<T>& v : vv) {os << v;} return os;}
+inline bool bit(ll x, int p) {return (x >> p) & 1;}
+inline bool out(int ni, int nj, int h, int w) {return (ni < 0 or ni >= h or nj < 0 or nj >= w);}
+inline int pc(ll x) {return __builtin_popcountll(x);}
+template <class T> inline T max(vector<T> x) {return *max_element(x.begin(), x.end());}
+template <class T> inline T min(vector<T> x) {return *min_element(x.begin(), x.end());}
+template <class T> inline T sum(vector<T> x) {return reduce(x.begin(), x.end()); }
