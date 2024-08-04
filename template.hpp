@@ -41,4 +41,4 @@ inline bool out(int ni, int nj, int h, int w) {return (ni < 0 or ni >= h or nj <
 inline int pc(ll x) {return __builtin_popcountll(x);}
 template <class T> inline T max(vector<T> x) {return *max_element(x.begin(), x.end());}
 template <class T> inline T min(vector<T> x) {return *min_element(x.begin(), x.end());}
-template <class T> inline T sum(vector<T> x) {return reduce(x.begin(), x.end()); }
+template <class T> inline T sum(vector<T> x) {return reduce(x.begin(), x.end());}
