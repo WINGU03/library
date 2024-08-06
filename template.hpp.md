@@ -1,50 +1,50 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: verify/aizu-next-combination.late_test.cpp
+    title: verify/aizu-next-combination.late_test.cpp
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/aizu-cc.test.cpp
     title: verify/aizu-cc.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/aizu-dynamic-bfs.test.cpp
     title: verify/aizu-dynamic-bfs.test.cpp
-  - icon: ':x:'
-    path: verify/aizu-next-combination.test.cpp
-    title: verify/aizu-next-combination.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/aizu-rolling-hash.test.cpp
     title: verify/aizu-rolling-hash.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/compile-option.test.cpp
     title: verify/compile-option.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/enum-divisor.test.cpp
     title: verify/enum-divisor.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/extgcd.test.cpp
     title: verify/extgcd.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/prime-factorize.test.cpp
     title: verify/prime-factorize.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/rerooting.test.cpp
     title: verify/rerooting.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo-mo1.test.cpp
     title: verify/yosupo-mo1.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo-mo2.test.cpp
     title: verify/yosupo-mo2.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo-rolling-hash.test.cpp
     title: verify/yosupo-rolling-hash.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yuki-rolling-hash-tree.test.cpp
     title: verify/yuki-rolling-hash-tree.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: '#line 1 "template.hpp"
@@ -125,8 +125,8 @@ data:
     template <class T> istream& operator>>(istream& is, vector<vector<T>>& vv) {for
     (vector<T>& v : vv) {is >> v;} return is;}
 
-    template <class T> ostream& operator<<(ostream& os, const vector<T>& vv) {for
-    (vector<T>& v : vv) {os << v;} return os;}
+    template <class T> ostream& operator<<(ostream& os, const vector<vector<T>>& vv)
+    {for (vector<T>& v : vv) {os << v;} return os;}
 
     inline bool bit(ll x, int p) {return (x >> p) & 1;}
 
@@ -218,8 +218,8 @@ data:
     template <class T> istream& operator>>(istream& is, vector<vector<T>>& vv) {for
     (vector<T>& v : vv) {is >> v;} return is;}
 
-    template <class T> ostream& operator<<(ostream& os, const vector<T>& vv) {for
-    (vector<T>& v : vv) {os << v;} return os;}
+    template <class T> ostream& operator<<(ostream& os, const vector<vector<T>>& vv)
+    {for (vector<T>& v : vv) {os << v;} return os;}
 
     inline bool bit(ll x, int p) {return (x >> p) & 1;}
 
@@ -236,14 +236,14 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: template.hpp
-  requiredBy: []
-  timestamp: '2024-08-06 22:46:40+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  requiredBy:
+  - verify/aizu-next-combination.late_test.cpp
+  timestamp: '2024-08-06 22:54:39+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/aizu-dynamic-bfs.test.cpp
   - verify/aizu-rolling-hash.test.cpp
   - verify/compile-option.test.cpp
-  - verify/aizu-next-combination.test.cpp
   - verify/enum-divisor.test.cpp
   - verify/yuki-rolling-hash-tree.test.cpp
   - verify/prime-factorize.test.cpp

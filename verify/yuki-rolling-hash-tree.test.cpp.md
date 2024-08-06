@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: string/rolling-hash-tree.hpp
     title: Rolling Hash Tree
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://yukicoder.me/problems/no/2761
@@ -42,10 +42,10 @@ data:
     \ os, const vector<T>& v) {rep(i, (int)v.size()) {os << v[i] << \" \\n\"[i + 1\
     \ == (int)v.size()];} return os;}\ntemplate <class T> istream& operator>>(istream&\
     \ is, vector<vector<T>>& vv) {for (vector<T>& v : vv) {is >> v;} return is;}\n\
-    template <class T> ostream& operator<<(ostream& os, const vector<T>& vv) {for\
-    \ (vector<T>& v : vv) {os << v;} return os;}\ninline bool bit(ll x, int p) {return\
-    \ (x >> p) & 1;}\ninline bool out(int ni, int nj, int h, int w) {return (ni <\
-    \ 0 or ni >= h or nj < 0 or nj >= w);}\ninline int pc(ll x) {return __builtin_popcountll(x);}\n\
+    template <class T> ostream& operator<<(ostream& os, const vector<vector<T>>& vv)\
+    \ {for (vector<T>& v : vv) {os << v;} return os;}\ninline bool bit(ll x, int p)\
+    \ {return (x >> p) & 1;}\ninline bool out(int ni, int nj, int h, int w) {return\
+    \ (ni < 0 or ni >= h or nj < 0 or nj >= w);}\ninline int pc(ll x) {return __builtin_popcountll(x);}\n\
     template <class T> inline T max(vector<T> x) {return *max_element(x.begin(), x.end());}\n\
     template <class T> inline T min(vector<T> x) {return *min_element(x.begin(), x.end());}\n\
     template <class T> inline T sum(vector<T> x) {return reduce(x.begin(), x.end());}\n\
@@ -109,8 +109,8 @@ data:
   isVerificationFile: true
   path: verify/yuki-rolling-hash-tree.test.cpp
   requiredBy: []
-  timestamp: '2024-08-06 22:46:40+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-08-06 22:54:39+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yuki-rolling-hash-tree.test.cpp
 layout: document

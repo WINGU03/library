@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':x:'
-    path: verify/aizu-next-combination.test.cpp
-    title: verify/aizu-next-combination.test.cpp
-  _isVerificationFailed: true
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: verify/aizu-next-combination.late_test.cpp
+    title: verify/aizu-next-combination.late_test.cpp
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
   bundledCode: "#line 1 \"misc/next-combination.hpp\"\ntemplate <typename T>\nbool\
@@ -33,11 +33,11 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: misc/next-combination.hpp
-  requiredBy: []
+  requiredBy:
+  - verify/aizu-next-combination.late_test.cpp
   timestamp: '2024-06-19 21:24:21+09:00'
-  verificationStatus: LIBRARY_ALL_WA
-  verifiedWith:
-  - verify/aizu-next-combination.test.cpp
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: misc/next-combination.hpp
 layout: document
 title: Next combination
