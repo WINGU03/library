@@ -32,6 +32,7 @@ template <class T1, class T2> ostream& operator<<(ostream& os, const pair<T1, T2
 template <class T> istream& operator>>(istream& is, vector<T>& v) {for (T& in : v) {is >> in;} return is;}
 template <class T> ostream& operator<<(ostream& os, const vector<T>& v) {rep(i, (int)v.size()) {os << v[i] << " \n"[i + 1 == (int)v.size()];} return os;}
 template <class T> istream& operator>>(istream& is, vector<vector<T>>& vv) {for (vector<T>& v : vv) {is >> v;} return is;}
+template <class T> ostream& operator<<(ostream& os, const vector<T>& vv) {for (vector<T>& v : vv) {os << v;} return os;}
 inline bool bit(ll x, int p) {return (x >> p) & 1;}
 inline bool out(int ni, int nj, int h, int w) {return (ni < 0 or ni >= h or nj < 0 or nj >= w);}
 inline int pc(ll x) {return __builtin_popcountll(x);}
