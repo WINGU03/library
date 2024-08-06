@@ -3,7 +3,7 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/aizu-cc.test.cpp
     title: verify/aizu-cc.test.cpp
   - icon: ':x:'
@@ -14,7 +14,7 @@ data:
     title: verify/yosupo-mo2.test.cpp
   _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 1 \"misc/cc.hpp\"\ntemplate <typename T = int>\nstruct CC {\n\
@@ -42,7 +42,7 @@ data:
   path: misc/cc.hpp
   requiredBy: []
   timestamp: '2024-06-19 21:24:21+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - verify/aizu-cc.test.cpp
   - verify/yosupo-mo2.test.cpp

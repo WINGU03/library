@@ -4,7 +4,7 @@ data:
   - icon: ':x:'
     path: misc/compile-option.hpp
     title: "\u30B3\u30F3\u30D1\u30A4\u30EB\u30AA\u30D7\u30B7\u30E7\u30F3"
-  - icon: ':question:'
+  - icon: ':x:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
@@ -41,17 +41,18 @@ data:
     \ T> ostream& operator<<(ostream& os, const vector<T>& v) {rep(i, (int)v.size())\
     \ {os << v[i] << \" \\n\"[i + 1 == (int)v.size()];} return os;}\ntemplate <class\
     \ T> istream& operator>>(istream& is, vector<vector<T>>& vv) {for (vector<T>&\
-    \ v : vv) {is >> v;} return is;}\ninline bool bit(ll x, int p) {return (x >> p)\
-    \ & 1;}\ninline bool out(int ni, int nj, int h, int w) {return (ni < 0 or ni >=\
-    \ h or nj < 0 or nj >= w);}\ninline int pc(ll x) {return __builtin_popcountll(x);}\n\
-    template <class T> inline T max(vector<T> x) {return *max_element(x.begin(), x.end());}\n\
-    template <class T> inline T min(vector<T> x) {return *min_element(x.begin(), x.end());}\n\
-    template <class T> inline T sum(vector<T> x) {return reduce(x.begin(), x.end());}\n\
-    #line 1 \"misc/compile-option.hpp\"\n#pragma GCC target(\"avx2\")\n#pragma GCC\
-    \ optimize(\"O3\")\n#pragma GCC optimize(\"unroll-loops\")\n#line 6 \"verify/compile-option.test.cpp\"\
-    \n\nint main(){\n    int t;\n    cin >> t;\n    while(t--){\n        ll a, b;\n\
-    \        cin >> a >> b;\n        cout << a + b << endl;\n    }\n    return 0;\n\
-    }\n"
+    \ v : vv) {is >> v;} return is;}\ntemplate <class T> ostream& operator<<(ostream&\
+    \ os, const vector<T>& vv) {for (vector<T>& v : vv) {os << v;} return os;}\ninline\
+    \ bool bit(ll x, int p) {return (x >> p) & 1;}\ninline bool out(int ni, int nj,\
+    \ int h, int w) {return (ni < 0 or ni >= h or nj < 0 or nj >= w);}\ninline int\
+    \ pc(ll x) {return __builtin_popcountll(x);}\ntemplate <class T> inline T max(vector<T>\
+    \ x) {return *max_element(x.begin(), x.end());}\ntemplate <class T> inline T min(vector<T>\
+    \ x) {return *min_element(x.begin(), x.end());}\ntemplate <class T> inline T sum(vector<T>\
+    \ x) {return reduce(x.begin(), x.end());}\n#line 1 \"misc/compile-option.hpp\"\
+    \n#pragma GCC target(\"avx2\")\n#pragma GCC optimize(\"O3\")\n#pragma GCC optimize(\"\
+    unroll-loops\")\n#line 6 \"verify/compile-option.test.cpp\"\n\nint main(){\n \
+    \   int t;\n    cin >> t;\n    while(t--){\n        ll a, b;\n        cin >> a\
+    \ >> b;\n        cout << a + b << endl;\n    }\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/many_aplusb\"\n\n#include\
     \ <bits/stdc++.h>\n#include \"template.hpp\"\n#include \"misc/compile-option.hpp\"\
     \n\nint main(){\n    int t;\n    cin >> t;\n    while(t--){\n        ll a, b;\n\
@@ -63,7 +64,7 @@ data:
   isVerificationFile: true
   path: verify/compile-option.test.cpp
   requiredBy: []
-  timestamp: '2024-08-06 22:04:39+09:00'
+  timestamp: '2024-08-06 22:46:40+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/compile-option.test.cpp

@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':x:'
     path: misc/cc.hpp
     title: "\u5EA7\u6A19\u5727\u7E2E"
   - icon: ':x:'
     path: misc/mo.hpp
     title: "Mo\u2019s algorithm"
-  - icon: ':question:'
+  - icon: ':x:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
@@ -44,27 +44,28 @@ data:
     \ T> ostream& operator<<(ostream& os, const vector<T>& v) {rep(i, (int)v.size())\
     \ {os << v[i] << \" \\n\"[i + 1 == (int)v.size()];} return os;}\ntemplate <class\
     \ T> istream& operator>>(istream& is, vector<vector<T>>& vv) {for (vector<T>&\
-    \ v : vv) {is >> v;} return is;}\ninline bool bit(ll x, int p) {return (x >> p)\
-    \ & 1;}\ninline bool out(int ni, int nj, int h, int w) {return (ni < 0 or ni >=\
-    \ h or nj < 0 or nj >= w);}\ninline int pc(ll x) {return __builtin_popcountll(x);}\n\
-    template <class T> inline T max(vector<T> x) {return *max_element(x.begin(), x.end());}\n\
-    template <class T> inline T min(vector<T> x) {return *min_element(x.begin(), x.end());}\n\
-    template <class T> inline T sum(vector<T> x) {return reduce(x.begin(), x.end());}\n\
-    #line 1 \"misc/mo.hpp\"\ntemplate <class M>\nstruct Mo {\n    using T = typename\
-    \ M::T;\n    int backet;\n    vector<int> left, right, order;\n    Mo(int N, int\
-    \ Q) {\n        order.resize(Q);\n        backet = max<int>(1, (double)(N) / max<double>(1,\
-    \ sqrt(Q * 2.0 / 3)));\n        iota(order.begin(), order.end(), 0);\n    }\n\
-    \    void add_query(int left_id, int right_id) {\n        left.emplace_back(left_id);\n\
-    \        right.emplace_back(right_id);\n    }\n    vector<T> run() {\n       \
-    \ vector<T> answer(order.size());\n        sort(order.begin(), order.end(), [&](int\
-    \ a, int b) {\n            int a_block = left[a] / backet, b_block = left[b] /\
-    \ backet;\n            if (a_block != b_block) return a_block < b_block;\n   \
-    \         if (a_block & 1) return right[a] < right[b];\n            return right[a]\
-    \ > right[b];\n        });\n        int now_left = 0, now_right = 0;\n       \
-    \ for (int i : order) {\n            while (now_left > left[i]) {\n          \
-    \      M::add_left(--now_left);\n            }\n            while (right[i] >\
-    \ now_right) {\n                M::add_right(now_right++);\n            }\n  \
-    \          while (now_left < left[i]) {\n                M::del_left(now_left++);\n\
+    \ v : vv) {is >> v;} return is;}\ntemplate <class T> ostream& operator<<(ostream&\
+    \ os, const vector<T>& vv) {for (vector<T>& v : vv) {os << v;} return os;}\ninline\
+    \ bool bit(ll x, int p) {return (x >> p) & 1;}\ninline bool out(int ni, int nj,\
+    \ int h, int w) {return (ni < 0 or ni >= h or nj < 0 or nj >= w);}\ninline int\
+    \ pc(ll x) {return __builtin_popcountll(x);}\ntemplate <class T> inline T max(vector<T>\
+    \ x) {return *max_element(x.begin(), x.end());}\ntemplate <class T> inline T min(vector<T>\
+    \ x) {return *min_element(x.begin(), x.end());}\ntemplate <class T> inline T sum(vector<T>\
+    \ x) {return reduce(x.begin(), x.end());}\n#line 1 \"misc/mo.hpp\"\ntemplate <class\
+    \ M>\nstruct Mo {\n    using T = typename M::T;\n    int backet;\n    vector<int>\
+    \ left, right, order;\n    Mo(int N, int Q) {\n        order.resize(Q);\n    \
+    \    backet = max<int>(1, (double)(N) / max<double>(1, sqrt(Q * 2.0 / 3)));\n\
+    \        iota(order.begin(), order.end(), 0);\n    }\n    void add_query(int left_id,\
+    \ int right_id) {\n        left.emplace_back(left_id);\n        right.emplace_back(right_id);\n\
+    \    }\n    vector<T> run() {\n        vector<T> answer(order.size());\n     \
+    \   sort(order.begin(), order.end(), [&](int a, int b) {\n            int a_block\
+    \ = left[a] / backet, b_block = left[b] / backet;\n            if (a_block !=\
+    \ b_block) return a_block < b_block;\n            if (a_block & 1) return right[a]\
+    \ < right[b];\n            return right[a] > right[b];\n        });\n        int\
+    \ now_left = 0, now_right = 0;\n        for (int i : order) {\n            while\
+    \ (now_left > left[i]) {\n                M::add_left(--now_left);\n         \
+    \   }\n            while (right[i] > now_right) {\n                M::add_right(now_right++);\n\
+    \            }\n            while (now_left < left[i]) {\n                M::del_left(now_left++);\n\
     \            }\n            while (right[i] < now_right) {\n                M::del_right(--now_right);\n\
     \            }\n            answer[i] = M::res(i);\n        }\n        return\
     \ answer;\n    }\n};\n#line 1 \"misc/cc.hpp\"\ntemplate <typename T = int>\nstruct\
@@ -115,7 +116,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo-mo1.test.cpp
   requiredBy: []
-  timestamp: '2024-08-06 22:04:39+09:00'
+  timestamp: '2024-08-06 22:46:40+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/yosupo-mo1.test.cpp

@@ -3,7 +3,7 @@ data:
   libraryCategories:
   - name: graph
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: graph/dynamic-bfs.hpp
       title: "\u52D5\u7684BFS"
     - icon: ':x:'
@@ -22,7 +22,7 @@ data:
       title: "\u7D20\u56E0\u6570\u5206\u89E3"
   - name: misc
     pages:
-    - icon: ':question:'
+    - icon: ':x:'
       path: misc/cc.hpp
       title: "\u5EA7\u6A19\u5727\u7E2E"
     - icon: ':x:'
@@ -47,16 +47,16 @@ data:
       title: Rolling Hash
   - name: .
     pages:
-    - icon: ':question:'
+    - icon: ':x:'
       path: template.hpp
       title: template.hpp
   verificationCategories:
   - name: verify
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/aizu-cc.test.cpp
       title: verify/aizu-cc.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/aizu-dynamic-bfs.test.cpp
       title: verify/aizu-dynamic-bfs.test.cpp
     - icon: ':x:'

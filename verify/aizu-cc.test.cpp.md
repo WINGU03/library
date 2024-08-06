@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':x:'
     path: misc/cc.hpp
     title: "\u5EA7\u6A19\u5727\u7E2E"
-  - icon: ':question:'
+  - icon: ':x:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/5/ALDS1_5_D
@@ -41,27 +41,28 @@ data:
     \ T> ostream& operator<<(ostream& os, const vector<T>& v) {rep(i, (int)v.size())\
     \ {os << v[i] << \" \\n\"[i + 1 == (int)v.size()];} return os;}\ntemplate <class\
     \ T> istream& operator>>(istream& is, vector<vector<T>>& vv) {for (vector<T>&\
-    \ v : vv) {is >> v;} return is;}\ninline bool bit(ll x, int p) {return (x >> p)\
-    \ & 1;}\ninline bool out(int ni, int nj, int h, int w) {return (ni < 0 or ni >=\
-    \ h or nj < 0 or nj >= w);}\ninline int pc(ll x) {return __builtin_popcountll(x);}\n\
-    template <class T> inline T max(vector<T> x) {return *max_element(x.begin(), x.end());}\n\
-    template <class T> inline T min(vector<T> x) {return *min_element(x.begin(), x.end());}\n\
-    template <class T> inline T sum(vector<T> x) {return reduce(x.begin(), x.end());}\n\
-    #line 1 \"misc/cc.hpp\"\ntemplate <typename T = int>\nstruct CC {\n    bool initialized;\n\
-    \    vector<T> xs;\n    unordered_map<T, int> mp;\n    CC() : initialized(false)\
-    \ {}\n    void add(T x) {\n        xs.push_back(x);\n    }\n    void init() {\n\
-    \        sort(xs.begin(), xs.end());\n        xs.erase(unique(xs.begin(), xs.end()),\
-    \ xs.end());\n        for (int i = 0; i < (int)xs.size(); i++) {\n           \
-    \ mp[xs[i]] = i;\n        }\n        initialized = true;\n    }\n    int operator()(T\
-    \ x) {\n        if (!initialized) init();\n        return mp[x];\n    }\n    T\
-    \ operator[](int i) {\n        if (!initialized) init();\n        return xs[i];\n\
-    \    }\n    int size() {\n        if (!initialized) init();\n        return xs.size();\n\
-    \    }\n};\n#line 6 \"verify/aizu-cc.test.cpp\"\n#include <atcoder/fenwicktree>\n\
-    \nint main() {\n    int n;\n    cin >> n;\n    vector<int> a(n);\n    cin >> a;\n\
-    \    CC c;\n    rep(i, n) c.add(a[i]);\n    int m = c.size();\n    rep(i, n) a[i]\
-    \ = c(a[i]);\n    fenwick_tree<int> f(m);\n    ll ans = 0;\n    rep(i, n) {\n\
-    \        ans += f.sum(a[i], m);\n        f.add(a[i], 1);\n    }\n    cout << ans\
-    \ << endl;\n    return 0;\n}\n"
+    \ v : vv) {is >> v;} return is;}\ntemplate <class T> ostream& operator<<(ostream&\
+    \ os, const vector<T>& vv) {for (vector<T>& v : vv) {os << v;} return os;}\ninline\
+    \ bool bit(ll x, int p) {return (x >> p) & 1;}\ninline bool out(int ni, int nj,\
+    \ int h, int w) {return (ni < 0 or ni >= h or nj < 0 or nj >= w);}\ninline int\
+    \ pc(ll x) {return __builtin_popcountll(x);}\ntemplate <class T> inline T max(vector<T>\
+    \ x) {return *max_element(x.begin(), x.end());}\ntemplate <class T> inline T min(vector<T>\
+    \ x) {return *min_element(x.begin(), x.end());}\ntemplate <class T> inline T sum(vector<T>\
+    \ x) {return reduce(x.begin(), x.end());}\n#line 1 \"misc/cc.hpp\"\ntemplate <typename\
+    \ T = int>\nstruct CC {\n    bool initialized;\n    vector<T> xs;\n    unordered_map<T,\
+    \ int> mp;\n    CC() : initialized(false) {}\n    void add(T x) {\n        xs.push_back(x);\n\
+    \    }\n    void init() {\n        sort(xs.begin(), xs.end());\n        xs.erase(unique(xs.begin(),\
+    \ xs.end()), xs.end());\n        for (int i = 0; i < (int)xs.size(); i++) {\n\
+    \            mp[xs[i]] = i;\n        }\n        initialized = true;\n    }\n \
+    \   int operator()(T x) {\n        if (!initialized) init();\n        return mp[x];\n\
+    \    }\n    T operator[](int i) {\n        if (!initialized) init();\n       \
+    \ return xs[i];\n    }\n    int size() {\n        if (!initialized) init();\n\
+    \        return xs.size();\n    }\n};\n#line 6 \"verify/aizu-cc.test.cpp\"\n#include\
+    \ <atcoder/fenwicktree>\n\nint main() {\n    int n;\n    cin >> n;\n    vector<int>\
+    \ a(n);\n    cin >> a;\n    CC c;\n    rep(i, n) c.add(a[i]);\n    int m = c.size();\n\
+    \    rep(i, n) a[i] = c(a[i]);\n    fenwick_tree<int> f(m);\n    ll ans = 0;\n\
+    \    rep(i, n) {\n        ans += f.sum(a[i], m);\n        f.add(a[i], 1);\n  \
+    \  }\n    cout << ans << endl;\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/5/ALDS1_5_D\"\
     \n\n#include <bits/stdc++.h>\n#include \"template.hpp\"\n#include \"misc/cc.hpp\"\
     \n#include <atcoder/fenwicktree>\n\nint main() {\n    int n;\n    cin >> n;\n\
@@ -75,8 +76,8 @@ data:
   isVerificationFile: true
   path: verify/aizu-cc.test.cpp
   requiredBy: []
-  timestamp: '2024-08-06 22:04:39+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2024-08-06 22:46:40+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/aizu-cc.test.cpp
 layout: document

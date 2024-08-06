@@ -4,7 +4,7 @@ data:
   - icon: ':x:'
     path: misc/next-combination.hpp
     title: Next combination
-  - icon: ':question:'
+  - icon: ':x:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
@@ -42,21 +42,23 @@ data:
     \ T> ostream& operator<<(ostream& os, const vector<T>& v) {rep(i, (int)v.size())\
     \ {os << v[i] << \" \\n\"[i + 1 == (int)v.size()];} return os;}\ntemplate <class\
     \ T> istream& operator>>(istream& is, vector<vector<T>>& vv) {for (vector<T>&\
-    \ v : vv) {is >> v;} return is;}\ninline bool bit(ll x, int p) {return (x >> p)\
-    \ & 1;}\ninline bool out(int ni, int nj, int h, int w) {return (ni < 0 or ni >=\
-    \ h or nj < 0 or nj >= w);}\ninline int pc(ll x) {return __builtin_popcountll(x);}\n\
-    template <class T> inline T max(vector<T> x) {return *max_element(x.begin(), x.end());}\n\
-    template <class T> inline T min(vector<T> x) {return *min_element(x.begin(), x.end());}\n\
-    template <class T> inline T sum(vector<T> x) {return reduce(x.begin(), x.end());}\n\
-    #line 1 \"misc/next-combination.hpp\"\ntemplate <typename T>\nbool next_combination(const\
-    \ T first, const T last, int k) {\n    const T subset = first + k;\n    if (first\
-    \ == last || first == subset || last == subset) {\n        return false;\n   \
-    \ }\n    T src = subset;\n    while (first != src) {\n        src--;\n       \
-    \ if (*src < *(last - 1)) {\n            T dest = subset;\n            while (*src\
-    \ >= *dest) {\n                dest++;\n            }\n            iter_swap(src,\
-    \ dest);\n            rotate(src + 1, dest + 1, last);\n            rotate(subset,\
-    \ subset + (last - dest) - 1, last);\n            return true;\n        }\n  \
-    \  }\n    rotate(first, subset, last);\n    return false;\n}\n#line 6 \"verify/aizu-next-combination.test.cpp\"\
+    \ v : vv) {is >> v;} return is;}\ntemplate <class T> ostream& operator<<(ostream&\
+    \ os, const vector<T>& vv) {for (vector<T>& v : vv) {os << v;} return os;}\ninline\
+    \ bool bit(ll x, int p) {return (x >> p) & 1;}\ninline bool out(int ni, int nj,\
+    \ int h, int w) {return (ni < 0 or ni >= h or nj < 0 or nj >= w);}\ninline int\
+    \ pc(ll x) {return __builtin_popcountll(x);}\ntemplate <class T> inline T max(vector<T>\
+    \ x) {return *max_element(x.begin(), x.end());}\ntemplate <class T> inline T min(vector<T>\
+    \ x) {return *min_element(x.begin(), x.end());}\ntemplate <class T> inline T sum(vector<T>\
+    \ x) {return reduce(x.begin(), x.end());}\n#line 1 \"misc/next-combination.hpp\"\
+    \ntemplate <typename T>\nbool next_combination(const T first, const T last, int\
+    \ k) {\n    const T subset = first + k;\n    if (first == last || first == subset\
+    \ || last == subset) {\n        return false;\n    }\n    T src = subset;\n  \
+    \  while (first != src) {\n        src--;\n        if (*src < *(last - 1)) {\n\
+    \            T dest = subset;\n            while (*src >= *dest) {\n         \
+    \       dest++;\n            }\n            iter_swap(src, dest);\n          \
+    \  rotate(src + 1, dest + 1, last);\n            rotate(subset, subset + (last\
+    \ - dest) - 1, last);\n            return true;\n        }\n    }\n    rotate(first,\
+    \ subset, last);\n    return false;\n}\n#line 6 \"verify/aizu-next-combination.test.cpp\"\
     \n\nint main() {\n    int n, s;\n    while (cin >> n >> s) {\n        if (n ==\
     \ 0 and s == 0) exit(0);\n        vector<int> p(n);\n        iota(all(p), 1);\n\
     \        int ans = 0;\n        do {\n            int cur = 0;\n            rep(i,\
@@ -75,7 +77,7 @@ data:
   isVerificationFile: true
   path: verify/aizu-next-combination.test.cpp
   requiredBy: []
-  timestamp: '2024-08-06 22:04:39+09:00'
+  timestamp: '2024-08-06 22:46:40+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/aizu-next-combination.test.cpp

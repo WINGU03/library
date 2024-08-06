@@ -3,10 +3,10 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/aizu-cc.test.cpp
     title: verify/aizu-cc.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/aizu-dynamic-bfs.test.cpp
     title: verify/aizu-dynamic-bfs.test.cpp
   - icon: ':x:'
@@ -44,7 +44,7 @@ data:
     title: verify/yuki-rolling-hash-tree.test.cpp
   _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: '#line 1 "template.hpp"
@@ -124,6 +124,9 @@ data:
 
     template <class T> istream& operator>>(istream& is, vector<vector<T>>& vv) {for
     (vector<T>& v : vv) {is >> v;} return is;}
+
+    template <class T> ostream& operator<<(ostream& os, const vector<T>& vv) {for
+    (vector<T>& v : vv) {os << v;} return os;}
 
     inline bool bit(ll x, int p) {return (x >> p) & 1;}
 
@@ -215,6 +218,9 @@ data:
     template <class T> istream& operator>>(istream& is, vector<vector<T>>& vv) {for
     (vector<T>& v : vv) {is >> v;} return is;}
 
+    template <class T> ostream& operator<<(ostream& os, const vector<T>& vv) {for
+    (vector<T>& v : vv) {os << v;} return os;}
+
     inline bool bit(ll x, int p) {return (x >> p) & 1;}
 
     inline bool out(int ni, int nj, int h, int w) {return (ni < 0 or ni >= h or nj
@@ -231,8 +237,8 @@ data:
   isVerificationFile: false
   path: template.hpp
   requiredBy: []
-  timestamp: '2024-08-06 22:04:39+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  timestamp: '2024-08-06 22:46:40+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - verify/aizu-dynamic-bfs.test.cpp
   - verify/aizu-rolling-hash.test.cpp

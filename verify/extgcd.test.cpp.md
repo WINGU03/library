@@ -4,7 +4,7 @@ data:
   - icon: ':x:'
     path: math/extgcd.hpp
     title: "\u62E1\u5F35\u30E6\u30FC\u30AF\u30EA\u30C3\u30C9\u306E\u4E92\u9664\u6CD5"
-  - icon: ':question:'
+  - icon: ':x:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
@@ -41,18 +41,19 @@ data:
     \ T> ostream& operator<<(ostream& os, const vector<T>& v) {rep(i, (int)v.size())\
     \ {os << v[i] << \" \\n\"[i + 1 == (int)v.size()];} return os;}\ntemplate <class\
     \ T> istream& operator>>(istream& is, vector<vector<T>>& vv) {for (vector<T>&\
-    \ v : vv) {is >> v;} return is;}\ninline bool bit(ll x, int p) {return (x >> p)\
-    \ & 1;}\ninline bool out(int ni, int nj, int h, int w) {return (ni < 0 or ni >=\
-    \ h or nj < 0 or nj >= w);}\ninline int pc(ll x) {return __builtin_popcountll(x);}\n\
-    template <class T> inline T max(vector<T> x) {return *max_element(x.begin(), x.end());}\n\
-    template <class T> inline T min(vector<T> x) {return *min_element(x.begin(), x.end());}\n\
-    template <class T> inline T sum(vector<T> x) {return reduce(x.begin(), x.end());}\n\
-    #line 1 \"math/extgcd.hpp\"\nll extgcd(ll a, ll b, ll &x, ll &y) {\n    if (b\
-    \ == 0) {\n        x = 1;\n        y = 0;\n        return a;\n    }\n    ll d\
-    \ = extgcd(b, a % b, y, x);\n    y -= a / b * x;\n    return d;\n}\n#line 6 \"\
-    verify/extgcd.test.cpp\"\n\nint main() {\n    int a, b;\n    cin >> a >> b;\n\
-    \    ll x, y;\n    extgcd(a, b, x, y);\n    cout << x << \" \" << y << endl;\n\
-    \    return 0;\n}\n"
+    \ v : vv) {is >> v;} return is;}\ntemplate <class T> ostream& operator<<(ostream&\
+    \ os, const vector<T>& vv) {for (vector<T>& v : vv) {os << v;} return os;}\ninline\
+    \ bool bit(ll x, int p) {return (x >> p) & 1;}\ninline bool out(int ni, int nj,\
+    \ int h, int w) {return (ni < 0 or ni >= h or nj < 0 or nj >= w);}\ninline int\
+    \ pc(ll x) {return __builtin_popcountll(x);}\ntemplate <class T> inline T max(vector<T>\
+    \ x) {return *max_element(x.begin(), x.end());}\ntemplate <class T> inline T min(vector<T>\
+    \ x) {return *min_element(x.begin(), x.end());}\ntemplate <class T> inline T sum(vector<T>\
+    \ x) {return reduce(x.begin(), x.end());}\n#line 1 \"math/extgcd.hpp\"\nll extgcd(ll\
+    \ a, ll b, ll &x, ll &y) {\n    if (b == 0) {\n        x = 1;\n        y = 0;\n\
+    \        return a;\n    }\n    ll d = extgcd(b, a % b, y, x);\n    y -= a / b\
+    \ * x;\n    return d;\n}\n#line 6 \"verify/extgcd.test.cpp\"\n\nint main() {\n\
+    \    int a, b;\n    cin >> a >> b;\n    ll x, y;\n    extgcd(a, b, x, y);\n  \
+    \  cout << x << \" \" << y << endl;\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_E\"\
     \n\n#include <bits/stdc++.h>\n#include \"template.hpp\"\n#include \"math/extgcd.hpp\"\
     \n\nint main() {\n    int a, b;\n    cin >> a >> b;\n    ll x, y;\n    extgcd(a,\
@@ -63,7 +64,7 @@ data:
   isVerificationFile: true
   path: verify/extgcd.test.cpp
   requiredBy: []
-  timestamp: '2024-08-06 22:04:39+09:00'
+  timestamp: '2024-08-06 22:46:40+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/extgcd.test.cpp
