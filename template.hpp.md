@@ -9,42 +9,42 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/aizu-dynamic-bfs.test.cpp
     title: verify/aizu-dynamic-bfs.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/aizu-next-combination.test.cpp
     title: verify/aizu-next-combination.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/aizu-rolling-hash.test.cpp
     title: verify/aizu-rolling-hash.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/compile-option.test.cpp
     title: verify/compile-option.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/enum-divisor.test.cpp
     title: verify/enum-divisor.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/extgcd.test.cpp
     title: verify/extgcd.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/prime-factorize.test.cpp
     title: verify/prime-factorize.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/rerooting.test.cpp
     title: verify/rerooting.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo-mo1.test.cpp
     title: verify/yosupo-mo1.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo-mo2.test.cpp
     title: verify/yosupo-mo2.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo-rolling-hash.test.cpp
     title: verify/yosupo-rolling-hash.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yuki-rolling-hash-tree.test.cpp
     title: verify/yuki-rolling-hash-tree.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: '#line 1 "template.hpp"
@@ -81,10 +81,6 @@ data:
 
     #define rep(...) overloadRep(__VA_ARGS__, rep3, rep2, rep1)(__VA_ARGS__)
 
-    #define rrep(i, a, b) for (int i = (int)(a); i <= (int)(b); i++)
-
-    #define drep(i, a, b) for (int i = (int)(a); i >= (int)(b); i--)
-
     #define all(a) a.begin(), a.end()
 
     #define rall(a) a.rbegin(), a.rend()
@@ -104,8 +100,6 @@ data:
     const int ddx[8] = {1, 0, -1, 0, 1, -1, 1, -1};
 
     const int ddy[8] = {0, 1, 0, -1, 1, -1, -1, 1};
-
-    const string d4 = "RDLU";
 
     struct cincout {cincout() {ios_base::sync_with_stdio(false); cin.tie(nullptr);
     cout << fixed << setprecision(15);}} init;
@@ -130,9 +124,6 @@ data:
 
     template <class T> istream& operator>>(istream& is, vector<vector<T>>& vv) {for
     (vector<T>& v : vv) {is >> v;} return is;}
-
-    template <class T> ostream& operator<<(ostream& os, vector<vector<T>>& vv) {for
-    (vector<T>& v : vv) {os << v;} return os;}
 
     inline bool bit(ll x, int p) {return (x >> p) & 1;}
 
@@ -180,10 +171,6 @@ data:
 
     #define rep(...) overloadRep(__VA_ARGS__, rep3, rep2, rep1)(__VA_ARGS__)
 
-    #define rrep(i, a, b) for (int i = (int)(a); i <= (int)(b); i++)
-
-    #define drep(i, a, b) for (int i = (int)(a); i >= (int)(b); i--)
-
     #define all(a) a.begin(), a.end()
 
     #define rall(a) a.rbegin(), a.rend()
@@ -203,8 +190,6 @@ data:
     const int ddx[8] = {1, 0, -1, 0, 1, -1, 1, -1};
 
     const int ddy[8] = {0, 1, 0, -1, 1, -1, -1, 1};
-
-    const string d4 = "RDLU";
 
     struct cincout {cincout() {ios_base::sync_with_stdio(false); cin.tie(nullptr);
     cout << fixed << setprecision(15);}} init;
@@ -230,9 +215,6 @@ data:
     template <class T> istream& operator>>(istream& is, vector<vector<T>>& vv) {for
     (vector<T>& v : vv) {is >> v;} return is;}
 
-    template <class T> ostream& operator<<(ostream& os, vector<vector<T>>& vv) {for
-    (vector<T>& v : vv) {os << v;} return os;}
-
     inline bool bit(ll x, int p) {return (x >> p) & 1;}
 
     inline bool out(int ni, int nj, int h, int w) {return (ni < 0 or ni >= h or nj
@@ -249,8 +231,8 @@ data:
   isVerificationFile: false
   path: template.hpp
   requiredBy: []
-  timestamp: '2024-08-04 19:01:07+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2024-08-06 22:04:39+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/aizu-dynamic-bfs.test.cpp
   - verify/aizu-rolling-hash.test.cpp

@@ -6,15 +6,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/aizu-cc.test.cpp
     title: verify/aizu-cc.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo-mo1.test.cpp
     title: verify/yosupo-mo1.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo-mo2.test.cpp
     title: verify/yosupo-mo2.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"misc/cc.hpp\"\ntemplate <typename T = int>\nstruct CC {\n\
@@ -42,7 +42,7 @@ data:
   path: misc/cc.hpp
   requiredBy: []
   timestamp: '2024-06-19 21:24:21+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/aizu-cc.test.cpp
   - verify/yosupo-mo2.test.cpp

@@ -3,15 +3,15 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo-mo1.test.cpp
     title: verify/yosupo-mo1.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo-mo2.test.cpp
     title: verify/yosupo-mo2.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 1 \"misc/mo.hpp\"\ntemplate <class M>\nstruct Mo {\n    using\
@@ -54,7 +54,7 @@ data:
   path: misc/mo.hpp
   requiredBy: []
   timestamp: '2024-06-22 09:18:57+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - verify/yosupo-mo2.test.cpp
   - verify/yosupo-mo1.test.cpp

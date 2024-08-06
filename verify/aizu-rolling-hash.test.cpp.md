@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: string/rolling-hash.hpp
     title: Rolling Hash
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/14/ALDS1_14_B
@@ -26,13 +26,11 @@ data:
     \ (int i = (int)(a); i < (int)(b); i++)\n#define rep3(i, a, b, c) for (int i =\
     \ (int)(a); i < (int)(b); i += (int)(c))\n#define overloadRep(a, b, c, d, e, ...)\
     \ e\n#define rep(...) overloadRep(__VA_ARGS__, rep3, rep2, rep1)(__VA_ARGS__)\n\
-    #define rrep(i, a, b) for (int i = (int)(a); i <= (int)(b); i++)\n#define drep(i,\
-    \ a, b) for (int i = (int)(a); i >= (int)(b); i--)\n#define all(a) a.begin(),\
-    \ a.end()\n#define rall(a) a.rbegin(), a.rend()\nusing ll = long long;\nusing\
-    \ ull = unsigned long long;\nconst int inf = 1e9;\nconst ll INF = 1e18;\nconst\
-    \ int dx[4] = {0, 1, 0, -1};\nconst int dy[4] = {1, 0, -1, 0};\nconst int ddx[8]\
-    \ = {1, 0, -1, 0, 1, -1, 1, -1};\nconst int ddy[8] = {0, 1, 0, -1, 1, -1, -1,\
-    \ 1};\nconst string d4 = \"RDLU\";\nstruct cincout {cincout() {ios_base::sync_with_stdio(false);\
+    #define all(a) a.begin(), a.end()\n#define rall(a) a.rbegin(), a.rend()\nusing\
+    \ ll = long long;\nusing ull = unsigned long long;\nconst int inf = 1e9;\nconst\
+    \ ll INF = 1e18;\nconst int dx[4] = {0, 1, 0, -1};\nconst int dy[4] = {1, 0, -1,\
+    \ 0};\nconst int ddx[8] = {1, 0, -1, 0, 1, -1, 1, -1};\nconst int ddy[8] = {0,\
+    \ 1, 0, -1, 1, -1, -1, 1};\nstruct cincout {cincout() {ios_base::sync_with_stdio(false);\
     \ cin.tie(nullptr); cout << fixed << setprecision(15);}} init;\ntemplate <class\
     \ T> inline bool chmax(T& a, T b) {if (a < b) {a = b; return true;} return false;}\n\
     template <class T> inline bool chmin(T& a, T b) {if (a > b) {a = b; return true;}\
@@ -44,23 +42,21 @@ data:
     \ T> ostream& operator<<(ostream& os, const vector<T>& v) {rep(i, (int)v.size())\
     \ {os << v[i] << \" \\n\"[i + 1 == (int)v.size()];} return os;}\ntemplate <class\
     \ T> istream& operator>>(istream& is, vector<vector<T>>& vv) {for (vector<T>&\
-    \ v : vv) {is >> v;} return is;}\ntemplate <class T> ostream& operator<<(ostream&\
-    \ os, vector<vector<T>>& vv) {for (vector<T>& v : vv) {os << v;} return os;}\n\
-    inline bool bit(ll x, int p) {return (x >> p) & 1;}\ninline bool out(int ni, int\
-    \ nj, int h, int w) {return (ni < 0 or ni >= h or nj < 0 or nj >= w);}\ninline\
-    \ int pc(ll x) {return __builtin_popcountll(x);}\ntemplate <class T> inline T\
-    \ max(vector<T> x) {return *max_element(x.begin(), x.end());}\ntemplate <class\
-    \ T> inline T min(vector<T> x) {return *min_element(x.begin(), x.end());}\ntemplate\
-    \ <class T> inline T sum(vector<T> x) {return reduce(x.begin(), x.end());}\n#line\
-    \ 1 \"string/rolling-hash.hpp\"\nmt19937_64 r(time(0));\nstatic constexpr ll mod\
-    \ = (1LL << 61) - 1;\nstatic const ll base = r() % (mod - 4) + 2;\n\nstruct RollingHash\
-    \ {\n    using i128 = __int128_t;\n    vector<ll> hash, power;\n    int n;\n \
-    \   string s;\n\n    inline ll add(ll a, ll b) const {\n        if ((a += b) >=\
-    \ mod) a -= mod;\n        return a;\n    }\n\n    inline ll mul(ll a, ll b) const\
-    \ {\n        i128 x = (i128)a * b;\n        return add(x >> 61, x & mod);\n  \
-    \  }\n\n    explicit RollingHash(const string& S) {\n        n = (int)S.size();\n\
-    \        s = S;\n        hash.resize(n + 1, 0);\n        power.resize(n + 1, 1);\n\
-    \        for (int i = 0; i < n; i++) {\n            hash[i + 1] = add(mul(hash[i],\
+    \ v : vv) {is >> v;} return is;}\ninline bool bit(ll x, int p) {return (x >> p)\
+    \ & 1;}\ninline bool out(int ni, int nj, int h, int w) {return (ni < 0 or ni >=\
+    \ h or nj < 0 or nj >= w);}\ninline int pc(ll x) {return __builtin_popcountll(x);}\n\
+    template <class T> inline T max(vector<T> x) {return *max_element(x.begin(), x.end());}\n\
+    template <class T> inline T min(vector<T> x) {return *min_element(x.begin(), x.end());}\n\
+    template <class T> inline T sum(vector<T> x) {return reduce(x.begin(), x.end());}\n\
+    #line 1 \"string/rolling-hash.hpp\"\nmt19937_64 r(time(0));\nstatic constexpr\
+    \ ll mod = (1LL << 61) - 1;\nstatic const ll base = r() % (mod - 4) + 2;\n\nstruct\
+    \ RollingHash {\n    using i128 = __int128_t;\n    vector<ll> hash, power;\n \
+    \   int n;\n    string s;\n\n    inline ll add(ll a, ll b) const {\n        if\
+    \ ((a += b) >= mod) a -= mod;\n        return a;\n    }\n\n    inline ll mul(ll\
+    \ a, ll b) const {\n        i128 x = (i128)a * b;\n        return add(x >> 61,\
+    \ x & mod);\n    }\n\n    explicit RollingHash(const string& S) {\n        n =\
+    \ (int)S.size();\n        s = S;\n        hash.resize(n + 1, 0);\n        power.resize(n\
+    \ + 1, 1);\n        for (int i = 0; i < n; i++) {\n            hash[i + 1] = add(mul(hash[i],\
     \ base), S[i]);\n            power[i + 1] = mul(power[i], base);\n        }\n\
     \    }\n\n    inline ll get(int l, int r) const {\n        return add(hash[r],\
     \ mod - mul(hash[l], power[r - l]));\n    }\n\n    inline ll get() const {\n \
@@ -94,8 +90,8 @@ data:
   isVerificationFile: true
   path: verify/aizu-rolling-hash.test.cpp
   requiredBy: []
-  timestamp: '2024-08-04 19:01:07+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2024-08-06 22:04:39+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/aizu-rolling-hash.test.cpp
 layout: document

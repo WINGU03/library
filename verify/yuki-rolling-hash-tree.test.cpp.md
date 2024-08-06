@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: string/rolling-hash-tree.hpp
     title: Rolling Hash Tree
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://yukicoder.me/problems/no/2761
@@ -25,27 +25,23 @@ data:
     \ rep1(i, a) for (int i = 0; i < (int)(a); i++)\n#define rep2(i, a, b) for (int\
     \ i = (int)(a); i < (int)(b); i++)\n#define rep3(i, a, b, c) for (int i = (int)(a);\
     \ i < (int)(b); i += (int)(c))\n#define overloadRep(a, b, c, d, e, ...) e\n#define\
-    \ rep(...) overloadRep(__VA_ARGS__, rep3, rep2, rep1)(__VA_ARGS__)\n#define rrep(i,\
-    \ a, b) for (int i = (int)(a); i <= (int)(b); i++)\n#define drep(i, a, b) for\
-    \ (int i = (int)(a); i >= (int)(b); i--)\n#define all(a) a.begin(), a.end()\n\
-    #define rall(a) a.rbegin(), a.rend()\nusing ll = long long;\nusing ull = unsigned\
-    \ long long;\nconst int inf = 1e9;\nconst ll INF = 1e18;\nconst int dx[4] = {0,\
-    \ 1, 0, -1};\nconst int dy[4] = {1, 0, -1, 0};\nconst int ddx[8] = {1, 0, -1,\
-    \ 0, 1, -1, 1, -1};\nconst int ddy[8] = {0, 1, 0, -1, 1, -1, -1, 1};\nconst string\
-    \ d4 = \"RDLU\";\nstruct cincout {cincout() {ios_base::sync_with_stdio(false);\
-    \ cin.tie(nullptr); cout << fixed << setprecision(15);}} init;\ntemplate <class\
-    \ T> inline bool chmax(T& a, T b) {if (a < b) {a = b; return true;} return false;}\n\
-    template <class T> inline bool chmin(T& a, T b) {if (a > b) {a = b; return true;}\
-    \ return false;}\ntemplate <class T1, class T2> istream& operator>>(istream& is,\
-    \ pair<T1, T2>& p) {is >> p.first >> p.second; return is;}\ntemplate <class T1,\
-    \ class T2> ostream& operator<<(ostream& os, const pair<T1, T2>& p) {os << p.first\
-    \ << \" \" << p.second << '\\n'; return os;}\ntemplate <class T> istream& operator>>(istream&\
-    \ is, vector<T>& v) {for (T& in : v) {is >> in;} return is;}\ntemplate <class\
-    \ T> ostream& operator<<(ostream& os, const vector<T>& v) {rep(i, (int)v.size())\
-    \ {os << v[i] << \" \\n\"[i + 1 == (int)v.size()];} return os;}\ntemplate <class\
-    \ T> istream& operator>>(istream& is, vector<vector<T>>& vv) {for (vector<T>&\
-    \ v : vv) {is >> v;} return is;}\ntemplate <class T> ostream& operator<<(ostream&\
-    \ os, vector<vector<T>>& vv) {for (vector<T>& v : vv) {os << v;} return os;}\n\
+    \ rep(...) overloadRep(__VA_ARGS__, rep3, rep2, rep1)(__VA_ARGS__)\n#define all(a)\
+    \ a.begin(), a.end()\n#define rall(a) a.rbegin(), a.rend()\nusing ll = long long;\n\
+    using ull = unsigned long long;\nconst int inf = 1e9;\nconst ll INF = 1e18;\n\
+    const int dx[4] = {0, 1, 0, -1};\nconst int dy[4] = {1, 0, -1, 0};\nconst int\
+    \ ddx[8] = {1, 0, -1, 0, 1, -1, 1, -1};\nconst int ddy[8] = {0, 1, 0, -1, 1, -1,\
+    \ -1, 1};\nstruct cincout {cincout() {ios_base::sync_with_stdio(false); cin.tie(nullptr);\
+    \ cout << fixed << setprecision(15);}} init;\ntemplate <class T> inline bool chmax(T&\
+    \ a, T b) {if (a < b) {a = b; return true;} return false;}\ntemplate <class T>\
+    \ inline bool chmin(T& a, T b) {if (a > b) {a = b; return true;} return false;}\n\
+    template <class T1, class T2> istream& operator>>(istream& is, pair<T1, T2>& p)\
+    \ {is >> p.first >> p.second; return is;}\ntemplate <class T1, class T2> ostream&\
+    \ operator<<(ostream& os, const pair<T1, T2>& p) {os << p.first << \" \" << p.second\
+    \ << '\\n'; return os;}\ntemplate <class T> istream& operator>>(istream& is, vector<T>&\
+    \ v) {for (T& in : v) {is >> in;} return is;}\ntemplate <class T> ostream& operator<<(ostream&\
+    \ os, const vector<T>& v) {rep(i, (int)v.size()) {os << v[i] << \" \\n\"[i + 1\
+    \ == (int)v.size()];} return os;}\ntemplate <class T> istream& operator>>(istream&\
+    \ is, vector<vector<T>>& vv) {for (vector<T>& v : vv) {is >> v;} return is;}\n\
     inline bool bit(ll x, int p) {return (x >> p) & 1;}\ninline bool out(int ni, int\
     \ nj, int h, int w) {return (ni < 0 or ni >= h or nj < 0 or nj >= w);}\ninline\
     \ int pc(ll x) {return __builtin_popcountll(x);}\ntemplate <class T> inline T\
@@ -112,8 +108,8 @@ data:
   isVerificationFile: true
   path: verify/yuki-rolling-hash-tree.test.cpp
   requiredBy: []
-  timestamp: '2024-08-04 19:01:07+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2024-08-06 22:04:39+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/yuki-rolling-hash-tree.test.cpp
 layout: document
