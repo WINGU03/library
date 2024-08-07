@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: misc/next-combination.hpp
     title: Next combination
   - icon: ':heavy_check_mark:'
@@ -11,11 +11,13 @@ data:
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
+    '*NOT_SPECIAL_COMMENTS*': ''
+    PROBLEM: https://onlinejudge.u-aizu.ac.jp/problems/ITP1_7_B
     links:
     - https://onlinejudge.u-aizu.ac.jp/problems/ITP1_7_B
-  bundledCode: "#line 1 \"verify/aizu-next-combination.late_test.cpp\"\n#define PROBLEM\
+  bundledCode: "#line 1 \"verify/aizu-next-combination.test.cpp\"\n#define PROBLEM\
     \ \"https://onlinejudge.u-aizu.ac.jp/problems/ITP1_7_B\"\n\n#include <bits/stdc++.h>\n\
     #line 2 \"template.hpp\"\nusing namespace std;\n#include <atcoder/modint>\nusing\
     \ namespace atcoder;\n#ifdef DEFINED_ONLY_IN_LOCAL\n#include <dump.hpp>\n#define\
@@ -41,11 +43,11 @@ data:
     \ {os << v[i] << \" \\n\"[i + 1 == (int)v.size()];} return os;}\ntemplate <class\
     \ T> istream& operator>>(istream& is, vector<vector<T>>& vv) {for (vector<T>&\
     \ v : vv) {is >> v;} return is;}\ntemplate <class T> ostream& operator<<(ostream&\
-    \ os, const vector<vector<T>>& vv) {for (vector<T>& v : vv) {os << v;} return\
-    \ os;}\ninline bool bit(ll x, int p) {return (x >> p) & 1;}\ninline bool out(int\
-    \ ni, int nj, int h, int w) {return (ni < 0 or ni >= h or nj < 0 or nj >= w);}\n\
-    inline int pc(ll x) {return __builtin_popcountll(x);}\ntemplate <class T> inline\
-    \ T max(vector<T> x) {return *max_element(x.begin(), x.end());}\ntemplate <class\
+    \ os, vector<vector<T>>& vv) {for (vector<T>& v : vv) {os << v;} return os;}\n\
+    inline bool bit(ll x, int p) {return (x >> p) & 1;}\ninline bool out(int ni, int\
+    \ nj, int h, int w) {return (ni < 0 or ni >= h or nj < 0 or nj >= w);}\ninline\
+    \ int pc(ll x) {return __builtin_popcountll(x);}\ntemplate <class T> inline T\
+    \ max(vector<T> x) {return *max_element(x.begin(), x.end());}\ntemplate <class\
     \ T> inline T min(vector<T> x) {return *min_element(x.begin(), x.end());}\ntemplate\
     \ <class T> inline T sum(vector<T> x) {return reduce(x.begin(), x.end());}\n#line\
     \ 1 \"misc/next-combination.hpp\"\ntemplate <typename T>\nbool next_combination(const\
@@ -56,7 +58,7 @@ data:
     \ >= *dest) {\n                dest++;\n            }\n            iter_swap(src,\
     \ dest);\n            rotate(src + 1, dest + 1, last);\n            rotate(subset,\
     \ subset + (last - dest) - 1, last);\n            return true;\n        }\n  \
-    \  }\n    rotate(first, subset, last);\n    return false;\n}\n#line 6 \"verify/aizu-next-combination.late_test.cpp\"\
+    \  }\n    rotate(first, subset, last);\n    return false;\n}\n#line 6 \"verify/aizu-next-combination.test.cpp\"\
     \n\nint main() {\n    int n, s;\n    while (cin >> n >> s) {\n        if (n ==\
     \ 0 and s == 0) exit(0);\n        vector<int> p(n);\n        iota(all(p), 1);\n\
     \        int ans = 0;\n        do {\n            int cur = 0;\n            rep(i,\
@@ -72,16 +74,16 @@ data:
   dependsOn:
   - template.hpp
   - misc/next-combination.hpp
-  isVerificationFile: false
-  path: verify/aizu-next-combination.late_test.cpp
+  isVerificationFile: true
+  path: verify/aizu-next-combination.test.cpp
   requiredBy: []
-  timestamp: '2024-08-06 23:05:18+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
+  timestamp: '2024-08-07 15:54:27+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: verify/aizu-next-combination.late_test.cpp
+documentation_of: verify/aizu-next-combination.test.cpp
 layout: document
 redirect_from:
-- /library/verify/aizu-next-combination.late_test.cpp
-- /library/verify/aizu-next-combination.late_test.cpp.html
-title: verify/aizu-next-combination.late_test.cpp
+- /verify/verify/aizu-next-combination.test.cpp
+- /verify/verify/aizu-next-combination.test.cpp.html
+title: verify/aizu-next-combination.test.cpp
 ---

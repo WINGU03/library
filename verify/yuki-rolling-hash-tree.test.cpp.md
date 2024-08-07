@@ -42,10 +42,10 @@ data:
     \ os, const vector<T>& v) {rep(i, (int)v.size()) {os << v[i] << \" \\n\"[i + 1\
     \ == (int)v.size()];} return os;}\ntemplate <class T> istream& operator>>(istream&\
     \ is, vector<vector<T>>& vv) {for (vector<T>& v : vv) {is >> v;} return is;}\n\
-    template <class T> ostream& operator<<(ostream& os, const vector<vector<T>>& vv)\
-    \ {for (vector<T>& v : vv) {os << v;} return os;}\ninline bool bit(ll x, int p)\
-    \ {return (x >> p) & 1;}\ninline bool out(int ni, int nj, int h, int w) {return\
-    \ (ni < 0 or ni >= h or nj < 0 or nj >= w);}\ninline int pc(ll x) {return __builtin_popcountll(x);}\n\
+    template <class T> ostream& operator<<(ostream& os, vector<vector<T>>& vv) {for\
+    \ (vector<T>& v : vv) {os << v;} return os;}\ninline bool bit(ll x, int p) {return\
+    \ (x >> p) & 1;}\ninline bool out(int ni, int nj, int h, int w) {return (ni <\
+    \ 0 or ni >= h or nj < 0 or nj >= w);}\ninline int pc(ll x) {return __builtin_popcountll(x);}\n\
     template <class T> inline T max(vector<T> x) {return *max_element(x.begin(), x.end());}\n\
     template <class T> inline T min(vector<T> x) {return *min_element(x.begin(), x.end());}\n\
     template <class T> inline T sum(vector<T> x) {return reduce(x.begin(), x.end());}\n\
@@ -109,7 +109,7 @@ data:
   isVerificationFile: true
   path: verify/yuki-rolling-hash-tree.test.cpp
   requiredBy: []
-  timestamp: '2024-08-06 22:54:39+09:00'
+  timestamp: '2024-08-07 15:54:27+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yuki-rolling-hash-tree.test.cpp

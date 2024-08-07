@@ -44,9 +44,9 @@ data:
   timestamp: '2024-06-19 21:24:21+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/aizu-cc.test.cpp
   - verify/yosupo-mo2.test.cpp
   - verify/yosupo-mo1.test.cpp
+  - verify/aizu-cc.test.cpp
 documentation_of: misc/cc.hpp
 layout: document
 title: "\u5EA7\u6A19\u5727\u7E2E"

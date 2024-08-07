@@ -1,10 +1,7 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: verify/aizu-next-combination.late_test.cpp
-    title: verify/aizu-next-combination.late_test.cpp
+  _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/aizu-cc.test.cpp
@@ -12,6 +9,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/aizu-dynamic-bfs.test.cpp
     title: verify/aizu-dynamic-bfs.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/aizu-next-combination.test.cpp
+    title: verify/aizu-next-combination.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/aizu-rolling-hash.test.cpp
     title: verify/aizu-rolling-hash.test.cpp
@@ -125,8 +125,8 @@ data:
     template <class T> istream& operator>>(istream& is, vector<vector<T>>& vv) {for
     (vector<T>& v : vv) {is >> v;} return is;}
 
-    template <class T> ostream& operator<<(ostream& os, const vector<vector<T>>& vv)
-    {for (vector<T>& v : vv) {os << v;} return os;}
+    template <class T> ostream& operator<<(ostream& os, vector<vector<T>>& vv) {for
+    (vector<T>& v : vv) {os << v;} return os;}
 
     inline bool bit(ll x, int p) {return (x >> p) & 1;}
 
@@ -218,8 +218,8 @@ data:
     template <class T> istream& operator>>(istream& is, vector<vector<T>>& vv) {for
     (vector<T>& v : vv) {is >> v;} return is;}
 
-    template <class T> ostream& operator<<(ostream& os, const vector<vector<T>>& vv)
-    {for (vector<T>& v : vv) {os << v;} return os;}
+    template <class T> ostream& operator<<(ostream& os, vector<vector<T>>& vv) {for
+    (vector<T>& v : vv) {os << v;} return os;}
 
     inline bool bit(ll x, int p) {return (x >> p) & 1;}
 
@@ -236,23 +236,23 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: template.hpp
-  requiredBy:
-  - verify/aizu-next-combination.late_test.cpp
-  timestamp: '2024-08-06 22:54:39+09:00'
+  requiredBy: []
+  timestamp: '2024-08-07 15:54:27+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/aizu-dynamic-bfs.test.cpp
+  - verify/aizu-next-combination.test.cpp
+  - verify/yosupo-mo2.test.cpp
+  - verify/yosupo-mo1.test.cpp
   - verify/aizu-rolling-hash.test.cpp
-  - verify/compile-option.test.cpp
-  - verify/enum-divisor.test.cpp
-  - verify/yuki-rolling-hash-tree.test.cpp
   - verify/prime-factorize.test.cpp
+  - verify/yosupo-rolling-hash.test.cpp
+  - verify/enum-divisor.test.cpp
+  - verify/aizu-dynamic-bfs.test.cpp
   - verify/rerooting.test.cpp
   - verify/aizu-cc.test.cpp
-  - verify/yosupo-mo2.test.cpp
+  - verify/compile-option.test.cpp
   - verify/extgcd.test.cpp
-  - verify/yosupo-rolling-hash.test.cpp
-  - verify/yosupo-mo1.test.cpp
+  - verify/yuki-rolling-hash-tree.test.cpp
 documentation_of: template.hpp
 layout: document
 redirect_from:

@@ -34,7 +34,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: misc/mo.hpp
       title: "Mo\u2019s algorithm"
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: misc/next-combination.hpp
       title: Next combination
   - name: string
@@ -50,11 +50,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: template.hpp
       title: template.hpp
-  - name: verify
-    pages:
-    - icon: ':warning:'
-      path: verify/aizu-next-combination.late_test.cpp
-      title: verify/aizu-next-combination.late_test.cpp
   verificationCategories:
   - name: verify
     pages:
@@ -64,6 +59,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/aizu-dynamic-bfs.test.cpp
       title: verify/aizu-dynamic-bfs.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/aizu-next-combination.test.cpp
+      title: verify/aizu-next-combination.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/aizu-rolling-hash.test.cpp
       title: verify/aizu-rolling-hash.test.cpp
