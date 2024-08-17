@@ -16,7 +16,7 @@ data:
       title: "\u7D04\u6570\u5217\u6319"
     - icon: ':heavy_check_mark:'
       path: math/eratosthenes.hpp
-      title: math/eratosthenes.hpp
+      title: "\u30A8\u30E9\u30C8\u30B9\u30C6\u30CD\u30B9\u306E\u7BE9"
     - icon: ':heavy_check_mark:'
       path: math/extgcd.hpp
       title: "\u62E1\u5F35\u30E6\u30FC\u30AF\u30EA\u30C3\u30C9\u306E\u4E92\u9664\u6CD5"
