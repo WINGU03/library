@@ -1,6 +1,7 @@
 {
 "verify/aizu-cc.test.cpp": "2024-08-07 15:54:27 +0900",
 "verify/aizu-dynamic-bfs.test.cpp": "2024-08-07 15:54:27 +0900",
+"verify/aizu-eratosthenes.test.cpp": "2024-08-18 00:49:59 +0900",
 "verify/aizu-next-combination.test.cpp": "2024-08-07 15:54:27 +0900",
 "verify/aizu-rolling-hash.test.cpp": "2024-08-07 15:54:27 +0900",
 "verify/compile-option.test.cpp": "2024-08-07 15:54:27 +0900",
