@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/rerooting.hpp
     title: "\u5168\u65B9\u4F4D\u6728DP"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []

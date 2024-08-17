@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: verify/aizu-eratosthenes.test.cpp
+    title: verify/aizu-eratosthenes.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 1 \"math/eratosthenes.hpp\"\nvector<bool> sieve(int N) {\n \
@@ -23,8 +26,9 @@ data:
   path: math/eratosthenes.hpp
   requiredBy: []
   timestamp: '2024-08-11 14:04:24+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - verify/aizu-eratosthenes.test.cpp
 documentation_of: math/eratosthenes.hpp
 layout: document
 redirect_from:

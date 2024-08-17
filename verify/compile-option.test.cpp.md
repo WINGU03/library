@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: misc/compile-option.hpp
     title: "\u30B3\u30F3\u30D1\u30A4\u30EB\u30AA\u30D7\u30B7\u30E7\u30F3"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []

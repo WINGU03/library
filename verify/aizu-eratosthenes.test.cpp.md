@@ -1,24 +1,24 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: misc/next-combination.hpp
-    title: Next combination
+  - icon: ':x:'
+    path: math/eratosthenes.hpp
+    title: math/eratosthenes.hpp
   - icon: ':question:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://onlinejudge.u-aizu.ac.jp/problems/ITP1_7_B
+    PROBLEM: https://onlinejudge.u-aizu.ac.jp/problems/0009
     links:
-    - https://onlinejudge.u-aizu.ac.jp/problems/ITP1_7_B
-  bundledCode: "#line 1 \"verify/aizu-next-combination.test.cpp\"\n#define PROBLEM\
-    \ \"https://onlinejudge.u-aizu.ac.jp/problems/ITP1_7_B\"\n\n#include <bits/stdc++.h>\n\
+    - https://onlinejudge.u-aizu.ac.jp/problems/0009
+  bundledCode: "#line 1 \"verify/aizu-eratosthenes.test.cpp\"\n#define PROBLEM \"\
+    https://onlinejudge.u-aizu.ac.jp/problems/0009\"\n\n#include <bits/stdc++.h>\n\
     #line 2 \"template.hpp\"\nusing namespace std;\n#include <atcoder/modint>\nusing\
     \ namespace atcoder;\n#ifdef DEFINED_ONLY_IN_LOCAL\n#include <dump.hpp>\n#define\
     \ dump(...) cpp_dump(__VA_ARGS__)\n#else\n#undef dump\n#define dump(...)\n#endif\n\
@@ -50,40 +50,34 @@ data:
     \ max(vector<T> x) {return *max_element(x.begin(), x.end());}\ntemplate <class\
     \ T> inline T min(vector<T> x) {return *min_element(x.begin(), x.end());}\ntemplate\
     \ <class T> inline T sum(vector<T> x) {return reduce(x.begin(), x.end());}\n#line\
-    \ 1 \"misc/next-combination.hpp\"\ntemplate <typename T>\nbool next_combination(const\
-    \ T first, const T last, int k) {\n    const T subset = first + k;\n    if (first\
-    \ == last || first == subset || last == subset) {\n        return false;\n   \
-    \ }\n    T src = subset;\n    while (first != src) {\n        src--;\n       \
-    \ if (*src < *(last - 1)) {\n            T dest = subset;\n            while (*src\
-    \ >= *dest) {\n                dest++;\n            }\n            iter_swap(src,\
-    \ dest);\n            rotate(src + 1, dest + 1, last);\n            rotate(subset,\
-    \ subset + (last - dest) - 1, last);\n            return true;\n        }\n  \
-    \  }\n    rotate(first, subset, last);\n    return false;\n}\n#line 6 \"verify/aizu-next-combination.test.cpp\"\
-    \n\nint main() {\n    int n, s;\n    while (cin >> n >> s) {\n        if (n ==\
-    \ 0 and s == 0) exit(0);\n        vector<int> p(n);\n        iota(all(p), 1);\n\
-    \        int ans = 0;\n        do {\n            int cur = 0;\n            rep(i,\
-    \ 3) cur += p[i];\n            if (cur == s) ans++;\n        } while (next_combination(all(p),\
-    \ 3));\n        cout << ans << endl;\n    }\n    return 0;\n}\n"
-  code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/ITP1_7_B\"\n\n\
-    #include <bits/stdc++.h>\n#include \"template.hpp\"\n#include \"misc/next-combination.hpp\"\
-    \n\nint main() {\n    int n, s;\n    while (cin >> n >> s) {\n        if (n ==\
-    \ 0 and s == 0) exit(0);\n        vector<int> p(n);\n        iota(all(p), 1);\n\
-    \        int ans = 0;\n        do {\n            int cur = 0;\n            rep(i,\
-    \ 3) cur += p[i];\n            if (cur == s) ans++;\n        } while (next_combination(all(p),\
-    \ 3));\n        cout << ans << endl;\n    }\n    return 0;\n}"
+    \ 1 \"math/eratosthenes.hpp\"\nvector<bool> sieve(int N) {\n    vector<bool> isprime(N\
+    \ + 1, true);\n    isprime[0] = false;\n    isprime[1] = false;\n    for (int\
+    \ i = 2; i * i <= N; i++) {\n        if (isprime[i] == false) continue;\n    \
+    \    for (int j = i * 2; j <= N; j += i) {\n            isprime[j] = false;\n\
+    \        }\n    }\n    return isprime;\n}\n#line 6 \"verify/aizu-eratosthenes.test.cpp\"\
+    \n\nusing P = pair<int, int>;\nusing T = tuple<int, int, int>;\nint main() {\n\
+    \    int n;\n    while (cin >> n) {\n        auto p = sieve(n);\n        int ans\
+    \ = 0;\n        for (int i = 0; i <= n; i++) {\n            if (p[i]) ans++;\n\
+    \        }\n        cout << ans << endl;\n    }\n    return 0;\n}\n"
+  code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/0009\"\n\n#include\
+    \ <bits/stdc++.h>\n#include \"template.hpp\"\n#include \"math/eratosthenes.hpp\"\
+    \n\nusing P = pair<int, int>;\nusing T = tuple<int, int, int>;\nint main() {\n\
+    \    int n;\n    while (cin >> n) {\n        auto p = sieve(n);\n        int ans\
+    \ = 0;\n        for (int i = 0; i <= n; i++) {\n            if (p[i]) ans++;\n\
+    \        }\n        cout << ans << endl;\n    }\n    return 0;\n}"
   dependsOn:
   - template.hpp
-  - misc/next-combination.hpp
+  - math/eratosthenes.hpp
   isVerificationFile: true
-  path: verify/aizu-next-combination.test.cpp
+  path: verify/aizu-eratosthenes.test.cpp
   requiredBy: []
-  timestamp: '2024-08-07 15:54:27+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2024-08-18 00:42:42+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
-documentation_of: verify/aizu-next-combination.test.cpp
+documentation_of: verify/aizu-eratosthenes.test.cpp
 layout: document
 redirect_from:
-- /verify/verify/aizu-next-combination.test.cpp
-- /verify/verify/aizu-next-combination.test.cpp.html
-title: verify/aizu-next-combination.test.cpp
+- /verify/verify/aizu-eratosthenes.test.cpp
+- /verify/verify/aizu-eratosthenes.test.cpp.html
+title: verify/aizu-eratosthenes.test.cpp
 ---

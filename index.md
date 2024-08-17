@@ -14,7 +14,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/enum-divisor.hpp
       title: "\u7D04\u6570\u5217\u6319"
-    - icon: ':warning:'
+    - icon: ':x:'
       path: math/eratosthenes.hpp
       title: math/eratosthenes.hpp
     - icon: ':heavy_check_mark:'
@@ -50,7 +50,7 @@ data:
       title: Rolling Hash
   - name: .
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template.hpp
       title: template.hpp
   verificationCategories:
@@ -62,6 +62,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/aizu-dynamic-bfs.test.cpp
       title: verify/aizu-dynamic-bfs.test.cpp
+    - icon: ':x:'
+      path: verify/aizu-eratosthenes.test.cpp
+      title: verify/aizu-eratosthenes.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/aizu-next-combination.test.cpp
       title: verify/aizu-next-combination.test.cpp
