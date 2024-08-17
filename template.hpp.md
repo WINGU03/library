@@ -9,7 +9,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/aizu-dynamic-bfs.test.cpp
     title: verify/aizu-dynamic-bfs.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/aizu-eratosthenes.test.cpp
     title: verify/aizu-eratosthenes.test.cpp
   - icon: ':heavy_check_mark:'
@@ -45,9 +45,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yuki-rolling-hash-tree.test.cpp
     title: verify/yuki-rolling-hash-tree.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: '#line 1 "template.hpp"
@@ -241,7 +241,7 @@ data:
   path: template.hpp
   requiredBy: []
   timestamp: '2024-08-07 15:54:27+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/aizu-next-combination.test.cpp
   - verify/yosupo-mo2.test.cpp

@@ -1,24 +1,24 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/eratosthenes.hpp
     title: math/eratosthenes.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://onlinejudge.u-aizu.ac.jp/problems/0009
+    PROBLEM: https://onlinejudge.u-aizu.ac.jp/problems/ALDS1_1_C
     links:
-    - https://onlinejudge.u-aizu.ac.jp/problems/0009
+    - https://onlinejudge.u-aizu.ac.jp/problems/ALDS1_1_C
   bundledCode: "#line 1 \"verify/aizu-eratosthenes.test.cpp\"\n#define PROBLEM \"\
-    https://onlinejudge.u-aizu.ac.jp/problems/0009\"\n\n#include <bits/stdc++.h>\n\
+    https://onlinejudge.u-aizu.ac.jp/problems/ALDS1_1_C\"\n\n#include <bits/stdc++.h>\n\
     #line 2 \"template.hpp\"\nusing namespace std;\n#include <atcoder/modint>\nusing\
     \ namespace atcoder;\n#ifdef DEFINED_ONLY_IN_LOCAL\n#include <dump.hpp>\n#define\
     \ dump(...) cpp_dump(__VA_ARGS__)\n#else\n#undef dump\n#define dump(...)\n#endif\n\
@@ -55,24 +55,24 @@ data:
     \ i = 2; i * i <= N; i++) {\n        if (isprime[i] == false) continue;\n    \
     \    for (int j = i * 2; j <= N; j += i) {\n            isprime[j] = false;\n\
     \        }\n    }\n    return isprime;\n}\n#line 6 \"verify/aizu-eratosthenes.test.cpp\"\
-    \n\nusing P = pair<int, int>;\nusing T = tuple<int, int, int>;\nint main() {\n\
-    \    int n;\n    while (cin >> n) {\n        auto p = sieve(n);\n        int ans\
-    \ = 0;\n        for (int i = 0; i <= n; i++) {\n            if (p[i]) ans++;\n\
-    \        }\n        cout << ans << endl;\n    }\n    return 0;\n}\n"
-  code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/0009\"\n\n#include\
-    \ <bits/stdc++.h>\n#include \"template.hpp\"\n#include \"math/eratosthenes.hpp\"\
-    \n\nusing P = pair<int, int>;\nusing T = tuple<int, int, int>;\nint main() {\n\
-    \    int n;\n    while (cin >> n) {\n        auto p = sieve(n);\n        int ans\
-    \ = 0;\n        for (int i = 0; i <= n; i++) {\n            if (p[i]) ans++;\n\
-    \        }\n        cout << ans << endl;\n    }\n    return 0;\n}"
+    \n\nint main() {\n    int n;\n    cin >> n;\n    auto p = sieve((int)1e8);\n \
+    \   int ans = 0;\n    for(int i = 0; i < n; i++) {\n        int x;\n        cin\
+    \ >> x;\n        if (p[x]) ans++;\n    }\n    cout << ans << endl;\n    return\
+    \ 0;\n}\n"
+  code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/ALDS1_1_C\"\n\
+    \n#include <bits/stdc++.h>\n#include \"template.hpp\"\n#include \"math/eratosthenes.hpp\"\
+    \n\nint main() {\n    int n;\n    cin >> n;\n    auto p = sieve((int)1e8);\n \
+    \   int ans = 0;\n    for(int i = 0; i < n; i++) {\n        int x;\n        cin\
+    \ >> x;\n        if (p[x]) ans++;\n    }\n    cout << ans << endl;\n    return\
+    \ 0;\n}"
   dependsOn:
   - template.hpp
   - math/eratosthenes.hpp
   isVerificationFile: true
   path: verify/aizu-eratosthenes.test.cpp
   requiredBy: []
-  timestamp: '2024-08-18 00:42:42+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-08-18 00:49:59+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aizu-eratosthenes.test.cpp
 layout: document
