@@ -11,6 +11,9 @@ data:
       title: "\u5168\u65B9\u4F4D\u6728DP"
   - name: math
     pages:
+    - icon: ':warning:'
+      path: math/combination.hpp
+      title: math/combination.hpp
     - icon: ':heavy_check_mark:'
       path: math/enum-divisor.hpp
       title: "\u7D04\u6570\u5217\u6319"
