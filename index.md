@@ -13,7 +13,7 @@ data:
     pages:
     - icon: ':warning:'
       path: math/combination.hpp
-      title: math/combination.hpp
+      title: "\u5EA7\u6A19\u5727\u7E2E"
     - icon: ':heavy_check_mark:'
       path: math/enum-divisor.hpp
       title: "\u7D04\u6570\u5217\u6319"

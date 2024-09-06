@@ -244,19 +244,19 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/aizu-next-combination.test.cpp
+  - verify/enum-divisor.test.cpp
+  - verify/aizu-rolling-hash.test.cpp
+  - verify/aizu-eratosthenes.test.cpp
+  - verify/extgcd.test.cpp
+  - verify/prime-factorize.test.cpp
   - verify/yosupo-mo2.test.cpp
   - verify/yosupo-mo1.test.cpp
-  - verify/aizu-eratosthenes.test.cpp
-  - verify/aizu-rolling-hash.test.cpp
-  - verify/prime-factorize.test.cpp
+  - verify/compile-option.test.cpp
+  - verify/yuki-rolling-hash-tree.test.cpp
   - verify/yosupo-rolling-hash.test.cpp
-  - verify/enum-divisor.test.cpp
   - verify/aizu-dynamic-bfs.test.cpp
   - verify/rerooting.test.cpp
   - verify/aizu-cc.test.cpp
-  - verify/compile-option.test.cpp
-  - verify/extgcd.test.cpp
-  - verify/yuki-rolling-hash-tree.test.cpp
 documentation_of: template.hpp
 layout: document
 redirect_from:

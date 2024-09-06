@@ -35,8 +35,20 @@ data:
   verifiedWith: []
 documentation_of: math/combination.hpp
 layout: document
-redirect_from:
-- /library/math/combination.hpp
-- /library/math/combination.hpp.html
-title: math/combination.hpp
+title: "\u5EA7\u6A19\u5727\u7E2E"
 ---
+
+mod 998244353 or 1000000007 の nCr を O(MAX) の前計算 -> 逐次 O(1) で求められる
+※ #include "math/combination.hpp" の前に using mint = (modint998244353 or modint1000000007)
+
+# コンストラクタ
+
+```cpp
+combination(int MAX)
+```
+
+# nCr
+
+```cpp
+mint com(int n, int r)
+```
