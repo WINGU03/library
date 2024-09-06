@@ -1,5 +1,5 @@
 ---
-title: 座標圧縮
+title: 二項係数(mod)
 documentation_of: //math/combination.hpp
 ---
 
