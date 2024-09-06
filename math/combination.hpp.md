@@ -35,7 +35,7 @@ data:
   verifiedWith: []
 documentation_of: math/combination.hpp
 layout: document
-title: "\u5EA7\u6A19\u5727\u7E2E"
+title: "\u4E8C\u9805\u4FC2\u6570(mod)"
 ---
 
 mod 998244353 or 1000000007 の nCr を O(MAX) の前計算 -> 逐次 O(1) で求められる
