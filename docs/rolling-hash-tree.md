@@ -6,8 +6,8 @@ documentation_of: //string/rolling-hash-tree.hpp
 ## コンストラクタ
 
 ```cpp
-(1) SegmentRollingHash seg(string s) // reverse x
-(2) SegmentRollingHash seg(string s, true) // reverse o
+(1) SegmentRollingHash seg(string s) // reverse off
+(2) SegmentRollingHash seg(string s, true) // reverse on
 ```
 
 (1)では、文字列を反対方向から見たハッシュを取らないため、定数倍がよくなる。
@@ -16,7 +16,7 @@ documentation_of: //string/rolling-hash-tree.hpp
 ## set
 
 ```cpp
-void seg.set(int i, char c)
+void set(int i, char c)
 ```
 
 文字列の一点更新
