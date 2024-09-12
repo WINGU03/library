@@ -9,9 +9,9 @@ using namespace atcoder;
 #undef dump
 #define dump(...)
 #endif
-#define rep1(i, a) for (int i = 0; i < (int)(a); i++)
-#define rep2(i, a, b) for (int i = (int)(a); i < (int)(b); i++)
-#define rep3(i, a, b, c) for (int i = (int)(a); i < (int)(b); i += (int)(c))
+#define rep1(i, a) for (int i = 0; i < a; i++)
+#define rep2(i, a, b) for (int i = a; i < b; i++)
+#define rep3(i, a, b, c) for (int i = a; i < b; i += c)
 #define overloadRep(a, b, c, d, e, ...) e
 #define rep(...) overloadRep(__VA_ARGS__, rep3, rep2, rep1)(__VA_ARGS__)
 #define all(a) a.begin(), a.end()
