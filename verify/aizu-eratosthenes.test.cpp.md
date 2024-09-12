@@ -43,21 +43,24 @@ data:
     \ == (int)v.size()];} return os;}\ntemplate <class T> istream& operator>>(istream&\
     \ is, vector<vector<T>>& vv) {for (vector<T>& v : vv) {is >> v;} return is;}\n\
     template <class T> ostream& operator<<(ostream& os, vector<vector<T>>& vv) {for\
-    \ (vector<T>& v : vv) {os << v;} return os;}\ninline bool bit(ll x, int p) {return\
-    \ (x >> p) & 1;}\ninline bool out(int ni, int nj, int h, int w) {return (ni <\
-    \ 0 or ni >= h or nj < 0 or nj >= w);}\ninline int pc(ll x) {return __builtin_popcountll(x);}\n\
-    template <class T> inline T max(vector<T> x) {return *max_element(x.begin(), x.end());}\n\
-    template <class T> inline T min(vector<T> x) {return *min_element(x.begin(), x.end());}\n\
-    template <class T> inline T sum(vector<T> x) {return reduce(x.begin(), x.end());}\n\
-    #line 1 \"math/eratosthenes.hpp\"\nvector<bool> sieve(int N) {\n    vector<bool>\
-    \ isprime(N + 1, true);\n    isprime[0] = false;\n    isprime[1] = false;\n  \
-    \  for (int i = 2; i * i <= N; i++) {\n        if (isprime[i] == false) continue;\n\
-    \        for (int j = i * 2; j <= N; j += i) {\n            isprime[j] = false;\n\
-    \        }\n    }\n    return isprime;\n}\n#line 6 \"verify/aizu-eratosthenes.test.cpp\"\
-    \n\nint main() {\n    int n;\n    cin >> n;\n    auto p = sieve((int)1e8);\n \
-    \   int ans = 0;\n    for(int i = 0; i < n; i++) {\n        int x;\n        cin\
-    \ >> x;\n        if (p[x]) ans++;\n    }\n    cout << ans << endl;\n    return\
-    \ 0;\n}\n"
+    \ (vector<T>& v : vv) {os << v;} return os;}\ntemplate <class T> inline T max(vector<T>\
+    \ x) {return *max_element(x.begin(), x.end());}\ntemplate <class T> inline T min(vector<T>\
+    \ x) {return *min_element(x.begin(), x.end());}\ntemplate <class T> inline T sum(vector<T>\
+    \ x) {return reduce(x.begin(), x.end());}\ntemplate <class... T> constexpr auto\
+    \ min(T... a) {return min(initializer_list<common_type_t<T...>>{a...});}\ntemplate\
+    \ <class... T> constexpr auto max(T... a) {return max(initializer_list<common_type_t<T...>>{a...});}\n\
+    inline bool bit(ll x, int p) {return (x >> p) & 1;}\ninline bool out(int ni, int\
+    \ nj, int h, int w) {return (ni < 0 or ni >= h or nj < 0 or nj >= w);}\ninline\
+    \ int pc(ll x) {return __builtin_popcountll(x);}\nvoid Yes() {cout << \"Yes\"\
+    \ << endl;}\nvoid No() {cout << \"No\" << endl;}\n#line 1 \"math/eratosthenes.hpp\"\
+    \nvector<bool> sieve(int N) {\n    vector<bool> isprime(N + 1, true);\n    isprime[0]\
+    \ = false;\n    isprime[1] = false;\n    for (int i = 2; i * i <= N; i++) {\n\
+    \        if (isprime[i] == false) continue;\n        for (int j = i * 2; j <=\
+    \ N; j += i) {\n            isprime[j] = false;\n        }\n    }\n    return\
+    \ isprime;\n}\n#line 6 \"verify/aizu-eratosthenes.test.cpp\"\n\nint main() {\n\
+    \    int n;\n    cin >> n;\n    auto p = sieve((int)1e8);\n    int ans = 0;\n\
+    \    for(int i = 0; i < n; i++) {\n        int x;\n        cin >> x;\n       \
+    \ if (p[x]) ans++;\n    }\n    cout << ans << endl;\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/ALDS1_1_C\"\n\
     \n#include <bits/stdc++.h>\n#include \"template.hpp\"\n#include \"math/eratosthenes.hpp\"\
     \n\nint main() {\n    int n;\n    cin >> n;\n    auto p = sieve((int)1e8);\n \
@@ -70,7 +73,7 @@ data:
   isVerificationFile: true
   path: verify/aizu-eratosthenes.test.cpp
   requiredBy: []
-  timestamp: '2024-09-12 14:59:30+09:00'
+  timestamp: '2024-09-12 16:44:49+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aizu-eratosthenes.test.cpp

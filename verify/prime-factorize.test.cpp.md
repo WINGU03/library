@@ -43,21 +43,24 @@ data:
     \ T> istream& operator>>(istream& is, vector<vector<T>>& vv) {for (vector<T>&\
     \ v : vv) {is >> v;} return is;}\ntemplate <class T> ostream& operator<<(ostream&\
     \ os, vector<vector<T>>& vv) {for (vector<T>& v : vv) {os << v;} return os;}\n\
+    template <class T> inline T max(vector<T> x) {return *max_element(x.begin(), x.end());}\n\
+    template <class T> inline T min(vector<T> x) {return *min_element(x.begin(), x.end());}\n\
+    template <class T> inline T sum(vector<T> x) {return reduce(x.begin(), x.end());}\n\
+    template <class... T> constexpr auto min(T... a) {return min(initializer_list<common_type_t<T...>>{a...});}\n\
+    template <class... T> constexpr auto max(T... a) {return max(initializer_list<common_type_t<T...>>{a...});}\n\
     inline bool bit(ll x, int p) {return (x >> p) & 1;}\ninline bool out(int ni, int\
     \ nj, int h, int w) {return (ni < 0 or ni >= h or nj < 0 or nj >= w);}\ninline\
-    \ int pc(ll x) {return __builtin_popcountll(x);}\ntemplate <class T> inline T\
-    \ max(vector<T> x) {return *max_element(x.begin(), x.end());}\ntemplate <class\
-    \ T> inline T min(vector<T> x) {return *min_element(x.begin(), x.end());}\ntemplate\
-    \ <class T> inline T sum(vector<T> x) {return reduce(x.begin(), x.end());}\n#line\
-    \ 1 \"math/prime-factorize.hpp\"\nvector<pair<ll, ll>> prime_factorize(ll n) {\n\
-    \    vector<pair<ll, ll>> res;\n    for (int p = 2; (ll)p * p <= n; p++) {\n \
-    \       if (n % p != 0) continue;\n        int num = 0;\n        while (n % p\
-    \ == 0) {\n            num++;\n            n /= p;\n        }\n        res.push_back(make_pair(p,\
-    \ num));\n    }\n    if (n != 1) res.push_back(make_pair(n, 1));\n    return res;\n\
-    }\n#line 6 \"verify/prime-factorize.test.cpp\"\n\nint main() {\n    int n;\n \
-    \   cin >> n;\n    auto p = prime_factorize(n);\n    cout << n << ':';\n    for\
-    \ (auto [number, val] : p) {\n        rep(i, val) cout << \" \" << number;\n \
-    \   }\n    cout << endl;\n    return 0;\n}\n"
+    \ int pc(ll x) {return __builtin_popcountll(x);}\nvoid Yes() {cout << \"Yes\"\
+    \ << endl;}\nvoid No() {cout << \"No\" << endl;}\n#line 1 \"math/prime-factorize.hpp\"\
+    \nvector<pair<ll, ll>> prime_factorize(ll n) {\n    vector<pair<ll, ll>> res;\n\
+    \    for (int p = 2; (ll)p * p <= n; p++) {\n        if (n % p != 0) continue;\n\
+    \        int num = 0;\n        while (n % p == 0) {\n            num++;\n    \
+    \        n /= p;\n        }\n        res.push_back(make_pair(p, num));\n    }\n\
+    \    if (n != 1) res.push_back(make_pair(n, 1));\n    return res;\n}\n#line 6\
+    \ \"verify/prime-factorize.test.cpp\"\n\nint main() {\n    int n;\n    cin >>\
+    \ n;\n    auto p = prime_factorize(n);\n    cout << n << ':';\n    for (auto [number,\
+    \ val] : p) {\n        rep(i, val) cout << \" \" << number;\n    }\n    cout <<\
+    \ endl;\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_A\"\
     \n\n#include <bits/stdc++.h>\n#include \"template.hpp\"\n#include \"math/prime-factorize.hpp\"\
     \n\nint main() {\n    int n;\n    cin >> n;\n    auto p = prime_factorize(n);\n\
@@ -69,7 +72,7 @@ data:
   isVerificationFile: true
   path: verify/prime-factorize.test.cpp
   requiredBy: []
-  timestamp: '2024-09-12 14:59:30+09:00'
+  timestamp: '2024-09-12 16:44:49+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/prime-factorize.test.cpp

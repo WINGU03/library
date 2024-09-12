@@ -43,17 +43,20 @@ data:
     \ T> istream& operator>>(istream& is, vector<vector<T>>& vv) {for (vector<T>&\
     \ v : vv) {is >> v;} return is;}\ntemplate <class T> ostream& operator<<(ostream&\
     \ os, vector<vector<T>>& vv) {for (vector<T>& v : vv) {os << v;} return os;}\n\
+    template <class T> inline T max(vector<T> x) {return *max_element(x.begin(), x.end());}\n\
+    template <class T> inline T min(vector<T> x) {return *min_element(x.begin(), x.end());}\n\
+    template <class T> inline T sum(vector<T> x) {return reduce(x.begin(), x.end());}\n\
+    template <class... T> constexpr auto min(T... a) {return min(initializer_list<common_type_t<T...>>{a...});}\n\
+    template <class... T> constexpr auto max(T... a) {return max(initializer_list<common_type_t<T...>>{a...});}\n\
     inline bool bit(ll x, int p) {return (x >> p) & 1;}\ninline bool out(int ni, int\
     \ nj, int h, int w) {return (ni < 0 or ni >= h or nj < 0 or nj >= w);}\ninline\
-    \ int pc(ll x) {return __builtin_popcountll(x);}\ntemplate <class T> inline T\
-    \ max(vector<T> x) {return *max_element(x.begin(), x.end());}\ntemplate <class\
-    \ T> inline T min(vector<T> x) {return *min_element(x.begin(), x.end());}\ntemplate\
-    \ <class T> inline T sum(vector<T> x) {return reduce(x.begin(), x.end());}\n#line\
-    \ 1 \"graph/rerooting.hpp\"\ntemplate <typename Cost>\nstruct Edge {\n    int\
-    \ src, to;\n    Cost cost;\n    Edge(int s, int t, Cost c = 1) : src(s), to(t),\
-    \ cost(c) {}\n    // \u30C7\u30D5\u30A9\u30EB\u30C8\u3067\u306F\u884C\u304D\u5148\
-    \u3092\u8FD4\u3059\n    operator int() const { return to; }\n};\n\ntemplate <typename\
-    \ Cost>\nstruct Graph : vector<vector<Edge<Cost>>> {\n    Graph(int n) : vector<vector<Edge<Cost>>>(n)\
+    \ int pc(ll x) {return __builtin_popcountll(x);}\nvoid Yes() {cout << \"Yes\"\
+    \ << endl;}\nvoid No() {cout << \"No\" << endl;}\n#line 1 \"graph/rerooting.hpp\"\
+    \ntemplate <typename Cost>\nstruct Edge {\n    int src, to;\n    Cost cost;\n\
+    \    Edge(int s, int t, Cost c = 1) : src(s), to(t), cost(c) {}\n    // \u30C7\
+    \u30D5\u30A9\u30EB\u30C8\u3067\u306F\u884C\u304D\u5148\u3092\u8FD4\u3059\n   \
+    \ operator int() const { return to; }\n};\n\ntemplate <typename Cost>\nstruct\
+    \ Graph : vector<vector<Edge<Cost>>> {\n    Graph(int n) : vector<vector<Edge<Cost>>>(n)\
     \ {}\n    void add_edge(int s, int t, Cost c = 1) { (*this)[s].emplace_back(s,\
     \ t, c); }\n};\n\ntemplate <\n    typename Cost,\n    typename Data,\n    Data\
     \ (*merge)(Data, Data),\n    Data (*e)(),\n    Data (*leaf)(),\n    Data (*apply)(Data,\
@@ -107,7 +110,7 @@ data:
   isVerificationFile: true
   path: verify/rerooting.test.cpp
   requiredBy: []
-  timestamp: '2024-09-12 14:59:30+09:00'
+  timestamp: '2024-09-12 16:44:49+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/rerooting.test.cpp

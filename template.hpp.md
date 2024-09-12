@@ -133,6 +133,16 @@ data:
     template <class T> ostream& operator<<(ostream& os, vector<vector<T>>& vv) {for
     (vector<T>& v : vv) {os << v;} return os;}
 
+    template <class T> inline T max(vector<T> x) {return *max_element(x.begin(), x.end());}
+
+    template <class T> inline T min(vector<T> x) {return *min_element(x.begin(), x.end());}
+
+    template <class T> inline T sum(vector<T> x) {return reduce(x.begin(), x.end());}
+
+    template <class... T> constexpr auto min(T... a) {return min(initializer_list<common_type_t<T...>>{a...});}
+
+    template <class... T> constexpr auto max(T... a) {return max(initializer_list<common_type_t<T...>>{a...});}
+
     inline bool bit(ll x, int p) {return (x >> p) & 1;}
 
     inline bool out(int ni, int nj, int h, int w) {return (ni < 0 or ni >= h or nj
@@ -140,11 +150,9 @@ data:
 
     inline int pc(ll x) {return __builtin_popcountll(x);}
 
-    template <class T> inline T max(vector<T> x) {return *max_element(x.begin(), x.end());}
+    void Yes() {cout << "Yes" << endl;}
 
-    template <class T> inline T min(vector<T> x) {return *min_element(x.begin(), x.end());}
-
-    template <class T> inline T sum(vector<T> x) {return reduce(x.begin(), x.end());}
+    void No() {cout << "No" << endl;}
 
     '
   code: '#include <bits/stdc++.h>
@@ -228,6 +236,16 @@ data:
     template <class T> ostream& operator<<(ostream& os, vector<vector<T>>& vv) {for
     (vector<T>& v : vv) {os << v;} return os;}
 
+    template <class T> inline T max(vector<T> x) {return *max_element(x.begin(), x.end());}
+
+    template <class T> inline T min(vector<T> x) {return *min_element(x.begin(), x.end());}
+
+    template <class T> inline T sum(vector<T> x) {return reduce(x.begin(), x.end());}
+
+    template <class... T> constexpr auto min(T... a) {return min(initializer_list<common_type_t<T...>>{a...});}
+
+    template <class... T> constexpr auto max(T... a) {return max(initializer_list<common_type_t<T...>>{a...});}
+
     inline bool bit(ll x, int p) {return (x >> p) & 1;}
 
     inline bool out(int ni, int nj, int h, int w) {return (ni < 0 or ni >= h or nj
@@ -235,16 +253,14 @@ data:
 
     inline int pc(ll x) {return __builtin_popcountll(x);}
 
-    template <class T> inline T max(vector<T> x) {return *max_element(x.begin(), x.end());}
+    void Yes() {cout << "Yes" << endl;}
 
-    template <class T> inline T min(vector<T> x) {return *min_element(x.begin(), x.end());}
-
-    template <class T> inline T sum(vector<T> x) {return reduce(x.begin(), x.end());}'
+    void No() {cout << "No" << endl;}'
   dependsOn: []
   isVerificationFile: false
   path: template.hpp
   requiredBy: []
-  timestamp: '2024-09-12 14:59:30+09:00'
+  timestamp: '2024-09-12 16:44:49+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/aizu-next-combination.test.cpp

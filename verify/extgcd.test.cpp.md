@@ -43,17 +43,20 @@ data:
     \ T> istream& operator>>(istream& is, vector<vector<T>>& vv) {for (vector<T>&\
     \ v : vv) {is >> v;} return is;}\ntemplate <class T> ostream& operator<<(ostream&\
     \ os, vector<vector<T>>& vv) {for (vector<T>& v : vv) {os << v;} return os;}\n\
+    template <class T> inline T max(vector<T> x) {return *max_element(x.begin(), x.end());}\n\
+    template <class T> inline T min(vector<T> x) {return *min_element(x.begin(), x.end());}\n\
+    template <class T> inline T sum(vector<T> x) {return reduce(x.begin(), x.end());}\n\
+    template <class... T> constexpr auto min(T... a) {return min(initializer_list<common_type_t<T...>>{a...});}\n\
+    template <class... T> constexpr auto max(T... a) {return max(initializer_list<common_type_t<T...>>{a...});}\n\
     inline bool bit(ll x, int p) {return (x >> p) & 1;}\ninline bool out(int ni, int\
     \ nj, int h, int w) {return (ni < 0 or ni >= h or nj < 0 or nj >= w);}\ninline\
-    \ int pc(ll x) {return __builtin_popcountll(x);}\ntemplate <class T> inline T\
-    \ max(vector<T> x) {return *max_element(x.begin(), x.end());}\ntemplate <class\
-    \ T> inline T min(vector<T> x) {return *min_element(x.begin(), x.end());}\ntemplate\
-    \ <class T> inline T sum(vector<T> x) {return reduce(x.begin(), x.end());}\n#line\
-    \ 1 \"math/extgcd.hpp\"\nll extgcd(ll a, ll b, ll &x, ll &y) {\n    if (b == 0)\
-    \ {\n        x = 1;\n        y = 0;\n        return a;\n    }\n    ll d = extgcd(b,\
-    \ a % b, y, x);\n    y -= a / b * x;\n    return d;\n}\n#line 6 \"verify/extgcd.test.cpp\"\
-    \n\nint main() {\n    int a, b;\n    cin >> a >> b;\n    ll x, y;\n    extgcd(a,\
-    \ b, x, y);\n    cout << x << \" \" << y << endl;\n    return 0;\n}\n"
+    \ int pc(ll x) {return __builtin_popcountll(x);}\nvoid Yes() {cout << \"Yes\"\
+    \ << endl;}\nvoid No() {cout << \"No\" << endl;}\n#line 1 \"math/extgcd.hpp\"\n\
+    ll extgcd(ll a, ll b, ll &x, ll &y) {\n    if (b == 0) {\n        x = 1;\n   \
+    \     y = 0;\n        return a;\n    }\n    ll d = extgcd(b, a % b, y, x);\n \
+    \   y -= a / b * x;\n    return d;\n}\n#line 6 \"verify/extgcd.test.cpp\"\n\n\
+    int main() {\n    int a, b;\n    cin >> a >> b;\n    ll x, y;\n    extgcd(a, b,\
+    \ x, y);\n    cout << x << \" \" << y << endl;\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_E\"\
     \n\n#include <bits/stdc++.h>\n#include \"template.hpp\"\n#include \"math/extgcd.hpp\"\
     \n\nint main() {\n    int a, b;\n    cin >> a >> b;\n    ll x, y;\n    extgcd(a,\
@@ -64,7 +67,7 @@ data:
   isVerificationFile: true
   path: verify/extgcd.test.cpp
   requiredBy: []
-  timestamp: '2024-09-12 14:59:30+09:00'
+  timestamp: '2024-09-12 16:44:49+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/extgcd.test.cpp
