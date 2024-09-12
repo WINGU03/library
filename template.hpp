@@ -16,6 +16,7 @@ using namespace atcoder;
 #define rep(...) overloadRep(__VA_ARGS__, rep3, rep2, rep1)(__VA_ARGS__)
 #define all(a) a.begin(), a.end()
 #define rall(a) a.rbegin(), a.rend()
+#define endl '\n'
 using ll = long long;
 using ull = unsigned long long;
 const int inf = 1e9;
