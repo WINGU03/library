@@ -74,11 +74,11 @@ data:
 
     #endif
 
-    #define rep1(i, a) for (int i = 0; i < (int)(a); i++)
+    #define rep1(i, a) for (int i = 0; i < a; i++)
 
-    #define rep2(i, a, b) for (int i = (int)(a); i < (int)(b); i++)
+    #define rep2(i, a, b) for (int i = a; i < b; i++)
 
-    #define rep3(i, a, b, c) for (int i = (int)(a); i < (int)(b); i += (int)(c))
+    #define rep3(i, a, b, c) for (int i = a; i < b; i += c)
 
     #define overloadRep(a, b, c, d, e, ...) e
 
@@ -169,11 +169,11 @@ data:
 
     #endif
 
-    #define rep1(i, a) for (int i = 0; i < (int)(a); i++)
+    #define rep1(i, a) for (int i = 0; i < a; i++)
 
-    #define rep2(i, a, b) for (int i = (int)(a); i < (int)(b); i++)
+    #define rep2(i, a, b) for (int i = a; i < b; i++)
 
-    #define rep3(i, a, b, c) for (int i = (int)(a); i < (int)(b); i += (int)(c))
+    #define rep3(i, a, b, c) for (int i = a; i < b; i += c)
 
     #define overloadRep(a, b, c, d, e, ...) e
 
@@ -244,7 +244,7 @@ data:
   isVerificationFile: false
   path: template.hpp
   requiredBy: []
-  timestamp: '2024-09-12 13:58:36+09:00'
+  timestamp: '2024-09-12 14:59:30+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/aizu-next-combination.test.cpp

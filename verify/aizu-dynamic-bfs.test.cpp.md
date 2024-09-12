@@ -21,15 +21,15 @@ data:
     \n\n#include <bits/stdc++.h>\n#line 2 \"template.hpp\"\nusing namespace std;\n\
     #include <atcoder/modint>\nusing namespace atcoder;\n#ifdef DEFINED_ONLY_IN_LOCAL\n\
     #include <dump.hpp>\n#define dump(...) cpp_dump(__VA_ARGS__)\n#else\n#undef dump\n\
-    #define dump(...)\n#endif\n#define rep1(i, a) for (int i = 0; i < (int)(a); i++)\n\
-    #define rep2(i, a, b) for (int i = (int)(a); i < (int)(b); i++)\n#define rep3(i,\
-    \ a, b, c) for (int i = (int)(a); i < (int)(b); i += (int)(c))\n#define overloadRep(a,\
-    \ b, c, d, e, ...) e\n#define rep(...) overloadRep(__VA_ARGS__, rep3, rep2, rep1)(__VA_ARGS__)\n\
-    #define all(a) a.begin(), a.end()\n#define rall(a) a.rbegin(), a.rend()\n#define\
-    \ endl '\\n'\nusing ll = long long;\nusing ull = unsigned long long;\nconst int\
-    \ inf = 1e9;\nconst ll INF = 1e18;\nconst int dx[4] = {0, 1, 0, -1};\nconst int\
-    \ dy[4] = {1, 0, -1, 0};\nconst int ddx[8] = {1, 0, -1, 0, 1, -1, 1, -1};\nconst\
-    \ int ddy[8] = {0, 1, 0, -1, 1, -1, -1, 1};\nstruct cincout {cincout() {ios_base::sync_with_stdio(false);\
+    #define dump(...)\n#endif\n#define rep1(i, a) for (int i = 0; i < a; i++)\n#define\
+    \ rep2(i, a, b) for (int i = a; i < b; i++)\n#define rep3(i, a, b, c) for (int\
+    \ i = a; i < b; i += c)\n#define overloadRep(a, b, c, d, e, ...) e\n#define rep(...)\
+    \ overloadRep(__VA_ARGS__, rep3, rep2, rep1)(__VA_ARGS__)\n#define all(a) a.begin(),\
+    \ a.end()\n#define rall(a) a.rbegin(), a.rend()\n#define endl '\\n'\nusing ll\
+    \ = long long;\nusing ull = unsigned long long;\nconst int inf = 1e9;\nconst ll\
+    \ INF = 1e18;\nconst int dx[4] = {0, 1, 0, -1};\nconst int dy[4] = {1, 0, -1,\
+    \ 0};\nconst int ddx[8] = {1, 0, -1, 0, 1, -1, 1, -1};\nconst int ddy[8] = {0,\
+    \ 1, 0, -1, 1, -1, -1, 1};\nstruct cincout {cincout() {ios_base::sync_with_stdio(false);\
     \ cin.tie(nullptr); cout << fixed << setprecision(15);}} init;\ntemplate <class\
     \ T> inline bool chmax(T& a, T b) {if (a < b) {a = b; return true;} return false;}\n\
     template <class T> inline bool chmin(T& a, T b) {if (a > b) {a = b; return true;}\
@@ -82,7 +82,7 @@ data:
   isVerificationFile: true
   path: verify/aizu-dynamic-bfs.test.cpp
   requiredBy: []
-  timestamp: '2024-09-12 13:58:36+09:00'
+  timestamp: '2024-09-12 14:59:30+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aizu-dynamic-bfs.test.cpp
