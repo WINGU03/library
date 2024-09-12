@@ -34,9 +34,13 @@ template <class T> istream& operator>>(istream& is, vector<T>& v) {for (T& in : 
 template <class T> ostream& operator<<(ostream& os, const vector<T>& v) {rep(i, (int)v.size()) {os << v[i] << " \n"[i + 1 == (int)v.size()];} return os;}
 template <class T> istream& operator>>(istream& is, vector<vector<T>>& vv) {for (vector<T>& v : vv) {is >> v;} return is;}
 template <class T> ostream& operator<<(ostream& os, vector<vector<T>>& vv) {for (vector<T>& v : vv) {os << v;} return os;}
-inline bool bit(ll x, int p) {return (x >> p) & 1;}
-inline bool out(int ni, int nj, int h, int w) {return (ni < 0 or ni >= h or nj < 0 or nj >= w);}
-inline int pc(ll x) {return __builtin_popcountll(x);}
 template <class T> inline T max(vector<T> x) {return *max_element(x.begin(), x.end());}
 template <class T> inline T min(vector<T> x) {return *min_element(x.begin(), x.end());}
 template <class T> inline T sum(vector<T> x) {return reduce(x.begin(), x.end());}
+template <class... T> constexpr auto min(T... a) {return min(initializer_list<common_type_t<T...>>{a...});}
+template <class... T> constexpr auto max(T... a) {return max(initializer_list<common_type_t<T...>>{a...});}
+inline bool bit(ll x, int p) {return (x >> p) & 1;}
+inline bool out(int ni, int nj, int h, int w) {return (ni < 0 or ni >= h or nj < 0 or nj >= w);}
+inline int pc(ll x) {return __builtin_popcountll(x);}
+void Yes() {cout << "Yes" << endl;}
+void No() {cout << "No" << endl;}
