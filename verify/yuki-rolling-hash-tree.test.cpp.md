@@ -26,30 +26,31 @@ data:
     \ i = (int)(a); i < (int)(b); i++)\n#define rep3(i, a, b, c) for (int i = (int)(a);\
     \ i < (int)(b); i += (int)(c))\n#define overloadRep(a, b, c, d, e, ...) e\n#define\
     \ rep(...) overloadRep(__VA_ARGS__, rep3, rep2, rep1)(__VA_ARGS__)\n#define all(a)\
-    \ a.begin(), a.end()\n#define rall(a) a.rbegin(), a.rend()\nusing ll = long long;\n\
-    using ull = unsigned long long;\nconst int inf = 1e9;\nconst ll INF = 1e18;\n\
-    const int dx[4] = {0, 1, 0, -1};\nconst int dy[4] = {1, 0, -1, 0};\nconst int\
-    \ ddx[8] = {1, 0, -1, 0, 1, -1, 1, -1};\nconst int ddy[8] = {0, 1, 0, -1, 1, -1,\
-    \ -1, 1};\nstruct cincout {cincout() {ios_base::sync_with_stdio(false); cin.tie(nullptr);\
-    \ cout << fixed << setprecision(15);}} init;\ntemplate <class T> inline bool chmax(T&\
-    \ a, T b) {if (a < b) {a = b; return true;} return false;}\ntemplate <class T>\
-    \ inline bool chmin(T& a, T b) {if (a > b) {a = b; return true;} return false;}\n\
-    template <class T1, class T2> istream& operator>>(istream& is, pair<T1, T2>& p)\
-    \ {is >> p.first >> p.second; return is;}\ntemplate <class T1, class T2> ostream&\
-    \ operator<<(ostream& os, const pair<T1, T2>& p) {os << p.first << \" \" << p.second\
-    \ << '\\n'; return os;}\ntemplate <class T> istream& operator>>(istream& is, vector<T>&\
-    \ v) {for (T& in : v) {is >> in;} return is;}\ntemplate <class T> ostream& operator<<(ostream&\
-    \ os, const vector<T>& v) {rep(i, (int)v.size()) {os << v[i] << \" \\n\"[i + 1\
-    \ == (int)v.size()];} return os;}\ntemplate <class T> istream& operator>>(istream&\
-    \ is, vector<vector<T>>& vv) {for (vector<T>& v : vv) {is >> v;} return is;}\n\
-    template <class T> ostream& operator<<(ostream& os, vector<vector<T>>& vv) {for\
-    \ (vector<T>& v : vv) {os << v;} return os;}\ninline bool bit(ll x, int p) {return\
-    \ (x >> p) & 1;}\ninline bool out(int ni, int nj, int h, int w) {return (ni <\
-    \ 0 or ni >= h or nj < 0 or nj >= w);}\ninline int pc(ll x) {return __builtin_popcountll(x);}\n\
-    template <class T> inline T max(vector<T> x) {return *max_element(x.begin(), x.end());}\n\
-    template <class T> inline T min(vector<T> x) {return *min_element(x.begin(), x.end());}\n\
-    template <class T> inline T sum(vector<T> x) {return reduce(x.begin(), x.end());}\n\
-    #line 6 \"verify/yuki-rolling-hash-tree.test.cpp\"\n\n#line 1 \"string/rolling-hash-tree.hpp\"\
+    \ a.begin(), a.end()\n#define rall(a) a.rbegin(), a.rend()\n#define endl '\\n'\n\
+    using ll = long long;\nusing ull = unsigned long long;\nconst int inf = 1e9;\n\
+    const ll INF = 1e18;\nconst int dx[4] = {0, 1, 0, -1};\nconst int dy[4] = {1,\
+    \ 0, -1, 0};\nconst int ddx[8] = {1, 0, -1, 0, 1, -1, 1, -1};\nconst int ddy[8]\
+    \ = {0, 1, 0, -1, 1, -1, -1, 1};\nstruct cincout {cincout() {ios_base::sync_with_stdio(false);\
+    \ cin.tie(nullptr); cout << fixed << setprecision(15);}} init;\ntemplate <class\
+    \ T> inline bool chmax(T& a, T b) {if (a < b) {a = b; return true;} return false;}\n\
+    template <class T> inline bool chmin(T& a, T b) {if (a > b) {a = b; return true;}\
+    \ return false;}\ntemplate <class T1, class T2> istream& operator>>(istream& is,\
+    \ pair<T1, T2>& p) {is >> p.first >> p.second; return is;}\ntemplate <class T1,\
+    \ class T2> ostream& operator<<(ostream& os, const pair<T1, T2>& p) {os << p.first\
+    \ << \" \" << p.second << '\\n'; return os;}\ntemplate <class T> istream& operator>>(istream&\
+    \ is, vector<T>& v) {for (T& in : v) {is >> in;} return is;}\ntemplate <class\
+    \ T> ostream& operator<<(ostream& os, const vector<T>& v) {rep(i, (int)v.size())\
+    \ {os << v[i] << \" \\n\"[i + 1 == (int)v.size()];} return os;}\ntemplate <class\
+    \ T> istream& operator>>(istream& is, vector<vector<T>>& vv) {for (vector<T>&\
+    \ v : vv) {is >> v;} return is;}\ntemplate <class T> ostream& operator<<(ostream&\
+    \ os, vector<vector<T>>& vv) {for (vector<T>& v : vv) {os << v;} return os;}\n\
+    inline bool bit(ll x, int p) {return (x >> p) & 1;}\ninline bool out(int ni, int\
+    \ nj, int h, int w) {return (ni < 0 or ni >= h or nj < 0 or nj >= w);}\ninline\
+    \ int pc(ll x) {return __builtin_popcountll(x);}\ntemplate <class T> inline T\
+    \ max(vector<T> x) {return *max_element(x.begin(), x.end());}\ntemplate <class\
+    \ T> inline T min(vector<T> x) {return *min_element(x.begin(), x.end());}\ntemplate\
+    \ <class T> inline T sum(vector<T> x) {return reduce(x.begin(), x.end());}\n#line\
+    \ 6 \"verify/yuki-rolling-hash-tree.test.cpp\"\n\n#line 1 \"string/rolling-hash-tree.hpp\"\
     \n#include <atcoder/segtree>\n\nmt19937_64 r(time(0));\nstatic const int mod1\
     \ = 1000000007, mod2 = 1000000009;\nusing mint1 = static_modint<mod1>;\nusing\
     \ mint2 = static_modint<mod2>;\nstatic const int base1 = r() % (mod1 - 4) + 2,\
@@ -109,7 +110,7 @@ data:
   isVerificationFile: true
   path: verify/yuki-rolling-hash-tree.test.cpp
   requiredBy: []
-  timestamp: '2024-08-07 15:54:27+09:00'
+  timestamp: '2024-09-12 13:58:36+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yuki-rolling-hash-tree.test.cpp

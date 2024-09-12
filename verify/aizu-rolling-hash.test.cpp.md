@@ -26,11 +26,11 @@ data:
     \ (int i = (int)(a); i < (int)(b); i++)\n#define rep3(i, a, b, c) for (int i =\
     \ (int)(a); i < (int)(b); i += (int)(c))\n#define overloadRep(a, b, c, d, e, ...)\
     \ e\n#define rep(...) overloadRep(__VA_ARGS__, rep3, rep2, rep1)(__VA_ARGS__)\n\
-    #define all(a) a.begin(), a.end()\n#define rall(a) a.rbegin(), a.rend()\nusing\
-    \ ll = long long;\nusing ull = unsigned long long;\nconst int inf = 1e9;\nconst\
-    \ ll INF = 1e18;\nconst int dx[4] = {0, 1, 0, -1};\nconst int dy[4] = {1, 0, -1,\
-    \ 0};\nconst int ddx[8] = {1, 0, -1, 0, 1, -1, 1, -1};\nconst int ddy[8] = {0,\
-    \ 1, 0, -1, 1, -1, -1, 1};\nstruct cincout {cincout() {ios_base::sync_with_stdio(false);\
+    #define all(a) a.begin(), a.end()\n#define rall(a) a.rbegin(), a.rend()\n#define\
+    \ endl '\\n'\nusing ll = long long;\nusing ull = unsigned long long;\nconst int\
+    \ inf = 1e9;\nconst ll INF = 1e18;\nconst int dx[4] = {0, 1, 0, -1};\nconst int\
+    \ dy[4] = {1, 0, -1, 0};\nconst int ddx[8] = {1, 0, -1, 0, 1, -1, 1, -1};\nconst\
+    \ int ddy[8] = {0, 1, 0, -1, 1, -1, -1, 1};\nstruct cincout {cincout() {ios_base::sync_with_stdio(false);\
     \ cin.tie(nullptr); cout << fixed << setprecision(15);}} init;\ntemplate <class\
     \ T> inline bool chmax(T& a, T b) {if (a < b) {a = b; return true;} return false;}\n\
     template <class T> inline bool chmin(T& a, T b) {if (a > b) {a = b; return true;}\
@@ -92,7 +92,7 @@ data:
   isVerificationFile: true
   path: verify/aizu-rolling-hash.test.cpp
   requiredBy: []
-  timestamp: '2024-08-07 15:54:27+09:00'
+  timestamp: '2024-09-12 13:58:36+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aizu-rolling-hash.test.cpp

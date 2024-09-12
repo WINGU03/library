@@ -88,6 +88,8 @@ data:
 
     #define rall(a) a.rbegin(), a.rend()
 
+    #define endl ''\n''
+
     using ll = long long;
 
     using ull = unsigned long long;
@@ -181,6 +183,8 @@ data:
 
     #define rall(a) a.rbegin(), a.rend()
 
+    #define endl ''\n''
+
     using ll = long long;
 
     using ull = unsigned long long;
@@ -240,7 +244,7 @@ data:
   isVerificationFile: false
   path: template.hpp
   requiredBy: []
-  timestamp: '2024-08-07 15:54:27+09:00'
+  timestamp: '2024-09-12 13:58:36+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/aizu-next-combination.test.cpp
