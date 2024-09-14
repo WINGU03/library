@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: string/rolling-hash.hpp
     title: Rolling Hash
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
@@ -56,7 +56,7 @@ data:
     \ nj, int h, int w) {return (ni < 0 or ni >= h or nj < 0 or nj >= w);}\ninline\
     \ int pc(ll x) {return __builtin_popcountll(x);}\nvoid Yes(bool judge = true)\
     \ {cout << (judge ? \"Yes\" : \"No\") << endl;}\nvoid No(bool judge = true) {cout\
-    \ << (judge ? \"Yes\" : \"No\") << endl;}\n#line 1 \"string/rolling-hash.hpp\"\
+    \ << (judge ? \"No\" : \"Yes\") << endl;}\n#line 1 \"string/rolling-hash.hpp\"\
     \nmt19937_64 r(time(0));\nstatic constexpr ll mod = (1LL << 61) - 1;\nstatic const\
     \ ll base = r() % (mod - 4) + 2;\n\nstruct RollingHash {\n    using i128 = __int128_t;\n\
     \    vector<ll> hash, power;\n    int n;\n    string s;\n\n    inline ll add(ll\
@@ -98,7 +98,7 @@ data:
   isVerificationFile: true
   path: verify/aizu-rolling-hash.test.cpp
   requiredBy: []
-  timestamp: '2024-09-14 14:26:12+09:00'
+  timestamp: '2024-09-14 18:40:33+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aizu-rolling-hash.test.cpp

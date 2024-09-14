@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/dynamic-bfs.hpp
     title: "\u52D5\u7684BFS"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
@@ -55,7 +55,7 @@ data:
     \ nj, int h, int w) {return (ni < 0 or ni >= h or nj < 0 or nj >= w);}\ninline\
     \ int pc(ll x) {return __builtin_popcountll(x);}\nvoid Yes(bool judge = true)\
     \ {cout << (judge ? \"Yes\" : \"No\") << endl;}\nvoid No(bool judge = true) {cout\
-    \ << (judge ? \"Yes\" : \"No\") << endl;}\n#line 1 \"graph/dynamic-bfs.hpp\"\n\
+    \ << (judge ? \"No\" : \"Yes\") << endl;}\n#line 1 \"graph/dynamic-bfs.hpp\"\n\
     template <class T, class f>\nint dynamic_bfs(T& s, f& nxt, T& g) {\n    if (s\
     \ == g) return 0;\n    map<T, int> dist;\n    queue<T> q;\n    dist[s] = 0;\n\
     \    q.push(s);\n    while (!q.empty()) {\n        auto v = q.front();\n     \
@@ -89,7 +89,7 @@ data:
   isVerificationFile: true
   path: verify/aizu-dynamic-bfs.test.cpp
   requiredBy: []
-  timestamp: '2024-09-14 14:26:12+09:00'
+  timestamp: '2024-09-14 18:40:33+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aizu-dynamic-bfs.test.cpp

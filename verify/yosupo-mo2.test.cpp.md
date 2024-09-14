@@ -7,7 +7,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: misc/mo.hpp
     title: "Mo\u2019s algorithm"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
@@ -58,7 +58,7 @@ data:
     \ nj, int h, int w) {return (ni < 0 or ni >= h or nj < 0 or nj >= w);}\ninline\
     \ int pc(ll x) {return __builtin_popcountll(x);}\nvoid Yes(bool judge = true)\
     \ {cout << (judge ? \"Yes\" : \"No\") << endl;}\nvoid No(bool judge = true) {cout\
-    \ << (judge ? \"Yes\" : \"No\") << endl;}\n#line 1 \"misc/cc.hpp\"\ntemplate <typename\
+    \ << (judge ? \"No\" : \"Yes\") << endl;}\n#line 1 \"misc/cc.hpp\"\ntemplate <typename\
     \ T = int>\nstruct CC {\n    bool initialized;\n    vector<T> xs;\n    unordered_map<T,\
     \ int> mp;\n    CC() : initialized(false) {}\n    void add(T x) {\n        xs.push_back(x);\n\
     \    }\n    void init() {\n        sort(xs.begin(), xs.end());\n        xs.erase(unique(xs.begin(),\
@@ -121,7 +121,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo-mo2.test.cpp
   requiredBy: []
-  timestamp: '2024-09-14 14:26:12+09:00'
+  timestamp: '2024-09-14 18:40:33+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo-mo2.test.cpp

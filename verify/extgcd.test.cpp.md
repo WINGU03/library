@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/extgcd.hpp
     title: "\u62E1\u5F35\u30E6\u30FC\u30AF\u30EA\u30C3\u30C9\u306E\u4E92\u9664\u6CD5"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
@@ -55,7 +55,7 @@ data:
     \ nj, int h, int w) {return (ni < 0 or ni >= h or nj < 0 or nj >= w);}\ninline\
     \ int pc(ll x) {return __builtin_popcountll(x);}\nvoid Yes(bool judge = true)\
     \ {cout << (judge ? \"Yes\" : \"No\") << endl;}\nvoid No(bool judge = true) {cout\
-    \ << (judge ? \"Yes\" : \"No\") << endl;}\n#line 1 \"math/extgcd.hpp\"\nll extgcd(ll\
+    \ << (judge ? \"No\" : \"Yes\") << endl;}\n#line 1 \"math/extgcd.hpp\"\nll extgcd(ll\
     \ a, ll b, ll &x, ll &y) {\n    if (b == 0) {\n        x = 1;\n        y = 0;\n\
     \        return a;\n    }\n    ll d = extgcd(b, a % b, y, x);\n    y -= a / b\
     \ * x;\n    return d;\n}\n#line 6 \"verify/extgcd.test.cpp\"\n\nint main() {\n\
@@ -71,7 +71,7 @@ data:
   isVerificationFile: true
   path: verify/extgcd.test.cpp
   requiredBy: []
-  timestamp: '2024-09-14 14:26:12+09:00'
+  timestamp: '2024-09-14 18:40:33+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/extgcd.test.cpp

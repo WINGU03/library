@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: misc/next-combination.hpp
     title: Next combination
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
@@ -56,7 +56,7 @@ data:
     \ nj, int h, int w) {return (ni < 0 or ni >= h or nj < 0 or nj >= w);}\ninline\
     \ int pc(ll x) {return __builtin_popcountll(x);}\nvoid Yes(bool judge = true)\
     \ {cout << (judge ? \"Yes\" : \"No\") << endl;}\nvoid No(bool judge = true) {cout\
-    \ << (judge ? \"Yes\" : \"No\") << endl;}\n#line 1 \"misc/next-combination.hpp\"\
+    \ << (judge ? \"No\" : \"Yes\") << endl;}\n#line 1 \"misc/next-combination.hpp\"\
     \ntemplate <typename T>\nbool next_combination(const T first, const T last, int\
     \ k) {\n    const T subset = first + k;\n    if (first == last || first == subset\
     \ || last == subset) {\n        return false;\n    }\n    T src = subset;\n  \
@@ -84,7 +84,7 @@ data:
   isVerificationFile: true
   path: verify/aizu-next-combination.test.cpp
   requiredBy: []
-  timestamp: '2024-09-14 14:26:12+09:00'
+  timestamp: '2024-09-14 18:40:33+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aizu-next-combination.test.cpp

@@ -9,7 +9,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/aizu-dynamic-bfs.test.cpp
     title: verify/aizu-dynamic-bfs.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/aizu-eratosthenes.test.cpp
     title: verify/aizu-eratosthenes.test.cpp
   - icon: ':heavy_check_mark:'
@@ -45,9 +45,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yuki-rolling-hash-tree.test.cpp
     title: verify/yuki-rolling-hash-tree.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: '#line 1 "template.hpp"
@@ -160,7 +160,7 @@ data:
 
     void Yes(bool judge = true) {cout << (judge ? "Yes" : "No") << endl;}
 
-    void No(bool judge = true) {cout << (judge ? "Yes" : "No") << endl;}
+    void No(bool judge = true) {cout << (judge ? "No" : "Yes") << endl;}
 
     '
   code: '#include <bits/stdc++.h>
@@ -271,13 +271,13 @@ data:
 
     void Yes(bool judge = true) {cout << (judge ? "Yes" : "No") << endl;}
 
-    void No(bool judge = true) {cout << (judge ? "Yes" : "No") << endl;}'
+    void No(bool judge = true) {cout << (judge ? "No" : "Yes") << endl;}'
   dependsOn: []
   isVerificationFile: false
   path: template.hpp
   requiredBy: []
-  timestamp: '2024-09-14 14:26:12+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  timestamp: '2024-09-14 18:40:33+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/aizu-next-combination.test.cpp
   - verify/enum-divisor.test.cpp

@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/rerooting.hpp
     title: "\u5168\u65B9\u4F4D\u6728DP"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
@@ -55,7 +55,7 @@ data:
     \ nj, int h, int w) {return (ni < 0 or ni >= h or nj < 0 or nj >= w);}\ninline\
     \ int pc(ll x) {return __builtin_popcountll(x);}\nvoid Yes(bool judge = true)\
     \ {cout << (judge ? \"Yes\" : \"No\") << endl;}\nvoid No(bool judge = true) {cout\
-    \ << (judge ? \"Yes\" : \"No\") << endl;}\n#line 1 \"graph/rerooting.hpp\"\ntemplate\
+    \ << (judge ? \"No\" : \"Yes\") << endl;}\n#line 1 \"graph/rerooting.hpp\"\ntemplate\
     \ <typename Cost>\nstruct Edge {\n    int src, to;\n    Cost cost;\n    Edge(int\
     \ s, int t, Cost c = 1) : src(s), to(t), cost(c) {}\n    // \u30C7\u30D5\u30A9\
     \u30EB\u30C8\u3067\u306F\u884C\u304D\u5148\u3092\u8FD4\u3059\n    operator int()\
@@ -114,7 +114,7 @@ data:
   isVerificationFile: true
   path: verify/rerooting.test.cpp
   requiredBy: []
-  timestamp: '2024-09-14 14:26:12+09:00'
+  timestamp: '2024-09-14 18:40:33+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/rerooting.test.cpp

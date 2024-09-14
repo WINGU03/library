@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/enum-divisor.hpp
     title: "\u7D04\u6570\u5217\u6319"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
@@ -55,7 +55,7 @@ data:
     \ nj, int h, int w) {return (ni < 0 or ni >= h or nj < 0 or nj >= w);}\ninline\
     \ int pc(ll x) {return __builtin_popcountll(x);}\nvoid Yes(bool judge = true)\
     \ {cout << (judge ? \"Yes\" : \"No\") << endl;}\nvoid No(bool judge = true) {cout\
-    \ << (judge ? \"Yes\" : \"No\") << endl;}\n#line 1 \"math/enum-divisor.hpp\"\n\
+    \ << (judge ? \"No\" : \"Yes\") << endl;}\n#line 1 \"math/enum-divisor.hpp\"\n\
     vector<ll> enum_divisor(ll n) {\n    vector<ll> res;\n    for (int i = 1; (ll)i\
     \ * i <= n; i++) {\n        if (n % i == 0) {\n            res.push_back(i);\n\
     \            ll j = n / i;\n            if (j != i) res.push_back(j);\n      \
@@ -75,7 +75,7 @@ data:
   isVerificationFile: true
   path: verify/enum-divisor.test.cpp
   requiredBy: []
-  timestamp: '2024-09-14 14:26:12+09:00'
+  timestamp: '2024-09-14 18:40:33+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/enum-divisor.test.cpp

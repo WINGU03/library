@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: misc/compile-option.hpp
     title: "\u30B3\u30F3\u30D1\u30A4\u30EB\u30AA\u30D7\u30B7\u30E7\u30F3"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
@@ -55,7 +55,7 @@ data:
     \ nj, int h, int w) {return (ni < 0 or ni >= h or nj < 0 or nj >= w);}\ninline\
     \ int pc(ll x) {return __builtin_popcountll(x);}\nvoid Yes(bool judge = true)\
     \ {cout << (judge ? \"Yes\" : \"No\") << endl;}\nvoid No(bool judge = true) {cout\
-    \ << (judge ? \"Yes\" : \"No\") << endl;}\n#line 1 \"misc/compile-option.hpp\"\
+    \ << (judge ? \"No\" : \"Yes\") << endl;}\n#line 1 \"misc/compile-option.hpp\"\
     \n#pragma GCC target(\"avx2\")\n#pragma GCC optimize(\"O3\")\n#pragma GCC optimize(\"\
     unroll-loops\")\n#line 6 \"verify/compile-option.test.cpp\"\n\nint main(){\n \
     \   int t;\n    cin >> t;\n    while(t--){\n        ll a, b;\n        cin >> a\
@@ -71,7 +71,7 @@ data:
   isVerificationFile: true
   path: verify/compile-option.test.cpp
   requiredBy: []
-  timestamp: '2024-09-14 14:26:12+09:00'
+  timestamp: '2024-09-14 18:40:33+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/compile-option.test.cpp

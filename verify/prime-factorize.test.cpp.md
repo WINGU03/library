@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/prime-factorize.hpp
     title: "\u7D20\u56E0\u6570\u5206\u89E3"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
@@ -55,7 +55,7 @@ data:
     \ nj, int h, int w) {return (ni < 0 or ni >= h or nj < 0 or nj >= w);}\ninline\
     \ int pc(ll x) {return __builtin_popcountll(x);}\nvoid Yes(bool judge = true)\
     \ {cout << (judge ? \"Yes\" : \"No\") << endl;}\nvoid No(bool judge = true) {cout\
-    \ << (judge ? \"Yes\" : \"No\") << endl;}\n#line 1 \"math/prime-factorize.hpp\"\
+    \ << (judge ? \"No\" : \"Yes\") << endl;}\n#line 1 \"math/prime-factorize.hpp\"\
     \nvector<pair<ll, ll>> prime_factorize(ll n) {\n    vector<pair<ll, ll>> res;\n\
     \    for (int p = 2; (ll)p * p <= n; p++) {\n        if (n % p != 0) continue;\n\
     \        int num = 0;\n        while (n % p == 0) {\n            num++;\n    \
@@ -76,7 +76,7 @@ data:
   isVerificationFile: true
   path: verify/prime-factorize.test.cpp
   requiredBy: []
-  timestamp: '2024-09-14 14:26:12+09:00'
+  timestamp: '2024-09-14 18:40:33+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/prime-factorize.test.cpp

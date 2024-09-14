@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/eratosthenes.hpp
     title: "\u30A8\u30E9\u30C8\u30B9\u30C6\u30CD\u30B9\u306E\u7BE9"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://onlinejudge.u-aizu.ac.jp/problems/ALDS1_1_C
@@ -56,7 +56,7 @@ data:
     \ nj, int h, int w) {return (ni < 0 or ni >= h or nj < 0 or nj >= w);}\ninline\
     \ int pc(ll x) {return __builtin_popcountll(x);}\nvoid Yes(bool judge = true)\
     \ {cout << (judge ? \"Yes\" : \"No\") << endl;}\nvoid No(bool judge = true) {cout\
-    \ << (judge ? \"Yes\" : \"No\") << endl;}\n#line 1 \"math/eratosthenes.hpp\"\n\
+    \ << (judge ? \"No\" : \"Yes\") << endl;}\n#line 1 \"math/eratosthenes.hpp\"\n\
     vector<bool> sieve(int N) {\n    vector<bool> isprime(N + 1, true);\n    isprime[0]\
     \ = false;\n    isprime[1] = false;\n    for (int i = 2; i * i <= N; i++) {\n\
     \        if (isprime[i] == false) continue;\n        for (int j = i * 2; j <=\
@@ -77,8 +77,8 @@ data:
   isVerificationFile: true
   path: verify/aizu-eratosthenes.test.cpp
   requiredBy: []
-  timestamp: '2024-09-14 14:26:12+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-09-14 18:40:33+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aizu-eratosthenes.test.cpp
 layout: document

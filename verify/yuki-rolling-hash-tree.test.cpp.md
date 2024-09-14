@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: string/rolling-hash-tree.hpp
     title: Rolling Hash Tree
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
@@ -56,7 +56,7 @@ data:
     \ nj, int h, int w) {return (ni < 0 or ni >= h or nj < 0 or nj >= w);}\ninline\
     \ int pc(ll x) {return __builtin_popcountll(x);}\nvoid Yes(bool judge = true)\
     \ {cout << (judge ? \"Yes\" : \"No\") << endl;}\nvoid No(bool judge = true) {cout\
-    \ << (judge ? \"Yes\" : \"No\") << endl;}\n#line 6 \"verify/yuki-rolling-hash-tree.test.cpp\"\
+    \ << (judge ? \"No\" : \"Yes\") << endl;}\n#line 6 \"verify/yuki-rolling-hash-tree.test.cpp\"\
     \n\n#line 1 \"string/rolling-hash-tree.hpp\"\n#include <atcoder/segtree>\n\nmt19937_64\
     \ r(time(0));\nstatic const int mod1 = 1000000007, mod2 = 1000000009;\nusing mint1\
     \ = static_modint<mod1>;\nusing mint2 = static_modint<mod2>;\nstatic const int\
@@ -117,7 +117,7 @@ data:
   isVerificationFile: true
   path: verify/yuki-rolling-hash-tree.test.cpp
   requiredBy: []
-  timestamp: '2024-09-14 14:26:12+09:00'
+  timestamp: '2024-09-14 18:40:33+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yuki-rolling-hash-tree.test.cpp
