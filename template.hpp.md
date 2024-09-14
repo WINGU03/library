@@ -9,7 +9,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/aizu-dynamic-bfs.test.cpp
     title: verify/aizu-dynamic-bfs.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/aizu-eratosthenes.test.cpp
     title: verify/aizu-eratosthenes.test.cpp
   - icon: ':heavy_check_mark:'
@@ -45,9 +45,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yuki-rolling-hash-tree.test.cpp
     title: verify/yuki-rolling-hash-tree.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: '#line 1 "template.hpp"
@@ -74,21 +74,27 @@ data:
 
     #endif
 
-    #define rep1(i, a) for (int i = 0; i < a; i++)
+    #define rep1(a) for (int i = 0; i < a; i++)
 
-    #define rep2(i, a, b) for (int i = a; i < b; i++)
+    #define rep2(i, a) for (int i = 0; i < a; i++)
 
-    #define rep3(i, a, b, c) for (int i = a; i < b; i += c)
+    #define rep3(i, a, b) for (int i = a; i < b; i++)
+
+    #define rep4(i, a, b, c) for (int i = a; i < b; i += c)
 
     #define overloadRep(a, b, c, d, e, ...) e
 
-    #define rep(...) overloadRep(__VA_ARGS__, rep3, rep2, rep1)(__VA_ARGS__)
+    #define rep(...) overloadRep(__VA_ARGS__, rep4, rep3, rep2, rep1)(__VA_ARGS__)
 
     #define all(a) a.begin(), a.end()
 
     #define rall(a) a.rbegin(), a.rend()
 
     #define endl ''\n''
+
+    #define INT(...) int __VA_ARGS__; input(__VA_ARGS__)
+
+    #define LL(...) ll __VA_ARGS__; input(__VA_ARGS__)
 
     using ll = long long;
 
@@ -108,6 +114,8 @@ data:
 
     struct cincout {cincout() {ios_base::sync_with_stdio(false); cin.tie(nullptr);
     cout << fixed << setprecision(15);}} init;
+
+    template <class... T> void input(T&... a) {(cin >> ... >> a);}
 
     template <class T> inline bool chmax(T& a, T b) {if (a < b) {a = b; return true;}
     return false;}
@@ -150,9 +158,9 @@ data:
 
     inline int pc(ll x) {return __builtin_popcountll(x);}
 
-    void Yes() {cout << "Yes" << endl;}
+    void Yes(bool judge = true) {cout << (judge ? "Yes" : "No") << endl;}
 
-    void No() {cout << "No" << endl;}
+    void No(bool judge = true) {cout << (judge ? "Yes" : "No") << endl;}
 
     '
   code: '#include <bits/stdc++.h>
@@ -177,21 +185,27 @@ data:
 
     #endif
 
-    #define rep1(i, a) for (int i = 0; i < a; i++)
+    #define rep1(a) for (int i = 0; i < a; i++)
 
-    #define rep2(i, a, b) for (int i = a; i < b; i++)
+    #define rep2(i, a) for (int i = 0; i < a; i++)
 
-    #define rep3(i, a, b, c) for (int i = a; i < b; i += c)
+    #define rep3(i, a, b) for (int i = a; i < b; i++)
+
+    #define rep4(i, a, b, c) for (int i = a; i < b; i += c)
 
     #define overloadRep(a, b, c, d, e, ...) e
 
-    #define rep(...) overloadRep(__VA_ARGS__, rep3, rep2, rep1)(__VA_ARGS__)
+    #define rep(...) overloadRep(__VA_ARGS__, rep4, rep3, rep2, rep1)(__VA_ARGS__)
 
     #define all(a) a.begin(), a.end()
 
     #define rall(a) a.rbegin(), a.rend()
 
     #define endl ''\n''
+
+    #define INT(...) int __VA_ARGS__; input(__VA_ARGS__)
+
+    #define LL(...) ll __VA_ARGS__; input(__VA_ARGS__)
 
     using ll = long long;
 
@@ -211,6 +225,8 @@ data:
 
     struct cincout {cincout() {ios_base::sync_with_stdio(false); cin.tie(nullptr);
     cout << fixed << setprecision(15);}} init;
+
+    template <class... T> void input(T&... a) {(cin >> ... >> a);}
 
     template <class T> inline bool chmax(T& a, T b) {if (a < b) {a = b; return true;}
     return false;}
@@ -253,15 +269,15 @@ data:
 
     inline int pc(ll x) {return __builtin_popcountll(x);}
 
-    void Yes() {cout << "Yes" << endl;}
+    void Yes(bool judge = true) {cout << (judge ? "Yes" : "No") << endl;}
 
-    void No() {cout << "No" << endl;}'
+    void No(bool judge = true) {cout << (judge ? "Yes" : "No") << endl;}'
   dependsOn: []
   isVerificationFile: false
   path: template.hpp
   requiredBy: []
-  timestamp: '2024-09-12 16:44:49+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2024-09-14 14:26:12+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/aizu-next-combination.test.cpp
   - verify/enum-divisor.test.cpp

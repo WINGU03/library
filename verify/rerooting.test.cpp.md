@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/rerooting.hpp
     title: "\u5168\u65B9\u4F4D\u6728DP"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
@@ -21,22 +21,25 @@ data:
     \n\n#include <bits/stdc++.h>\n#line 2 \"template.hpp\"\nusing namespace std;\n\
     #include <atcoder/modint>\nusing namespace atcoder;\n#ifdef DEFINED_ONLY_IN_LOCAL\n\
     #include <dump.hpp>\n#define dump(...) cpp_dump(__VA_ARGS__)\n#else\n#undef dump\n\
-    #define dump(...)\n#endif\n#define rep1(i, a) for (int i = 0; i < a; i++)\n#define\
-    \ rep2(i, a, b) for (int i = a; i < b; i++)\n#define rep3(i, a, b, c) for (int\
-    \ i = a; i < b; i += c)\n#define overloadRep(a, b, c, d, e, ...) e\n#define rep(...)\
-    \ overloadRep(__VA_ARGS__, rep3, rep2, rep1)(__VA_ARGS__)\n#define all(a) a.begin(),\
-    \ a.end()\n#define rall(a) a.rbegin(), a.rend()\n#define endl '\\n'\nusing ll\
-    \ = long long;\nusing ull = unsigned long long;\nconst int inf = 1e9;\nconst ll\
-    \ INF = 1e18;\nconst int dx[4] = {0, 1, 0, -1};\nconst int dy[4] = {1, 0, -1,\
+    #define dump(...)\n#endif\n#define rep1(a) for (int i = 0; i < a; i++)\n#define\
+    \ rep2(i, a) for (int i = 0; i < a; i++)\n#define rep3(i, a, b) for (int i = a;\
+    \ i < b; i++)\n#define rep4(i, a, b, c) for (int i = a; i < b; i += c)\n#define\
+    \ overloadRep(a, b, c, d, e, ...) e\n#define rep(...) overloadRep(__VA_ARGS__,\
+    \ rep4, rep3, rep2, rep1)(__VA_ARGS__)\n#define all(a) a.begin(), a.end()\n#define\
+    \ rall(a) a.rbegin(), a.rend()\n#define endl '\\n'\n#define INT(...) int __VA_ARGS__;\
+    \ input(__VA_ARGS__)\n#define LL(...) ll __VA_ARGS__; input(__VA_ARGS__)\nusing\
+    \ ll = long long;\nusing ull = unsigned long long;\nconst int inf = 1e9;\nconst\
+    \ ll INF = 1e18;\nconst int dx[4] = {0, 1, 0, -1};\nconst int dy[4] = {1, 0, -1,\
     \ 0};\nconst int ddx[8] = {1, 0, -1, 0, 1, -1, 1, -1};\nconst int ddy[8] = {0,\
     \ 1, 0, -1, 1, -1, -1, 1};\nstruct cincout {cincout() {ios_base::sync_with_stdio(false);\
-    \ cin.tie(nullptr); cout << fixed << setprecision(15);}} init;\ntemplate <class\
-    \ T> inline bool chmax(T& a, T b) {if (a < b) {a = b; return true;} return false;}\n\
-    template <class T> inline bool chmin(T& a, T b) {if (a > b) {a = b; return true;}\
-    \ return false;}\ntemplate <class T1, class T2> istream& operator>>(istream& is,\
-    \ pair<T1, T2>& p) {is >> p.first >> p.second; return is;}\ntemplate <class T1,\
-    \ class T2> ostream& operator<<(ostream& os, const pair<T1, T2>& p) {os << p.first\
-    \ << \" \" << p.second << '\\n'; return os;}\ntemplate <class T> istream& operator>>(istream&\
+    \ cin.tie(nullptr); cout << fixed << setprecision(15);}} init;\ntemplate <class...\
+    \ T> void input(T&... a) {(cin >> ... >> a);}\ntemplate <class T> inline bool\
+    \ chmax(T& a, T b) {if (a < b) {a = b; return true;} return false;}\ntemplate\
+    \ <class T> inline bool chmin(T& a, T b) {if (a > b) {a = b; return true;} return\
+    \ false;}\ntemplate <class T1, class T2> istream& operator>>(istream& is, pair<T1,\
+    \ T2>& p) {is >> p.first >> p.second; return is;}\ntemplate <class T1, class T2>\
+    \ ostream& operator<<(ostream& os, const pair<T1, T2>& p) {os << p.first << \"\
+    \ \" << p.second << '\\n'; return os;}\ntemplate <class T> istream& operator>>(istream&\
     \ is, vector<T>& v) {for (T& in : v) {is >> in;} return is;}\ntemplate <class\
     \ T> ostream& operator<<(ostream& os, const vector<T>& v) {rep(i, (int)v.size())\
     \ {os << v[i] << \" \\n\"[i + 1 == (int)v.size()];} return os;}\ntemplate <class\
@@ -50,51 +53,52 @@ data:
     template <class... T> constexpr auto max(T... a) {return max(initializer_list<common_type_t<T...>>{a...});}\n\
     inline bool bit(ll x, int p) {return (x >> p) & 1;}\ninline bool out(int ni, int\
     \ nj, int h, int w) {return (ni < 0 or ni >= h or nj < 0 or nj >= w);}\ninline\
-    \ int pc(ll x) {return __builtin_popcountll(x);}\nvoid Yes() {cout << \"Yes\"\
-    \ << endl;}\nvoid No() {cout << \"No\" << endl;}\n#line 1 \"graph/rerooting.hpp\"\
-    \ntemplate <typename Cost>\nstruct Edge {\n    int src, to;\n    Cost cost;\n\
-    \    Edge(int s, int t, Cost c = 1) : src(s), to(t), cost(c) {}\n    // \u30C7\
-    \u30D5\u30A9\u30EB\u30C8\u3067\u306F\u884C\u304D\u5148\u3092\u8FD4\u3059\n   \
-    \ operator int() const { return to; }\n};\n\ntemplate <typename Cost>\nstruct\
-    \ Graph : vector<vector<Edge<Cost>>> {\n    Graph(int n) : vector<vector<Edge<Cost>>>(n)\
-    \ {}\n    void add_edge(int s, int t, Cost c = 1) { (*this)[s].emplace_back(s,\
-    \ t, c); }\n};\n\ntemplate <\n    typename Cost,\n    typename Data,\n    Data\
-    \ (*merge)(Data, Data),\n    Data (*e)(),\n    Data (*leaf)(),\n    Data (*apply)(Data,\
-    \ int, int, Cost)>\nstruct Rerooting : Graph<Cost> {\n    // memo : 0\u3092\u6839\
-    \u3068\u3057\u305F\u3068\u304D\u306Ei\u306E\u90E8\u5206\u6728\u306E\u5024(i\u81EA\
-    \u8EAB\u306F\u542B\u307E\u308C\u306A\u3044)\n    vector<Data> dp, memo;\n\n  \
-    \  Rerooting(int n) : Graph<Cost>::Graph(n) {}\n\n    vector<Data> run() {\n \
-    \       memo.resize((*this).size(), e());\n        dp.resize((*this).size());\n\
-    \        dfs1(0, -1);\n        dfs2(0, -1, e());\n        return dp;\n    }\n\
-    \    // 0\u3092\u6839\u3068\u3057\u305F\u6728\u306E\u5168\u3066\u306E\u90E8\u5206\
-    \u6728\u306B\u3064\u3044\u3066\u5024\u3092\u6C42\u3081\u308B\n    void dfs1(int\
-    \ c, int p) {\n        bool upd = false;\n        for (Edge<Cost>& d : (*this)[c])\
-    \ {\n            if (d != p) {\n                dfs1(d, c);\n                upd\
-    \ = true;\n                memo[c] = merge(memo[c], apply(memo[d], d, c, d.cost));\n\
-    \            }\n        }\n        if (!upd) memo[c] = leaf();\n    }\n    //\
-    \ \u884C\u304D\u304C\u3051\u9806\u3067\u9802\u70B9\u306E\u5024\u3092\u78BA\u5B9A\
-    (val\u306B\u306F\u3001\u6839\u306E\u79FB\u52D5\u304C\u884C\u308F\u308C\u308B\u3068\
-    \u304D\u3001\u5143\u3005\u6839\u3060\u3063\u305F\u9802\u70B9\u306E\u5024\u304C\
-    \u683C\u7D0D\u3055\u308C\u308B)\n    void dfs2(int c, int p, const Data& val)\
-    \ {\n        vector<Data> ds{val};\n        for (Edge<Cost>& d : (*this)[c]) {\n\
-    \            if (d != p) {\n                ds.push_back(apply(memo[d], d, c,\
-    \ d.cost));\n            }\n        }\n        int n = ds.size(), idx = 1;\n \
-    \       // \u524D\u304B\u3089\u306E\u7D2F\u7A4D\u3068\u5F8C\u308D\u304B\u3089\u306E\
-    \u7D2F\u7A4D\n        vector<Data> head(n + 1, e()), tail(n + 1, e());\n     \
-    \   for (int i = 1; i <= n; i++) head[i] = merge(head[i - 1], ds[i - 1]);\n  \
-    \      for (int i = n - 1; i >= 0; i--) tail[i] = merge(tail[i + 1], ds[i]);\n\
-    \        // c\u306E\u5024\u306F\u5168\u3066\u306E\u5B50\u5B6B\u306B\u3064\u3044\
-    \u3066\u306E\u7D2F\u7A4D\n        dp[c] = head[n];\n\n        for (Edge<Cost>&\
-    \ d : (*this)[c]) {\n            if (d != p) {\n                Data sub = merge(head[idx],\
-    \ tail[idx + 1]);\n                dfs2(d, c, apply(sub, c, d, d.cost));\n   \
-    \             idx++;\n            }\n        }\n    }\n};\n#line 6 \"verify/rerooting.test.cpp\"\
-    \n\nint merge(int a, int b) {\n    return max(a, b);\n}\nint e() {\n    return\
-    \ 0;\n}\nint leaf() {\n    return 0;\n}\nint apply(int a, int c, int p, int w)\
-    \ {\n    return a + w;\n}\n\nint main() {\n    int n;\n    cin >> n;\n    Rerooting<int,\
-    \ int, merge, e, leaf, apply> g(n);\n    rep(i, n - 1) {\n        int u, v, w;\n\
-    \        cin >> u >> v >> w;\n        g.add_edge(u, v, w);\n        g.add_edge(v,\
-    \ u, w);\n    }\n    auto ans = g.run();\n    rep(i, n) {\n        cout << ans[i]\
-    \ << endl;\n    }\n    return 0;\n}\n"
+    \ int pc(ll x) {return __builtin_popcountll(x);}\nvoid Yes(bool judge = true)\
+    \ {cout << (judge ? \"Yes\" : \"No\") << endl;}\nvoid No(bool judge = true) {cout\
+    \ << (judge ? \"Yes\" : \"No\") << endl;}\n#line 1 \"graph/rerooting.hpp\"\ntemplate\
+    \ <typename Cost>\nstruct Edge {\n    int src, to;\n    Cost cost;\n    Edge(int\
+    \ s, int t, Cost c = 1) : src(s), to(t), cost(c) {}\n    // \u30C7\u30D5\u30A9\
+    \u30EB\u30C8\u3067\u306F\u884C\u304D\u5148\u3092\u8FD4\u3059\n    operator int()\
+    \ const { return to; }\n};\n\ntemplate <typename Cost>\nstruct Graph : vector<vector<Edge<Cost>>>\
+    \ {\n    Graph(int n) : vector<vector<Edge<Cost>>>(n) {}\n    void add_edge(int\
+    \ s, int t, Cost c = 1) { (*this)[s].emplace_back(s, t, c); }\n};\n\ntemplate\
+    \ <\n    typename Cost,\n    typename Data,\n    Data (*merge)(Data, Data),\n\
+    \    Data (*e)(),\n    Data (*leaf)(),\n    Data (*apply)(Data, int, int, Cost)>\n\
+    struct Rerooting : Graph<Cost> {\n    // memo : 0\u3092\u6839\u3068\u3057\u305F\
+    \u3068\u304D\u306Ei\u306E\u90E8\u5206\u6728\u306E\u5024(i\u81EA\u8EAB\u306F\u542B\
+    \u307E\u308C\u306A\u3044)\n    vector<Data> dp, memo;\n\n    Rerooting(int n)\
+    \ : Graph<Cost>::Graph(n) {}\n\n    vector<Data> run() {\n        memo.resize((*this).size(),\
+    \ e());\n        dp.resize((*this).size());\n        dfs1(0, -1);\n        dfs2(0,\
+    \ -1, e());\n        return dp;\n    }\n    // 0\u3092\u6839\u3068\u3057\u305F\
+    \u6728\u306E\u5168\u3066\u306E\u90E8\u5206\u6728\u306B\u3064\u3044\u3066\u5024\
+    \u3092\u6C42\u3081\u308B\n    void dfs1(int c, int p) {\n        bool upd = false;\n\
+    \        for (Edge<Cost>& d : (*this)[c]) {\n            if (d != p) {\n     \
+    \           dfs1(d, c);\n                upd = true;\n                memo[c]\
+    \ = merge(memo[c], apply(memo[d], d, c, d.cost));\n            }\n        }\n\
+    \        if (!upd) memo[c] = leaf();\n    }\n    // \u884C\u304D\u304C\u3051\u9806\
+    \u3067\u9802\u70B9\u306E\u5024\u3092\u78BA\u5B9A(val\u306B\u306F\u3001\u6839\u306E\
+    \u79FB\u52D5\u304C\u884C\u308F\u308C\u308B\u3068\u304D\u3001\u5143\u3005\u6839\
+    \u3060\u3063\u305F\u9802\u70B9\u306E\u5024\u304C\u683C\u7D0D\u3055\u308C\u308B\
+    )\n    void dfs2(int c, int p, const Data& val) {\n        vector<Data> ds{val};\n\
+    \        for (Edge<Cost>& d : (*this)[c]) {\n            if (d != p) {\n     \
+    \           ds.push_back(apply(memo[d], d, c, d.cost));\n            }\n     \
+    \   }\n        int n = ds.size(), idx = 1;\n        // \u524D\u304B\u3089\u306E\
+    \u7D2F\u7A4D\u3068\u5F8C\u308D\u304B\u3089\u306E\u7D2F\u7A4D\n        vector<Data>\
+    \ head(n + 1, e()), tail(n + 1, e());\n        for (int i = 1; i <= n; i++) head[i]\
+    \ = merge(head[i - 1], ds[i - 1]);\n        for (int i = n - 1; i >= 0; i--) tail[i]\
+    \ = merge(tail[i + 1], ds[i]);\n        // c\u306E\u5024\u306F\u5168\u3066\u306E\
+    \u5B50\u5B6B\u306B\u3064\u3044\u3066\u306E\u7D2F\u7A4D\n        dp[c] = head[n];\n\
+    \n        for (Edge<Cost>& d : (*this)[c]) {\n            if (d != p) {\n    \
+    \            Data sub = merge(head[idx], tail[idx + 1]);\n                dfs2(d,\
+    \ c, apply(sub, c, d, d.cost));\n                idx++;\n            }\n     \
+    \   }\n    }\n};\n#line 6 \"verify/rerooting.test.cpp\"\n\nint merge(int a, int\
+    \ b) {\n    return max(a, b);\n}\nint e() {\n    return 0;\n}\nint leaf() {\n\
+    \    return 0;\n}\nint apply(int a, int c, int p, int w) {\n    return a + w;\n\
+    }\n\nint main() {\n    int n;\n    cin >> n;\n    Rerooting<int, int, merge, e,\
+    \ leaf, apply> g(n);\n    rep(i, n - 1) {\n        int u, v, w;\n        cin >>\
+    \ u >> v >> w;\n        g.add_edge(u, v, w);\n        g.add_edge(v, u, w);\n \
+    \   }\n    auto ans = g.run();\n    rep(i, n) {\n        cout << ans[i] << endl;\n\
+    \    }\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/5/GRL_5_B\"\
     \n\n#include <bits/stdc++.h>\n#include \"template.hpp\"\n#include \"graph/rerooting.hpp\"\
     \n\nint merge(int a, int b) {\n    return max(a, b);\n}\nint e() {\n    return\
@@ -110,7 +114,7 @@ data:
   isVerificationFile: true
   path: verify/rerooting.test.cpp
   requiredBy: []
-  timestamp: '2024-09-12 16:44:49+09:00'
+  timestamp: '2024-09-14 14:26:12+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/rerooting.test.cpp
