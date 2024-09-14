@@ -47,4 +47,4 @@ inline bool bit(ll x, int p) {return (x >> p) & 1;}
 inline bool out(int ni, int nj, int h, int w) {return (ni < 0 or ni >= h or nj < 0 or nj >= w);}
 inline int pc(ll x) {return __builtin_popcountll(x);}
 void Yes(bool judge = true) {cout << (judge ? "Yes" : "No") << endl;}
-void No(bool judge = true) {cout << (judge ? "Yes" : "No") << endl;}
+void No(bool judge = true) {cout << (judge ? "No" : "Yes") << endl;}
