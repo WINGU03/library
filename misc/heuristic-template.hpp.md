@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/heuristic-template.test.cpp
     title: verify/heuristic-template.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"misc/heuristic-template.hpp\"\n#include <bits/stdc++.h>\n\
@@ -24,7 +24,7 @@ data:
     \ isTimeOver() const {return now_time_ >= time_threshold_;}\n};\nclass Random\
     \ {\n   public:\n    mt19937 mt;\n    uniform_real_distribution<double> dd_{0,\
     \ 1.0};\n    Random(const int seed = 0): mt(mt19937(seed)) {}\n    inline int\
-    \ nextInt(const int l,const int r) {uniform_int_distribution<int> di(l,r); return\
+    \ nextInt(const int l, const int r) {uniform_int_distribution<int> di(l,r); return\
     \ di(mt);} // l <= x <= r\n    inline double nextDouble() {return dd_(mt);} //\
     \ 0 < x < 1.0\n    inline double nextLog() {return log(dd_(mt));} // 0 < x < 1.0\
     \ (log)\n};\nRandom rnd{};\n\n#define rep(i, a) for (int i = 0; i < a; i++)\n"
@@ -40,7 +40,7 @@ data:
     \ isTimeOver() const {return now_time_ >= time_threshold_;}\n};\nclass Random\
     \ {\n   public:\n    mt19937 mt;\n    uniform_real_distribution<double> dd_{0,\
     \ 1.0};\n    Random(const int seed = 0): mt(mt19937(seed)) {}\n    inline int\
-    \ nextInt(const int l,const int r) {uniform_int_distribution<int> di(l,r); return\
+    \ nextInt(const int l, const int r) {uniform_int_distribution<int> di(l,r); return\
     \ di(mt);} // l <= x <= r\n    inline double nextDouble() {return dd_(mt);} //\
     \ 0 < x < 1.0\n    inline double nextLog() {return log(dd_(mt));} // 0 < x < 1.0\
     \ (log)\n};\nRandom rnd{};\n\n#define rep(i, a) for (int i = 0; i < a; i++)"
@@ -48,8 +48,8 @@ data:
   isVerificationFile: false
   path: misc/heuristic-template.hpp
   requiredBy: []
-  timestamp: '2024-09-15 16:59:39+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2024-09-15 17:05:40+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/heuristic-template.test.cpp
 documentation_of: misc/heuristic-template.hpp
