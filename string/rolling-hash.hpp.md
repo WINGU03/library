@@ -35,11 +35,11 @@ data:
     \ b + mid)) {\n                right = mid;\n            } else {\n          \
     \      left = mid;\n            }\n        }\n        return left;\n    }\n\n\
     \    inline int lcp(const RollingHash& T, int a, int b) const {\n        int len\
-    \ = min((int)hash.size() - a, (int)hash.size() - b);\n        int left = 0, right\
-    \ = len;\n        while (right - left > 1) {\n            int mid = (left + right)\
-    \ / 2;\n            if (get(a, a + mid) != T.get(b, b + mid)) {\n            \
-    \    right = mid;\n            } else {\n                left = mid;\n       \
-    \     }\n        }\n        return left;\n    }\n};\n"
+    \ = min((int)hash.size() - a, (int)T.hash.size() - b);\n        int left = 0,\
+    \ right = len;\n        while (right - left > 1) {\n            int mid = (left\
+    \ + right) / 2;\n            if (get(a, a + mid) != T.get(b, b + mid)) {\n   \
+    \             right = mid;\n            } else {\n                left = mid;\n\
+    \            }\n        }\n        return left;\n    }\n};\n"
   code: "mt19937_64 r(time(0));\nstatic constexpr ll mod = (1LL << 61) - 1;\nstatic\
     \ const ll base = r() % (mod - 4) + 2;\n\nstruct RollingHash {\n    using i128\
     \ = __int128_t;\n    vector<ll> hash, power;\n    int n;\n    string s;\n\n  \
@@ -60,7 +60,7 @@ data:
     \ != get(b, b + mid)) {\n                right = mid;\n            } else {\n\
     \                left = mid;\n            }\n        }\n        return left;\n\
     \    }\n\n    inline int lcp(const RollingHash& T, int a, int b) const {\n   \
-    \     int len = min((int)hash.size() - a, (int)hash.size() - b);\n        int\
+    \     int len = min((int)hash.size() - a, (int)T.hash.size() - b);\n        int\
     \ left = 0, right = len;\n        while (right - left > 1) {\n            int\
     \ mid = (left + right) / 2;\n            if (get(a, a + mid) != T.get(b, b + mid))\
     \ {\n                right = mid;\n            } else {\n                left\
@@ -69,7 +69,7 @@ data:
   isVerificationFile: false
   path: string/rolling-hash.hpp
   requiredBy: []
-  timestamp: '2024-06-18 21:24:13+09:00'
+  timestamp: '2024-09-15 12:47:51+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/aizu-rolling-hash.test.cpp

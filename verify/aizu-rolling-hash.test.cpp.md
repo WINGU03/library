@@ -77,7 +77,7 @@ data:
     \ != get(b, b + mid)) {\n                right = mid;\n            } else {\n\
     \                left = mid;\n            }\n        }\n        return left;\n\
     \    }\n\n    inline int lcp(const RollingHash& T, int a, int b) const {\n   \
-    \     int len = min((int)hash.size() - a, (int)hash.size() - b);\n        int\
+    \     int len = min((int)hash.size() - a, (int)T.hash.size() - b);\n        int\
     \ left = 0, right = len;\n        while (right - left > 1) {\n            int\
     \ mid = (left + right) / 2;\n            if (get(a, a + mid) != T.get(b, b + mid))\
     \ {\n                right = mid;\n            } else {\n                left\
@@ -98,7 +98,7 @@ data:
   isVerificationFile: true
   path: verify/aizu-rolling-hash.test.cpp
   requiredBy: []
-  timestamp: '2024-09-14 18:40:33+09:00'
+  timestamp: '2024-09-15 12:47:51+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aizu-rolling-hash.test.cpp
