@@ -3,6 +3,9 @@
 #include <bits/stdc++.h>
 #include "misc/heuristic-template.hpp"
 
+const int dx[4] = {1, 0, -1, 0};
+const int dy[4] = {0, 1, 0, -1};
+
 int main() {
     int n = 3;
     vector a(n, vector<int>(3));
