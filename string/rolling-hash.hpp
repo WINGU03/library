@@ -56,7 +56,7 @@ struct RollingHash {
     }
 
     inline int lcp(const RollingHash& T, int a, int b) const {
-        int len = min((int)hash.size() - a, (int)hash.size() - b);
+        int len = min((int)hash.size() - a, (int)T.hash.size() - b);
         int left = 0, right = len;
         while (right - left > 1) {
             int mid = (left + right) / 2;
