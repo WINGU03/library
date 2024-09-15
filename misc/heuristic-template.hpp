@@ -24,7 +24,7 @@ class Random {
    public:
     mt19937 mt;
     uniform_real_distribution<double> dd_{0, 1.0};
-    Random(const int seed = 0): mt(mt19937(seed)) {}
+    Random(): mt(chrono::steady_clock::now().time_since_epoch().count()) {}
     inline int nextInt(const int l, const int r) {uniform_int_distribution<int> di(l,r); return di(mt);} // l <= x <= r
     inline double nextDouble() {return dd_(mt);} // 0 < x < 1.0
     inline double nextLog() {return log(dd_(mt));} // 0 < x < 1.0 (log)
