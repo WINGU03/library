@@ -19,9 +19,6 @@ data:
     path: verify/aizu-rolling-hash.test.cpp
     title: verify/aizu-rolling-hash.test.cpp
   - icon: ':heavy_check_mark:'
-    path: verify/compile-option.test.cpp
-    title: verify/compile-option.test.cpp
-  - icon: ':heavy_check_mark:'
     path: verify/enum-divisor.test.cpp
     title: verify/enum-divisor.test.cpp
   - icon: ':heavy_check_mark:'
@@ -287,7 +284,6 @@ data:
   - verify/prime-factorize.test.cpp
   - verify/yosupo-mo2.test.cpp
   - verify/yosupo-mo1.test.cpp
-  - verify/compile-option.test.cpp
   - verify/yuki-rolling-hash-tree.test.cpp
   - verify/yosupo-rolling-hash.test.cpp
   - verify/aizu-dynamic-bfs.test.cpp

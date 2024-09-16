@@ -32,9 +32,6 @@ data:
       path: misc/cc.hpp
       title: "\u5EA7\u6A19\u5727\u7E2E"
     - icon: ':heavy_check_mark:'
-      path: misc/compile-option.hpp
-      title: "\u30B3\u30F3\u30D1\u30A4\u30EB\u30AA\u30D7\u30B7\u30E7\u30F3"
-    - icon: ':heavy_check_mark:'
       path: misc/heuristic-template.hpp
       title: Heuristic template
     - icon: ':heavy_check_mark:'
@@ -74,9 +71,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/aizu-rolling-hash.test.cpp
       title: verify/aizu-rolling-hash.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: verify/compile-option.test.cpp
-      title: verify/compile-option.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/enum-divisor.test.cpp
       title: verify/enum-divisor.test.cpp
