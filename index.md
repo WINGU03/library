@@ -11,7 +11,7 @@ data:
       title: "\u5168\u65B9\u4F4D\u6728DP"
   - name: math
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: math/combination.hpp
       title: "\u4E8C\u9805\u4FC2\u6570(mod)"
     - icon: ':heavy_check_mark:'
@@ -59,6 +59,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/aizu-cc.test.cpp
       title: verify/aizu-cc.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/aizu-combination.test.cpp
+      title: verify/aizu-combination.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/aizu-dynamic-bfs.test.cpp
       title: verify/aizu-dynamic-bfs.test.cpp

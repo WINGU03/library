@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/aizu-combination.test.cpp
+    title: verify/aizu-combination.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"math/combination.hpp\"\nstruct combination {\n    vector<mint>\
@@ -31,8 +34,9 @@ data:
   path: math/combination.hpp
   requiredBy: []
   timestamp: '2024-09-01 15:31:20+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/aizu-combination.test.cpp
 documentation_of: math/combination.hpp
 layout: document
 title: "\u4E8C\u9805\u4FC2\u6570(mod)"
