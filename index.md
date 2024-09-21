@@ -3,13 +3,13 @@ data:
   libraryCategories:
   - name: data-structure
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/fenwick-tree.hpp
-      title: BIT
-    - icon: ':warning:'
+      title: Fenwick Tree
+    - icon: ':x:'
       path: data-structure/lazy-segment-tree.hpp
       title: Lazy Segment Tree
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/segment-tree.hpp
       title: Segment Tree
   - name: graph
@@ -86,8 +86,14 @@ data:
       path: verify/extgcd.test.cpp
       title: verify/extgcd.test.cpp
     - icon: ':heavy_check_mark:'
+      path: verify/fenwick-tree.test.cpp
+      title: verify/fenwick-tree.test.cpp
+    - icon: ':heavy_check_mark:'
       path: verify/heuristic-template.test.cpp
       title: verify/heuristic-template.test.cpp
+    - icon: ':x:'
+      path: verify/lazy-segment-tree.test.cpp
+      title: verify/lazy-segment-tree.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/mo.test.cpp
       title: verify/mo.test.cpp
@@ -106,5 +112,8 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/rolling-hash.test.cpp
       title: verify/rolling-hash.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/segment-tree.test.cpp
+      title: verify/segment-tree.test.cpp
 layout: toppage
 ---

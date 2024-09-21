@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: verify/lazy-segment-tree.test.cpp
+    title: verify/lazy-segment-tree.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 1 \"data-structure/lazy-segment-tree.hpp\"\ntemplate <class\
@@ -70,8 +73,9 @@ data:
   path: data-structure/lazy-segment-tree.hpp
   requiredBy: []
   timestamp: '2024-09-21 13:06:46+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - verify/lazy-segment-tree.test.cpp
 documentation_of: data-structure/lazy-segment-tree.hpp
 layout: document
 title: Lazy Segment Tree
