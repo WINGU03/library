@@ -5,11 +5,13 @@
 "verify/enum-divisor.test.cpp": "2024-09-14 18:40:33 +0900",
 "verify/eratosthenes.test.cpp": "2024-09-21 13:06:46 +0900",
 "verify/extgcd.test.cpp": "2024-09-14 18:40:33 +0900",
+"verify/fenwick-tree.test.cpp": "2024-09-21 13:38:24 +0900",
 "verify/heuristic-template.test.cpp": "2024-09-15 17:22:53 +0900",
 "verify/mo.test.cpp": "2024-09-21 13:06:46 +0900",
 "verify/next-combination.test.cpp": "2024-09-21 13:06:46 +0900",
 "verify/prime-factorize.test.cpp": "2024-09-14 18:40:33 +0900",
 "verify/rerooting.test.cpp": "2024-09-14 18:40:33 +0900",
 "verify/rolling-hash-tree.test.cpp": "2024-09-21 13:06:46 +0900",
-"verify/rolling-hash.test.cpp": "2024-09-21 13:06:46 +0900"
+"verify/rolling-hash.test.cpp": "2024-09-21 13:06:46 +0900",
+"verify/segment-tree.test.cpp": "2024-09-21 13:38:24 +0900"
 }
