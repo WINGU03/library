@@ -6,7 +6,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/fenwick-tree.hpp
       title: Fenwick Tree
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/lazy-segment-tree.hpp
       title: Lazy Segment Tree
     - icon: ':heavy_check_mark:'
@@ -91,7 +91,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/heuristic-template.test.cpp
       title: verify/heuristic-template.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/lazy-segment-tree.test.cpp
       title: verify/lazy-segment-tree.test.cpp
     - icon: ':heavy_check_mark:'
