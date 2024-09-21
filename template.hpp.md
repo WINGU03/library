@@ -4,29 +4,29 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: verify/aizu-cc.test.cpp
-    title: verify/aizu-cc.test.cpp
+    path: verify/cc.test.cpp
+    title: verify/cc.test.cpp
   - icon: ':heavy_check_mark:'
-    path: verify/aizu-combination.test.cpp
-    title: verify/aizu-combination.test.cpp
+    path: verify/combination.test.cpp
+    title: verify/combination.test.cpp
   - icon: ':heavy_check_mark:'
-    path: verify/aizu-dynamic-bfs.test.cpp
-    title: verify/aizu-dynamic-bfs.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/aizu-eratosthenes.test.cpp
-    title: verify/aizu-eratosthenes.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/aizu-next-combination.test.cpp
-    title: verify/aizu-next-combination.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/aizu-rolling-hash.test.cpp
-    title: verify/aizu-rolling-hash.test.cpp
+    path: verify/dynamic-bfs.test.cpp
+    title: verify/dynamic-bfs.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/enum-divisor.test.cpp
     title: verify/enum-divisor.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/eratosthenes.test.cpp
+    title: verify/eratosthenes.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/extgcd.test.cpp
     title: verify/extgcd.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/mo.test.cpp
+    title: verify/mo.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/next-combination.test.cpp
+    title: verify/next-combination.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/prime-factorize.test.cpp
     title: verify/prime-factorize.test.cpp
@@ -34,17 +34,11 @@ data:
     path: verify/rerooting.test.cpp
     title: verify/rerooting.test.cpp
   - icon: ':heavy_check_mark:'
-    path: verify/yosupo-mo1.test.cpp
-    title: verify/yosupo-mo1.test.cpp
+    path: verify/rolling-hash-tree.test.cpp
+    title: verify/rolling-hash-tree.test.cpp
   - icon: ':heavy_check_mark:'
-    path: verify/yosupo-mo2.test.cpp
-    title: verify/yosupo-mo2.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/yosupo-rolling-hash.test.cpp
-    title: verify/yosupo-rolling-hash.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/yuki-rolling-hash-tree.test.cpp
-    title: verify/yuki-rolling-hash-tree.test.cpp
+    path: verify/rolling-hash.test.cpp
+    title: verify/rolling-hash.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -279,19 +273,17 @@ data:
   timestamp: '2024-09-14 18:40:33+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/yosupo-mo1.test.cpp
-  - verify/aizu-eratosthenes.test.cpp
-  - verify/aizu-next-combination.test.cpp
-  - verify/aizu-dynamic-bfs.test.cpp
-  - verify/yuki-rolling-hash-tree.test.cpp
+  - verify/dynamic-bfs.test.cpp
+  - verify/combination.test.cpp
+  - verify/cc.test.cpp
   - verify/prime-factorize.test.cpp
-  - verify/aizu-cc.test.cpp
   - verify/rerooting.test.cpp
   - verify/enum-divisor.test.cpp
-  - verify/aizu-combination.test.cpp
-  - verify/yosupo-mo2.test.cpp
-  - verify/yosupo-rolling-hash.test.cpp
-  - verify/aizu-rolling-hash.test.cpp
+  - verify/next-combination.test.cpp
+  - verify/eratosthenes.test.cpp
+  - verify/rolling-hash-tree.test.cpp
+  - verify/mo.test.cpp
+  - verify/rolling-hash.test.cpp
   - verify/extgcd.test.cpp
 documentation_of: template.hpp
 layout: document

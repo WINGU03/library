@@ -4,8 +4,8 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: verify/yuki-rolling-hash-tree.test.cpp
-    title: verify/yuki-rolling-hash-tree.test.cpp
+    path: verify/rolling-hash-tree.test.cpp
+    title: verify/rolling-hash-tree.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -61,7 +61,7 @@ data:
   timestamp: '2024-06-15 16:25:33+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/yuki-rolling-hash-tree.test.cpp
+  - verify/rolling-hash-tree.test.cpp
 documentation_of: string/rolling-hash-tree.hpp
 layout: document
 title: Rolling Hash Tree

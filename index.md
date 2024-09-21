@@ -1,6 +1,17 @@
 ---
 data:
   libraryCategories:
+  - name: data-structure
+    pages:
+    - icon: ':warning:'
+      path: data-structure/fenwick-tree.hpp
+      title: BIT
+    - icon: ':warning:'
+      path: data-structure/lazy-segment-tree.hpp
+      title: Lazy Segment Tree
+    - icon: ':warning:'
+      path: data-structure/segment-tree.hpp
+      title: Segment Tree
   - name: graph
     pages:
     - icon: ':heavy_check_mark:'
@@ -57,26 +68,20 @@ data:
   - name: verify
     pages:
     - icon: ':heavy_check_mark:'
-      path: verify/aizu-cc.test.cpp
-      title: verify/aizu-cc.test.cpp
+      path: verify/cc.test.cpp
+      title: verify/cc.test.cpp
     - icon: ':heavy_check_mark:'
-      path: verify/aizu-combination.test.cpp
-      title: verify/aizu-combination.test.cpp
+      path: verify/combination.test.cpp
+      title: verify/combination.test.cpp
     - icon: ':heavy_check_mark:'
-      path: verify/aizu-dynamic-bfs.test.cpp
-      title: verify/aizu-dynamic-bfs.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: verify/aizu-eratosthenes.test.cpp
-      title: verify/aizu-eratosthenes.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: verify/aizu-next-combination.test.cpp
-      title: verify/aizu-next-combination.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: verify/aizu-rolling-hash.test.cpp
-      title: verify/aizu-rolling-hash.test.cpp
+      path: verify/dynamic-bfs.test.cpp
+      title: verify/dynamic-bfs.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/enum-divisor.test.cpp
       title: verify/enum-divisor.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/eratosthenes.test.cpp
+      title: verify/eratosthenes.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/extgcd.test.cpp
       title: verify/extgcd.test.cpp
@@ -84,22 +89,22 @@ data:
       path: verify/heuristic-template.test.cpp
       title: verify/heuristic-template.test.cpp
     - icon: ':heavy_check_mark:'
+      path: verify/mo.test.cpp
+      title: verify/mo.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/next-combination.test.cpp
+      title: verify/next-combination.test.cpp
+    - icon: ':heavy_check_mark:'
       path: verify/prime-factorize.test.cpp
       title: verify/prime-factorize.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/rerooting.test.cpp
       title: verify/rerooting.test.cpp
     - icon: ':heavy_check_mark:'
-      path: verify/yosupo-mo1.test.cpp
-      title: verify/yosupo-mo1.test.cpp
+      path: verify/rolling-hash-tree.test.cpp
+      title: verify/rolling-hash-tree.test.cpp
     - icon: ':heavy_check_mark:'
-      path: verify/yosupo-mo2.test.cpp
-      title: verify/yosupo-mo2.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: verify/yosupo-rolling-hash.test.cpp
-      title: verify/yosupo-rolling-hash.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: verify/yuki-rolling-hash-tree.test.cpp
-      title: verify/yuki-rolling-hash-tree.test.cpp
+      path: verify/rolling-hash.test.cpp
+      title: verify/rolling-hash.test.cpp
 layout: toppage
 ---

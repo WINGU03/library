@@ -2,8 +2,8 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: misc/cc.hpp
-    title: "\u5EA7\u6A19\u5727\u7E2E"
+    path: math/eratosthenes.hpp
+    title: "\u30A8\u30E9\u30C8\u30B9\u30C6\u30CD\u30B9\u306E\u7BE9"
   - icon: ':heavy_check_mark:'
     path: template.hpp
     title: template.hpp
@@ -14,10 +14,10 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/5/ALDS1_5_D
+    PROBLEM: https://onlinejudge.u-aizu.ac.jp/problems/ALDS1_1_C
     links:
-    - https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/5/ALDS1_5_D
-  bundledCode: "#line 1 \"verify/aizu-cc.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/5/ALDS1_5_D\"\
+    - https://onlinejudge.u-aizu.ac.jp/problems/ALDS1_1_C
+  bundledCode: "#line 1 \"verify/eratosthenes.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/ALDS1_1_C\"\
     \n\n#include <bits/stdc++.h>\n#line 2 \"template.hpp\"\nusing namespace std;\n\
     #include <atcoder/modint>\nusing namespace atcoder;\n#ifdef DEFINED_ONLY_IN_LOCAL\n\
     #include <dump.hpp>\n#define dump(...) cpp_dump(__VA_ARGS__)\n#else\n#undef dump\n\
@@ -55,41 +55,34 @@ data:
     \ nj, int h, int w) {return (ni < 0 or ni >= h or nj < 0 or nj >= w);}\ninline\
     \ int pc(ll x) {return __builtin_popcountll(x);}\nvoid Yes(bool judge = true)\
     \ {cout << (judge ? \"Yes\" : \"No\") << endl;}\nvoid No(bool judge = true) {cout\
-    \ << (judge ? \"No\" : \"Yes\") << endl;}\n#line 1 \"misc/cc.hpp\"\ntemplate <typename\
-    \ T = int>\nstruct CC {\n    bool initialized;\n    vector<T> xs;\n    unordered_map<T,\
-    \ int> mp;\n    CC() : initialized(false) {}\n    void add(T x) {\n        xs.push_back(x);\n\
-    \    }\n    void init() {\n        sort(xs.begin(), xs.end());\n        xs.erase(unique(xs.begin(),\
-    \ xs.end()), xs.end());\n        for (int i = 0; i < (int)xs.size(); i++) {\n\
-    \            mp[xs[i]] = i;\n        }\n        initialized = true;\n    }\n \
-    \   int operator()(T x) {\n        if (!initialized) init();\n        return mp[x];\n\
-    \    }\n    T operator[](int i) {\n        if (!initialized) init();\n       \
-    \ return xs[i];\n    }\n    int size() {\n        if (!initialized) init();\n\
-    \        return xs.size();\n    }\n};\n#line 6 \"verify/aizu-cc.test.cpp\"\n#include\
-    \ <atcoder/fenwicktree>\n\nint main() {\n    int n;\n    cin >> n;\n    vector<int>\
-    \ a(n);\n    cin >> a;\n    CC c;\n    rep(i, n) c.add(a[i]);\n    int m = c.size();\n\
-    \    rep(i, n) a[i] = c(a[i]);\n    fenwick_tree<int> f(m);\n    ll ans = 0;\n\
-    \    rep(i, n) {\n        ans += f.sum(a[i], m);\n        f.add(a[i], 1);\n  \
-    \  }\n    cout << ans << endl;\n    return 0;\n}\n"
-  code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/5/ALDS1_5_D\"\
-    \n\n#include <bits/stdc++.h>\n#include \"template.hpp\"\n#include \"misc/cc.hpp\"\
-    \n#include <atcoder/fenwicktree>\n\nint main() {\n    int n;\n    cin >> n;\n\
-    \    vector<int> a(n);\n    cin >> a;\n    CC c;\n    rep(i, n) c.add(a[i]);\n\
-    \    int m = c.size();\n    rep(i, n) a[i] = c(a[i]);\n    fenwick_tree<int> f(m);\n\
-    \    ll ans = 0;\n    rep(i, n) {\n        ans += f.sum(a[i], m);\n        f.add(a[i],\
-    \ 1);\n    }\n    cout << ans << endl;\n    return 0;\n}"
+    \ << (judge ? \"No\" : \"Yes\") << endl;}\n#line 1 \"math/eratosthenes.hpp\"\n\
+    vector<bool> sieve(int N) {\n    vector<bool> isprime(N + 1, true);\n    isprime[0]\
+    \ = false;\n    isprime[1] = false;\n    for (int i = 2; i * i <= N; i++) {\n\
+    \        if (isprime[i] == false) continue;\n        for (int j = i * 2; j <=\
+    \ N; j += i) {\n            isprime[j] = false;\n        }\n    }\n    return\
+    \ isprime;\n}\n#line 6 \"verify/eratosthenes.test.cpp\"\n\nint main() {\n    int\
+    \ n;\n    cin >> n;\n    auto p = sieve((int)1e8);\n    int ans = 0;\n    for(int\
+    \ i = 0; i < n; i++) {\n        int x;\n        cin >> x;\n        if (p[x]) ans++;\n\
+    \    }\n    cout << ans << endl;\n    return 0;\n}\n"
+  code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/ALDS1_1_C\"\n\
+    \n#include <bits/stdc++.h>\n#include \"template.hpp\"\n#include \"math/eratosthenes.hpp\"\
+    \n\nint main() {\n    int n;\n    cin >> n;\n    auto p = sieve((int)1e8);\n \
+    \   int ans = 0;\n    for(int i = 0; i < n; i++) {\n        int x;\n        cin\
+    \ >> x;\n        if (p[x]) ans++;\n    }\n    cout << ans << endl;\n    return\
+    \ 0;\n}"
   dependsOn:
   - template.hpp
-  - misc/cc.hpp
+  - math/eratosthenes.hpp
   isVerificationFile: true
-  path: verify/aizu-cc.test.cpp
+  path: verify/eratosthenes.test.cpp
   requiredBy: []
-  timestamp: '2024-09-14 18:40:33+09:00'
+  timestamp: '2024-09-21 13:06:46+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: verify/aizu-cc.test.cpp
+documentation_of: verify/eratosthenes.test.cpp
 layout: document
 redirect_from:
-- /verify/verify/aizu-cc.test.cpp
-- /verify/verify/aizu-cc.test.cpp.html
-title: verify/aizu-cc.test.cpp
+- /verify/verify/eratosthenes.test.cpp
+- /verify/verify/eratosthenes.test.cpp.html
+title: verify/eratosthenes.test.cpp
 ---

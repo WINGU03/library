@@ -4,11 +4,8 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: verify/yosupo-mo1.test.cpp
-    title: verify/yosupo-mo1.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/yosupo-mo2.test.cpp
-    title: verify/yosupo-mo2.test.cpp
+    path: verify/mo.test.cpp
+    title: verify/mo.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -56,8 +53,7 @@ data:
   timestamp: '2024-06-22 09:18:57+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/yosupo-mo1.test.cpp
-  - verify/yosupo-mo2.test.cpp
+  - verify/mo.test.cpp
 documentation_of: misc/mo.hpp
 layout: document
 title: "Mo\u2019s algorithm"

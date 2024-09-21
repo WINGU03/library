@@ -4,8 +4,8 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: verify/aizu-dynamic-bfs.test.cpp
-    title: verify/aizu-dynamic-bfs.test.cpp
+    path: verify/dynamic-bfs.test.cpp
+    title: verify/dynamic-bfs.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -31,7 +31,7 @@ data:
   timestamp: '2024-07-09 20:45:55+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/aizu-dynamic-bfs.test.cpp
+  - verify/dynamic-bfs.test.cpp
 documentation_of: graph/dynamic-bfs.hpp
 layout: document
 title: "\u52D5\u7684BFS"

@@ -4,8 +4,8 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: verify/aizu-combination.test.cpp
-    title: verify/aizu-combination.test.cpp
+    path: verify/combination.test.cpp
+    title: verify/combination.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -36,7 +36,7 @@ data:
   timestamp: '2024-09-01 15:31:20+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/aizu-combination.test.cpp
+  - verify/combination.test.cpp
 documentation_of: math/combination.hpp
 layout: document
 title: "\u4E8C\u9805\u4FC2\u6570(mod)"

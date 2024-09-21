@@ -4,8 +4,8 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: verify/aizu-eratosthenes.test.cpp
-    title: verify/aizu-eratosthenes.test.cpp
+    path: verify/eratosthenes.test.cpp
+    title: verify/eratosthenes.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -28,7 +28,7 @@ data:
   timestamp: '2024-08-11 14:04:24+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/aizu-eratosthenes.test.cpp
+  - verify/eratosthenes.test.cpp
 documentation_of: math/eratosthenes.hpp
 layout: document
 title: "\u30A8\u30E9\u30C8\u30B9\u30C6\u30CD\u30B9\u306E\u7BE9"

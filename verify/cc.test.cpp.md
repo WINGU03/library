@@ -5,9 +5,6 @@ data:
     path: misc/cc.hpp
     title: "\u5EA7\u6A19\u5727\u7E2E"
   - icon: ':heavy_check_mark:'
-    path: misc/mo.hpp
-    title: "Mo\u2019s algorithm"
-  - icon: ':heavy_check_mark:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
@@ -17,10 +14,10 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.yosupo.jp/problem/static_range_frequency
+    PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/5/ALDS1_5_D
     links:
-    - https://judge.yosupo.jp/problem/static_range_frequency
-  bundledCode: "#line 1 \"verify/yosupo-mo2.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/static_range_frequency\"\
+    - https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/5/ALDS1_5_D
+  bundledCode: "#line 1 \"verify/cc.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/5/ALDS1_5_D\"\
     \n\n#include <bits/stdc++.h>\n#line 2 \"template.hpp\"\nusing namespace std;\n\
     #include <atcoder/modint>\nusing namespace atcoder;\n#ifdef DEFINED_ONLY_IN_LOCAL\n\
     #include <dump.hpp>\n#define dump(...) cpp_dump(__VA_ARGS__)\n#else\n#undef dump\n\
@@ -67,67 +64,32 @@ data:
     \   int operator()(T x) {\n        if (!initialized) init();\n        return mp[x];\n\
     \    }\n    T operator[](int i) {\n        if (!initialized) init();\n       \
     \ return xs[i];\n    }\n    int size() {\n        if (!initialized) init();\n\
-    \        return xs.size();\n    }\n};\n#line 1 \"misc/mo.hpp\"\ntemplate <class\
-    \ M>\nstruct Mo {\n    using T = typename M::T;\n    int backet;\n    vector<int>\
-    \ left, right, order;\n    Mo(int N, int Q) {\n        order.resize(Q);\n    \
-    \    backet = max<int>(1, (double)(N) / max<double>(1, sqrt(Q * 2.0 / 3)));\n\
-    \        iota(order.begin(), order.end(), 0);\n    }\n    void add_query(int left_id,\
-    \ int right_id) {\n        left.emplace_back(left_id);\n        right.emplace_back(right_id);\n\
-    \    }\n    vector<T> run() {\n        vector<T> answer(order.size());\n     \
-    \   sort(order.begin(), order.end(), [&](int a, int b) {\n            int a_block\
-    \ = left[a] / backet, b_block = left[b] / backet;\n            if (a_block !=\
-    \ b_block) return a_block < b_block;\n            if (a_block & 1) return right[a]\
-    \ < right[b];\n            return right[a] > right[b];\n        });\n        int\
-    \ now_left = 0, now_right = 0;\n        for (int i : order) {\n            while\
-    \ (now_left > left[i]) {\n                M::add_left(--now_left);\n         \
-    \   }\n            while (right[i] > now_right) {\n                M::add_right(now_right++);\n\
-    \            }\n            while (now_left < left[i]) {\n                M::del_left(now_left++);\n\
-    \            }\n            while (right[i] < now_right) {\n                M::del_right(--now_right);\n\
-    \            }\n            answer[i] = M::res(i);\n        }\n        return\
-    \ answer;\n    }\n};\n#line 7 \"verify/yosupo-mo2.test.cpp\"\n\nint main() {\n\
-    \    static int n, q;\n    cin >> n >> q;\n    static vector<int> a(n);\n    cin\
-    \ >> a;\n\n    static CC c;\n    rep(i, n) c.add(a[i]);\n    rep(i, n) a[i] =\
-    \ c(a[i]);\n    static vector<int> cnt(c.size());\n    static vector<int> l(q),\
-    \ r(q), x(q);\n    rep(i, q) cin >> l[i] >> r[i] >> x[i];\n    struct M {\n  \
-    \      using T = int;\n        static void add_left(int pos) {\n            cnt[a[pos]]++;\n\
-    \        }\n        static void add_right(int pos) {\n            cnt[a[pos]]++;\n\
-    \        }\n        static void del_left(int pos) {\n            cnt[a[pos]]--;\n\
-    \        }\n        static void del_right(int pos) {\n            cnt[a[pos]]--;\n\
-    \        }\n        static T res(int i) {\n            if (n == 0) return 0;\n\
-    \            if (c(x[i]) == 0 and c[0] != x[i]) return 0;\n            return\
-    \ cnt[c(x[i])];\n        }\n    };\n\n    Mo<M> mo(n, q);\n    rep(i, q) {\n \
-    \       mo.add_query(l[i], r[i]);\n    }\n    auto res = mo.run();\n    for (auto\
-    \ i : res) cout << i << '\\n';\n    return 0;\n}\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/static_range_frequency\"\
+    \        return xs.size();\n    }\n};\n#line 6 \"verify/cc.test.cpp\"\n#include\
+    \ <atcoder/fenwicktree>\n\nint main() {\n    int n;\n    cin >> n;\n    vector<int>\
+    \ a(n);\n    cin >> a;\n    CC c;\n    rep(i, n) c.add(a[i]);\n    int m = c.size();\n\
+    \    rep(i, n) a[i] = c(a[i]);\n    fenwick_tree<int> f(m);\n    ll ans = 0;\n\
+    \    rep(i, n) {\n        ans += f.sum(a[i], m);\n        f.add(a[i], 1);\n  \
+    \  }\n    cout << ans << endl;\n    return 0;\n}\n"
+  code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/5/ALDS1_5_D\"\
     \n\n#include <bits/stdc++.h>\n#include \"template.hpp\"\n#include \"misc/cc.hpp\"\
-    \n#include \"misc/mo.hpp\"\n\nint main() {\n    static int n, q;\n    cin >> n\
-    \ >> q;\n    static vector<int> a(n);\n    cin >> a;\n\n    static CC c;\n   \
-    \ rep(i, n) c.add(a[i]);\n    rep(i, n) a[i] = c(a[i]);\n    static vector<int>\
-    \ cnt(c.size());\n    static vector<int> l(q), r(q), x(q);\n    rep(i, q) cin\
-    \ >> l[i] >> r[i] >> x[i];\n    struct M {\n        using T = int;\n        static\
-    \ void add_left(int pos) {\n            cnt[a[pos]]++;\n        }\n        static\
-    \ void add_right(int pos) {\n            cnt[a[pos]]++;\n        }\n        static\
-    \ void del_left(int pos) {\n            cnt[a[pos]]--;\n        }\n        static\
-    \ void del_right(int pos) {\n            cnt[a[pos]]--;\n        }\n        static\
-    \ T res(int i) {\n            if (n == 0) return 0;\n            if (c(x[i]) ==\
-    \ 0 and c[0] != x[i]) return 0;\n            return cnt[c(x[i])];\n        }\n\
-    \    };\n\n    Mo<M> mo(n, q);\n    rep(i, q) {\n        mo.add_query(l[i], r[i]);\n\
-    \    }\n    auto res = mo.run();\n    for (auto i : res) cout << i << '\\n';\n\
-    \    return 0;\n}"
+    \n#include <atcoder/fenwicktree>\n\nint main() {\n    int n;\n    cin >> n;\n\
+    \    vector<int> a(n);\n    cin >> a;\n    CC c;\n    rep(i, n) c.add(a[i]);\n\
+    \    int m = c.size();\n    rep(i, n) a[i] = c(a[i]);\n    fenwick_tree<int> f(m);\n\
+    \    ll ans = 0;\n    rep(i, n) {\n        ans += f.sum(a[i], m);\n        f.add(a[i],\
+    \ 1);\n    }\n    cout << ans << endl;\n    return 0;\n}"
   dependsOn:
   - template.hpp
   - misc/cc.hpp
-  - misc/mo.hpp
   isVerificationFile: true
-  path: verify/yosupo-mo2.test.cpp
+  path: verify/cc.test.cpp
   requiredBy: []
-  timestamp: '2024-09-14 18:40:33+09:00'
+  timestamp: '2024-09-21 13:06:46+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: verify/yosupo-mo2.test.cpp
+documentation_of: verify/cc.test.cpp
 layout: document
 redirect_from:
-- /verify/verify/yosupo-mo2.test.cpp
-- /verify/verify/yosupo-mo2.test.cpp.html
-title: verify/yosupo-mo2.test.cpp
+- /verify/verify/cc.test.cpp
+- /verify/verify/cc.test.cpp.html
+title: verify/cc.test.cpp
 ---

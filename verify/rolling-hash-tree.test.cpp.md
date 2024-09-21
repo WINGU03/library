@@ -17,9 +17,9 @@ data:
     PROBLEM: https://yukicoder.me/problems/no/2761
     links:
     - https://yukicoder.me/problems/no/2761
-  bundledCode: "#line 1 \"verify/yuki-rolling-hash-tree.test.cpp\"\n#define PROBLEM\
-    \ \"https://yukicoder.me/problems/no/2761\"\n\n#include <bits/stdc++.h>\n\n#line\
-    \ 2 \"template.hpp\"\nusing namespace std;\n#include <atcoder/modint>\nusing namespace\
+  bundledCode: "#line 1 \"verify/rolling-hash-tree.test.cpp\"\n#define PROBLEM \"\
+    https://yukicoder.me/problems/no/2761\"\n\n#include <bits/stdc++.h>\n\n#line 2\
+    \ \"template.hpp\"\nusing namespace std;\n#include <atcoder/modint>\nusing namespace\
     \ atcoder;\n#ifdef DEFINED_ONLY_IN_LOCAL\n#include <dump.hpp>\n#define dump(...)\
     \ cpp_dump(__VA_ARGS__)\n#else\n#undef dump\n#define dump(...)\n#endif\n#define\
     \ rep1(a) for (int i = 0; i < a; i++)\n#define rep2(i, a) for (int i = 0; i <\
@@ -56,7 +56,7 @@ data:
     \ nj, int h, int w) {return (ni < 0 or ni >= h or nj < 0 or nj >= w);}\ninline\
     \ int pc(ll x) {return __builtin_popcountll(x);}\nvoid Yes(bool judge = true)\
     \ {cout << (judge ? \"Yes\" : \"No\") << endl;}\nvoid No(bool judge = true) {cout\
-    \ << (judge ? \"No\" : \"Yes\") << endl;}\n#line 6 \"verify/yuki-rolling-hash-tree.test.cpp\"\
+    \ << (judge ? \"No\" : \"Yes\") << endl;}\n#line 6 \"verify/rolling-hash-tree.test.cpp\"\
     \n\n#line 1 \"string/rolling-hash-tree.hpp\"\n#include <atcoder/segtree>\n\nmt19937_64\
     \ r(time(0));\nstatic const int mod1 = 1000000007, mod2 = 1000000009;\nusing mint1\
     \ = static_modint<mod1>;\nusing mint2 = static_modint<mod2>;\nstatic const int\
@@ -78,20 +78,20 @@ data:
     \ r) {\n        auto [a, b, c, d] = seg.prod(l, r);\n        return (ll)a.val()\
     \ * mod2 + b.val();\n    }\n\n    inline ll r_get(int l, int r) {\n        auto\
     \ [a, b, c, d] = r_seg.prod(l, r);\n        return (ll)a.val() * mod2 + b.val();\n\
-    \    }\n};\n#line 8 \"verify/yuki-rolling-hash-tree.test.cpp\"\n\nint main() {\n\
-    \    int n, l, q;\n    cin >> n >> l >> q;\n    vector<string> s(n);\n    cin\
-    \ >> s;\n    vector<RollingHashTree> RollingHash(n);\n    rep(i, n) {\n      \
-    \  RollingHash[i] = RollingHashTree(s[i]);\n    }\n\n    while (q--) {\n     \
-    \   int type;\n        cin >> type;\n        if (type == 1) {\n            int\
-    \ k;\n            char c, d;\n            cin >> k >> c >> d;\n            k--;\n\
-    \            rep(i, n) {\n                if (s[i][k] == c) {\n              \
-    \      s[i][k] = d;\n                    RollingHash[i].set(k, d);\n         \
-    \       }\n            }\n        } else {\n            string t;\n          \
-    \  cin >> t;\n            int m = t.size();\n            ll cor1 = 0, cor2 = 0;\n\
-    \            rep(i, m) {\n                cor1 = cor1 * base1 + t[i];\n      \
-    \          cor1 %= mod1;\n            }\n            rep(i, m) {\n           \
-    \     cor2 = cor2 * base2 + t[i];\n                cor2 %= mod2;\n           \
-    \ }\n\n            int ans = 0;\n            rep(i, n) {\n                if (RollingHash[i].get(0,\
+    \    }\n};\n#line 8 \"verify/rolling-hash-tree.test.cpp\"\n\nint main() {\n  \
+    \  int n, l, q;\n    cin >> n >> l >> q;\n    vector<string> s(n);\n    cin >>\
+    \ s;\n    vector<RollingHashTree> RollingHash(n);\n    rep(i, n) {\n        RollingHash[i]\
+    \ = RollingHashTree(s[i]);\n    }\n\n    while (q--) {\n        int type;\n  \
+    \      cin >> type;\n        if (type == 1) {\n            int k;\n          \
+    \  char c, d;\n            cin >> k >> c >> d;\n            k--;\n           \
+    \ rep(i, n) {\n                if (s[i][k] == c) {\n                    s[i][k]\
+    \ = d;\n                    RollingHash[i].set(k, d);\n                }\n   \
+    \         }\n        } else {\n            string t;\n            cin >> t;\n\
+    \            int m = t.size();\n            ll cor1 = 0, cor2 = 0;\n         \
+    \   rep(i, m) {\n                cor1 = cor1 * base1 + t[i];\n               \
+    \ cor1 %= mod1;\n            }\n            rep(i, m) {\n                cor2\
+    \ = cor2 * base2 + t[i];\n                cor2 %= mod2;\n            }\n\n   \
+    \         int ans = 0;\n            rep(i, n) {\n                if (RollingHash[i].get(0,\
     \ m) == cor1 * mod2 + cor2) ans++;\n            }\n\n            cout << ans <<\
     \ endl;\n        }\n    }\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://yukicoder.me/problems/no/2761\"\n\n#include <bits/stdc++.h>\n\
@@ -115,15 +115,15 @@ data:
   - template.hpp
   - string/rolling-hash-tree.hpp
   isVerificationFile: true
-  path: verify/yuki-rolling-hash-tree.test.cpp
+  path: verify/rolling-hash-tree.test.cpp
   requiredBy: []
-  timestamp: '2024-09-14 18:40:33+09:00'
+  timestamp: '2024-09-21 13:06:46+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: verify/yuki-rolling-hash-tree.test.cpp
+documentation_of: verify/rolling-hash-tree.test.cpp
 layout: document
 redirect_from:
-- /verify/verify/yuki-rolling-hash-tree.test.cpp
-- /verify/verify/yuki-rolling-hash-tree.test.cpp.html
-title: verify/yuki-rolling-hash-tree.test.cpp
+- /verify/verify/rolling-hash-tree.test.cpp
+- /verify/verify/rolling-hash-tree.test.cpp.html
+title: verify/rolling-hash-tree.test.cpp
 ---

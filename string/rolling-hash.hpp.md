@@ -4,11 +4,8 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: verify/aizu-rolling-hash.test.cpp
-    title: verify/aizu-rolling-hash.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/yosupo-rolling-hash.test.cpp
-    title: verify/yosupo-rolling-hash.test.cpp
+    path: verify/rolling-hash.test.cpp
+    title: verify/rolling-hash.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -72,8 +69,7 @@ data:
   timestamp: '2024-09-15 12:47:51+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/yosupo-rolling-hash.test.cpp
-  - verify/aizu-rolling-hash.test.cpp
+  - verify/rolling-hash.test.cpp
 documentation_of: string/rolling-hash.hpp
 layout: document
 title: Rolling Hash

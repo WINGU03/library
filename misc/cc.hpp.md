@@ -4,14 +4,11 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: verify/aizu-cc.test.cpp
-    title: verify/aizu-cc.test.cpp
+    path: verify/cc.test.cpp
+    title: verify/cc.test.cpp
   - icon: ':heavy_check_mark:'
-    path: verify/yosupo-mo1.test.cpp
-    title: verify/yosupo-mo1.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/yosupo-mo2.test.cpp
-    title: verify/yosupo-mo2.test.cpp
+    path: verify/mo.test.cpp
+    title: verify/mo.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -44,9 +41,8 @@ data:
   timestamp: '2024-06-19 21:24:21+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/yosupo-mo1.test.cpp
-  - verify/aizu-cc.test.cpp
-  - verify/yosupo-mo2.test.cpp
+  - verify/cc.test.cpp
+  - verify/mo.test.cpp
 documentation_of: misc/cc.hpp
 layout: document
 title: "\u5EA7\u6A19\u5727\u7E2E"

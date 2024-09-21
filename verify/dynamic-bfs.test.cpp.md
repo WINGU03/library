@@ -2,8 +2,8 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: math/combination.hpp
-    title: "\u4E8C\u9805\u4FC2\u6570(mod)"
+    path: graph/dynamic-bfs.hpp
+    title: "\u52D5\u7684BFS"
   - icon: ':heavy_check_mark:'
     path: template.hpp
     title: template.hpp
@@ -14,10 +14,10 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_E
+    PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/13/ALDS1_13_B
     links:
-    - https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_E
-  bundledCode: "#line 1 \"verify/aizu-combination.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_E\"\
+    - https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/13/ALDS1_13_B
+  bundledCode: "#line 1 \"verify/dynamic-bfs.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/13/ALDS1_13_B\"\
     \n\n#include <bits/stdc++.h>\n#line 2 \"template.hpp\"\nusing namespace std;\n\
     #include <atcoder/modint>\nusing namespace atcoder;\n#ifdef DEFINED_ONLY_IN_LOCAL\n\
     #include <dump.hpp>\n#define dump(...) cpp_dump(__VA_ARGS__)\n#else\n#undef dump\n\
@@ -55,36 +55,47 @@ data:
     \ nj, int h, int w) {return (ni < 0 or ni >= h or nj < 0 or nj >= w);}\ninline\
     \ int pc(ll x) {return __builtin_popcountll(x);}\nvoid Yes(bool judge = true)\
     \ {cout << (judge ? \"Yes\" : \"No\") << endl;}\nvoid No(bool judge = true) {cout\
-    \ << (judge ? \"No\" : \"Yes\") << endl;}\n#line 5 \"verify/aizu-combination.test.cpp\"\
-    \n\nusing mint = modint1000000007;\n#line 1 \"math/combination.hpp\"\nstruct combination\
-    \ {\n    vector<mint> fac, finv, inv;\n    combination(int M) {\n        fac.resize(M\
-    \ + 1); finv.resize(M + 1); inv.resize(M + 1);\n        const int MOD = mint::mod();\n\
-    \        fac[0] = fac[1] = 1;\n        finv[0] = finv[1] = 1;\n        inv[1]\
-    \ = 1;\n        for (int i = 2; i <= M; i++) {\n            fac[i] = fac[i - 1]\
-    \ * i;\n            inv[i] = MOD - inv[MOD % i] * (MOD / i);\n            finv[i]\
-    \ = finv[i - 1] * inv[i];\n        }\n    }\n    mint com(int n, int k) {\n  \
-    \      if (n < k) return 0;\n        if (n < 0 || k < 0) return 0;\n        return\
-    \ fac[n] * finv[k] * finv[n - k];\n    }\n};\n#line 8 \"verify/aizu-combination.test.cpp\"\
-    \n\nint main() {\n    int n, k;\n    cin >> n >> k;\n    combination c(k);\n \
-    \   cout << c.com(k, n).val() << endl;\n    return 0;\n}\n"
-  code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_E\"\
-    \n\n#include <bits/stdc++.h>\n#include \"template.hpp\"\n\nusing mint = modint1000000007;\n\
-    #include \"math/combination.hpp\"\n\nint main() {\n    int n, k;\n    cin >> n\
-    \ >> k;\n    combination c(k);\n    cout << c.com(k, n).val() << endl;\n    return\
-    \ 0;\n}"
+    \ << (judge ? \"No\" : \"Yes\") << endl;}\n#line 1 \"graph/dynamic-bfs.hpp\"\n\
+    template <class T, class f>\nint dynamic_bfs(T& s, f& nxt, T& g) {\n    if (s\
+    \ == g) return 0;\n    map<T, int> dist;\n    queue<T> q;\n    dist[s] = 0;\n\
+    \    q.push(s);\n    while (!q.empty()) {\n        auto v = q.front();\n     \
+    \   q.pop();\n        for (const auto& u : nxt(v)) {\n            if (dist.count(u))\
+    \ continue;\n            if (u == g) return dist[v] + 1;\n            dist[u]\
+    \ = dist[v] + 1;\n            q.push(u);\n        }\n    }\n    return -1;\n}\n\
+    #line 6 \"verify/dynamic-bfs.test.cpp\"\n\nint main() {\n    int n = 3;\n    vector\
+    \ p(n, vector<int>(n));\n    cin >> p;\n\n    vector ans(n, vector<int>(n));\n\
+    \    rep(i, n) rep(j, n) if (i != 2 or j != 2) ans[i][j] = i * n + j + 1;\n\n\
+    \    auto f = [&](vector<vector<int>> &x) {\n        vector<vector<vector<int>>>\
+    \ res;\n        rep(i, n) rep(j, n) if (x[i][j] == 0) {\n            rep(d, 4)\
+    \ {\n                int ni = i + dx[d], nj = j + dy[d];\n                if (out(ni,\
+    \ nj, n, n)) continue;\n                auto nex = x;\n                swap(nex[i][j],\
+    \ nex[ni][nj]);\n                res.push_back(nex);\n            }\n        }\n\
+    \        return res;\n    };\n\n    cout << dynamic_bfs(p, f, ans) << endl;\n\
+    \    return 0;\n}\n"
+  code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/13/ALDS1_13_B\"\
+    \n\n#include <bits/stdc++.h>\n#include \"template.hpp\"\n#include \"graph/dynamic-bfs.hpp\"\
+    \n\nint main() {\n    int n = 3;\n    vector p(n, vector<int>(n));\n    cin >>\
+    \ p;\n\n    vector ans(n, vector<int>(n));\n    rep(i, n) rep(j, n) if (i != 2\
+    \ or j != 2) ans[i][j] = i * n + j + 1;\n\n    auto f = [&](vector<vector<int>>\
+    \ &x) {\n        vector<vector<vector<int>>> res;\n        rep(i, n) rep(j, n)\
+    \ if (x[i][j] == 0) {\n            rep(d, 4) {\n                int ni = i + dx[d],\
+    \ nj = j + dy[d];\n                if (out(ni, nj, n, n)) continue;\n        \
+    \        auto nex = x;\n                swap(nex[i][j], nex[ni][nj]);\n      \
+    \          res.push_back(nex);\n            }\n        }\n        return res;\n\
+    \    };\n\n    cout << dynamic_bfs(p, f, ans) << endl;\n    return 0;\n}"
   dependsOn:
   - template.hpp
-  - math/combination.hpp
+  - graph/dynamic-bfs.hpp
   isVerificationFile: true
-  path: verify/aizu-combination.test.cpp
+  path: verify/dynamic-bfs.test.cpp
   requiredBy: []
-  timestamp: '2024-09-20 17:11:59+09:00'
+  timestamp: '2024-09-21 13:06:46+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: verify/aizu-combination.test.cpp
+documentation_of: verify/dynamic-bfs.test.cpp
 layout: document
 redirect_from:
-- /verify/verify/aizu-combination.test.cpp
-- /verify/verify/aizu-combination.test.cpp.html
-title: verify/aizu-combination.test.cpp
+- /verify/verify/dynamic-bfs.test.cpp
+- /verify/verify/dynamic-bfs.test.cpp.html
+title: verify/dynamic-bfs.test.cpp
 ---

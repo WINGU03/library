@@ -4,8 +4,8 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: verify/aizu-next-combination.test.cpp
-    title: verify/aizu-next-combination.test.cpp
+    path: verify/next-combination.test.cpp
+    title: verify/next-combination.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -37,7 +37,7 @@ data:
   timestamp: '2024-06-19 21:24:21+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/aizu-next-combination.test.cpp
+  - verify/next-combination.test.cpp
 documentation_of: misc/next-combination.hpp
 layout: document
 title: Next combination

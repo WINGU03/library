@@ -20,7 +20,7 @@ data:
     PROBLEM: https://judge.yosupo.jp/problem/static_range_inversions_query
     links:
     - https://judge.yosupo.jp/problem/static_range_inversions_query
-  bundledCode: "#line 1 \"verify/yosupo-mo1.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/static_range_inversions_query\"\
+  bundledCode: "#line 1 \"verify/mo.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/static_range_inversions_query\"\
     \n\n#include <bits/stdc++.h>\n#line 2 \"template.hpp\"\nusing namespace std;\n\
     #include <atcoder/modint>\nusing namespace atcoder;\n#ifdef DEFINED_ONLY_IN_LOCAL\n\
     #include <dump.hpp>\n#define dump(...) cpp_dump(__VA_ARGS__)\n#else\n#undef dump\n\
@@ -84,10 +84,10 @@ data:
     \   int operator()(T x) {\n        if (!initialized) init();\n        return mp[x];\n\
     \    }\n    T operator[](int i) {\n        if (!initialized) init();\n       \
     \ return xs[i];\n    }\n    int size() {\n        if (!initialized) init();\n\
-    \        return xs.size();\n    }\n};\n#line 7 \"verify/yosupo-mo1.test.cpp\"\n\
-    #include <atcoder/fenwicktree>\n\nint main() {\n    static int n, q;\n    cin\
-    \ >> n >> q;\n    static vector<int> a(n);\n    cin >> a;\n    static CC c;\n\
-    \    rep(i, n) c.add(a[i]);\n    rep(i, n) a[i] = c(a[i]);\n\n    static fenwick_tree<ll>\
+    \        return xs.size();\n    }\n};\n#line 7 \"verify/mo.test.cpp\"\n#include\
+    \ <atcoder/fenwicktree>\n\nint main() {\n    static int n, q;\n    cin >> n >>\
+    \ q;\n    static vector<int> a(n);\n    cin >> a;\n    static CC c;\n    rep(i,\
+    \ n) c.add(a[i]);\n    rep(i, n) a[i] = c(a[i]);\n\n    static fenwick_tree<ll>\
     \ f(n + 1);\n    static ll ans = 0;\n    struct M {\n        using T = ll;\n \
     \       static void add_left(int i) {\n            ans += f.sum(0, a[i]);\n  \
     \          f.add(a[i], 1);\n        }\n        static void add_right(int i) {\n\
@@ -121,15 +121,15 @@ data:
   - misc/mo.hpp
   - misc/cc.hpp
   isVerificationFile: true
-  path: verify/yosupo-mo1.test.cpp
+  path: verify/mo.test.cpp
   requiredBy: []
-  timestamp: '2024-09-14 18:40:33+09:00'
+  timestamp: '2024-09-21 13:06:46+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: verify/yosupo-mo1.test.cpp
+documentation_of: verify/mo.test.cpp
 layout: document
 redirect_from:
-- /verify/verify/yosupo-mo1.test.cpp
-- /verify/verify/yosupo-mo1.test.cpp.html
-title: verify/yosupo-mo1.test.cpp
+- /verify/verify/mo.test.cpp
+- /verify/verify/mo.test.cpp.html
+title: verify/mo.test.cpp
 ---
