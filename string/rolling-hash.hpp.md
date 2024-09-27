@@ -87,7 +87,7 @@ RollingHash R(string s)
 ## get
 
 ```cpp
-ll R.get(int l, int r)
+long long get(int l, int r)
 ```
 
 閉区間[l, r) のハッシュを返す。
@@ -97,7 +97,7 @@ $O(1)$
 ## all get
 
 ```cpp
-ll R.get()
+long long get()
 ```
 
 S[0:] のハッシュを返す。
@@ -107,7 +107,7 @@ $O(1)$
 ## connect
 
 ```cpp
-ll R.connect(ll s_hash, ll t_hash, ll t_len)
+long long connect(long long s_hash, long long t_hash, long long t_len)
 ```
 $O(1)$
 
@@ -116,7 +116,7 @@ $O(1)$
 ## lcp
 
 ```cpp
-int R.lcp(int a,int b)
+int lcp(int a,int b)
 ```
 
 S[a:] と S[b:] の 最長共通部分接頭辞(LCP)を返す。
@@ -126,7 +126,7 @@ $O(logN)$
 ## lcp(other RollingHash)
 
 ```cpp
-int R.lcp(RollingHash &other,int a,int b)
+int lcp(RollingHash &other,int a,int b)
 ```
 
 S[a:] と T[b:] の 最長共通部分接頭辞(LCP)を返す。
