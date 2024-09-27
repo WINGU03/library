@@ -1,6 +1,6 @@
-vector<pair<ll, ll>> prime_factorize(ll n) {
-    vector<pair<ll, ll>> res;
-    for (int p = 2; (ll)p * p <= n; p++) {
+vector<pair<long long, long long>> prime_factorize(long long n) {
+    vector<pair<long long, long long>> res;
+    for (int p = 2; (long long)p * p <= n; p++) {
         if (n % p != 0) continue;
         int num = 0;
         while (n % p == 0) {

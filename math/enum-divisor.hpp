@@ -1,9 +1,9 @@
-vector<ll> enum_divisor(ll n) {
-    vector<ll> res;
-    for (int i = 1; (ll)i * i <= n; i++) {
+vector<long long> enum_divisor(long long n) {
+    vector<long long> res;
+    for (int i = 1; (long long)i * i <= n; i++) {
         if (n % i == 0) {
             res.push_back(i);
-            ll j = n / i;
+            long long j = n / i;
             if (j != i) res.push_back(j);
         }
     }

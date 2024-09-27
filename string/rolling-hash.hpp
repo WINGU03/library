@@ -1,20 +1,19 @@
-mt19937_64 r(time(0));
-static constexpr ll mod = (1LL << 61) - 1;
-static const ll base = r() % (mod - 4) + 2;
+mt19937_64 rnd(time(0));
+static constexpr long long mod = (1LL << 61) - 1;
+static const long long base = rnd() % (mod - 4) + 2;
 
 struct RollingHash {
-    using i128 = __int128_t;
-    vector<ll> hash, power;
+    vector<long long> hash, power;
     int n;
     string s;
 
-    inline ll add(ll a, ll b) const {
+    inline long long add(long long a, long long b) const {
         if ((a += b) >= mod) a -= mod;
         return a;
     }
 
-    inline ll mul(ll a, ll b) const {
-        i128 x = (i128)a * b;
+    inline long long mul(long long a, long long b) const {
+        __int128_t x = (__int128_t)a * b;
         return add(x >> 61, x & mod);
     }
 
@@ -29,15 +28,15 @@ struct RollingHash {
         }
     }
 
-    inline ll get(int l, int r) const {
+    inline long long get(int l, int r) const {
         return add(hash[r], mod - mul(hash[l], power[r - l]));
     }
 
-    inline ll get() const {
+    inline long long get() const {
         return hash.back();
     }
 
-    inline ll connect(ll hash1, ll hash2, int hash2_len) const {
+    inline long long connect(long long hash1, long long hash2, int hash2_len) const {
         return add(mul(hash1, power[hash2_len]), hash2);
     }
 
