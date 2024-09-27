@@ -1,7 +1,7 @@
-mt19937_64 rnd(time(0));
+random_device rd;
+mt19937_64 rnd(rd());
 static constexpr long long mod = (1LL << 61) - 1;
 static const long long base = rnd() % (mod - 4) + 2;
-
 struct RollingHash {
     vector<long long> hash, power;
     int n;
