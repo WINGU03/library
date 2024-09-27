@@ -12,6 +12,7 @@
 "verify/next-combination.test.cpp": "2024-09-21 13:06:46 +0900",
 "verify/prime-factorize.test.cpp": "2024-09-27 20:13:23 +0900",
 "verify/rerooting.test.cpp": "2024-09-14 18:40:33 +0900",
+"verify/rolling-hash-tree.test.cpp": "2024-09-27 21:16:33 +0900",
 "verify/rolling-hash.test.cpp": "2024-09-27 21:13:50 +0900",
 "verify/segment-tree.test.cpp": "2024-09-21 13:38:24 +0900"
 }
