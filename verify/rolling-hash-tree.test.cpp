@@ -11,9 +11,9 @@ int main() {
     cin >> n >> l >> q;
     vector<string> s(n);
     cin >> s;
-    vector<RollingHashTree> RollingHash(n);
+    vector<RollingHashTree> rolling_hash(n);
     rep(i, n) {
-        RollingHash[i] = RollingHashTree(s[i]);
+        rolling_hash[i] = RollingHashTree(s[i]);
     }
 
     while (q--) {
@@ -27,26 +27,18 @@ int main() {
             rep(i, n) {
                 if (s[i][k] == c) {
                     s[i][k] = d;
-                    RollingHash[i].set(k, d);
+                    rolling_hash[i].set(k, d);
                 }
             }
         } else {
             string t;
             cin >> t;
             int m = t.size();
-            ll cor1 = 0, cor2 = 0;
-            rep(i, m) {
-                cor1 = cor1 * base1 + t[i];
-                cor1 %= mod1;
-            }
-            rep(i, m) {
-                cor2 = cor2 * base2 + t[i];
-                cor2 %= mod2;
-            }
+            RollingHashTree rol(t);
 
             int ans = 0;
             rep(i, n) {
-                if (RollingHash[i].get(0, m) == cor1 * mod2 + cor2) ans++;
+                if (rolling_hash[i].get(0, m) == rol.get(0, m)) ans++;
             }
 
             cout << ans << endl;
