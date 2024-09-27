@@ -24,15 +24,15 @@ void set(int i, char c)
 ## get
 
 ```cpp
-ll get(int l, int r)
+long long get(int l, int r)
 ```
 
-閉区間[l, r)のハッシュ取得
+閉区間[l, r)のハッシュ値を返す。
 
-## r_get
+## rget
 
 ```cpp
-ll r_get(int l, int r)
+long long rget(int l, int r)
 ```
 
-閉区間[l, r)の逆ハッシュ取得
+閉区間[l, r)を逆から見たハッシュ値を返す。
