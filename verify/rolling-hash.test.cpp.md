@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: string/rolling-hash.hpp
     title: Rolling Hash
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
@@ -56,18 +56,18 @@ data:
     \ int pc(ll x) {return __builtin_popcountll(x);}\nvoid Yes(bool judge = true)\
     \ {cout << (judge ? \"Yes\" : \"No\") << endl;}\nvoid No(bool judge = true) {cout\
     \ << (judge ? \"No\" : \"Yes\") << endl;}\n#line 1 \"string/rolling-hash.hpp\"\
-    \nmt19937_64 rnd(time(0));\nstatic constexpr long long mod = (1LL << 61) - 1;\n\
-    static const long long base = rnd() % (mod - 4) + 2;\n\nstruct RollingHash {\n\
-    \    vector<long long> hash, power;\n    int n;\n    string s;\n\n    inline long\
-    \ long add(long long a, long long b) const {\n        if ((a += b) >= mod) a -=\
-    \ mod;\n        return a;\n    }\n\n    inline long long mul(long long a, long\
-    \ long b) const {\n        __int128_t x = (__int128_t)a * b;\n        return add(x\
-    \ >> 61, x & mod);\n    }\n\n    explicit RollingHash(const string& S) {\n   \
-    \     n = (int)S.size();\n        s = S;\n        hash.resize(n + 1, 0);\n   \
-    \     power.resize(n + 1, 1);\n        for (int i = 0; i < n; i++) {\n       \
-    \     hash[i + 1] = add(mul(hash[i], base), S[i]);\n            power[i + 1] =\
-    \ mul(power[i], base);\n        }\n    }\n\n    inline long long get(int l, int\
-    \ r) const {\n        return add(hash[r], mod - mul(hash[l], power[r - l]));\n\
+    \nrandom_device rd;\nmt19937_64 rnd(rd());\nstatic constexpr long long mod = (1LL\
+    \ << 61) - 1;\nstatic const long long base = rnd() % (mod - 4) + 2;\nstruct RollingHash\
+    \ {\n    vector<long long> hash, power;\n    int n;\n    string s;\n\n    inline\
+    \ long long add(long long a, long long b) const {\n        if ((a += b) >= mod)\
+    \ a -= mod;\n        return a;\n    }\n\n    inline long long mul(long long a,\
+    \ long long b) const {\n        __int128_t x = (__int128_t)a * b;\n        return\
+    \ add(x >> 61, x & mod);\n    }\n\n    explicit RollingHash(const string& S) {\n\
+    \        n = (int)S.size();\n        s = S;\n        hash.resize(n + 1, 0);\n\
+    \        power.resize(n + 1, 1);\n        for (int i = 0; i < n; i++) {\n    \
+    \        hash[i + 1] = add(mul(hash[i], base), S[i]);\n            power[i + 1]\
+    \ = mul(power[i], base);\n        }\n    }\n\n    inline long long get(int l,\
+    \ int r) const {\n        return add(hash[r], mod - mul(hash[l], power[r - l]));\n\
     \    }\n\n    inline long long get() const {\n        return hash.back();\n  \
     \  }\n\n    inline long long connect(long long hash1, long long hash2, int hash2_len)\
     \ const {\n        return add(mul(hash1, power[hash2_len]), hash2);\n    }\n\n\
@@ -98,7 +98,7 @@ data:
   isVerificationFile: true
   path: verify/rolling-hash.test.cpp
   requiredBy: []
-  timestamp: '2024-09-27 20:13:23+09:00'
+  timestamp: '2024-09-27 21:13:50+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/rolling-hash.test.cpp

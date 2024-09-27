@@ -3,64 +3,57 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/rolling-hash-tree.test.cpp
     title: verify/rolling-hash-tree.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 1 \"string/rolling-hash-tree.hpp\"\n#include <atcoder/segtree>\n\
-    \nmt19937_64 rnd(time(0));\nstatic const int mod1 = 1000000007, mod2 = 1000000009;\n\
-    using mint1 = static_modint<mod1>;\nusing mint2 = static_modint<mod2>;\nstatic\
-    \ const int base1 = rnd() % (mod1 - 4) + 2, base2 = rnd() % (mod2 - 4) + 2;\n\n\
-    using D = tuple<mint1, mint2, mint1, mint2>;\nD op(D l, D r) {\n    auto [a, b,\
-    \ c, d] = l;\n    auto [e, f, g, h] = r;\n    mint1 res1 = a * g + e;\n    mint2\
-    \ res2 = b * h + f;\n    return D(res1, res2, c * g, d * h);\n}\nD e() {\n   \
-    \ return D(0, 0, 1, 1);\n}\n\nD op_(D l, D r) {\n    auto [a, b, c, d] = l;\n\
-    \    auto [e, f, g, h] = r;\n    mint1 res1 = e * c + a;\n    mint2 res2 = f *\
-    \ d + b;\n    return D(res1, res2, c * g, d * h);\n}\n\nstruct RollingHashTree\
-    \ {\n    segtree<D, op, e> seg;\n    segtree<D, op_, e> rseg;\n    bool reverse;\n\
-    \n    explicit RollingHashTree(const string &s = \"\", bool reverse_ = false)\n\
-    \        : reverse(reverse_) {\n        int n = s.size();\n        seg = segtree<D,\
-    \ op, e>(n);\n        if (reverse) rseg = segtree<D, op_, e>(n);\n        rep(i,\
-    \ n) {\n            seg.set(i, D(s[i], s[i], base1, base2));\n            if (reverse)\
-    \ rseg.set(i, D(s[i], s[i], base1, base2));\n        }\n    }\n\n    inline void\
-    \ set(int i, char c) {\n        seg.set(i, D(c, c, base1, base2));\n        if\
-    \ (reverse) rseg.set(i, D(c, c, base1, base2));\n    }\n\n    inline long long\
-    \ get(int l, int r) {\n        auto [a, b, c, d] = seg.prod(l, r);\n        return\
-    \ (long long)a.val() * mod2 + b.val();\n    }\n\n    inline long long rget(int\
-    \ l, int r) {\n        auto [a, b, c, d] = rseg.prod(l, r);\n        return (long\
-    \ long)a.val() * mod2 + b.val();\n    }\n};\n"
-  code: "#include <atcoder/segtree>\n\nmt19937_64 rnd(time(0));\nstatic const int\
-    \ mod1 = 1000000007, mod2 = 1000000009;\nusing mint1 = static_modint<mod1>;\n\
-    using mint2 = static_modint<mod2>;\nstatic const int base1 = rnd() % (mod1 - 4)\
-    \ + 2, base2 = rnd() % (mod2 - 4) + 2;\n\nusing D = tuple<mint1, mint2, mint1,\
-    \ mint2>;\nD op(D l, D r) {\n    auto [a, b, c, d] = l;\n    auto [e, f, g, h]\
-    \ = r;\n    mint1 res1 = a * g + e;\n    mint2 res2 = b * h + f;\n    return D(res1,\
-    \ res2, c * g, d * h);\n}\nD e() {\n    return D(0, 0, 1, 1);\n}\n\nD op_(D l,\
-    \ D r) {\n    auto [a, b, c, d] = l;\n    auto [e, f, g, h] = r;\n    mint1 res1\
-    \ = e * c + a;\n    mint2 res2 = f * d + b;\n    return D(res1, res2, c * g, d\
-    \ * h);\n}\n\nstruct RollingHashTree {\n    segtree<D, op, e> seg;\n    segtree<D,\
-    \ op_, e> rseg;\n    bool reverse;\n\n    explicit RollingHashTree(const string\
-    \ &s = \"\", bool reverse_ = false)\n        : reverse(reverse_) {\n        int\
-    \ n = s.size();\n        seg = segtree<D, op, e>(n);\n        if (reverse) rseg\
+    \nrandom_device rd;\nmt19937_64 rnd(rd());\nstatic constexpr long long mod = (1LL\
+    \ << 61) - 1;\nstatic const long long base = rnd() % (mod - 4) + 2;\n\nusing D\
+    \ = pair<long long, long long>;\n\nD op(D l, D r) {\n    auto [a, b] = l;\n  \
+    \  auto [c, d] = r;\n    __int128_t x = (__int128_t)a * d + c;\n    return D(x\
+    \ % mod, ((__int128_t)b * d) % mod);\n}\nD e() {\n    return D(0, 1);\n}\n\nD\
+    \ op_(D l, D r) {\n    auto [a, b] = l;\n    auto [c, d] = r;\n    __int128_t\
+    \ x = (__int128_t)c * b + a;\n    return D(x % mod, ((__int128_t)b * d) % mod);\n\
+    }\n\nstruct RollingHashTree {\n    segtree<D, op, e> seg;\n    segtree<D, op_,\
+    \ e> rseg;\n    bool reverse;\n\n    explicit RollingHashTree(const string &s\
+    \ = \"\", bool reverse_ = false)\n        : reverse(reverse_) {\n        int n\
+    \ = s.size();\n        seg = segtree<D, op, e>(n);\n        if (reverse) rseg\
     \ = segtree<D, op_, e>(n);\n        rep(i, n) {\n            seg.set(i, D(s[i],\
-    \ s[i], base1, base2));\n            if (reverse) rseg.set(i, D(s[i], s[i], base1,\
-    \ base2));\n        }\n    }\n\n    inline void set(int i, char c) {\n       \
-    \ seg.set(i, D(c, c, base1, base2));\n        if (reverse) rseg.set(i, D(c, c,\
-    \ base1, base2));\n    }\n\n    inline long long get(int l, int r) {\n       \
-    \ auto [a, b, c, d] = seg.prod(l, r);\n        return (long long)a.val() * mod2\
-    \ + b.val();\n    }\n\n    inline long long rget(int l, int r) {\n        auto\
-    \ [a, b, c, d] = rseg.prod(l, r);\n        return (long long)a.val() * mod2 +\
-    \ b.val();\n    }\n};"
+    \ base));\n            if (reverse) rseg.set(i, D(s[i], base));\n        }\n \
+    \   }\n\n    inline void set(int i, char c) {\n        seg.set(i, D(c, base));\n\
+    \        if (reverse) rseg.set(i, D(c, base));\n    }\n\n    inline long long\
+    \ get(int l, int r) {\n        auto [a, b] = seg.prod(l, r);\n        return a;\n\
+    \    }\n\n    inline long long rget(int l, int r) {\n        auto [a, b] = rseg.prod(l,\
+    \ r);\n        return a;\n    }\n};\n"
+  code: "#include <atcoder/segtree>\n\nrandom_device rd;\nmt19937_64 rnd(rd());\n\
+    static constexpr long long mod = (1LL << 61) - 1;\nstatic const long long base\
+    \ = rnd() % (mod - 4) + 2;\n\nusing D = pair<long long, long long>;\n\nD op(D\
+    \ l, D r) {\n    auto [a, b] = l;\n    auto [c, d] = r;\n    __int128_t x = (__int128_t)a\
+    \ * d + c;\n    return D(x % mod, ((__int128_t)b * d) % mod);\n}\nD e() {\n  \
+    \  return D(0, 1);\n}\n\nD op_(D l, D r) {\n    auto [a, b] = l;\n    auto [c,\
+    \ d] = r;\n    __int128_t x = (__int128_t)c * b + a;\n    return D(x % mod, ((__int128_t)b\
+    \ * d) % mod);\n}\n\nstruct RollingHashTree {\n    segtree<D, op, e> seg;\n  \
+    \  segtree<D, op_, e> rseg;\n    bool reverse;\n\n    explicit RollingHashTree(const\
+    \ string &s = \"\", bool reverse_ = false)\n        : reverse(reverse_) {\n  \
+    \      int n = s.size();\n        seg = segtree<D, op, e>(n);\n        if (reverse)\
+    \ rseg = segtree<D, op_, e>(n);\n        rep(i, n) {\n            seg.set(i, D(s[i],\
+    \ base));\n            if (reverse) rseg.set(i, D(s[i], base));\n        }\n \
+    \   }\n\n    inline void set(int i, char c) {\n        seg.set(i, D(c, base));\n\
+    \        if (reverse) rseg.set(i, D(c, base));\n    }\n\n    inline long long\
+    \ get(int l, int r) {\n        auto [a, b] = seg.prod(l, r);\n        return a;\n\
+    \    }\n\n    inline long long rget(int l, int r) {\n        auto [a, b] = rseg.prod(l,\
+    \ r);\n        return a;\n    }\n};"
   dependsOn: []
   isVerificationFile: false
   path: string/rolling-hash-tree.hpp
   requiredBy: []
-  timestamp: '2024-09-27 20:27:13+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2024-09-27 21:13:50+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - verify/rolling-hash-tree.test.cpp
 documentation_of: string/rolling-hash-tree.hpp

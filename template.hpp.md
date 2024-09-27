@@ -33,15 +33,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/rerooting.test.cpp
     title: verify/rerooting.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/rolling-hash-tree.test.cpp
     title: verify/rolling-hash-tree.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/rolling-hash.test.cpp
     title: verify/rolling-hash.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: '#line 1 "template.hpp"
@@ -271,7 +271,7 @@ data:
   path: template.hpp
   requiredBy: []
   timestamp: '2024-09-14 18:40:33+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/dynamic-bfs.test.cpp
   - verify/combination.test.cpp

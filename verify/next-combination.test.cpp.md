@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: misc/next-combination.hpp
     title: Next combination
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []

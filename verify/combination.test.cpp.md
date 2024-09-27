@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/combination.hpp
     title: "\u4E8C\u9805\u4FC2\u6570(mod)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []

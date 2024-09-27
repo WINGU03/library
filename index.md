@@ -53,7 +53,7 @@ data:
       title: Next combination
   - name: string
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: string/rolling-hash-tree.hpp
       title: Rolling Hash Tree
     - icon: ':heavy_check_mark:'
@@ -61,7 +61,7 @@ data:
       title: Rolling Hash
   - name: .
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template.hpp
       title: template.hpp
   verificationCategories:
@@ -106,7 +106,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/rerooting.test.cpp
       title: verify/rerooting.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/rolling-hash-tree.test.cpp
       title: verify/rolling-hash-tree.test.cpp
     - icon: ':heavy_check_mark:'
