@@ -11,20 +11,21 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"math/enum-divisor.hpp\"\nvector<ll> enum_divisor(ll n) {\n\
-    \    vector<ll> res;\n    for (int i = 1; (ll)i * i <= n; i++) {\n        if (n\
-    \ % i == 0) {\n            res.push_back(i);\n            ll j = n / i;\n    \
-    \        if (j != i) res.push_back(j);\n        }\n    }\n    sort(res.begin(),\
-    \ res.end());\n    return res;\n}\n"
-  code: "vector<ll> enum_divisor(ll n) {\n    vector<ll> res;\n    for (int i = 1;\
-    \ (ll)i * i <= n; i++) {\n        if (n % i == 0) {\n            res.push_back(i);\n\
-    \            ll j = n / i;\n            if (j != i) res.push_back(j);\n      \
-    \  }\n    }\n    sort(res.begin(), res.end());\n    return res;\n}"
+  bundledCode: "#line 1 \"math/enum-divisor.hpp\"\nvector<long long> enum_divisor(long\
+    \ long n) {\n    vector<long long> res;\n    for (int i = 1; (long long)i * i\
+    \ <= n; i++) {\n        if (n % i == 0) {\n            res.push_back(i);\n   \
+    \         long long j = n / i;\n            if (j != i) res.push_back(j);\n  \
+    \      }\n    }\n    sort(res.begin(), res.end());\n    return res;\n}\n"
+  code: "vector<long long> enum_divisor(long long n) {\n    vector<long long> res;\n\
+    \    for (int i = 1; (long long)i * i <= n; i++) {\n        if (n % i == 0) {\n\
+    \            res.push_back(i);\n            long long j = n / i;\n           \
+    \ if (j != i) res.push_back(j);\n        }\n    }\n    sort(res.begin(), res.end());\n\
+    \    return res;\n}"
   dependsOn: []
   isVerificationFile: false
   path: math/enum-divisor.hpp
   requiredBy: []
-  timestamp: '2024-06-10 17:44:10+09:00'
+  timestamp: '2024-09-27 20:13:23+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/enum-divisor.test.cpp

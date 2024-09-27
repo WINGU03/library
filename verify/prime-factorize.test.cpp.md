@@ -56,15 +56,15 @@ data:
     \ int pc(ll x) {return __builtin_popcountll(x);}\nvoid Yes(bool judge = true)\
     \ {cout << (judge ? \"Yes\" : \"No\") << endl;}\nvoid No(bool judge = true) {cout\
     \ << (judge ? \"No\" : \"Yes\") << endl;}\n#line 1 \"math/prime-factorize.hpp\"\
-    \nvector<pair<ll, ll>> prime_factorize(ll n) {\n    vector<pair<ll, ll>> res;\n\
-    \    for (int p = 2; (ll)p * p <= n; p++) {\n        if (n % p != 0) continue;\n\
-    \        int num = 0;\n        while (n % p == 0) {\n            num++;\n    \
-    \        n /= p;\n        }\n        res.push_back(make_pair(p, num));\n    }\n\
-    \    if (n != 1) res.push_back(make_pair(n, 1));\n    return res;\n}\n#line 6\
-    \ \"verify/prime-factorize.test.cpp\"\n\nint main() {\n    int n;\n    cin >>\
-    \ n;\n    auto p = prime_factorize(n);\n    cout << n << ':';\n    for (auto [number,\
-    \ val] : p) {\n        rep(i, val) cout << \" \" << number;\n    }\n    cout <<\
-    \ endl;\n    return 0;\n}\n"
+    \nvector<pair<long long, long long>> prime_factorize(long long n) {\n    vector<pair<long\
+    \ long, long long>> res;\n    for (int p = 2; (long long)p * p <= n; p++) {\n\
+    \        if (n % p != 0) continue;\n        int num = 0;\n        while (n % p\
+    \ == 0) {\n            num++;\n            n /= p;\n        }\n        res.push_back(make_pair(p,\
+    \ num));\n    }\n    if (n != 1) res.push_back(make_pair(n, 1));\n    return res;\n\
+    }\n#line 6 \"verify/prime-factorize.test.cpp\"\n\nint main() {\n    int n;\n \
+    \   cin >> n;\n    auto p = prime_factorize(n);\n    cout << n << ':';\n    for\
+    \ (auto [number, val] : p) {\n        rep(i, val) cout << \" \" << number;\n \
+    \   }\n    cout << endl;\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_A\"\
     \n\n#include <bits/stdc++.h>\n#include \"template.hpp\"\n#include \"math/prime-factorize.hpp\"\
     \n\nint main() {\n    int n;\n    cin >> n;\n    auto p = prime_factorize(n);\n\
@@ -76,7 +76,7 @@ data:
   isVerificationFile: true
   path: verify/prime-factorize.test.cpp
   requiredBy: []
-  timestamp: '2024-09-14 18:40:33+09:00'
+  timestamp: '2024-09-27 20:13:23+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/prime-factorize.test.cpp

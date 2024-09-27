@@ -55,12 +55,13 @@ data:
     \ nj, int h, int w) {return (ni < 0 or ni >= h or nj < 0 or nj >= w);}\ninline\
     \ int pc(ll x) {return __builtin_popcountll(x);}\nvoid Yes(bool judge = true)\
     \ {cout << (judge ? \"Yes\" : \"No\") << endl;}\nvoid No(bool judge = true) {cout\
-    \ << (judge ? \"No\" : \"Yes\") << endl;}\n#line 1 \"math/extgcd.hpp\"\nll extgcd(ll\
-    \ a, ll b, ll &x, ll &y) {\n    if (b == 0) {\n        x = 1;\n        y = 0;\n\
-    \        return a;\n    }\n    ll d = extgcd(b, a % b, y, x);\n    y -= a / b\
-    \ * x;\n    return d;\n}\n#line 6 \"verify/extgcd.test.cpp\"\n\nint main() {\n\
-    \    int a, b;\n    cin >> a >> b;\n    ll x, y;\n    extgcd(a, b, x, y);\n  \
-    \  cout << x << \" \" << y << endl;\n    return 0;\n}\n"
+    \ << (judge ? \"No\" : \"Yes\") << endl;}\n#line 1 \"math/extgcd.hpp\"\nlong long\
+    \ extgcd(long long a, long long b, long long &x, long long &y) {\n    if (b ==\
+    \ 0) {\n        x = 1;\n        y = 0;\n        return a;\n    }\n    long long\
+    \ d = extgcd(b, a % b, y, x);\n    y -= a / b * x;\n    return d;\n}\n#line 6\
+    \ \"verify/extgcd.test.cpp\"\n\nint main() {\n    int a, b;\n    cin >> a >> b;\n\
+    \    ll x, y;\n    extgcd(a, b, x, y);\n    cout << x << \" \" << y << endl;\n\
+    \    return 0;\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_E\"\
     \n\n#include <bits/stdc++.h>\n#include \"template.hpp\"\n#include \"math/extgcd.hpp\"\
     \n\nint main() {\n    int a, b;\n    cin >> a >> b;\n    ll x, y;\n    extgcd(a,\
@@ -71,7 +72,7 @@ data:
   isVerificationFile: true
   path: verify/extgcd.test.cpp
   requiredBy: []
-  timestamp: '2024-09-14 18:40:33+09:00'
+  timestamp: '2024-09-27 20:13:23+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/extgcd.test.cpp

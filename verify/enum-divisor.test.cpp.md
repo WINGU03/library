@@ -56,14 +56,14 @@ data:
     \ int pc(ll x) {return __builtin_popcountll(x);}\nvoid Yes(bool judge = true)\
     \ {cout << (judge ? \"Yes\" : \"No\") << endl;}\nvoid No(bool judge = true) {cout\
     \ << (judge ? \"No\" : \"Yes\") << endl;}\n#line 1 \"math/enum-divisor.hpp\"\n\
-    vector<ll> enum_divisor(ll n) {\n    vector<ll> res;\n    for (int i = 1; (ll)i\
-    \ * i <= n; i++) {\n        if (n % i == 0) {\n            res.push_back(i);\n\
-    \            ll j = n / i;\n            if (j != i) res.push_back(j);\n      \
-    \  }\n    }\n    sort(res.begin(), res.end());\n    return res;\n}\n#line 6 \"\
-    verify/enum-divisor.test.cpp\"\n\nint main(){\n    ll n;\n    cin >> n;\n    auto\
-    \ divisors = enum_divisor(n);\n    ll ans = 0;\n    for (auto divisor : divisors)\
-    \ {\n        ans += divisor;\n    }\n    cout << ans << endl;\n    return 0;\n\
-    }\n"
+    vector<long long> enum_divisor(long long n) {\n    vector<long long> res;\n  \
+    \  for (int i = 1; (long long)i * i <= n; i++) {\n        if (n % i == 0) {\n\
+    \            res.push_back(i);\n            long long j = n / i;\n           \
+    \ if (j != i) res.push_back(j);\n        }\n    }\n    sort(res.begin(), res.end());\n\
+    \    return res;\n}\n#line 6 \"verify/enum-divisor.test.cpp\"\n\nint main(){\n\
+    \    ll n;\n    cin >> n;\n    auto divisors = enum_divisor(n);\n    ll ans =\
+    \ 0;\n    for (auto divisor : divisors) {\n        ans += divisor;\n    }\n  \
+    \  cout << ans << endl;\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://yukicoder.me/problems/no/888\"\n\n#include <bits/stdc++.h>\n\
     #include \"template.hpp\"\n#include \"math/enum-divisor.hpp\"\n\nint main(){\n\
     \    ll n;\n    cin >> n;\n    auto divisors = enum_divisor(n);\n    ll ans =\
@@ -75,7 +75,7 @@ data:
   isVerificationFile: true
   path: verify/enum-divisor.test.cpp
   requiredBy: []
-  timestamp: '2024-09-14 18:40:33+09:00'
+  timestamp: '2024-09-27 20:13:23+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/enum-divisor.test.cpp

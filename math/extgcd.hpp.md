@@ -11,17 +11,19 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"math/extgcd.hpp\"\nll extgcd(ll a, ll b, ll &x, ll &y) {\n\
+  bundledCode: "#line 1 \"math/extgcd.hpp\"\nlong long extgcd(long long a, long long\
+    \ b, long long &x, long long &y) {\n    if (b == 0) {\n        x = 1;\n      \
+    \  y = 0;\n        return a;\n    }\n    long long d = extgcd(b, a % b, y, x);\n\
+    \    y -= a / b * x;\n    return d;\n}\n"
+  code: "long long extgcd(long long a, long long b, long long &x, long long &y) {\n\
     \    if (b == 0) {\n        x = 1;\n        y = 0;\n        return a;\n    }\n\
-    \    ll d = extgcd(b, a % b, y, x);\n    y -= a / b * x;\n    return d;\n}\n"
-  code: "ll extgcd(ll a, ll b, ll &x, ll &y) {\n    if (b == 0) {\n        x = 1;\n\
-    \        y = 0;\n        return a;\n    }\n    ll d = extgcd(b, a % b, y, x);\n\
-    \    y -= a / b * x;\n    return d;\n}"
+    \    long long d = extgcd(b, a % b, y, x);\n    y -= a / b * x;\n    return d;\n\
+    }"
   dependsOn: []
   isVerificationFile: false
   path: math/extgcd.hpp
   requiredBy: []
-  timestamp: '2024-06-10 17:44:10+09:00'
+  timestamp: '2024-09-27 20:13:23+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/extgcd.test.cpp

@@ -56,35 +56,36 @@ data:
     \ int pc(ll x) {return __builtin_popcountll(x);}\nvoid Yes(bool judge = true)\
     \ {cout << (judge ? \"Yes\" : \"No\") << endl;}\nvoid No(bool judge = true) {cout\
     \ << (judge ? \"No\" : \"Yes\") << endl;}\n#line 1 \"string/rolling-hash.hpp\"\
-    \nmt19937_64 r(time(0));\nstatic constexpr ll mod = (1LL << 61) - 1;\nstatic const\
-    \ ll base = r() % (mod - 4) + 2;\n\nstruct RollingHash {\n    using i128 = __int128_t;\n\
-    \    vector<ll> hash, power;\n    int n;\n    string s;\n\n    inline ll add(ll\
-    \ a, ll b) const {\n        if ((a += b) >= mod) a -= mod;\n        return a;\n\
-    \    }\n\n    inline ll mul(ll a, ll b) const {\n        i128 x = (i128)a * b;\n\
-    \        return add(x >> 61, x & mod);\n    }\n\n    explicit RollingHash(const\
-    \ string& S) {\n        n = (int)S.size();\n        s = S;\n        hash.resize(n\
-    \ + 1, 0);\n        power.resize(n + 1, 1);\n        for (int i = 0; i < n; i++)\
-    \ {\n            hash[i + 1] = add(mul(hash[i], base), S[i]);\n            power[i\
-    \ + 1] = mul(power[i], base);\n        }\n    }\n\n    inline ll get(int l, int\
+    \nmt19937_64 rnd(time(0));\nstatic constexpr long long mod = (1LL << 61) - 1;\n\
+    static const long long base = rnd() % (mod - 4) + 2;\n\nstruct RollingHash {\n\
+    \    vector<long long> hash, power;\n    int n;\n    string s;\n\n    inline long\
+    \ long add(long long a, long long b) const {\n        if ((a += b) >= mod) a -=\
+    \ mod;\n        return a;\n    }\n\n    inline long long mul(long long a, long\
+    \ long b) const {\n        __int128_t x = (__int128_t)a * b;\n        return add(x\
+    \ >> 61, x & mod);\n    }\n\n    explicit RollingHash(const string& S) {\n   \
+    \     n = (int)S.size();\n        s = S;\n        hash.resize(n + 1, 0);\n   \
+    \     power.resize(n + 1, 1);\n        for (int i = 0; i < n; i++) {\n       \
+    \     hash[i + 1] = add(mul(hash[i], base), S[i]);\n            power[i + 1] =\
+    \ mul(power[i], base);\n        }\n    }\n\n    inline long long get(int l, int\
     \ r) const {\n        return add(hash[r], mod - mul(hash[l], power[r - l]));\n\
-    \    }\n\n    inline ll get() const {\n        return hash.back();\n    }\n\n\
-    \    inline ll connect(ll hash1, ll hash2, int hash2_len) const {\n        return\
-    \ add(mul(hash1, power[hash2_len]), hash2);\n    }\n\n    inline int lcp(int a,\
-    \ int b) const {\n        int len = min((int)hash.size() - a, (int)hash.size()\
+    \    }\n\n    inline long long get() const {\n        return hash.back();\n  \
+    \  }\n\n    inline long long connect(long long hash1, long long hash2, int hash2_len)\
+    \ const {\n        return add(mul(hash1, power[hash2_len]), hash2);\n    }\n\n\
+    \    inline int lcp(int a, int b) const {\n        int len = min((int)hash.size()\
+    \ - a, (int)hash.size() - b);\n        int left = 0, right = len;\n        while\
+    \ (right - left > 1) {\n            int mid = (left + right) / 2;\n          \
+    \  if (get(a, a + mid) != get(b, b + mid)) {\n                right = mid;\n \
+    \           } else {\n                left = mid;\n            }\n        }\n\
+    \        return left;\n    }\n\n    inline int lcp(const RollingHash& T, int a,\
+    \ int b) const {\n        int len = min((int)hash.size() - a, (int)T.hash.size()\
     \ - b);\n        int left = 0, right = len;\n        while (right - left > 1)\
     \ {\n            int mid = (left + right) / 2;\n            if (get(a, a + mid)\
-    \ != get(b, b + mid)) {\n                right = mid;\n            } else {\n\
+    \ != T.get(b, b + mid)) {\n                right = mid;\n            } else {\n\
     \                left = mid;\n            }\n        }\n        return left;\n\
-    \    }\n\n    inline int lcp(const RollingHash& T, int a, int b) const {\n   \
-    \     int len = min((int)hash.size() - a, (int)T.hash.size() - b);\n        int\
-    \ left = 0, right = len;\n        while (right - left > 1) {\n            int\
-    \ mid = (left + right) / 2;\n            if (get(a, a + mid) != T.get(b, b + mid))\
-    \ {\n                right = mid;\n            } else {\n                left\
-    \ = mid;\n            }\n        }\n        return left;\n    }\n};\n#line 6 \"\
-    verify/rolling-hash.test.cpp\"\n\nint main() {\n    string T, P;\n    cin >> T\
-    \ >> P;\n    int N = T.size(), M = P.size();\n    RollingHash RT(T), RP(P);\n\
-    \    rep(i, N - M + 1) {\n        if(RT.get(i, i + M) == RP.get()) {\n       \
-    \     cout << i << endl;\n        }\n    }\n    return 0;\n}\n"
+    \    }\n};\n#line 6 \"verify/rolling-hash.test.cpp\"\n\nint main() {\n    string\
+    \ T, P;\n    cin >> T >> P;\n    int N = T.size(), M = P.size();\n    RollingHash\
+    \ RT(T), RP(P);\n    rep(i, N - M + 1) {\n        if(RT.get(i, i + M) == RP.get())\
+    \ {\n            cout << i << endl;\n        }\n    }\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/14/ALDS1_14_B\"\
     \n\n#include<bits/stdc++.h>\n#include \"template.hpp\"\n#include \"string/rolling-hash.hpp\"\
     \n\nint main() {\n    string T, P;\n    cin >> T >> P;\n    int N = T.size(),\
@@ -97,7 +98,7 @@ data:
   isVerificationFile: true
   path: verify/rolling-hash.test.cpp
   requiredBy: []
-  timestamp: '2024-09-21 13:06:46+09:00'
+  timestamp: '2024-09-27 20:13:23+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/rolling-hash.test.cpp
