@@ -4,16 +4,16 @@
 
 #include "template.hpp"
 
-#include "string/rolling-hash-tree.hpp"
+#include "string/segment-tree-rolling-hash.hpp"
 
 int main() {
     int n, l, q;
     cin >> n >> l >> q;
     vector<string> s(n);
     cin >> s;
-    vector<rolling_hash> rolling_hash(n);
+    vector<rolling_hash> rs;
     rep(i, n) {
-        rolling_hash[i] = rolling_hash(s[i]);
+        rs.push_back(rolling_hash(s[i]));
     }
 
     while (q--) {
@@ -27,18 +27,18 @@ int main() {
             rep(i, n) {
                 if (s[i][k] == c) {
                     s[i][k] = d;
-                    rolling_hash[i].set(k, d);
+                    rs[i].set(k, d);
                 }
             }
         } else {
             string t;
             cin >> t;
             int m = t.size();
-            rolling_hash rol(t);
+            rolling_hash rt(t);
 
             int ans = 0;
             rep(i, n) {
-                if (rolling_hash[i].get(0, m) == rol.get(0, m)) ans++;
+                if (rs[i].get(0, m) == rt.get(0, m)) ans++;
             }
 
             cout << ans << endl;
