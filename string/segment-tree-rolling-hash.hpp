@@ -24,12 +24,12 @@ D op_(D l, D r) {
     return D(x % mod, ((__int128_t)b * d) % mod);
 }
 
-struct RollingHashTree {
+struct rolling_hash {
     segtree<D, op, e> seg;
     segtree<D, op_, e> rseg;
     bool reverse;
 
-    explicit RollingHashTree(const string &s = "", bool reverse_ = false)
+    explicit rolling_hash(const string &s = "", bool reverse_ = false)
         : reverse(reverse_) {
         int n = s.size();
         seg = segtree<D, op, e>(n);

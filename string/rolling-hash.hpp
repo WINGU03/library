@@ -2,7 +2,7 @@ random_device rd;
 mt19937_64 rnd(rd());
 static constexpr long long mod = (1LL << 61) - 1;
 static const long long base = rnd() % (mod - 4) + 2;
-struct RollingHash {
+struct rolling_hash {
     vector<long long> hash, power;
     int n;
     string s;
@@ -17,7 +17,7 @@ struct RollingHash {
         return add(x >> 61, x & mod);
     }
 
-    explicit RollingHash(const string& S) {
+    explicit rolling_hash(const string& S) {
         n = (int)S.size();
         s = S;
         hash.resize(n + 1, 0);
@@ -54,7 +54,7 @@ struct RollingHash {
         return left;
     }
 
-    inline int lcp(const RollingHash& T, int a, int b) const {
+    inline int lcp(const rolling_hash& T, int a, int b) const {
         int len = min((int)hash.size() - a, (int)T.hash.size() - b);
         int left = 0, right = len;
         while (right - left > 1) {

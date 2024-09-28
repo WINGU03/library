@@ -1,13 +1,13 @@
 ---
-title: Rolling Hash Tree
-documentation_of: //string/rolling-hash-tree.hpp
+title: Rolling Hash(一点変更反転可能)
+documentation_of: //string/segment-tree-rolling-hash.hpp
 ---
 
 ## コンストラクタ
 
 ```cpp
-(1) SegmentRollingHash seg(string s) // reverse off
-(2) SegmentRollingHash seg(string s, true) // reverse on
+(1) rolling_hash seg(string s) // reverse off
+(2) rolling_hash seg(string s, true) // reverse on
 ```
 
 (1)では、文字列を反対方向から見たハッシュを取らないため、定数倍がよくなる。

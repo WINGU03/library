@@ -6,7 +6,7 @@ documentation_of: //string/rolling-hash.hpp
 ## コンストラクタ
 
 ```cpp
-RollingHash R(string s)
+rolling_hash R(string s)
 ```
 
 ## get
@@ -32,7 +32,7 @@ $O(1)$
 ## connect
 
 ```cpp
-long long connect(long long s_hash, long long t_hash, long long t_len)
+long long connect(long long S_hash, long long T_hash, long long T_len)
 ```
 $O(1)$
 
@@ -51,7 +51,7 @@ $O(logN)$
 ## lcp(other RollingHash)
 
 ```cpp
-int lcp(RollingHash &other,int a,int b)
+int lcp(RollingHash &T,int a,int b)
 ```
 
 S[a:] と T[b:] の 最長共通部分接頭辞(LCP)を返す。

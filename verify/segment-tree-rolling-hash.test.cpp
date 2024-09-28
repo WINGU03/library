@@ -11,9 +11,9 @@ int main() {
     cin >> n >> l >> q;
     vector<string> s(n);
     cin >> s;
-    vector<RollingHashTree> rolling_hash(n);
+    vector<rolling_hash> rolling_hash(n);
     rep(i, n) {
-        rolling_hash[i] = RollingHashTree(s[i]);
+        rolling_hash[i] = rolling_hash(s[i]);
     }
 
     while (q--) {
@@ -34,7 +34,7 @@ int main() {
             string t;
             cin >> t;
             int m = t.size();
-            RollingHashTree rol(t);
+            rolling_hash rol(t);
 
             int ans = 0;
             rep(i, n) {

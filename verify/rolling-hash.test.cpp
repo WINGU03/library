@@ -8,7 +8,7 @@ int main() {
     string T, P;
     cin >> T >> P;
     int N = T.size(), M = P.size();
-    RollingHash RT(T), RP(P);
+    rolling_hash RT(T), RP(P);
     rep(i, N - M + 1) {
         if(RT.get(i, i + M) == RP.get()) {
             cout << i << endl;
