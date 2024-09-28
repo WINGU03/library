@@ -31,3 +31,12 @@ documentation_of: math/extgcd.hpp
 layout: document
 title: "\u62E1\u5F35\u30E6\u30FC\u30AF\u30EA\u30C3\u30C9\u306E\u4E92\u9664\u6CD5"
 ---
+
+# extgcd
+
+```cpp
+long long extgcd(long long a, long long b, long long &x, long long &y)
+```
+
+gcd(a, b) を返す。
+ax + by = gcd(a, b) を満たす x と y が格納される。
