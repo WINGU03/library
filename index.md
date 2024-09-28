@@ -54,11 +54,11 @@ data:
   - name: string
     pages:
     - icon: ':heavy_check_mark:'
-      path: string/rolling-hash-tree.hpp
-      title: Rolling Hash Tree
-    - icon: ':heavy_check_mark:'
       path: string/rolling-hash.hpp
       title: Rolling Hash
+    - icon: ':warning:'
+      path: string/segment-tree-rolling-hash.hpp
+      title: "Rolling Hash(\u4E00\u70B9\u5909\u66F4\u53CD\u8EE2\u53EF\u80FD)"
   - name: .
     pages:
     - icon: ':heavy_check_mark:'
@@ -107,11 +107,11 @@ data:
       path: verify/rerooting.test.cpp
       title: verify/rerooting.test.cpp
     - icon: ':heavy_check_mark:'
-      path: verify/rolling-hash-tree.test.cpp
-      title: verify/rolling-hash-tree.test.cpp
-    - icon: ':heavy_check_mark:'
       path: verify/rolling-hash.test.cpp
       title: verify/rolling-hash.test.cpp
+    - icon: ':x:'
+      path: verify/segment-tree-rolling-hash.test.cpp
+      title: verify/segment-tree-rolling-hash.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/segment-tree.test.cpp
       title: verify/segment-tree.test.cpp

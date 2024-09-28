@@ -13,14 +13,14 @@ data:
     links: []
   bundledCode: "#line 1 \"string/rolling-hash.hpp\"\nrandom_device rd;\nmt19937_64\
     \ rnd(rd());\nstatic constexpr long long mod = (1LL << 61) - 1;\nstatic const\
-    \ long long base = rnd() % (mod - 4) + 2;\nstruct RollingHash {\n    vector<long\
+    \ long long base = rnd() % (mod - 4) + 2;\nstruct rolling_hash {\n    vector<long\
     \ long> hash, power;\n    int n;\n    string s;\n\n    inline long long add(long\
     \ long a, long long b) const {\n        if ((a += b) >= mod) a -= mod;\n     \
     \   return a;\n    }\n\n    inline long long mul(long long a, long long b) const\
     \ {\n        __int128_t x = (__int128_t)a * b;\n        return add(x >> 61, x\
-    \ & mod);\n    }\n\n    explicit RollingHash(const string& S) {\n        n = (int)S.size();\n\
-    \        s = S;\n        hash.resize(n + 1, 0);\n        power.resize(n + 1, 1);\n\
-    \        for (int i = 0; i < n; i++) {\n            hash[i + 1] = add(mul(hash[i],\
+    \ & mod);\n    }\n\n    explicit rolling_hash(const string& S) {\n        n =\
+    \ (int)S.size();\n        s = S;\n        hash.resize(n + 1, 0);\n        power.resize(n\
+    \ + 1, 1);\n        for (int i = 0; i < n; i++) {\n            hash[i + 1] = add(mul(hash[i],\
     \ base), S[i]);\n            power[i + 1] = mul(power[i], base);\n        }\n\
     \    }\n\n    inline long long get(int l, int r) const {\n        return add(hash[r],\
     \ mod - mul(hash[l], power[r - l]));\n    }\n\n    inline long long get() const\
@@ -32,19 +32,19 @@ data:
     \    int mid = (left + right) / 2;\n            if (get(a, a + mid) != get(b,\
     \ b + mid)) {\n                right = mid;\n            } else {\n          \
     \      left = mid;\n            }\n        }\n        return left;\n    }\n\n\
-    \    inline int lcp(const RollingHash& T, int a, int b) const {\n        int len\
-    \ = min((int)hash.size() - a, (int)T.hash.size() - b);\n        int left = 0,\
-    \ right = len;\n        while (right - left > 1) {\n            int mid = (left\
+    \    inline int lcp(const rolling_hash& T, int a, int b) const {\n        int\
+    \ len = min((int)hash.size() - a, (int)T.hash.size() - b);\n        int left =\
+    \ 0, right = len;\n        while (right - left > 1) {\n            int mid = (left\
     \ + right) / 2;\n            if (get(a, a + mid) != T.get(b, b + mid)) {\n   \
     \             right = mid;\n            } else {\n                left = mid;\n\
     \            }\n        }\n        return left;\n    }\n};\n"
   code: "random_device rd;\nmt19937_64 rnd(rd());\nstatic constexpr long long mod\
     \ = (1LL << 61) - 1;\nstatic const long long base = rnd() % (mod - 4) + 2;\nstruct\
-    \ RollingHash {\n    vector<long long> hash, power;\n    int n;\n    string s;\n\
+    \ rolling_hash {\n    vector<long long> hash, power;\n    int n;\n    string s;\n\
     \n    inline long long add(long long a, long long b) const {\n        if ((a +=\
     \ b) >= mod) a -= mod;\n        return a;\n    }\n\n    inline long long mul(long\
     \ long a, long long b) const {\n        __int128_t x = (__int128_t)a * b;\n  \
-    \      return add(x >> 61, x & mod);\n    }\n\n    explicit RollingHash(const\
+    \      return add(x >> 61, x & mod);\n    }\n\n    explicit rolling_hash(const\
     \ string& S) {\n        n = (int)S.size();\n        s = S;\n        hash.resize(n\
     \ + 1, 0);\n        power.resize(n + 1, 1);\n        for (int i = 0; i < n; i++)\
     \ {\n            hash[i + 1] = add(mul(hash[i], base), S[i]);\n            power[i\
@@ -58,8 +58,8 @@ data:
     \ (right - left > 1) {\n            int mid = (left + right) / 2;\n          \
     \  if (get(a, a + mid) != get(b, b + mid)) {\n                right = mid;\n \
     \           } else {\n                left = mid;\n            }\n        }\n\
-    \        return left;\n    }\n\n    inline int lcp(const RollingHash& T, int a,\
-    \ int b) const {\n        int len = min((int)hash.size() - a, (int)T.hash.size()\
+    \        return left;\n    }\n\n    inline int lcp(const rolling_hash& T, int\
+    \ a, int b) const {\n        int len = min((int)hash.size() - a, (int)T.hash.size()\
     \ - b);\n        int left = 0, right = len;\n        while (right - left > 1)\
     \ {\n            int mid = (left + right) / 2;\n            if (get(a, a + mid)\
     \ != T.get(b, b + mid)) {\n                right = mid;\n            } else {\n\
@@ -69,7 +69,7 @@ data:
   isVerificationFile: false
   path: string/rolling-hash.hpp
   requiredBy: []
-  timestamp: '2024-09-27 21:13:50+09:00'
+  timestamp: '2024-09-28 15:49:29+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/rolling-hash.test.cpp
@@ -81,7 +81,7 @@ title: Rolling Hash
 ## コンストラクタ
 
 ```cpp
-RollingHash R(string s)
+rolling_hash R(string s)
 ```
 
 ## get
@@ -107,7 +107,7 @@ $O(1)$
 ## connect
 
 ```cpp
-long long connect(long long s_hash, long long t_hash, long long t_len)
+long long connect(long long S_hash, long long T_hash, long long T_len)
 ```
 $O(1)$
 
@@ -126,7 +126,7 @@ $O(logN)$
 ## lcp(other RollingHash)
 
 ```cpp
-int lcp(RollingHash &other,int a,int b)
+int lcp(RollingHash &T,int a,int b)
 ```
 
 S[a:] と T[b:] の 最長共通部分接頭辞(LCP)を返す。

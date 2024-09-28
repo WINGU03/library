@@ -34,9 +34,6 @@ data:
     path: verify/rerooting.test.cpp
     title: verify/rerooting.test.cpp
   - icon: ':heavy_check_mark:'
-    path: verify/rolling-hash-tree.test.cpp
-    title: verify/rolling-hash-tree.test.cpp
-  - icon: ':heavy_check_mark:'
     path: verify/rolling-hash.test.cpp
     title: verify/rolling-hash.test.cpp
   _isVerificationFailed: false
@@ -281,7 +278,6 @@ data:
   - verify/enum-divisor.test.cpp
   - verify/next-combination.test.cpp
   - verify/eratosthenes.test.cpp
-  - verify/rolling-hash-tree.test.cpp
   - verify/mo.test.cpp
   - verify/rolling-hash.test.cpp
   - verify/extgcd.test.cpp
