@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/segment-tree-rolling-hash.test.cpp
+    title: verify/segment-tree-rolling-hash.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"string/segment-tree-rolling-hash.hpp\"\n#include <atcoder/segtree>\n\
@@ -50,8 +53,9 @@ data:
   path: string/segment-tree-rolling-hash.hpp
   requiredBy: []
   timestamp: '2024-09-28 15:49:29+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/segment-tree-rolling-hash.test.cpp
 documentation_of: string/segment-tree-rolling-hash.hpp
 layout: document
 title: "Rolling Hash(\u4E00\u70B9\u5909\u66F4\u53CD\u8EE2\u53EF\u80FD)"

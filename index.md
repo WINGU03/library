@@ -56,7 +56,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: string/rolling-hash.hpp
       title: Rolling Hash
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: string/segment-tree-rolling-hash.hpp
       title: "Rolling Hash(\u4E00\u70B9\u5909\u66F4\u53CD\u8EE2\u53EF\u80FD)"
   - name: .
@@ -109,7 +109,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/rolling-hash.test.cpp
       title: verify/rolling-hash.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/segment-tree-rolling-hash.test.cpp
       title: verify/segment-tree-rolling-hash.test.cpp
     - icon: ':heavy_check_mark:'
