@@ -3,15 +3,15 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/cc.test.cpp
     title: verify/cc.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/mo.test.cpp
     title: verify/mo.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 1 \"misc/cc.hpp\"\ntemplate <typename T = int>\nstruct CC {\n\
@@ -39,7 +39,7 @@ data:
   path: misc/cc.hpp
   requiredBy: []
   timestamp: '2024-06-19 21:24:21+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - verify/cc.test.cpp
   - verify/mo.test.cpp
