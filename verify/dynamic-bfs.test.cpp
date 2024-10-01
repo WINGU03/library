@@ -4,6 +4,9 @@
 #include "template.hpp"
 #include "graph/dynamic-bfs.hpp"
 
+int dx[4] = {-1, 0, 1, 0};
+int dy[4] = {0, 1, 0, -1};
+
 int main() {
     int n = 3;
     vector p(n, vector<int>(n));
@@ -17,7 +20,7 @@ int main() {
         rep(i, n) rep(j, n) if (x[i][j] == 0) {
             rep(d, 4) {
                 int ni = i + dx[d], nj = j + dy[d];
-                if (out(ni, nj, n, n)) continue;
+                if (ni < 0 or nj < 0 or ni >= n or nj >= n) continue;
                 auto nex = x;
                 swap(nex[i][j], nex[ni][nj]);
                 res.push_back(nex);

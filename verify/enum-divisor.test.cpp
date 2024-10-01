@@ -5,10 +5,10 @@
 #include "math/enum-divisor.hpp"
 
 int main(){
-    ll n;
+    long long n;
     cin >> n;
     auto divisors = enum_divisor(n);
-    ll ans = 0;
+    long long ans = 0;
     for (auto divisor : divisors) {
         ans += divisor;
     }

@@ -15,7 +15,7 @@ int main() {
     int m = c.size();
     rep(i, n) a[i] = c(a[i]);
     fenwick_tree<int> f(m);
-    ll ans = 0;
+    long long ans = 0;
     rep(i, n) {
         ans += f.sum(a[i], m);
         f.add(a[i], 1);

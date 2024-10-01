@@ -7,7 +7,7 @@
 int main() {
     int a, b;
     cin >> a >> b;
-    ll x, y;
+    long long x, y;
     extgcd(a, b, x, y);
     cout << x << " " << y << endl;
     return 0;

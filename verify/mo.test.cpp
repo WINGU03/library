@@ -15,10 +15,10 @@ int main() {
     rep(i, n) c.add(a[i]);
     rep(i, n) a[i] = c(a[i]);
 
-    static fenwick_tree<ll> f(n + 1);
-    static ll ans = 0;
+    static fenwick_tree<long long> f(n + 1);
+    static long long ans = 0;
     struct M {
-        using T = ll;
+        using T = long long;
         static void add_left(int i) {
             ans += f.sum(0, a[i]);
             f.add(a[i], 1);
