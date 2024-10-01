@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: misc/cc.hpp
     title: "\u5EA7\u6A19\u5727\u7E2E"
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: misc/mo.hpp
     title: "Mo\u2019s algorithm"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/static_range_inversions_query
@@ -55,15 +55,15 @@ data:
     \        return xs.size();\n    }\n};\n#line 7 \"verify/mo.test.cpp\"\n#include\
     \ <atcoder/fenwicktree>\n\nint main() {\n    static int n, q;\n    cin >> n >>\
     \ q;\n    static vector<int> a(n);\n    cin >> a;\n    static CC c;\n    rep(i,\
-    \ n) c.add(a[i]);\n    rep(i, n) a[i] = c(a[i]);\n\n    static fenwick_tree<ll>\
-    \ f(n + 1);\n    static ll ans = 0;\n    struct M {\n        using T = ll;\n \
-    \       static void add_left(int i) {\n            ans += f.sum(0, a[i]);\n  \
-    \          f.add(a[i], 1);\n        }\n        static void add_right(int i) {\n\
-    \            ans += f.sum(a[i] + 1, n);\n            f.add(a[i], 1);\n       \
-    \ }\n        static void del_left(int i) {\n            ans -= f.sum(0, a[i]);\n\
-    \            f.add(a[i], -1);\n        }\n        static void del_right(int i)\
-    \ {\n            ans -= f.sum(a[i] + 1, n);\n            f.add(a[i], -1);\n  \
-    \      }\n        static T res(int i) {\n            return ans;\n        }\n\
+    \ n) c.add(a[i]);\n    rep(i, n) a[i] = c(a[i]);\n\n    static fenwick_tree<long\
+    \ long> f(n + 1);\n    static long long ans = 0;\n    struct M {\n        using\
+    \ T = long long;\n        static void add_left(int i) {\n            ans += f.sum(0,\
+    \ a[i]);\n            f.add(a[i], 1);\n        }\n        static void add_right(int\
+    \ i) {\n            ans += f.sum(a[i] + 1, n);\n            f.add(a[i], 1);\n\
+    \        }\n        static void del_left(int i) {\n            ans -= f.sum(0,\
+    \ a[i]);\n            f.add(a[i], -1);\n        }\n        static void del_right(int\
+    \ i) {\n            ans -= f.sum(a[i] + 1, n);\n            f.add(a[i], -1);\n\
+    \        }\n        static T res(int i) {\n            return ans;\n        }\n\
     \    };\n\n    Mo<M> mo(n, q);\n    rep(i, q) {\n        int l, r;\n        cin\
     \ >> l >> r;\n        mo.add_query(l, r);\n    }\n    auto res = mo.run();\n \
     \   for (auto i : res) cout << i << '\\n';\n    return 0;\n}\n"
@@ -72,18 +72,18 @@ data:
     \n#include \"misc/cc.hpp\"\n#include <atcoder/fenwicktree>\n\nint main() {\n \
     \   static int n, q;\n    cin >> n >> q;\n    static vector<int> a(n);\n    cin\
     \ >> a;\n    static CC c;\n    rep(i, n) c.add(a[i]);\n    rep(i, n) a[i] = c(a[i]);\n\
-    \n    static fenwick_tree<ll> f(n + 1);\n    static ll ans = 0;\n    struct M\
-    \ {\n        using T = ll;\n        static void add_left(int i) {\n          \
-    \  ans += f.sum(0, a[i]);\n            f.add(a[i], 1);\n        }\n        static\
-    \ void add_right(int i) {\n            ans += f.sum(a[i] + 1, n);\n          \
-    \  f.add(a[i], 1);\n        }\n        static void del_left(int i) {\n       \
-    \     ans -= f.sum(0, a[i]);\n            f.add(a[i], -1);\n        }\n      \
-    \  static void del_right(int i) {\n            ans -= f.sum(a[i] + 1, n);\n  \
-    \          f.add(a[i], -1);\n        }\n        static T res(int i) {\n      \
-    \      return ans;\n        }\n    };\n\n    Mo<M> mo(n, q);\n    rep(i, q) {\n\
-    \        int l, r;\n        cin >> l >> r;\n        mo.add_query(l, r);\n    }\n\
-    \    auto res = mo.run();\n    for (auto i : res) cout << i << '\\n';\n    return\
-    \ 0;\n}"
+    \n    static fenwick_tree<long long> f(n + 1);\n    static long long ans = 0;\n\
+    \    struct M {\n        using T = long long;\n        static void add_left(int\
+    \ i) {\n            ans += f.sum(0, a[i]);\n            f.add(a[i], 1);\n    \
+    \    }\n        static void add_right(int i) {\n            ans += f.sum(a[i]\
+    \ + 1, n);\n            f.add(a[i], 1);\n        }\n        static void del_left(int\
+    \ i) {\n            ans -= f.sum(0, a[i]);\n            f.add(a[i], -1);\n   \
+    \     }\n        static void del_right(int i) {\n            ans -= f.sum(a[i]\
+    \ + 1, n);\n            f.add(a[i], -1);\n        }\n        static T res(int\
+    \ i) {\n            return ans;\n        }\n    };\n\n    Mo<M> mo(n, q);\n  \
+    \  rep(i, q) {\n        int l, r;\n        cin >> l >> r;\n        mo.add_query(l,\
+    \ r);\n    }\n    auto res = mo.run();\n    for (auto i : res) cout << i << '\\\
+    n';\n    return 0;\n}"
   dependsOn:
   - template.hpp
   - misc/mo.hpp
@@ -91,8 +91,8 @@ data:
   isVerificationFile: true
   path: verify/mo.test.cpp
   requiredBy: []
-  timestamp: '2024-10-01 21:17:41+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-10-01 21:26:03+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/mo.test.cpp
 layout: document

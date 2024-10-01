@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/extgcd.hpp
     title: "\u62E1\u5F35\u30E6\u30FC\u30AF\u30EA\u30C3\u30C9\u306E\u4E92\u9664\u6CD5"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_E
@@ -27,20 +27,20 @@ data:
     \ long b, long long &x, long long &y) {\n    if (b == 0) {\n        x = 1;\n \
     \       y = 0;\n        return a;\n    }\n    long long d = extgcd(b, a % b, y,\
     \ x);\n    y -= a / b * x;\n    return d;\n}\n#line 6 \"verify/extgcd.test.cpp\"\
-    \n\nint main() {\n    int a, b;\n    cin >> a >> b;\n    ll x, y;\n    extgcd(a,\
-    \ b, x, y);\n    cout << x << \" \" << y << endl;\n    return 0;\n}\n"
+    \n\nint main() {\n    int a, b;\n    cin >> a >> b;\n    long long x, y;\n   \
+    \ extgcd(a, b, x, y);\n    cout << x << \" \" << y << endl;\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_E\"\
     \n\n#include <bits/stdc++.h>\n#include \"template.hpp\"\n#include \"math/extgcd.hpp\"\
-    \n\nint main() {\n    int a, b;\n    cin >> a >> b;\n    ll x, y;\n    extgcd(a,\
-    \ b, x, y);\n    cout << x << \" \" << y << endl;\n    return 0;\n}"
+    \n\nint main() {\n    int a, b;\n    cin >> a >> b;\n    long long x, y;\n   \
+    \ extgcd(a, b, x, y);\n    cout << x << \" \" << y << endl;\n    return 0;\n}"
   dependsOn:
   - template.hpp
   - math/extgcd.hpp
   isVerificationFile: true
   path: verify/extgcd.test.cpp
   requiredBy: []
-  timestamp: '2024-10-01 21:17:41+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-10-01 21:26:03+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/extgcd.test.cpp
 layout: document

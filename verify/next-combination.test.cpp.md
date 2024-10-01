@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: misc/next-combination.hpp
     title: Next combination
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://onlinejudge.u-aizu.ac.jp/problems/ITP1_7_B
@@ -34,25 +34,26 @@ data:
     \ true;\n        }\n    }\n    rotate(first, subset, last);\n    return false;\n\
     }\n#line 6 \"verify/next-combination.test.cpp\"\n\nint main() {\n    int n, s;\n\
     \    while (cin >> n >> s) {\n        if (n == 0 and s == 0) exit(0);\n      \
-    \  vector<int> p(n);\n        iota(all(p), 1);\n        int ans = 0;\n       \
-    \ do {\n            int cur = 0;\n            rep(i, 3) cur += p[i];\n       \
-    \     if (cur == s) ans++;\n        } while (next_combination(all(p), 3));\n \
-    \       cout << ans << endl;\n    }\n    return 0;\n}\n"
+    \  vector<int> p(n);\n        iota(p.begin(), p.end(), 1);\n        int ans =\
+    \ 0;\n        do {\n            int cur = 0;\n            rep(i, 3) cur += p[i];\n\
+    \            if (cur == s) ans++;\n        } while (next_combination(p.begin(),\
+    \ p.end(), 3));\n        cout << ans << endl;\n    }\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/ITP1_7_B\"\n\n\
     #include <bits/stdc++.h>\n#include \"template.hpp\"\n#include \"misc/next-combination.hpp\"\
     \n\nint main() {\n    int n, s;\n    while (cin >> n >> s) {\n        if (n ==\
-    \ 0 and s == 0) exit(0);\n        vector<int> p(n);\n        iota(all(p), 1);\n\
-    \        int ans = 0;\n        do {\n            int cur = 0;\n            rep(i,\
-    \ 3) cur += p[i];\n            if (cur == s) ans++;\n        } while (next_combination(all(p),\
-    \ 3));\n        cout << ans << endl;\n    }\n    return 0;\n}"
+    \ 0 and s == 0) exit(0);\n        vector<int> p(n);\n        iota(p.begin(), p.end(),\
+    \ 1);\n        int ans = 0;\n        do {\n            int cur = 0;\n        \
+    \    rep(i, 3) cur += p[i];\n            if (cur == s) ans++;\n        } while\
+    \ (next_combination(p.begin(), p.end(), 3));\n        cout << ans << endl;\n \
+    \   }\n    return 0;\n}"
   dependsOn:
   - template.hpp
   - misc/next-combination.hpp
   isVerificationFile: true
   path: verify/next-combination.test.cpp
   requiredBy: []
-  timestamp: '2024-10-01 21:17:41+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-10-01 21:26:03+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/next-combination.test.cpp
 layout: document

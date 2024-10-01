@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: misc/cc.hpp
     title: "\u5EA7\u6A19\u5727\u7E2E"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/5/ALDS1_5_D
@@ -35,24 +35,24 @@ data:
     \        return xs.size();\n    }\n};\n#line 6 \"verify/cc.test.cpp\"\n#include\
     \ <atcoder/fenwicktree>\n\nint main() {\n    int n;\n    cin >> n;\n    vector<int>\
     \ a(n);\n    cin >> a;\n    CC c;\n    rep(i, n) c.add(a[i]);\n    int m = c.size();\n\
-    \    rep(i, n) a[i] = c(a[i]);\n    fenwick_tree<int> f(m);\n    ll ans = 0;\n\
-    \    rep(i, n) {\n        ans += f.sum(a[i], m);\n        f.add(a[i], 1);\n  \
-    \  }\n    cout << ans << endl;\n    return 0;\n}\n"
+    \    rep(i, n) a[i] = c(a[i]);\n    fenwick_tree<int> f(m);\n    long long ans\
+    \ = 0;\n    rep(i, n) {\n        ans += f.sum(a[i], m);\n        f.add(a[i], 1);\n\
+    \    }\n    cout << ans << endl;\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/5/ALDS1_5_D\"\
     \n\n#include <bits/stdc++.h>\n#include \"template.hpp\"\n#include \"misc/cc.hpp\"\
     \n#include <atcoder/fenwicktree>\n\nint main() {\n    int n;\n    cin >> n;\n\
     \    vector<int> a(n);\n    cin >> a;\n    CC c;\n    rep(i, n) c.add(a[i]);\n\
     \    int m = c.size();\n    rep(i, n) a[i] = c(a[i]);\n    fenwick_tree<int> f(m);\n\
-    \    ll ans = 0;\n    rep(i, n) {\n        ans += f.sum(a[i], m);\n        f.add(a[i],\
-    \ 1);\n    }\n    cout << ans << endl;\n    return 0;\n}"
+    \    long long ans = 0;\n    rep(i, n) {\n        ans += f.sum(a[i], m);\n   \
+    \     f.add(a[i], 1);\n    }\n    cout << ans << endl;\n    return 0;\n}"
   dependsOn:
   - template.hpp
   - misc/cc.hpp
   isVerificationFile: true
   path: verify/cc.test.cpp
   requiredBy: []
-  timestamp: '2024-10-01 21:17:41+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-10-01 21:26:03+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/cc.test.cpp
 layout: document

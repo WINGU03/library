@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: string/segment-tree-rolling-hash.hpp
     title: "Rolling Hash(\u4E00\u70B9\u5909\u66F4\u53CD\u8EE2\u53EF\u80FD)"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []

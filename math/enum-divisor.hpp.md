@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/enum-divisor.test.cpp
     title: verify/enum-divisor.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"math/enum-divisor.hpp\"\nvector<long long> enum_divisor(long\
@@ -26,7 +26,7 @@ data:
   path: math/enum-divisor.hpp
   requiredBy: []
   timestamp: '2024-09-27 20:13:23+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/enum-divisor.test.cpp
 documentation_of: math/enum-divisor.hpp

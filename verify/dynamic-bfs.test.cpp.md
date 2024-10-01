@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph/dynamic-bfs.hpp
     title: "\u52D5\u7684BFS"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/13/ALDS1_13_B
@@ -30,34 +30,36 @@ data:
     \ : nxt(v)) {\n            if (dist.count(u)) continue;\n            if (u ==\
     \ g) return dist[v] + 1;\n            dist[u] = dist[v] + 1;\n            q.push(u);\n\
     \        }\n    }\n    return -1;\n}\n#line 6 \"verify/dynamic-bfs.test.cpp\"\n\
-    \nint main() {\n    int n = 3;\n    vector p(n, vector<int>(n));\n    cin >> p;\n\
-    \n    vector ans(n, vector<int>(n));\n    rep(i, n) rep(j, n) if (i != 2 or j\
-    \ != 2) ans[i][j] = i * n + j + 1;\n\n    auto f = [&](vector<vector<int>> &x)\
-    \ {\n        vector<vector<vector<int>>> res;\n        rep(i, n) rep(j, n) if\
-    \ (x[i][j] == 0) {\n            rep(d, 4) {\n                int ni = i + dx[d],\
-    \ nj = j + dy[d];\n                if (out(ni, nj, n, n)) continue;\n        \
-    \        auto nex = x;\n                swap(nex[i][j], nex[ni][nj]);\n      \
-    \          res.push_back(nex);\n            }\n        }\n        return res;\n\
-    \    };\n\n    cout << dynamic_bfs(p, f, ans) << endl;\n    return 0;\n}\n"
+    \nint dx[4] = {-1, 0, 1, 0};\nint dy[4] = {0, 1, 0, -1};\n\nint main() {\n   \
+    \ int n = 3;\n    vector p(n, vector<int>(n));\n    cin >> p;\n\n    vector ans(n,\
+    \ vector<int>(n));\n    rep(i, n) rep(j, n) if (i != 2 or j != 2) ans[i][j] =\
+    \ i * n + j + 1;\n\n    auto f = [&](vector<vector<int>> &x) {\n        vector<vector<vector<int>>>\
+    \ res;\n        rep(i, n) rep(j, n) if (x[i][j] == 0) {\n            rep(d, 4)\
+    \ {\n                int ni = i + dx[d], nj = j + dy[d];\n                if (ni\
+    \ < 0 or nj < 0 or ni >= n or nj >= n) continue;\n                auto nex = x;\n\
+    \                swap(nex[i][j], nex[ni][nj]);\n                res.push_back(nex);\n\
+    \            }\n        }\n        return res;\n    };\n\n    cout << dynamic_bfs(p,\
+    \ f, ans) << endl;\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/13/ALDS1_13_B\"\
     \n\n#include <bits/stdc++.h>\n#include \"template.hpp\"\n#include \"graph/dynamic-bfs.hpp\"\
-    \n\nint main() {\n    int n = 3;\n    vector p(n, vector<int>(n));\n    cin >>\
-    \ p;\n\n    vector ans(n, vector<int>(n));\n    rep(i, n) rep(j, n) if (i != 2\
-    \ or j != 2) ans[i][j] = i * n + j + 1;\n\n    auto f = [&](vector<vector<int>>\
-    \ &x) {\n        vector<vector<vector<int>>> res;\n        rep(i, n) rep(j, n)\
-    \ if (x[i][j] == 0) {\n            rep(d, 4) {\n                int ni = i + dx[d],\
-    \ nj = j + dy[d];\n                if (out(ni, nj, n, n)) continue;\n        \
-    \        auto nex = x;\n                swap(nex[i][j], nex[ni][nj]);\n      \
-    \          res.push_back(nex);\n            }\n        }\n        return res;\n\
-    \    };\n\n    cout << dynamic_bfs(p, f, ans) << endl;\n    return 0;\n}"
+    \n\nint dx[4] = {-1, 0, 1, 0};\nint dy[4] = {0, 1, 0, -1};\n\nint main() {\n \
+    \   int n = 3;\n    vector p(n, vector<int>(n));\n    cin >> p;\n\n    vector\
+    \ ans(n, vector<int>(n));\n    rep(i, n) rep(j, n) if (i != 2 or j != 2) ans[i][j]\
+    \ = i * n + j + 1;\n\n    auto f = [&](vector<vector<int>> &x) {\n        vector<vector<vector<int>>>\
+    \ res;\n        rep(i, n) rep(j, n) if (x[i][j] == 0) {\n            rep(d, 4)\
+    \ {\n                int ni = i + dx[d], nj = j + dy[d];\n                if (ni\
+    \ < 0 or nj < 0 or ni >= n or nj >= n) continue;\n                auto nex = x;\n\
+    \                swap(nex[i][j], nex[ni][nj]);\n                res.push_back(nex);\n\
+    \            }\n        }\n        return res;\n    };\n\n    cout << dynamic_bfs(p,\
+    \ f, ans) << endl;\n    return 0;\n}"
   dependsOn:
   - template.hpp
   - graph/dynamic-bfs.hpp
   isVerificationFile: true
   path: verify/dynamic-bfs.test.cpp
   requiredBy: []
-  timestamp: '2024-10-01 21:17:41+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-10-01 21:26:03+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/dynamic-bfs.test.cpp
 layout: document

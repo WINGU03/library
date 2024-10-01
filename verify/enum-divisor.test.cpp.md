@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/enum-divisor.hpp
     title: "\u7D04\u6570\u5217\u6319"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://yukicoder.me/problems/no/888
@@ -28,23 +28,23 @@ data:
     \ <= n; i++) {\n        if (n % i == 0) {\n            res.push_back(i);\n   \
     \         long long j = n / i;\n            if (j != i) res.push_back(j);\n  \
     \      }\n    }\n    sort(res.begin(), res.end());\n    return res;\n}\n#line\
-    \ 6 \"verify/enum-divisor.test.cpp\"\n\nint main(){\n    ll n;\n    cin >> n;\n\
-    \    auto divisors = enum_divisor(n);\n    ll ans = 0;\n    for (auto divisor\
-    \ : divisors) {\n        ans += divisor;\n    }\n    cout << ans << endl;\n  \
-    \  return 0;\n}\n"
+    \ 6 \"verify/enum-divisor.test.cpp\"\n\nint main(){\n    long long n;\n    cin\
+    \ >> n;\n    auto divisors = enum_divisor(n);\n    long long ans = 0;\n    for\
+    \ (auto divisor : divisors) {\n        ans += divisor;\n    }\n    cout << ans\
+    \ << endl;\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://yukicoder.me/problems/no/888\"\n\n#include <bits/stdc++.h>\n\
     #include \"template.hpp\"\n#include \"math/enum-divisor.hpp\"\n\nint main(){\n\
-    \    ll n;\n    cin >> n;\n    auto divisors = enum_divisor(n);\n    ll ans =\
-    \ 0;\n    for (auto divisor : divisors) {\n        ans += divisor;\n    }\n  \
-    \  cout << ans << endl;\n    return 0;\n}"
+    \    long long n;\n    cin >> n;\n    auto divisors = enum_divisor(n);\n    long\
+    \ long ans = 0;\n    for (auto divisor : divisors) {\n        ans += divisor;\n\
+    \    }\n    cout << ans << endl;\n    return 0;\n}"
   dependsOn:
   - template.hpp
   - math/enum-divisor.hpp
   isVerificationFile: true
   path: verify/enum-divisor.test.cpp
   requiredBy: []
-  timestamp: '2024-10-01 21:17:41+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-10-01 21:26:03+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/enum-divisor.test.cpp
 layout: document

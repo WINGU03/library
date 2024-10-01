@@ -3,28 +3,28 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/cc.test.cpp
     title: verify/cc.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/combination.test.cpp
     title: verify/combination.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/dynamic-bfs.test.cpp
     title: verify/dynamic-bfs.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/enum-divisor.test.cpp
     title: verify/enum-divisor.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/eratosthenes.test.cpp
     title: verify/eratosthenes.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/extgcd.test.cpp
     title: verify/extgcd.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/mo.test.cpp
     title: verify/mo.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/next-combination.test.cpp
     title: verify/next-combination.test.cpp
   - icon: ':heavy_check_mark:'
@@ -39,9 +39,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/segment-tree-rolling-hash.test.cpp
     title: verify/segment-tree-rolling-hash.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: '#line 1 "template.hpp"
@@ -105,7 +105,7 @@ data:
   path: template.hpp
   requiredBy: []
   timestamp: '2024-10-01 21:17:41+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/dynamic-bfs.test.cpp
   - verify/segment-tree-rolling-hash.test.cpp
