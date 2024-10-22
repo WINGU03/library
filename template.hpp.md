@@ -54,15 +54,13 @@ data:
 
     using namespace atcoder;
 
-    #ifdef DEFINED_ONLY_IN_LOCAL
+    #ifdef local
 
-    #include <dump.hpp>
+    #include <cpp-dump.hpp>
 
-    #define dump(...) cpp_dump(__VA_ARGS__)
+    #define dump cpp_dump
 
     #else
-
-    #undef dump
 
     #define dump(...)
 
@@ -82,15 +80,13 @@ data:
 
     using namespace atcoder;
 
-    #ifdef DEFINED_ONLY_IN_LOCAL
+    #ifdef local
 
-    #include <dump.hpp>
+    #include <cpp-dump.hpp>
 
-    #define dump(...) cpp_dump(__VA_ARGS__)
+    #define dump cpp_dump
 
     #else
-
-    #undef dump
 
     #define dump(...)
 
@@ -104,21 +100,21 @@ data:
   isVerificationFile: false
   path: template.hpp
   requiredBy: []
-  timestamp: '2024-10-01 21:17:41+09:00'
+  timestamp: '2024-10-22 20:37:22+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/dynamic-bfs.test.cpp
+  - verify/rolling-hash.test.cpp
   - verify/segment-tree-rolling-hash.test.cpp
-  - verify/combination.test.cpp
-  - verify/cc.test.cpp
-  - verify/prime-factorize.test.cpp
   - verify/rerooting.test.cpp
   - verify/enum-divisor.test.cpp
-  - verify/next-combination.test.cpp
+  - verify/prime-factorize.test.cpp
   - verify/eratosthenes.test.cpp
-  - verify/mo.test.cpp
-  - verify/rolling-hash.test.cpp
+  - verify/combination.test.cpp
+  - verify/next-combination.test.cpp
   - verify/extgcd.test.cpp
+  - verify/cc.test.cpp
+  - verify/dynamic-bfs.test.cpp
+  - verify/mo.test.cpp
 documentation_of: template.hpp
 layout: document
 redirect_from:

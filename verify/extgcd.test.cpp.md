@@ -19,16 +19,16 @@ data:
     - https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_E
   bundledCode: "#line 1 \"verify/extgcd.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_E\"\
     \n\n#include <bits/stdc++.h>\n#line 2 \"template.hpp\"\nusing namespace std;\n\
-    #include <atcoder/modint>\nusing namespace atcoder;\n#ifdef DEFINED_ONLY_IN_LOCAL\n\
-    #include <dump.hpp>\n#define dump(...) cpp_dump(__VA_ARGS__)\n#else\n#undef dump\n\
-    #define dump(...)\n#endif\n#define rep(i, n) for (int i = 0; i < n; i++)\ntemplate\
-    \ <class T> istream& operator>>(istream& I, vector<T>& V) { for (T& X : V) I >>\
-    \ X; return I; }\n#line 1 \"math/extgcd.hpp\"\nlong long extgcd(long long a, long\
-    \ long b, long long &x, long long &y) {\n    if (b == 0) {\n        x = 1;\n \
-    \       y = 0;\n        return a;\n    }\n    long long d = extgcd(b, a % b, y,\
-    \ x);\n    y -= a / b * x;\n    return d;\n}\n#line 6 \"verify/extgcd.test.cpp\"\
-    \n\nint main() {\n    int a, b;\n    cin >> a >> b;\n    long long x, y;\n   \
-    \ extgcd(a, b, x, y);\n    cout << x << \" \" << y << endl;\n    return 0;\n}\n"
+    #include <atcoder/modint>\nusing namespace atcoder;\n#ifdef local\n#include <cpp-dump.hpp>\n\
+    #define dump cpp_dump\n#else\n#define dump(...)\n#endif\n#define rep(i, n) for\
+    \ (int i = 0; i < n; i++)\ntemplate <class T> istream& operator>>(istream& I,\
+    \ vector<T>& V) { for (T& X : V) I >> X; return I; }\n#line 1 \"math/extgcd.hpp\"\
+    \nlong long extgcd(long long a, long long b, long long &x, long long &y) {\n \
+    \   if (b == 0) {\n        x = 1;\n        y = 0;\n        return a;\n    }\n\
+    \    long long d = extgcd(b, a % b, y, x);\n    y -= a / b * x;\n    return d;\n\
+    }\n#line 6 \"verify/extgcd.test.cpp\"\n\nint main() {\n    int a, b;\n    cin\
+    \ >> a >> b;\n    long long x, y;\n    extgcd(a, b, x, y);\n    cout << x << \"\
+    \ \" << y << endl;\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_E\"\
     \n\n#include <bits/stdc++.h>\n#include \"template.hpp\"\n#include \"math/extgcd.hpp\"\
     \n\nint main() {\n    int a, b;\n    cin >> a >> b;\n    long long x, y;\n   \
@@ -39,7 +39,7 @@ data:
   isVerificationFile: true
   path: verify/extgcd.test.cpp
   requiredBy: []
-  timestamp: '2024-10-01 21:26:03+09:00'
+  timestamp: '2024-10-22 20:37:22+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/extgcd.test.cpp

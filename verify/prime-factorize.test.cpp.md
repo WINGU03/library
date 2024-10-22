@@ -19,15 +19,14 @@ data:
     - https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_A
   bundledCode: "#line 1 \"verify/prime-factorize.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_A\"\
     \n\n#include <bits/stdc++.h>\n#line 2 \"template.hpp\"\nusing namespace std;\n\
-    #include <atcoder/modint>\nusing namespace atcoder;\n#ifdef DEFINED_ONLY_IN_LOCAL\n\
-    #include <dump.hpp>\n#define dump(...) cpp_dump(__VA_ARGS__)\n#else\n#undef dump\n\
-    #define dump(...)\n#endif\n#define rep(i, n) for (int i = 0; i < n; i++)\ntemplate\
-    \ <class T> istream& operator>>(istream& I, vector<T>& V) { for (T& X : V) I >>\
-    \ X; return I; }\n#line 1 \"math/prime-factorize.hpp\"\nvector<pair<long long,\
-    \ long long>> prime_factorize(long long n) {\n    vector<pair<long long, long\
-    \ long>> res;\n    for (int p = 2; (long long)p * p <= n; p++) {\n        if (n\
-    \ % p != 0) continue;\n        int num = 0;\n        while (n % p == 0) {\n  \
-    \          num++;\n            n /= p;\n        }\n        res.push_back(make_pair(p,\
+    #include <atcoder/modint>\nusing namespace atcoder;\n#ifdef local\n#include <cpp-dump.hpp>\n\
+    #define dump cpp_dump\n#else\n#define dump(...)\n#endif\n#define rep(i, n) for\
+    \ (int i = 0; i < n; i++)\ntemplate <class T> istream& operator>>(istream& I,\
+    \ vector<T>& V) { for (T& X : V) I >> X; return I; }\n#line 1 \"math/prime-factorize.hpp\"\
+    \nvector<pair<long long, long long>> prime_factorize(long long n) {\n    vector<pair<long\
+    \ long, long long>> res;\n    for (int p = 2; (long long)p * p <= n; p++) {\n\
+    \        if (n % p != 0) continue;\n        int num = 0;\n        while (n % p\
+    \ == 0) {\n            num++;\n            n /= p;\n        }\n        res.push_back(make_pair(p,\
     \ num));\n    }\n    if (n != 1) res.push_back(make_pair(n, 1));\n    return res;\n\
     }\n#line 6 \"verify/prime-factorize.test.cpp\"\n\nint main() {\n    int n;\n \
     \   cin >> n;\n    auto p = prime_factorize(n);\n    cout << n << ':';\n    for\
@@ -44,7 +43,7 @@ data:
   isVerificationFile: true
   path: verify/prime-factorize.test.cpp
   requiredBy: []
-  timestamp: '2024-10-01 21:17:41+09:00'
+  timestamp: '2024-10-22 20:37:22+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/prime-factorize.test.cpp
