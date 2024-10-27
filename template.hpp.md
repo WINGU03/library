@@ -62,6 +62,8 @@ data:
 
     #else
 
+    #undef dump
+
     #define dump(...)
 
     #endif
@@ -88,6 +90,8 @@ data:
 
     #else
 
+    #undef dump
+
     #define dump(...)
 
     #endif
@@ -100,7 +104,7 @@ data:
   isVerificationFile: false
   path: template.hpp
   requiredBy: []
-  timestamp: '2024-10-22 20:37:22+09:00'
+  timestamp: '2024-10-28 01:36:20+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/rolling-hash.test.cpp

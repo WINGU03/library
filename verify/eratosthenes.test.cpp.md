@@ -20,9 +20,9 @@ data:
   bundledCode: "#line 1 \"verify/eratosthenes.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/ALDS1_1_C\"\
     \n\n#include <bits/stdc++.h>\n#line 2 \"template.hpp\"\nusing namespace std;\n\
     #include <atcoder/modint>\nusing namespace atcoder;\n#ifdef local\n#include <cpp-dump.hpp>\n\
-    #define dump cpp_dump\n#else\n#define dump(...)\n#endif\n#define rep(i, n) for\
-    \ (int i = 0; i < n; i++)\ntemplate <class T> istream& operator>>(istream& I,\
-    \ vector<T>& V) { for (T& X : V) I >> X; return I; }\n#line 1 \"math/eratosthenes.hpp\"\
+    #define dump cpp_dump\n#else\n#undef dump\n#define dump(...)\n#endif\n#define\
+    \ rep(i, n) for (int i = 0; i < n; i++)\ntemplate <class T> istream& operator>>(istream&\
+    \ I, vector<T>& V) { for (T& X : V) I >> X; return I; }\n#line 1 \"math/eratosthenes.hpp\"\
     \nvector<bool> sieve(int N) {\n    vector<bool> isprime(N + 1, true);\n    isprime[0]\
     \ = false;\n    isprime[1] = false;\n    for (int i = 2; i * i <= N; i++) {\n\
     \        if (isprime[i] == false) continue;\n        for (int j = i * 2; j <=\
@@ -43,7 +43,7 @@ data:
   isVerificationFile: true
   path: verify/eratosthenes.test.cpp
   requiredBy: []
-  timestamp: '2024-10-22 20:37:22+09:00'
+  timestamp: '2024-10-28 01:36:20+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/eratosthenes.test.cpp

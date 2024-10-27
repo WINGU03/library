@@ -20,9 +20,9 @@ data:
   bundledCode: "#line 1 \"verify/rerooting.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/5/GRL_5_B\"\
     \n\n#include <bits/stdc++.h>\n#line 2 \"template.hpp\"\nusing namespace std;\n\
     #include <atcoder/modint>\nusing namespace atcoder;\n#ifdef local\n#include <cpp-dump.hpp>\n\
-    #define dump cpp_dump\n#else\n#define dump(...)\n#endif\n#define rep(i, n) for\
-    \ (int i = 0; i < n; i++)\ntemplate <class T> istream& operator>>(istream& I,\
-    \ vector<T>& V) { for (T& X : V) I >> X; return I; }\n#line 1 \"graph/rerooting.hpp\"\
+    #define dump cpp_dump\n#else\n#undef dump\n#define dump(...)\n#endif\n#define\
+    \ rep(i, n) for (int i = 0; i < n; i++)\ntemplate <class T> istream& operator>>(istream&\
+    \ I, vector<T>& V) { for (T& X : V) I >> X; return I; }\n#line 1 \"graph/rerooting.hpp\"\
     \ntemplate <typename Cost>\nstruct Edge {\n    int src, to;\n    Cost cost;\n\
     \    Edge(int s, int t, Cost c = 1) : src(s), to(t), cost(c) {}\n    // \u30C7\
     \u30D5\u30A9\u30EB\u30C8\u3067\u306F\u884C\u304D\u5148\u3092\u8FD4\u3059\n   \
@@ -81,7 +81,7 @@ data:
   isVerificationFile: true
   path: verify/rerooting.test.cpp
   requiredBy: []
-  timestamp: '2024-10-22 20:37:22+09:00'
+  timestamp: '2024-10-28 01:36:20+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/rerooting.test.cpp

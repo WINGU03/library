@@ -20,9 +20,9 @@ data:
   bundledCode: "#line 1 \"verify/rolling-hash.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/14/ALDS1_14_B\"\
     \n\n#include<bits/stdc++.h>\n#line 2 \"template.hpp\"\nusing namespace std;\n\
     #include <atcoder/modint>\nusing namespace atcoder;\n#ifdef local\n#include <cpp-dump.hpp>\n\
-    #define dump cpp_dump\n#else\n#define dump(...)\n#endif\n#define rep(i, n) for\
-    \ (int i = 0; i < n; i++)\ntemplate <class T> istream& operator>>(istream& I,\
-    \ vector<T>& V) { for (T& X : V) I >> X; return I; }\n#line 1 \"string/rolling-hash.hpp\"\
+    #define dump cpp_dump\n#else\n#undef dump\n#define dump(...)\n#endif\n#define\
+    \ rep(i, n) for (int i = 0; i < n; i++)\ntemplate <class T> istream& operator>>(istream&\
+    \ I, vector<T>& V) { for (T& X : V) I >> X; return I; }\n#line 1 \"string/rolling-hash.hpp\"\
     \nrandom_device rd;\nmt19937_64 rnd(rd());\nstatic constexpr long long mod = (1LL\
     \ << 61) - 1;\nstatic const long long base = rnd() % (mod - 4) + 2;\nstruct rolling_hash\
     \ {\n    vector<long long> hash, power;\n    int n;\n    string s;\n\n    inline\
@@ -65,7 +65,7 @@ data:
   isVerificationFile: true
   path: verify/rolling-hash.test.cpp
   requiredBy: []
-  timestamp: '2024-10-22 20:37:22+09:00'
+  timestamp: '2024-10-28 01:36:20+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/rolling-hash.test.cpp

@@ -20,9 +20,9 @@ data:
   bundledCode: "#line 1 \"verify/next-combination.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/ITP1_7_B\"\
     \n\n#include <bits/stdc++.h>\n#line 2 \"template.hpp\"\nusing namespace std;\n\
     #include <atcoder/modint>\nusing namespace atcoder;\n#ifdef local\n#include <cpp-dump.hpp>\n\
-    #define dump cpp_dump\n#else\n#define dump(...)\n#endif\n#define rep(i, n) for\
-    \ (int i = 0; i < n; i++)\ntemplate <class T> istream& operator>>(istream& I,\
-    \ vector<T>& V) { for (T& X : V) I >> X; return I; }\n#line 1 \"misc/next-combination.hpp\"\
+    #define dump cpp_dump\n#else\n#undef dump\n#define dump(...)\n#endif\n#define\
+    \ rep(i, n) for (int i = 0; i < n; i++)\ntemplate <class T> istream& operator>>(istream&\
+    \ I, vector<T>& V) { for (T& X : V) I >> X; return I; }\n#line 1 \"misc/next-combination.hpp\"\
     \ntemplate <typename T>\nbool next_combination(const T first, const T last, int\
     \ k) {\n    const T subset = first + k;\n    if (first == last || first == subset\
     \ || last == subset) {\n        return false;\n    }\n    T src = subset;\n  \
@@ -52,7 +52,7 @@ data:
   isVerificationFile: true
   path: verify/next-combination.test.cpp
   requiredBy: []
-  timestamp: '2024-10-22 20:37:22+09:00'
+  timestamp: '2024-10-28 01:36:20+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/next-combination.test.cpp

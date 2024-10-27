@@ -20,9 +20,9 @@ data:
   bundledCode: "#line 1 \"verify/combination.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_E\"\
     \n\n#include <bits/stdc++.h>\n#line 2 \"template.hpp\"\nusing namespace std;\n\
     #include <atcoder/modint>\nusing namespace atcoder;\n#ifdef local\n#include <cpp-dump.hpp>\n\
-    #define dump cpp_dump\n#else\n#define dump(...)\n#endif\n#define rep(i, n) for\
-    \ (int i = 0; i < n; i++)\ntemplate <class T> istream& operator>>(istream& I,\
-    \ vector<T>& V) { for (T& X : V) I >> X; return I; }\n#line 5 \"verify/combination.test.cpp\"\
+    #define dump cpp_dump\n#else\n#undef dump\n#define dump(...)\n#endif\n#define\
+    \ rep(i, n) for (int i = 0; i < n; i++)\ntemplate <class T> istream& operator>>(istream&\
+    \ I, vector<T>& V) { for (T& X : V) I >> X; return I; }\n#line 5 \"verify/combination.test.cpp\"\
     \n\nusing mint = modint1000000007;\n#line 1 \"math/combination.hpp\"\nstruct combination\
     \ {\n    vector<mint> fac, finv, inv;\n    combination(int M) {\n        fac.resize(M\
     \ + 1); finv.resize(M + 1); inv.resize(M + 1);\n        const int MOD = mint::mod();\n\
@@ -45,7 +45,7 @@ data:
   isVerificationFile: true
   path: verify/combination.test.cpp
   requiredBy: []
-  timestamp: '2024-10-22 20:37:22+09:00'
+  timestamp: '2024-10-28 01:36:20+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/combination.test.cpp

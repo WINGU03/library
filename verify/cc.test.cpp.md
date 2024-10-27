@@ -20,10 +20,10 @@ data:
   bundledCode: "#line 1 \"verify/cc.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/5/ALDS1_5_D\"\
     \n\n#include <bits/stdc++.h>\n#line 2 \"template.hpp\"\nusing namespace std;\n\
     #include <atcoder/modint>\nusing namespace atcoder;\n#ifdef local\n#include <cpp-dump.hpp>\n\
-    #define dump cpp_dump\n#else\n#define dump(...)\n#endif\n#define rep(i, n) for\
-    \ (int i = 0; i < n; i++)\ntemplate <class T> istream& operator>>(istream& I,\
-    \ vector<T>& V) { for (T& X : V) I >> X; return I; }\n#line 1 \"misc/cc.hpp\"\n\
-    template <typename T = int>\nstruct CC {\n    bool initialized;\n    vector<T>\
+    #define dump cpp_dump\n#else\n#undef dump\n#define dump(...)\n#endif\n#define\
+    \ rep(i, n) for (int i = 0; i < n; i++)\ntemplate <class T> istream& operator>>(istream&\
+    \ I, vector<T>& V) { for (T& X : V) I >> X; return I; }\n#line 1 \"misc/cc.hpp\"\
+    \ntemplate <typename T = int>\nstruct CC {\n    bool initialized;\n    vector<T>\
     \ xs;\n    unordered_map<T, int> mp;\n    CC() : initialized(false) {}\n    void\
     \ add(T x) {\n        xs.push_back(x);\n    }\n    void init() {\n        sort(xs.begin(),\
     \ xs.end());\n        xs.erase(unique(xs.begin(), xs.end()), xs.end());\n    \
@@ -51,7 +51,7 @@ data:
   isVerificationFile: true
   path: verify/cc.test.cpp
   requiredBy: []
-  timestamp: '2024-10-22 20:37:22+09:00'
+  timestamp: '2024-10-28 01:36:20+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/cc.test.cpp
