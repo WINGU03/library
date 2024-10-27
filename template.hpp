@@ -6,6 +6,7 @@ using namespace atcoder;
 #include <cpp-dump.hpp>
 #define dump cpp_dump
 #else
+#undef dump
 #define dump(...)
 #endif
 #define rep(i, n) for (int i = 0; i < n; i++)
