@@ -19,18 +19,18 @@ data:
     - https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/13/ALDS1_13_B
   bundledCode: "#line 1 \"verify/dynamic-bfs.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/13/ALDS1_13_B\"\
     \n\n#include <bits/stdc++.h>\n#line 2 \"template.hpp\"\nusing namespace std;\n\
-    #include <atcoder/modint>\nusing namespace atcoder;\n#ifdef local\n#include <cpp-dump.hpp>\n\
-    #define dump cpp_dump\n#else\n#undef dump\n#define dump(...)\n#endif\n#define\
-    \ rep(i, n) for (int i = 0; i < n; i++)\ntemplate <class T> istream& operator>>(istream&\
-    \ I, vector<T>& V) { for (T& X : V) I >> X; return I; }\n#line 1 \"graph/dynamic-bfs.hpp\"\
-    \ntemplate <class T, class f>\nint dynamic_bfs(T& s, f& nxt, T& g) {\n    if (s\
-    \ == g) return 0;\n    map<T, int> dist;\n    queue<T> q;\n    dist[s] = 0;\n\
-    \    q.push(s);\n    while (!q.empty()) {\n        auto v = q.front();\n     \
-    \   q.pop();\n        for (const auto& u : nxt(v)) {\n            if (dist.count(u))\
-    \ continue;\n            if (u == g) return dist[v] + 1;\n            dist[u]\
-    \ = dist[v] + 1;\n            q.push(u);\n        }\n    }\n    return -1;\n}\n\
-    #line 6 \"verify/dynamic-bfs.test.cpp\"\n\nint dx[4] = {-1, 0, 1, 0};\nint dy[4]\
-    \ = {0, 1, 0, -1};\n\nint main() {\n    int n = 3;\n    vector p(n, vector<int>(n));\n\
+    #include <atcoder/modint>\nusing namespace atcoder;\n#ifdef local\n#include <dump.hpp>\n\
+    #else\n#define dump(...)\n#endif\n#define rep(i, n) for (int i = 0; i < n; i++)\n\
+    template <class T> istream& operator>>(istream& I, vector<T>& V) { for (T& X :\
+    \ V) I >> X; return I; }\n#line 1 \"graph/dynamic-bfs.hpp\"\ntemplate <class T,\
+    \ class f>\nint dynamic_bfs(T& s, f& nxt, T& g) {\n    if (s == g) return 0;\n\
+    \    map<T, int> dist;\n    queue<T> q;\n    dist[s] = 0;\n    q.push(s);\n  \
+    \  while (!q.empty()) {\n        auto v = q.front();\n        q.pop();\n     \
+    \   for (const auto& u : nxt(v)) {\n            if (dist.count(u)) continue;\n\
+    \            if (u == g) return dist[v] + 1;\n            dist[u] = dist[v] +\
+    \ 1;\n            q.push(u);\n        }\n    }\n    return -1;\n}\n#line 6 \"\
+    verify/dynamic-bfs.test.cpp\"\n\nint dx[4] = {-1, 0, 1, 0};\nint dy[4] = {0, 1,\
+    \ 0, -1};\n\nint main() {\n    int n = 3;\n    vector p(n, vector<int>(n));\n\
     \    cin >> p;\n\n    vector ans(n, vector<int>(n));\n    rep(i, n) rep(j, n)\
     \ if (i != 2 or j != 2) ans[i][j] = i * n + j + 1;\n\n    auto f = [&](vector<vector<int>>\
     \ &x) {\n        vector<vector<vector<int>>> res;\n        rep(i, n) rep(j, n)\
@@ -58,7 +58,7 @@ data:
   isVerificationFile: true
   path: verify/dynamic-bfs.test.cpp
   requiredBy: []
-  timestamp: '2024-10-28 01:36:20+09:00'
+  timestamp: '2024-10-28 13:56:24+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/dynamic-bfs.test.cpp

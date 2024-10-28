@@ -20,10 +20,9 @@ data:
   bundledCode: "#line 1 \"verify/segment-tree-rolling-hash.test.cpp\"\n#define PROBLEM\
     \ \"https://yukicoder.me/problems/no/2761\"\n\n#include <bits/stdc++.h>\n\n#line\
     \ 2 \"template.hpp\"\nusing namespace std;\n#include <atcoder/modint>\nusing namespace\
-    \ atcoder;\n#ifdef local\n#include <cpp-dump.hpp>\n#define dump cpp_dump\n#else\n\
-    #undef dump\n#define dump(...)\n#endif\n#define rep(i, n) for (int i = 0; i <\
-    \ n; i++)\ntemplate <class T> istream& operator>>(istream& I, vector<T>& V) {\
-    \ for (T& X : V) I >> X; return I; }\n#line 6 \"verify/segment-tree-rolling-hash.test.cpp\"\
+    \ atcoder;\n#ifdef local\n#include <dump.hpp>\n#else\n#define dump(...)\n#endif\n\
+    #define rep(i, n) for (int i = 0; i < n; i++)\ntemplate <class T> istream& operator>>(istream&\
+    \ I, vector<T>& V) { for (T& X : V) I >> X; return I; }\n#line 6 \"verify/segment-tree-rolling-hash.test.cpp\"\
     \n\n#line 1 \"string/segment-tree-rolling-hash.hpp\"\n#include <atcoder/segtree>\n\
     \nrandom_device rd;\nmt19937_64 rnd(rd());\nstatic constexpr long long mod = (1LL\
     \ << 61) - 1;\nstatic const long long base = rnd() % (mod - 4) + 2;\n\nusing D\
@@ -75,7 +74,7 @@ data:
   isVerificationFile: true
   path: verify/segment-tree-rolling-hash.test.cpp
   requiredBy: []
-  timestamp: '2024-10-28 01:36:20+09:00'
+  timestamp: '2024-10-28 13:56:24+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/segment-tree-rolling-hash.test.cpp

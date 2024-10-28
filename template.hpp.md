@@ -56,13 +56,9 @@ data:
 
     #ifdef local
 
-    #include <cpp-dump.hpp>
-
-    #define dump cpp_dump
+    #include <dump.hpp>
 
     #else
-
-    #undef dump
 
     #define dump(...)
 
@@ -84,13 +80,9 @@ data:
 
     #ifdef local
 
-    #include <cpp-dump.hpp>
-
-    #define dump cpp_dump
+    #include <dump.hpp>
 
     #else
-
-    #undef dump
 
     #define dump(...)
 
@@ -104,7 +96,7 @@ data:
   isVerificationFile: false
   path: template.hpp
   requiredBy: []
-  timestamp: '2024-10-28 01:36:20+09:00'
+  timestamp: '2024-10-28 13:56:24+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/rolling-hash.test.cpp
