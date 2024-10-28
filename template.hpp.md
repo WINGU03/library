@@ -56,11 +56,11 @@ data:
 
     #ifdef local
 
-    #include <dump.hpp>
+    #include <debug.hpp>
 
     #else
 
-    #define dump(...)
+    #define debug(...)
 
     #endif
 
@@ -80,11 +80,11 @@ data:
 
     #ifdef local
 
-    #include <dump.hpp>
+    #include <debug.hpp>
 
     #else
 
-    #define dump(...)
+    #define debug(...)
 
     #endif
 
@@ -96,7 +96,7 @@ data:
   isVerificationFile: false
   path: template.hpp
   requiredBy: []
-  timestamp: '2024-10-28 13:56:24+09:00'
+  timestamp: '2024-10-28 22:30:38+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/rolling-hash.test.cpp

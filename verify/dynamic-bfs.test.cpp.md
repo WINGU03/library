@@ -19,8 +19,8 @@ data:
     - https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/13/ALDS1_13_B
   bundledCode: "#line 1 \"verify/dynamic-bfs.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/13/ALDS1_13_B\"\
     \n\n#include <bits/stdc++.h>\n#line 2 \"template.hpp\"\nusing namespace std;\n\
-    #include <atcoder/modint>\nusing namespace atcoder;\n#ifdef local\n#include <dump.hpp>\n\
-    #else\n#define dump(...)\n#endif\n#define rep(i, n) for (int i = 0; i < n; i++)\n\
+    #include <atcoder/modint>\nusing namespace atcoder;\n#ifdef local\n#include <debug.hpp>\n\
+    #else\n#define debug(...)\n#endif\n#define rep(i, n) for (int i = 0; i < n; i++)\n\
     template <class T> istream& operator>>(istream& I, vector<T>& V) { for (T& X :\
     \ V) I >> X; return I; }\n#line 1 \"graph/dynamic-bfs.hpp\"\ntemplate <class T,\
     \ class f>\nint dynamic_bfs(T& s, f& nxt, T& g) {\n    if (s == g) return 0;\n\
@@ -58,7 +58,7 @@ data:
   isVerificationFile: true
   path: verify/dynamic-bfs.test.cpp
   requiredBy: []
-  timestamp: '2024-10-28 13:56:24+09:00'
+  timestamp: '2024-10-28 22:30:38+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/dynamic-bfs.test.cpp

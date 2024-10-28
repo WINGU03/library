@@ -19,8 +19,8 @@ data:
     - https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_E
   bundledCode: "#line 1 \"verify/combination.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_E\"\
     \n\n#include <bits/stdc++.h>\n#line 2 \"template.hpp\"\nusing namespace std;\n\
-    #include <atcoder/modint>\nusing namespace atcoder;\n#ifdef local\n#include <dump.hpp>\n\
-    #else\n#define dump(...)\n#endif\n#define rep(i, n) for (int i = 0; i < n; i++)\n\
+    #include <atcoder/modint>\nusing namespace atcoder;\n#ifdef local\n#include <debug.hpp>\n\
+    #else\n#define debug(...)\n#endif\n#define rep(i, n) for (int i = 0; i < n; i++)\n\
     template <class T> istream& operator>>(istream& I, vector<T>& V) { for (T& X :\
     \ V) I >> X; return I; }\n#line 5 \"verify/combination.test.cpp\"\n\nusing mint\
     \ = modint1000000007;\n#line 1 \"math/combination.hpp\"\nstruct combination {\n\
@@ -45,7 +45,7 @@ data:
   isVerificationFile: true
   path: verify/combination.test.cpp
   requiredBy: []
-  timestamp: '2024-10-28 13:56:24+09:00'
+  timestamp: '2024-10-28 22:30:38+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/combination.test.cpp
