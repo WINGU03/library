@@ -3,9 +3,9 @@ using namespace std;
 #include <atcoder/modint>
 using namespace atcoder;
 #ifdef local
-#include <dump.hpp>
+#include <debug.hpp>
 #else
-#define dump(...)
+#define debug(...)
 #endif
 #define rep(i, n) for (int i = 0; i < n; i++)
 template <class T> istream& operator>>(istream& I, vector<T>& V) { for (T& X : V) I >> X; return I; }
