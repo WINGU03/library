@@ -21,10 +21,12 @@ data:
     \n\n#include <bits/stdc++.h>\n#line 2 \"template.hpp\"\nusing namespace std;\n\
     #include <atcoder/modint>\nusing namespace atcoder;\n#ifdef local\n#include <debug.hpp>\n\
     #else\n#define debug(...)\n#endif\n#define rep(i, n) for (int i = 0; i < n; i++)\n\
-    template <class T> istream& operator>>(istream& I, vector<T>& V) { for (T& X :\
-    \ V) I >> X; return I; }\n#line 5 \"verify/combination.test.cpp\"\n\nusing mint\
-    \ = modint1000000007;\n#line 1 \"math/combination.hpp\"\nstruct combination {\n\
-    \    vector<mint> fac, finv, inv;\n    combination(int M) {\n        fac.resize(M\
+    template <class T> istream& operator>>(istream& I, vector<T>& V) {for (T& X :\
+    \ V) I >> X; return I;}\ntemplate <class T> inline bool chmax(T& a, T b) {if (a\
+    \ < b) {a = b; return true;} return false;}\ntemplate <class T> inline bool chmin(T&\
+    \ a, T b) {if (a > b) {a = b; return true;} return false;}\n#line 5 \"verify/combination.test.cpp\"\
+    \n\nusing mint = modint1000000007;\n#line 1 \"math/combination.hpp\"\nstruct combination\
+    \ {\n    vector<mint> fac, finv, inv;\n    combination(int M) {\n        fac.resize(M\
     \ + 1); finv.resize(M + 1); inv.resize(M + 1);\n        const int MOD = mint::mod();\n\
     \        fac[0] = fac[1] = 1;\n        finv[0] = finv[1] = 1;\n        inv[1]\
     \ = 1;\n        for (int i = 2; i <= M; i++) {\n            fac[i] = fac[i - 1]\
@@ -45,7 +47,7 @@ data:
   isVerificationFile: true
   path: verify/combination.test.cpp
   requiredBy: []
-  timestamp: '2024-10-28 22:30:38+09:00'
+  timestamp: '2024-11-18 18:40:35+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/combination.test.cpp

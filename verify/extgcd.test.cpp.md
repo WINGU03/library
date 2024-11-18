@@ -21,13 +21,16 @@ data:
     \n\n#include <bits/stdc++.h>\n#line 2 \"template.hpp\"\nusing namespace std;\n\
     #include <atcoder/modint>\nusing namespace atcoder;\n#ifdef local\n#include <debug.hpp>\n\
     #else\n#define debug(...)\n#endif\n#define rep(i, n) for (int i = 0; i < n; i++)\n\
-    template <class T> istream& operator>>(istream& I, vector<T>& V) { for (T& X :\
-    \ V) I >> X; return I; }\n#line 1 \"math/extgcd.hpp\"\nlong long extgcd(long long\
-    \ a, long long b, long long &x, long long &y) {\n    if (b == 0) {\n        x\
-    \ = 1;\n        y = 0;\n        return a;\n    }\n    long long d = extgcd(b,\
-    \ a % b, y, x);\n    y -= a / b * x;\n    return d;\n}\n#line 6 \"verify/extgcd.test.cpp\"\
-    \n\nint main() {\n    int a, b;\n    cin >> a >> b;\n    long long x, y;\n   \
-    \ extgcd(a, b, x, y);\n    cout << x << \" \" << y << endl;\n    return 0;\n}\n"
+    template <class T> istream& operator>>(istream& I, vector<T>& V) {for (T& X :\
+    \ V) I >> X; return I;}\ntemplate <class T> inline bool chmax(T& a, T b) {if (a\
+    \ < b) {a = b; return true;} return false;}\ntemplate <class T> inline bool chmin(T&\
+    \ a, T b) {if (a > b) {a = b; return true;} return false;}\n#line 1 \"math/extgcd.hpp\"\
+    \nlong long extgcd(long long a, long long b, long long &x, long long &y) {\n \
+    \   if (b == 0) {\n        x = 1;\n        y = 0;\n        return a;\n    }\n\
+    \    long long d = extgcd(b, a % b, y, x);\n    y -= a / b * x;\n    return d;\n\
+    }\n#line 6 \"verify/extgcd.test.cpp\"\n\nint main() {\n    int a, b;\n    cin\
+    \ >> a >> b;\n    long long x, y;\n    extgcd(a, b, x, y);\n    cout << x << \"\
+    \ \" << y << endl;\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_E\"\
     \n\n#include <bits/stdc++.h>\n#include \"template.hpp\"\n#include \"math/extgcd.hpp\"\
     \n\nint main() {\n    int a, b;\n    cin >> a >> b;\n    long long x, y;\n   \
@@ -38,7 +41,7 @@ data:
   isVerificationFile: true
   path: verify/extgcd.test.cpp
   requiredBy: []
-  timestamp: '2024-10-28 22:30:38+09:00'
+  timestamp: '2024-11-18 18:40:35+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/extgcd.test.cpp

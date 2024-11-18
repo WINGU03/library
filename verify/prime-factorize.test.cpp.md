@@ -21,12 +21,14 @@ data:
     \n\n#include <bits/stdc++.h>\n#line 2 \"template.hpp\"\nusing namespace std;\n\
     #include <atcoder/modint>\nusing namespace atcoder;\n#ifdef local\n#include <debug.hpp>\n\
     #else\n#define debug(...)\n#endif\n#define rep(i, n) for (int i = 0; i < n; i++)\n\
-    template <class T> istream& operator>>(istream& I, vector<T>& V) { for (T& X :\
-    \ V) I >> X; return I; }\n#line 1 \"math/prime-factorize.hpp\"\nvector<pair<long\
-    \ long, long long>> prime_factorize(long long n) {\n    vector<pair<long long,\
-    \ long long>> res;\n    for (int p = 2; (long long)p * p <= n; p++) {\n      \
-    \  if (n % p != 0) continue;\n        int num = 0;\n        while (n % p == 0)\
-    \ {\n            num++;\n            n /= p;\n        }\n        res.push_back(make_pair(p,\
+    template <class T> istream& operator>>(istream& I, vector<T>& V) {for (T& X :\
+    \ V) I >> X; return I;}\ntemplate <class T> inline bool chmax(T& a, T b) {if (a\
+    \ < b) {a = b; return true;} return false;}\ntemplate <class T> inline bool chmin(T&\
+    \ a, T b) {if (a > b) {a = b; return true;} return false;}\n#line 1 \"math/prime-factorize.hpp\"\
+    \nvector<pair<long long, long long>> prime_factorize(long long n) {\n    vector<pair<long\
+    \ long, long long>> res;\n    for (int p = 2; (long long)p * p <= n; p++) {\n\
+    \        if (n % p != 0) continue;\n        int num = 0;\n        while (n % p\
+    \ == 0) {\n            num++;\n            n /= p;\n        }\n        res.push_back(make_pair(p,\
     \ num));\n    }\n    if (n != 1) res.push_back(make_pair(n, 1));\n    return res;\n\
     }\n#line 6 \"verify/prime-factorize.test.cpp\"\n\nint main() {\n    int n;\n \
     \   cin >> n;\n    auto p = prime_factorize(n);\n    cout << n << ':';\n    for\
@@ -43,7 +45,7 @@ data:
   isVerificationFile: true
   path: verify/prime-factorize.test.cpp
   requiredBy: []
-  timestamp: '2024-10-28 22:30:38+09:00'
+  timestamp: '2024-11-18 18:40:35+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/prime-factorize.test.cpp

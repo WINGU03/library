@@ -66,8 +66,14 @@ data:
 
     #define rep(i, n) for (int i = 0; i < n; i++)
 
-    template <class T> istream& operator>>(istream& I, vector<T>& V) { for (T& X :
-    V) I >> X; return I; }
+    template <class T> istream& operator>>(istream& I, vector<T>& V) {for (T& X :
+    V) I >> X; return I;}
+
+    template <class T> inline bool chmax(T& a, T b) {if (a < b) {a = b; return true;}
+    return false;}
+
+    template <class T> inline bool chmin(T& a, T b) {if (a > b) {a = b; return true;}
+    return false;}
 
     '
   code: '#include <bits/stdc++.h>
@@ -90,13 +96,19 @@ data:
 
     #define rep(i, n) for (int i = 0; i < n; i++)
 
-    template <class T> istream& operator>>(istream& I, vector<T>& V) { for (T& X :
-    V) I >> X; return I; }'
+    template <class T> istream& operator>>(istream& I, vector<T>& V) {for (T& X :
+    V) I >> X; return I;}
+
+    template <class T> inline bool chmax(T& a, T b) {if (a < b) {a = b; return true;}
+    return false;}
+
+    template <class T> inline bool chmin(T& a, T b) {if (a > b) {a = b; return true;}
+    return false;}'
   dependsOn: []
   isVerificationFile: false
   path: template.hpp
   requiredBy: []
-  timestamp: '2024-10-28 22:30:38+09:00'
+  timestamp: '2024-11-18 18:40:35+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/rolling-hash.test.cpp
