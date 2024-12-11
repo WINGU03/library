@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: string/segment-tree-rolling-hash.hpp
     title: "Rolling Hash(\u4E00\u70B9\u5909\u66F4\u53CD\u8EE2\u53EF\u80FD)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
@@ -25,8 +25,9 @@ data:
     \ I, vector<T>& V) {for (T& X : V) I >> X; return I;}\ntemplate <class T> inline\
     \ bool chmax(T& a, T b) {if (a < b) {a = b; return true;} return false;}\ntemplate\
     \ <class T> inline bool chmin(T& a, T b) {if (a > b) {a = b; return true;} return\
-    \ false;}\n#line 6 \"verify/segment-tree-rolling-hash.test.cpp\"\n\n#line 1 \"\
-    string/segment-tree-rolling-hash.hpp\"\n#include <atcoder/segtree>\n\nrandom_device\
+    \ false;}\nconst int dx[](1, 0, -1, 0), dy[](0, 1, 0, -1), inf = 2e9; const long\
+    \ INF = 1e18;\n#line 6 \"verify/segment-tree-rolling-hash.test.cpp\"\n\n#line\
+    \ 1 \"string/segment-tree-rolling-hash.hpp\"\n#include <atcoder/segtree>\n\nrandom_device\
     \ rd;\nmt19937_64 rnd(rd());\nstatic constexpr long long mod = (1LL << 61) - 1;\n\
     static const long long base = rnd() % (mod - 4) + 2;\n\nusing D = pair<long long,\
     \ long long>;\n\nD op(D l, D r) {\n    auto [a, b] = l;\n    auto [c, d] = r;\n\
@@ -76,7 +77,7 @@ data:
   isVerificationFile: true
   path: verify/segment-tree-rolling-hash.test.cpp
   requiredBy: []
-  timestamp: '2024-11-18 18:40:35+09:00'
+  timestamp: '2024-12-11 21:51:41+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/segment-tree-rolling-hash.test.cpp

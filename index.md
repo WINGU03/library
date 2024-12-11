@@ -6,7 +6,7 @@ data:
     - icon: ':warning:'
       path: classic_temlate.hpp
       title: classic_temlate.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template.hpp
       title: template.hpp
   - name: data-structure
@@ -22,7 +22,7 @@ data:
       title: Segment Tree
   - name: graph
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: graph/dynamic-bfs.hpp
       title: "\u52D5\u7684BFS"
     - icon: ':heavy_check_mark:'
@@ -76,7 +76,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/combination.test.cpp
       title: verify/combination.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/dynamic-bfs.test.cpp
       title: verify/dynamic-bfs.test.cpp
     - icon: ':heavy_check_mark:'

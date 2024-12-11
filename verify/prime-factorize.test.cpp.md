@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/prime-factorize.hpp
     title: "\u7D20\u56E0\u6570\u5206\u89E3"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
@@ -24,16 +24,17 @@ data:
     template <class T> istream& operator>>(istream& I, vector<T>& V) {for (T& X :\
     \ V) I >> X; return I;}\ntemplate <class T> inline bool chmax(T& a, T b) {if (a\
     \ < b) {a = b; return true;} return false;}\ntemplate <class T> inline bool chmin(T&\
-    \ a, T b) {if (a > b) {a = b; return true;} return false;}\n#line 1 \"math/prime-factorize.hpp\"\
-    \nvector<pair<long long, long long>> prime_factorize(long long n) {\n    vector<pair<long\
-    \ long, long long>> res;\n    for (int p = 2; (long long)p * p <= n; p++) {\n\
-    \        if (n % p != 0) continue;\n        int num = 0;\n        while (n % p\
-    \ == 0) {\n            num++;\n            n /= p;\n        }\n        res.push_back(make_pair(p,\
-    \ num));\n    }\n    if (n != 1) res.push_back(make_pair(n, 1));\n    return res;\n\
-    }\n#line 6 \"verify/prime-factorize.test.cpp\"\n\nint main() {\n    int n;\n \
-    \   cin >> n;\n    auto p = prime_factorize(n);\n    cout << n << ':';\n    for\
-    \ (auto [number, val] : p) {\n        rep(i, val) cout << \" \" << number;\n \
-    \   }\n    cout << endl;\n    return 0;\n}\n"
+    \ a, T b) {if (a > b) {a = b; return true;} return false;}\nconst int dx[](1,\
+    \ 0, -1, 0), dy[](0, 1, 0, -1), inf = 2e9; const long INF = 1e18;\n#line 1 \"\
+    math/prime-factorize.hpp\"\nvector<pair<long long, long long>> prime_factorize(long\
+    \ long n) {\n    vector<pair<long long, long long>> res;\n    for (int p = 2;\
+    \ (long long)p * p <= n; p++) {\n        if (n % p != 0) continue;\n        int\
+    \ num = 0;\n        while (n % p == 0) {\n            num++;\n            n /=\
+    \ p;\n        }\n        res.push_back(make_pair(p, num));\n    }\n    if (n !=\
+    \ 1) res.push_back(make_pair(n, 1));\n    return res;\n}\n#line 6 \"verify/prime-factorize.test.cpp\"\
+    \n\nint main() {\n    int n;\n    cin >> n;\n    auto p = prime_factorize(n);\n\
+    \    cout << n << ':';\n    for (auto [number, val] : p) {\n        rep(i, val)\
+    \ cout << \" \" << number;\n    }\n    cout << endl;\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_A\"\
     \n\n#include <bits/stdc++.h>\n#include \"template.hpp\"\n#include \"math/prime-factorize.hpp\"\
     \n\nint main() {\n    int n;\n    cin >> n;\n    auto p = prime_factorize(n);\n\
@@ -45,7 +46,7 @@ data:
   isVerificationFile: true
   path: verify/prime-factorize.test.cpp
   requiredBy: []
-  timestamp: '2024-11-18 18:40:35+09:00'
+  timestamp: '2024-12-11 21:51:41+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/prime-factorize.test.cpp

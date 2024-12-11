@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/rerooting.hpp
     title: "\u5168\u65B9\u4F4D\u6728DP"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
@@ -24,12 +24,13 @@ data:
     template <class T> istream& operator>>(istream& I, vector<T>& V) {for (T& X :\
     \ V) I >> X; return I;}\ntemplate <class T> inline bool chmax(T& a, T b) {if (a\
     \ < b) {a = b; return true;} return false;}\ntemplate <class T> inline bool chmin(T&\
-    \ a, T b) {if (a > b) {a = b; return true;} return false;}\n#line 1 \"graph/rerooting.hpp\"\
-    \ntemplate <typename Cost>\nstruct Edge {\n    int src, to;\n    Cost cost;\n\
-    \    Edge(int s, int t, Cost c = 1) : src(s), to(t), cost(c) {}\n    // \u30C7\
-    \u30D5\u30A9\u30EB\u30C8\u3067\u306F\u884C\u304D\u5148\u3092\u8FD4\u3059\n   \
-    \ operator int() const { return to; }\n};\n\ntemplate <typename Cost>\nstruct\
-    \ Graph : vector<vector<Edge<Cost>>> {\n    Graph(int n) : vector<vector<Edge<Cost>>>(n)\
+    \ a, T b) {if (a > b) {a = b; return true;} return false;}\nconst int dx[](1,\
+    \ 0, -1, 0), dy[](0, 1, 0, -1), inf = 2e9; const long INF = 1e18;\n#line 1 \"\
+    graph/rerooting.hpp\"\ntemplate <typename Cost>\nstruct Edge {\n    int src, to;\n\
+    \    Cost cost;\n    Edge(int s, int t, Cost c = 1) : src(s), to(t), cost(c) {}\n\
+    \    // \u30C7\u30D5\u30A9\u30EB\u30C8\u3067\u306F\u884C\u304D\u5148\u3092\u8FD4\
+    \u3059\n    operator int() const { return to; }\n};\n\ntemplate <typename Cost>\n\
+    struct Graph : vector<vector<Edge<Cost>>> {\n    Graph(int n) : vector<vector<Edge<Cost>>>(n)\
     \ {}\n    void add_edge(int s, int t, Cost c = 1) { (*this)[s].emplace_back(s,\
     \ t, c); }\n};\n\ntemplate <\n    typename Cost,\n    typename Data,\n    Data\
     \ (*merge)(Data, Data),\n    Data (*e)(),\n    Data (*leaf)(),\n    Data (*apply)(Data,\
@@ -83,7 +84,7 @@ data:
   isVerificationFile: true
   path: verify/rerooting.test.cpp
   requiredBy: []
-  timestamp: '2024-11-18 18:40:35+09:00'
+  timestamp: '2024-12-11 21:51:41+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/rerooting.test.cpp

@@ -9,7 +9,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/combination.test.cpp
     title: verify/combination.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/dynamic-bfs.test.cpp
     title: verify/dynamic-bfs.test.cpp
   - icon: ':heavy_check_mark:'
@@ -39,9 +39,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/segment-tree-rolling-hash.test.cpp
     title: verify/segment-tree-rolling-hash.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: '#line 1 "template.hpp"
@@ -75,6 +75,8 @@ data:
     template <class T> inline bool chmin(T& a, T b) {if (a > b) {a = b; return true;}
     return false;}
 
+    const int dx[](1, 0, -1, 0), dy[](0, 1, 0, -1), inf = 2e9; const long INF = 1e18;
+
     '
   code: '#include <bits/stdc++.h>
 
@@ -103,13 +105,15 @@ data:
     return false;}
 
     template <class T> inline bool chmin(T& a, T b) {if (a > b) {a = b; return true;}
-    return false;}'
+    return false;}
+
+    const int dx[](1, 0, -1, 0), dy[](0, 1, 0, -1), inf = 2e9; const long INF = 1e18;'
   dependsOn: []
   isVerificationFile: false
   path: template.hpp
   requiredBy: []
-  timestamp: '2024-11-18 18:40:35+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2024-12-11 21:51:41+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/rolling-hash.test.cpp
   - verify/segment-tree-rolling-hash.test.cpp
