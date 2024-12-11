@@ -9,9 +9,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/combination.test.cpp
     title: verify/combination.test.cpp
-  - icon: ':x:'
-    path: verify/dynamic-bfs.test.cpp
-    title: verify/dynamic-bfs.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/enum-divisor.test.cpp
     title: verify/enum-divisor.test.cpp
@@ -39,9 +36,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/segment-tree-rolling-hash.test.cpp
     title: verify/segment-tree-rolling-hash.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: '#line 1 "template.hpp"
@@ -113,7 +110,7 @@ data:
   path: template.hpp
   requiredBy: []
   timestamp: '2024-12-11 21:51:41+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/rolling-hash.test.cpp
   - verify/segment-tree-rolling-hash.test.cpp
@@ -125,7 +122,6 @@ data:
   - verify/next-combination.test.cpp
   - verify/extgcd.test.cpp
   - verify/cc.test.cpp
-  - verify/dynamic-bfs.test.cpp
   - verify/mo.test.cpp
 documentation_of: template.hpp
 layout: document

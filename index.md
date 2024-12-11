@@ -6,7 +6,7 @@ data:
     - icon: ':warning:'
       path: classic_temlate.hpp
       title: classic_temlate.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template.hpp
       title: template.hpp
   - name: data-structure
@@ -22,9 +22,6 @@ data:
       title: Segment Tree
   - name: graph
     pages:
-    - icon: ':x:'
-      path: graph/dynamic-bfs.hpp
-      title: "\u52D5\u7684BFS"
     - icon: ':heavy_check_mark:'
       path: graph/rerooting.hpp
       title: "\u5168\u65B9\u4F4D\u6728DP"
@@ -51,9 +48,6 @@ data:
       path: misc/cc.hpp
       title: "\u5EA7\u6A19\u5727\u7E2E"
     - icon: ':heavy_check_mark:'
-      path: misc/heuristic-template.hpp
-      title: Heuristic template
-    - icon: ':heavy_check_mark:'
       path: misc/mo.hpp
       title: "Mo\u2019s algorithm"
     - icon: ':heavy_check_mark:'
@@ -76,9 +70,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/combination.test.cpp
       title: verify/combination.test.cpp
-    - icon: ':x:'
-      path: verify/dynamic-bfs.test.cpp
-      title: verify/dynamic-bfs.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/enum-divisor.test.cpp
       title: verify/enum-divisor.test.cpp
@@ -91,9 +82,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/fenwick-tree.test.cpp
       title: verify/fenwick-tree.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: verify/heuristic-template.test.cpp
-      title: verify/heuristic-template.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/lazy-segment-tree.test.cpp
       title: verify/lazy-segment-tree.test.cpp
