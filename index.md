@@ -53,6 +53,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: misc/next-combination.hpp
       title: Next combination
+    - icon: ':warning:'
+      path: misc/random-timer.hpp
+      title: misc/random-timer.hpp
   - name: string
     pages:
     - icon: ':heavy_check_mark:'
