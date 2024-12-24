@@ -3,7 +3,8 @@
 #include <bits/stdc++.h>
 #include "template.hpp"
 
-using mint = modint1000000007;
+#include <atcoder/modint>
+using mint = atcoder::modint1000000007;
 #include "math/combination.hpp"
 
 int main() {

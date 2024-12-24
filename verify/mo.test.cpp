@@ -15,7 +15,7 @@ int main() {
     rep(i, n) c.add(a[i]);
     rep(i, n) a[i] = c(a[i]);
 
-    static fenwick_tree<long long> f(n + 1);
+    static atcoder::fenwick_tree<long long> f(n + 1);
     static long long ans = 0;
     struct M {
         using T = long long;

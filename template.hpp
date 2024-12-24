@@ -1,7 +1,5 @@
 #include <bits/stdc++.h>
 using namespace std;
-#include <atcoder/modint>
-using namespace atcoder;
 #ifdef local
 #include <debug.hpp>
 #else
