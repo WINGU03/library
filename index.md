@@ -6,7 +6,7 @@ data:
     - icon: ':warning:'
       path: classic_temlate.hpp
       title: classic_temlate.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template.hpp
       title: template.hpp
   - name: data-structure
@@ -44,7 +44,7 @@ data:
       title: "\u7D20\u56E0\u6570\u5206\u89E3"
   - name: misc
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: misc/cc.hpp
       title: "\u5EA7\u6A19\u5727\u7E2E"
     - icon: ':heavy_check_mark:'
@@ -67,7 +67,7 @@ data:
   verificationCategories:
   - name: verify
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/cc.test.cpp
       title: verify/cc.test.cpp
     - icon: ':heavy_check_mark:'

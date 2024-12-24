@@ -3,7 +3,7 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/cc.test.cpp
     title: verify/cc.test.cpp
   - icon: ':heavy_check_mark:'
@@ -36,9 +36,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/segment-tree-rolling-hash.test.cpp
     title: verify/segment-tree-rolling-hash.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: '#line 1 "template.hpp"
@@ -46,10 +46,6 @@ data:
     #include <bits/stdc++.h>
 
     using namespace std;
-
-    #include <atcoder/modint>
-
-    using namespace atcoder;
 
     #ifdef local
 
@@ -79,10 +75,6 @@ data:
 
     using namespace std;
 
-    #include <atcoder/modint>
-
-    using namespace atcoder;
-
     #ifdef local
 
     #include <debug.hpp>
@@ -109,8 +101,8 @@ data:
   isVerificationFile: false
   path: template.hpp
   requiredBy: []
-  timestamp: '2024-12-11 21:51:41+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2024-12-24 23:10:08+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/rolling-hash.test.cpp
   - verify/segment-tree-rolling-hash.test.cpp

@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: misc/next-combination.hpp
     title: Next combination
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
@@ -19,28 +19,27 @@ data:
     - https://onlinejudge.u-aizu.ac.jp/problems/ITP1_7_B
   bundledCode: "#line 1 \"verify/next-combination.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/ITP1_7_B\"\
     \n\n#include <bits/stdc++.h>\n#line 2 \"template.hpp\"\nusing namespace std;\n\
-    #include <atcoder/modint>\nusing namespace atcoder;\n#ifdef local\n#include <debug.hpp>\n\
-    #else\n#define debug(...)\n#endif\n#define rep(i, n) for (int i = 0; i < n; i++)\n\
-    template <class T> istream& operator>>(istream& I, vector<T>& V) {for (T& X :\
-    \ V) I >> X; return I;}\ntemplate <class T> inline bool chmax(T& a, T b) {if (a\
-    \ < b) {a = b; return true;} return false;}\ntemplate <class T> inline bool chmin(T&\
-    \ a, T b) {if (a > b) {a = b; return true;} return false;}\nconst int dx[](1,\
-    \ 0, -1, 0), dy[](0, 1, 0, -1), inf = 2e9; const long INF = 1e18;\n#line 1 \"\
-    misc/next-combination.hpp\"\ntemplate <typename T>\nbool next_combination(const\
-    \ T first, const T last, int k) {\n    const T subset = first + k;\n    if (first\
-    \ == last || first == subset || last == subset) {\n        return false;\n   \
-    \ }\n    T src = subset;\n    while (first != src) {\n        src--;\n       \
-    \ if (*src < *(last - 1)) {\n            T dest = subset;\n            while (*src\
-    \ >= *dest) {\n                dest++;\n            }\n            iter_swap(src,\
-    \ dest);\n            rotate(src + 1, dest + 1, last);\n            rotate(subset,\
-    \ subset + (last - dest) - 1, last);\n            return true;\n        }\n  \
-    \  }\n    rotate(first, subset, last);\n    return false;\n}\n#line 6 \"verify/next-combination.test.cpp\"\
-    \n\nint main() {\n    int n, s;\n    while (cin >> n >> s) {\n        if (n ==\
-    \ 0 and s == 0) exit(0);\n        vector<int> p(n);\n        iota(p.begin(), p.end(),\
-    \ 1);\n        int ans = 0;\n        do {\n            int cur = 0;\n        \
-    \    rep(i, 3) cur += p[i];\n            if (cur == s) ans++;\n        } while\
-    \ (next_combination(p.begin(), p.end(), 3));\n        cout << ans << endl;\n \
-    \   }\n    return 0;\n}\n"
+    #ifdef local\n#include <debug.hpp>\n#else\n#define debug(...)\n#endif\n#define\
+    \ rep(i, n) for (int i = 0; i < n; i++)\ntemplate <class T> istream& operator>>(istream&\
+    \ I, vector<T>& V) {for (T& X : V) I >> X; return I;}\ntemplate <class T> inline\
+    \ bool chmax(T& a, T b) {if (a < b) {a = b; return true;} return false;}\ntemplate\
+    \ <class T> inline bool chmin(T& a, T b) {if (a > b) {a = b; return true;} return\
+    \ false;}\nconst int dx[](1, 0, -1, 0), dy[](0, 1, 0, -1), inf = 2e9; const long\
+    \ INF = 1e18;\n#line 1 \"misc/next-combination.hpp\"\ntemplate <typename T>\n\
+    bool next_combination(const T first, const T last, int k) {\n    const T subset\
+    \ = first + k;\n    if (first == last || first == subset || last == subset) {\n\
+    \        return false;\n    }\n    T src = subset;\n    while (first != src) {\n\
+    \        src--;\n        if (*src < *(last - 1)) {\n            T dest = subset;\n\
+    \            while (*src >= *dest) {\n                dest++;\n            }\n\
+    \            iter_swap(src, dest);\n            rotate(src + 1, dest + 1, last);\n\
+    \            rotate(subset, subset + (last - dest) - 1, last);\n            return\
+    \ true;\n        }\n    }\n    rotate(first, subset, last);\n    return false;\n\
+    }\n#line 6 \"verify/next-combination.test.cpp\"\n\nint main() {\n    int n, s;\n\
+    \    while (cin >> n >> s) {\n        if (n == 0 and s == 0) exit(0);\n      \
+    \  vector<int> p(n);\n        iota(p.begin(), p.end(), 1);\n        int ans =\
+    \ 0;\n        do {\n            int cur = 0;\n            rep(i, 3) cur += p[i];\n\
+    \            if (cur == s) ans++;\n        } while (next_combination(p.begin(),\
+    \ p.end(), 3));\n        cout << ans << endl;\n    }\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/ITP1_7_B\"\n\n\
     #include <bits/stdc++.h>\n#include \"template.hpp\"\n#include \"misc/next-combination.hpp\"\
     \n\nint main() {\n    int n, s;\n    while (cin >> n >> s) {\n        if (n ==\
@@ -55,7 +54,7 @@ data:
   isVerificationFile: true
   path: verify/next-combination.test.cpp
   requiredBy: []
-  timestamp: '2024-12-11 21:51:41+09:00'
+  timestamp: '2024-12-24 23:10:08+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/next-combination.test.cpp

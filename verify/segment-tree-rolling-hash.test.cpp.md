@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: string/segment-tree-rolling-hash.hpp
     title: "Rolling Hash(\u4E00\u70B9\u5909\u66F4\u53CD\u8EE2\u53EF\u80FD)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
@@ -19,19 +19,19 @@ data:
     - https://yukicoder.me/problems/no/2761
   bundledCode: "#line 1 \"verify/segment-tree-rolling-hash.test.cpp\"\n#define PROBLEM\
     \ \"https://yukicoder.me/problems/no/2761\"\n\n#include <bits/stdc++.h>\n\n#line\
-    \ 2 \"template.hpp\"\nusing namespace std;\n#include <atcoder/modint>\nusing namespace\
-    \ atcoder;\n#ifdef local\n#include <debug.hpp>\n#else\n#define debug(...)\n#endif\n\
-    #define rep(i, n) for (int i = 0; i < n; i++)\ntemplate <class T> istream& operator>>(istream&\
-    \ I, vector<T>& V) {for (T& X : V) I >> X; return I;}\ntemplate <class T> inline\
-    \ bool chmax(T& a, T b) {if (a < b) {a = b; return true;} return false;}\ntemplate\
-    \ <class T> inline bool chmin(T& a, T b) {if (a > b) {a = b; return true;} return\
-    \ false;}\nconst int dx[](1, 0, -1, 0), dy[](0, 1, 0, -1), inf = 2e9; const long\
-    \ INF = 1e18;\n#line 6 \"verify/segment-tree-rolling-hash.test.cpp\"\n\n#line\
-    \ 1 \"string/segment-tree-rolling-hash.hpp\"\n#include <atcoder/segtree>\n\nrandom_device\
-    \ rd;\nmt19937_64 rnd(rd());\nstatic constexpr long long mod = (1LL << 61) - 1;\n\
-    static const long long base = rnd() % (mod - 4) + 2;\n\nusing D = pair<long long,\
-    \ long long>;\n\nD op(D l, D r) {\n    auto [a, b] = l;\n    auto [c, d] = r;\n\
-    \    __int128_t x = (__int128_t)a * d + c;\n    return D(x % mod, ((__int128_t)b\
+    \ 2 \"template.hpp\"\nusing namespace std;\n#ifdef local\n#include <debug.hpp>\n\
+    #else\n#define debug(...)\n#endif\n#define rep(i, n) for (int i = 0; i < n; i++)\n\
+    template <class T> istream& operator>>(istream& I, vector<T>& V) {for (T& X :\
+    \ V) I >> X; return I;}\ntemplate <class T> inline bool chmax(T& a, T b) {if (a\
+    \ < b) {a = b; return true;} return false;}\ntemplate <class T> inline bool chmin(T&\
+    \ a, T b) {if (a > b) {a = b; return true;} return false;}\nconst int dx[](1,\
+    \ 0, -1, 0), dy[](0, 1, 0, -1), inf = 2e9; const long INF = 1e18;\n#line 6 \"\
+    verify/segment-tree-rolling-hash.test.cpp\"\n\n#line 1 \"string/segment-tree-rolling-hash.hpp\"\
+    \n#include <atcoder/segtree>\nusing namespace atcoder;\n\nrandom_device rd;\n\
+    mt19937_64 rnd(rd());\nstatic constexpr long long mod = (1LL << 61) - 1;\nstatic\
+    \ const long long base = rnd() % (mod - 4) + 2;\n\nusing D = pair<long long, long\
+    \ long>;\n\nD op(D l, D r) {\n    auto [a, b] = l;\n    auto [c, d] = r;\n   \
+    \ __int128_t x = (__int128_t)a * d + c;\n    return D(x % mod, ((__int128_t)b\
     \ * d) % mod);\n}\nD e() {\n    return D(0, 1);\n}\n\nD op_(D l, D r) {\n    auto\
     \ [a, b] = l;\n    auto [c, d] = r;\n    __int128_t x = (__int128_t)c * b + a;\n\
     \    return D(x % mod, ((__int128_t)b * d) % mod);\n}\n\nstruct rolling_hash {\n\
@@ -77,7 +77,7 @@ data:
   isVerificationFile: true
   path: verify/segment-tree-rolling-hash.test.cpp
   requiredBy: []
-  timestamp: '2024-12-11 21:51:41+09:00'
+  timestamp: '2024-12-24 23:10:08+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/segment-tree-rolling-hash.test.cpp
