@@ -24,20 +24,19 @@ data:
     \ I, vector<T>& V) {for (T& X : V) I >> X; return I;}\ntemplate <class T> inline\
     \ bool chmax(T& a, T b) {if (a < b) {a = b; return true;} return false;}\ntemplate\
     \ <class T> inline bool chmin(T& a, T b) {if (a > b) {a = b; return true;} return\
-    \ false;}\nconst int dx[](1, 0, -1, 0), dy[](0, 1, 0, -1), inf = 2e9; const long\
-    \ INF = 1e18;\n#line 5 \"verify/combination.test.cpp\"\n\n#include <atcoder/modint>\n\
-    using mint = atcoder::modint1000000007;\n#line 1 \"math/combination.hpp\"\nstruct\
-    \ combination {\n    vector<mint> fac, finv, inv;\n    combination(int M) {\n\
-    \        fac.resize(M + 1); finv.resize(M + 1); inv.resize(M + 1);\n        const\
-    \ int MOD = mint::mod();\n        fac[0] = fac[1] = 1;\n        finv[0] = finv[1]\
-    \ = 1;\n        inv[1] = 1;\n        for (int i = 2; i <= M; i++) {\n        \
-    \    fac[i] = fac[i - 1] * i;\n            inv[i] = MOD - inv[MOD % i] * (MOD\
-    \ / i);\n            finv[i] = finv[i - 1] * inv[i];\n        }\n    }\n    mint\
-    \ com(int n, int k) {\n        if (n < k) return 0;\n        if (n < 0 || k <\
-    \ 0) return 0;\n        return fac[n] * finv[k] * finv[n - k];\n    }\n};\n#line\
-    \ 9 \"verify/combination.test.cpp\"\n\nint main() {\n    int n, k;\n    cin >>\
-    \ n >> k;\n    combination c(k);\n    cout << c.com(k, n).val() << endl;\n   \
-    \ return 0;\n}\n"
+    \ false;}\nint dx[](1, 0, -1, 0), dy[](0, 1, 0, -1), inf = 2e9; long INF = 1e18;\n\
+    #line 5 \"verify/combination.test.cpp\"\n\n#include <atcoder/modint>\nusing mint\
+    \ = atcoder::modint1000000007;\n#line 1 \"math/combination.hpp\"\nstruct combination\
+    \ {\n    vector<mint> fac, finv, inv;\n    combination(int M) {\n        fac.resize(M\
+    \ + 1); finv.resize(M + 1); inv.resize(M + 1);\n        const int MOD = mint::mod();\n\
+    \        fac[0] = fac[1] = 1;\n        finv[0] = finv[1] = 1;\n        inv[1]\
+    \ = 1;\n        for (int i = 2; i <= M; i++) {\n            fac[i] = fac[i - 1]\
+    \ * i;\n            inv[i] = MOD - inv[MOD % i] * (MOD / i);\n            finv[i]\
+    \ = finv[i - 1] * inv[i];\n        }\n    }\n    mint com(int n, int k) {\n  \
+    \      if (n < k) return 0;\n        if (n < 0 || k < 0) return 0;\n        return\
+    \ fac[n] * finv[k] * finv[n - k];\n    }\n};\n#line 9 \"verify/combination.test.cpp\"\
+    \n\nint main() {\n    int n, k;\n    cin >> n >> k;\n    combination c(k);\n \
+    \   cout << c.com(k, n).val() << endl;\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_E\"\
     \n\n#include <bits/stdc++.h>\n#include \"template.hpp\"\n\n#include <atcoder/modint>\n\
     using mint = atcoder::modint1000000007;\n#include \"math/combination.hpp\"\n\n\
@@ -49,7 +48,7 @@ data:
   isVerificationFile: true
   path: verify/combination.test.cpp
   requiredBy: []
-  timestamp: '2024-12-24 23:10:08+09:00'
+  timestamp: '2024-12-30 13:42:31+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/combination.test.cpp

@@ -24,12 +24,12 @@ data:
     \ I, vector<T>& V) {for (T& X : V) I >> X; return I;}\ntemplate <class T> inline\
     \ bool chmax(T& a, T b) {if (a < b) {a = b; return true;} return false;}\ntemplate\
     \ <class T> inline bool chmin(T& a, T b) {if (a > b) {a = b; return true;} return\
-    \ false;}\nconst int dx[](1, 0, -1, 0), dy[](0, 1, 0, -1), inf = 2e9; const long\
-    \ INF = 1e18;\n#line 1 \"math/eratosthenes.hpp\"\nvector<bool> sieve(int N) {\n\
-    \    vector<bool> isprime(N + 1, true);\n    isprime[0] = false;\n    isprime[1]\
-    \ = false;\n    for (int i = 2; i * i <= N; i++) {\n        if (isprime[i] ==\
-    \ false) continue;\n        for (int j = i * 2; j <= N; j += i) {\n          \
-    \  isprime[j] = false;\n        }\n    }\n    return isprime;\n}\n#line 6 \"verify/eratosthenes.test.cpp\"\
+    \ false;}\nint dx[](1, 0, -1, 0), dy[](0, 1, 0, -1), inf = 2e9; long INF = 1e18;\n\
+    #line 1 \"math/eratosthenes.hpp\"\nvector<bool> sieve(int N) {\n    vector<bool>\
+    \ isprime(N + 1, true);\n    isprime[0] = false;\n    isprime[1] = false;\n  \
+    \  for (int i = 2; i * i <= N; i++) {\n        if (isprime[i] == false) continue;\n\
+    \        for (int j = i * 2; j <= N; j += i) {\n            isprime[j] = false;\n\
+    \        }\n    }\n    return isprime;\n}\n#line 6 \"verify/eratosthenes.test.cpp\"\
     \n\nint main() {\n    int n;\n    cin >> n;\n    auto p = sieve((int)1e8);\n \
     \   int ans = 0;\n    for(int i = 0; i < n; i++) {\n        int x;\n        cin\
     \ >> x;\n        if (p[x]) ans++;\n    }\n    cout << ans << endl;\n    return\
@@ -46,7 +46,7 @@ data:
   isVerificationFile: true
   path: verify/eratosthenes.test.cpp
   requiredBy: []
-  timestamp: '2024-12-24 23:10:08+09:00'
+  timestamp: '2024-12-30 13:42:31+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/eratosthenes.test.cpp
