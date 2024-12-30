@@ -27,22 +27,22 @@ data:
     \ I, vector<T>& V) {for (T& X : V) I >> X; return I;}\ntemplate <class T> inline\
     \ bool chmax(T& a, T b) {if (a < b) {a = b; return true;} return false;}\ntemplate\
     \ <class T> inline bool chmin(T& a, T b) {if (a > b) {a = b; return true;} return\
-    \ false;}\nint dx[](1, 0, -1, 0), dy[](0, 1, 0, -1), inf = 2e9; long INF = 1e18;\n\
-    #line 1 \"misc/mo.hpp\"\ntemplate <class M>\nstruct Mo {\n    using T = typename\
-    \ M::T;\n    int backet;\n    vector<int> left, right, order;\n    Mo(int N, int\
-    \ Q) {\n        order.resize(Q);\n        backet = max<int>(1, (double)(N) / max<double>(1,\
-    \ sqrt(Q * 2.0 / 3)));\n        iota(order.begin(), order.end(), 0);\n    }\n\
-    \    void add_query(int left_id, int right_id) {\n        left.emplace_back(left_id);\n\
-    \        right.emplace_back(right_id);\n    }\n    vector<T> run() {\n       \
-    \ vector<T> answer(order.size());\n        sort(order.begin(), order.end(), [&](int\
-    \ a, int b) {\n            int a_block = left[a] / backet, b_block = left[b] /\
-    \ backet;\n            if (a_block != b_block) return a_block < b_block;\n   \
-    \         if (a_block & 1) return right[a] < right[b];\n            return right[a]\
-    \ > right[b];\n        });\n        int now_left = 0, now_right = 0;\n       \
-    \ for (int i : order) {\n            while (now_left > left[i]) {\n          \
-    \      M::add_left(--now_left);\n            }\n            while (right[i] >\
-    \ now_right) {\n                M::add_right(now_right++);\n            }\n  \
-    \          while (now_left < left[i]) {\n                M::del_left(now_left++);\n\
+    \ false;}\nvector<int> di = {-1, 1, 0, 0}, dj = {0, 0, -1, 1}; int inf = 2e9;\
+    \ long INF = 1e18;\n#line 1 \"misc/mo.hpp\"\ntemplate <class M>\nstruct Mo {\n\
+    \    using T = typename M::T;\n    int backet;\n    vector<int> left, right, order;\n\
+    \    Mo(int N, int Q) {\n        order.resize(Q);\n        backet = max<int>(1,\
+    \ (double)(N) / max<double>(1, sqrt(Q * 2.0 / 3)));\n        iota(order.begin(),\
+    \ order.end(), 0);\n    }\n    void add_query(int left_id, int right_id) {\n \
+    \       left.emplace_back(left_id);\n        right.emplace_back(right_id);\n \
+    \   }\n    vector<T> run() {\n        vector<T> answer(order.size());\n      \
+    \  sort(order.begin(), order.end(), [&](int a, int b) {\n            int a_block\
+    \ = left[a] / backet, b_block = left[b] / backet;\n            if (a_block !=\
+    \ b_block) return a_block < b_block;\n            if (a_block & 1) return right[a]\
+    \ < right[b];\n            return right[a] > right[b];\n        });\n        int\
+    \ now_left = 0, now_right = 0;\n        for (int i : order) {\n            while\
+    \ (now_left > left[i]) {\n                M::add_left(--now_left);\n         \
+    \   }\n            while (right[i] > now_right) {\n                M::add_right(now_right++);\n\
+    \            }\n            while (now_left < left[i]) {\n                M::del_left(now_left++);\n\
     \            }\n            while (right[i] < now_right) {\n                M::del_right(--now_right);\n\
     \            }\n            answer[i] = M::res(i);\n        }\n        return\
     \ answer;\n    }\n};\n#line 1 \"misc/cc.hpp\"\ntemplate <typename T = int>\nstruct\
@@ -93,7 +93,7 @@ data:
   isVerificationFile: true
   path: verify/mo.test.cpp
   requiredBy: []
-  timestamp: '2024-12-30 13:42:31+09:00'
+  timestamp: '2024-12-30 13:49:04+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/mo.test.cpp

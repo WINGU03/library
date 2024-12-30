@@ -24,8 +24,8 @@ data:
     template <class T> istream& operator>>(istream& I, vector<T>& V) {for (T& X :\
     \ V) I >> X; return I;}\ntemplate <class T> inline bool chmax(T& a, T b) {if (a\
     \ < b) {a = b; return true;} return false;}\ntemplate <class T> inline bool chmin(T&\
-    \ a, T b) {if (a > b) {a = b; return true;} return false;}\nint dx[](1, 0, -1,\
-    \ 0), dy[](0, 1, 0, -1), inf = 2e9; long INF = 1e18;\n#line 6 \"verify/segment-tree-rolling-hash.test.cpp\"\
+    \ a, T b) {if (a > b) {a = b; return true;} return false;}\nvector<int> di = {-1,\
+    \ 1, 0, 0}, dj = {0, 0, -1, 1}; int inf = 2e9; long INF = 1e18;\n#line 6 \"verify/segment-tree-rolling-hash.test.cpp\"\
     \n\n#line 1 \"string/segment-tree-rolling-hash.hpp\"\n#include <atcoder/segtree>\n\
     using namespace atcoder;\n\nrandom_device rd;\nmt19937_64 rnd(rd());\nstatic constexpr\
     \ long long mod = (1LL << 61) - 1;\nstatic const long long base = rnd() % (mod\
@@ -77,7 +77,7 @@ data:
   isVerificationFile: true
   path: verify/segment-tree-rolling-hash.test.cpp
   requiredBy: []
-  timestamp: '2024-12-30 13:42:31+09:00'
+  timestamp: '2024-12-30 13:49:04+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/segment-tree-rolling-hash.test.cpp

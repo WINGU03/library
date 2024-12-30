@@ -68,7 +68,8 @@ data:
     template <class T> inline bool chmin(T& a, T b) {if (a > b) {a = b; return true;}
     return false;}
 
-    int dx[](1, 0, -1, 0), dy[](0, 1, 0, -1), inf = 2e9; long INF = 1e18;
+    vector<int> di = {-1, 1, 0, 0}, dj = {0, 0, -1, 1}; int inf = 2e9; long INF =
+    1e18;
 
     '
   code: '#include <bits/stdc++.h>
@@ -96,12 +97,13 @@ data:
     template <class T> inline bool chmin(T& a, T b) {if (a > b) {a = b; return true;}
     return false;}
 
-    int dx[](1, 0, -1, 0), dy[](0, 1, 0, -1), inf = 2e9; long INF = 1e18;'
+    vector<int> di = {-1, 1, 0, 0}, dj = {0, 0, -1, 1}; int inf = 2e9; long INF =
+    1e18;'
   dependsOn: []
   isVerificationFile: false
   path: template.hpp
   requiredBy: []
-  timestamp: '2024-12-30 13:42:31+09:00'
+  timestamp: '2024-12-30 13:49:04+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/rolling-hash.test.cpp
