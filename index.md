@@ -39,6 +39,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/extgcd.hpp
       title: "\u62E1\u5F35\u30E6\u30FC\u30AF\u30EA\u30C3\u30C9\u306E\u4E92\u9664\u6CD5"
+    - icon: ':warning:'
+      path: math/fraction.hpp
+      title: math/fraction.hpp
     - icon: ':heavy_check_mark:'
       path: math/prime-factorize.hpp
       title: "\u7D20\u56E0\u6570\u5206\u89E3"
