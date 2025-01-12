@@ -45,7 +45,11 @@ struct lazy_segtree {
         return op(L, R);
     }
 
-    M get(int idx) { return prod(idx, idx + 1); }
+    M get(int idx) {
+        idx += n;
+        for (int i = h; i >= 1; i--) push(idx >> i);
+        return d[idx];
+    }
 
     M all_prod() { return d[1]; }
 
