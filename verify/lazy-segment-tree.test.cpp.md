@@ -34,8 +34,9 @@ data:
     \ r) push((r - 1) >> i);\n        }\n        M L = e(), R = e();\n        for\
     \ (; l < r; l >>= 1, r >>= 1) {\n            if (l & 1) L = op(L, d[l++]);\n \
     \           if (r & 1) R = op(d[--r], R);\n        }\n        return op(L, R);\n\
-    \    }\n\n    M get(int idx) { return prod(idx, idx + 1); }\n\n    M all_prod()\
-    \ { return d[1]; }\n\n    void apply(int l, int r, F f) {\n        l += n, r +=\
+    \    }\n\n    M get(int idx) {\n        idx += n;\n        for (int i = h; i >=\
+    \ 1; i--) push(idx >> i);\n        return d[idx];\n    }\n\n    M all_prod() {\
+    \ return d[1]; }\n\n    void apply(int l, int r, F f) {\n        l += n, r +=\
     \ n;\n        for (int i = h; i >= 1; i--) {\n            if (((l >> i) << i)\
     \ != l) push(l >> i);\n            if (((r >> i) << i) != r) push((r - 1) >> i);\n\
     \        }\n        {\n            int l2 = l, r2 = r;\n            for(; l <\
@@ -74,7 +75,7 @@ data:
   isVerificationFile: true
   path: verify/lazy-segment-tree.test.cpp
   requiredBy: []
-  timestamp: '2024-09-21 13:41:03+09:00'
+  timestamp: '2025-01-12 09:16:57+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/lazy-segment-tree.test.cpp
