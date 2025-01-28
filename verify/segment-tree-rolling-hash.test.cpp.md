@@ -19,7 +19,7 @@ data:
     - https://yukicoder.me/problems/no/2761
   bundledCode: "#line 1 \"verify/segment-tree-rolling-hash.test.cpp\"\n#define PROBLEM\
     \ \"https://yukicoder.me/problems/no/2761\"\n\n#include <bits/stdc++.h>\n\n#line\
-    \ 2 \"template.hpp\"\nusing namespace std;\n#ifdef local\n#include <debug.hpp>\n\
+    \ 1 \"template.hpp\"\nusing namespace std;\n#ifdef local\n#include <debug.hpp>\n\
     #else\n#define debug(...)\n#endif\n#define rep(i, n) for (int i = 0; i < n; i++)\n\
     template <class T> istream& operator>>(istream& I, vector<T>& V) {for (T& X :\
     \ V) I >> X; return I;}\ntemplate <class T> inline bool chmax(T& a, T b) {if (a\
@@ -77,7 +77,7 @@ data:
   isVerificationFile: true
   path: verify/segment-tree-rolling-hash.test.cpp
   requiredBy: []
-  timestamp: '2024-12-30 13:49:04+09:00'
+  timestamp: '2025-01-28 16:58:28+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/segment-tree-rolling-hash.test.cpp

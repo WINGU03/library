@@ -43,8 +43,6 @@ data:
     links: []
   bundledCode: '#line 1 "template.hpp"
 
-    #include <bits/stdc++.h>
-
     using namespace std;
 
     #ifdef local
@@ -72,9 +70,7 @@ data:
     1e18;
 
     '
-  code: '#include <bits/stdc++.h>
-
-    using namespace std;
+  code: 'using namespace std;
 
     #ifdef local
 
@@ -103,20 +99,20 @@ data:
   isVerificationFile: false
   path: template.hpp
   requiredBy: []
-  timestamp: '2024-12-30 13:49:04+09:00'
+  timestamp: '2025-01-28 16:58:28+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/extgcd.test.cpp
-  - verify/combination.test.cpp
-  - verify/mo.test.cpp
-  - verify/rerooting.test.cpp
-  - verify/enum-divisor.test.cpp
-  - verify/rolling-hash.test.cpp
-  - verify/cc.test.cpp
-  - verify/eratosthenes.test.cpp
   - verify/segment-tree-rolling-hash.test.cpp
-  - verify/prime-factorize.test.cpp
+  - verify/combination.test.cpp
   - verify/next-combination.test.cpp
+  - verify/eratosthenes.test.cpp
+  - verify/rolling-hash.test.cpp
+  - verify/enum-divisor.test.cpp
+  - verify/mo.test.cpp
+  - verify/cc.test.cpp
+  - verify/rerooting.test.cpp
+  - verify/prime-factorize.test.cpp
+  - verify/extgcd.test.cpp
 documentation_of: template.hpp
 layout: document
 redirect_from:
