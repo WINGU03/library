@@ -27,7 +27,7 @@ data:
     \ I, vector<T>& V) {for (T& X : V) I >> X; return I;}\ntemplate <class T> inline\
     \ bool chmax(T& a, T b) {if (a < b) {a = b; return true;} return false;}\ntemplate\
     \ <class T> inline bool chmin(T& a, T b) {if (a > b) {a = b; return true;} return\
-    \ false;}\nvector<int> di = {-1, 1, 0, 0}, dj = {0, 0, -1, 1}; int inf = 2e9;\
+    \ false;}\nvector<int> di = {-1, 1, 0, 0}, dj = {0, 0, -1, 1}; int inf = 1e9;\
     \ long INF = 1e18;\n#line 1 \"misc/mo.hpp\"\ntemplate <class M>\nstruct Mo {\n\
     \    using T = typename M::T;\n    int backet;\n    vector<int> left, right, order;\n\
     \    Mo(int N, int Q) {\n        order.resize(Q);\n        backet = max<int>(1,\
@@ -93,7 +93,7 @@ data:
   isVerificationFile: true
   path: verify/mo.test.cpp
   requiredBy: []
-  timestamp: '2025-01-28 16:58:28+09:00'
+  timestamp: '2025-01-29 20:24:57+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/mo.test.cpp

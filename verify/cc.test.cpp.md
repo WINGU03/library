@@ -24,7 +24,7 @@ data:
     \ I, vector<T>& V) {for (T& X : V) I >> X; return I;}\ntemplate <class T> inline\
     \ bool chmax(T& a, T b) {if (a < b) {a = b; return true;} return false;}\ntemplate\
     \ <class T> inline bool chmin(T& a, T b) {if (a > b) {a = b; return true;} return\
-    \ false;}\nvector<int> di = {-1, 1, 0, 0}, dj = {0, 0, -1, 1}; int inf = 2e9;\
+    \ false;}\nvector<int> di = {-1, 1, 0, 0}, dj = {0, 0, -1, 1}; int inf = 1e9;\
     \ long INF = 1e18;\n#line 1 \"misc/cc.hpp\"\ntemplate <typename T = int>\nstruct\
     \ CC {\n    bool initialized;\n    vector<T> xs;\n    unordered_map<T, int> mp;\n\
     \    CC() : initialized(false) {}\n    void add(T x) {\n        xs.push_back(x);\n\
@@ -53,7 +53,7 @@ data:
   isVerificationFile: true
   path: verify/cc.test.cpp
   requiredBy: []
-  timestamp: '2025-01-28 16:58:28+09:00'
+  timestamp: '2025-01-29 20:24:57+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/cc.test.cpp

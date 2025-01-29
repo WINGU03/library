@@ -24,7 +24,7 @@ data:
     \ I, vector<T>& V) {for (T& X : V) I >> X; return I;}\ntemplate <class T> inline\
     \ bool chmax(T& a, T b) {if (a < b) {a = b; return true;} return false;}\ntemplate\
     \ <class T> inline bool chmin(T& a, T b) {if (a > b) {a = b; return true;} return\
-    \ false;}\nvector<int> di = {-1, 1, 0, 0}, dj = {0, 0, -1, 1}; int inf = 2e9;\
+    \ false;}\nvector<int> di = {-1, 1, 0, 0}, dj = {0, 0, -1, 1}; int inf = 1e9;\
     \ long INF = 1e18;\n#line 1 \"math/enum-divisor.hpp\"\nvector<long long> enum_divisor(long\
     \ long n) {\n    vector<long long> res;\n    for (int i = 1; (long long)i * i\
     \ <= n; i++) {\n        if (n % i == 0) {\n            res.push_back(i);\n   \
@@ -45,7 +45,7 @@ data:
   isVerificationFile: true
   path: verify/enum-divisor.test.cpp
   requiredBy: []
-  timestamp: '2025-01-28 16:58:28+09:00'
+  timestamp: '2025-01-29 20:24:57+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/enum-divisor.test.cpp

@@ -24,7 +24,7 @@ data:
     \ I, vector<T>& V) {for (T& X : V) I >> X; return I;}\ntemplate <class T> inline\
     \ bool chmax(T& a, T b) {if (a < b) {a = b; return true;} return false;}\ntemplate\
     \ <class T> inline bool chmin(T& a, T b) {if (a > b) {a = b; return true;} return\
-    \ false;}\nvector<int> di = {-1, 1, 0, 0}, dj = {0, 0, -1, 1}; int inf = 2e9;\
+    \ false;}\nvector<int> di = {-1, 1, 0, 0}, dj = {0, 0, -1, 1}; int inf = 1e9;\
     \ long INF = 1e18;\n#line 1 \"graph/rerooting.hpp\"\ntemplate <typename Cost>\n\
     struct Edge {\n    int src, to;\n    Cost cost;\n    Edge(int s, int t, Cost c\
     \ = 1) : src(s), to(t), cost(c) {}\n    // \u30C7\u30D5\u30A9\u30EB\u30C8\u3067\
@@ -84,7 +84,7 @@ data:
   isVerificationFile: true
   path: verify/rerooting.test.cpp
   requiredBy: []
-  timestamp: '2025-01-28 16:58:28+09:00'
+  timestamp: '2025-01-29 20:24:57+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/rerooting.test.cpp

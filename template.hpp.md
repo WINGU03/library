@@ -66,7 +66,7 @@ data:
     template <class T> inline bool chmin(T& a, T b) {if (a > b) {a = b; return true;}
     return false;}
 
-    vector<int> di = {-1, 1, 0, 0}, dj = {0, 0, -1, 1}; int inf = 2e9; long INF =
+    vector<int> di = {-1, 1, 0, 0}, dj = {0, 0, -1, 1}; int inf = 1e9; long INF =
     1e18;
 
     '
@@ -93,13 +93,13 @@ data:
     template <class T> inline bool chmin(T& a, T b) {if (a > b) {a = b; return true;}
     return false;}
 
-    vector<int> di = {-1, 1, 0, 0}, dj = {0, 0, -1, 1}; int inf = 2e9; long INF =
+    vector<int> di = {-1, 1, 0, 0}, dj = {0, 0, -1, 1}; int inf = 1e9; long INF =
     1e18;'
   dependsOn: []
   isVerificationFile: false
   path: template.hpp
   requiredBy: []
-  timestamp: '2025-01-28 16:58:28+09:00'
+  timestamp: '2025-01-29 20:24:57+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/segment-tree-rolling-hash.test.cpp
